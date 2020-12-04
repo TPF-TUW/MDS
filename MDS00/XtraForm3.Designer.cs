@@ -63,6 +63,7 @@ namespace MDS00
             this.accordionControlElement27 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.accordionControlElement30 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -76,7 +77,8 @@ namespace MDS00
             this.accordionControlElement2,
             this.accordionControlElement23,
             this.accordionControlElement26,
-            this.accordionControlElement27});
+            this.accordionControlElement27,
+            this.accordionControlElement30});
             this.accordionControl1.Location = new System.Drawing.Point(0, 0);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.Size = new System.Drawing.Size(177, 715);
@@ -112,7 +114,6 @@ namespace MDS00
             this.accordionControlElement4.Name = "accordionControlElement4";
             this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement4.Text = "Branch";
-            this.accordionControlElement4.Click += new System.EventHandler(this.accordionControlElement4_Click);
             // 
             // accordionControlElement5
             // 
@@ -323,6 +324,7 @@ namespace MDS00
             // 
             // accordionControlElement26
             // 
+            this.accordionControlElement26.Expanded = true;
             this.accordionControlElement26.Name = "accordionControlElement26";
             this.accordionControlElement26.Text = "Shipment";
             // 
@@ -337,6 +339,11 @@ namespace MDS00
             this.documentManager1.View = this.tabbedView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
+            // 
+            // accordionControlElement30
+            // 
+            this.accordionControlElement30.Name = "accordionControlElement30";
+            this.accordionControlElement30.Text = "Element30";
             // 
             // XtraForm3
             // 
@@ -388,5 +395,6 @@ namespace MDS00
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement25;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement28;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement29;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement30;
     }
 }
