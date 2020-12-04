@@ -61,9 +61,9 @@ namespace MDS00
             this.accordionControlElement28 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement26 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement27 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement30 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.accordionControlElement30 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -81,7 +81,7 @@ namespace MDS00
             this.accordionControlElement30});
             this.accordionControl1.Location = new System.Drawing.Point(0, 0);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(177, 715);
+            this.accordionControl1.Size = new System.Drawing.Size(195, 715);
             this.accordionControl1.TabIndex = 4;
             this.accordionControl1.Text = "accordionControl1";
             // 
@@ -333,17 +333,17 @@ namespace MDS00
             this.accordionControlElement27.Name = "accordionControlElement27";
             this.accordionControlElement27.Text = "EXIMs";
             // 
+            // accordionControlElement30
+            // 
+            this.accordionControlElement30.Name = "accordionControlElement30";
+            this.accordionControlElement30.Text = "Element30";
+            // 
             // documentManager1
             // 
             this.documentManager1.MdiParent = this;
             this.documentManager1.View = this.tabbedView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
-            // 
-            // accordionControlElement30
-            // 
-            this.accordionControlElement30.Name = "accordionControlElement30";
-            this.accordionControlElement30.Text = "Element30";
             // 
             // XtraForm3
             // 

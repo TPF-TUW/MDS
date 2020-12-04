@@ -10,6 +10,7 @@ using DevExpress.Utils.Extensions;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using MDS00;
+using TheepClass;
 
 namespace M02
 {
@@ -21,41 +22,13 @@ namespace M02
         {
             InitializeComponent();
             UserLookAndFeel.Default.StyleChanged += MyStyleChanged;
-            iniConfig = new IniFile("Config.ini");
-            UserLookAndFeel.Default.SetSkinStyle(iniConfig.Read("SkinName", "DevExpress"), iniConfig.Read("SkinPalette", "DevExpress"));
-            CreateSplashScreen();
-        }
-
-        private IniFile iniConfig;
-
-        private void CreateSplashScreen()
-        {
-            DevExpress.XtraSplashScreen.SplashScreenManager.ShowSkinSplashScreen(
-                logoImage: null,
-                title: "MDS",
-                subtitle: "Merchandise and Development System",
-                footer: "Copyright © 2020-2021 IT Integration Team",
-                loading: "Starting...",
-                parentForm: this,
-                useFadeIn: true,
-                useFadeOut: true,
-                throwExceptionIfAlreadyOpened: true,
-                startPos: DevExpress.XtraSplashScreen.SplashFormStartPosition.Default,
-                location: default
-                );
-        }
-        private void CloseSplashScreen()
-        {
-            DevExpress.XtraSplashScreen.SplashScreenManager.CloseForm();
         }
 
         private void MyStyleChanged(object sender, EventArgs e)
         {
             UserLookAndFeel userLookAndFeel = (UserLookAndFeel)sender;
-            LookAndFeelChangedEventArgs lookAndFeelChangedEventArgs = (DevExpress.LookAndFeel.LookAndFeelChangedEventArgs)e;
-            //MessageBox.Show("MyStyleChanged: " + lookAndFeelChangedEventArgs.Reason.ToString() + ", " + userLookAndFeel.SkinName + ", " + userLookAndFeel.ActiveSvgPaletteName);
-            iniConfig.Write("SkinName", userLookAndFeel.SkinName, "DevExpress");
-            iniConfig.Write("SkinPalette", userLookAndFeel.ActiveSvgPaletteName, "DevExpress");
+            cUtility.SaveRegistry(@"Software\MDS", "SkinName", userLookAndFeel.SkinName);
+            cUtility.SaveRegistry(@"Software\MDS", "SkinPalette", userLookAndFeel.ActiveSvgPaletteName);
         }
 
         private void XtraForm1_Load(object sender, EventArgs e)
@@ -64,7 +37,6 @@ namespace M02
             cbeComType.EditValue = "";
             bbiNew.PerformClick();
             LoadData();
-            CloseSplashScreen();
         }
 
         private void NewData()

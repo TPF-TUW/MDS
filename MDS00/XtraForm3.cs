@@ -13,6 +13,8 @@ using System.Diagnostics;
 using System.Reflection;
 using System.IO;
 using DevExpress.XtraBars.Navigation;
+using DevExpress.LookAndFeel;
+using TheepClass;
 
 namespace MDS00
 {
@@ -21,6 +23,9 @@ namespace MDS00
         public XtraForm3()
         {
             InitializeComponent();
+            var skinName = cUtility.LoadRegistry(@"Software\MDS", "SkinName");
+            var skinPalette = cUtility.LoadRegistry(@"Software\MDS", "SkinPalette");
+            UserLookAndFeel.Default.SetSkinStyle(skinName == null ? "Basic" : skinName.ToString(), skinPalette == null ? "Default" : skinPalette.ToString());
             accordionControl1.ElementClick += AccordionControl1_ElementClick;
         }
 
@@ -73,6 +78,7 @@ namespace MDS00
         private void AccordionControl1_ElementClick(object sender, ElementClickEventArgs e)
         {
             if (e.Element.Style == ElementStyle.Group) return;
+            CreateSplashScreen(e.Element.Hint);
             try
             {
                 RunProcess(e.Element.Hint);
@@ -81,6 +87,7 @@ namespace MDS00
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            CloseSplashScreen();
         }
 
         private void accordionControlElement4_Click(object sender, EventArgs e)

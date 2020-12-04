@@ -9,6 +9,7 @@ using System.Drawing;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraEditors;
 using DevExpress.XtraLayout.Utils;
+using TheepClass;
 
 namespace M15
 {
@@ -19,19 +20,13 @@ namespace M15
         {
             InitializeComponent();
             UserLookAndFeel.Default.StyleChanged += MyStyleChanged;
-            iniConfig = new IniFile("Config.ini");
-            UserLookAndFeel.Default.SetSkinStyle(iniConfig.Read("SkinName", "DevExpress"), iniConfig.Read("SkinPalette", "DevExpress"));
         }
-
-        private IniFile iniConfig;
 
         private void MyStyleChanged(object sender, EventArgs e)
         {
             UserLookAndFeel userLookAndFeel = (UserLookAndFeel)sender;
-            LookAndFeelChangedEventArgs lookAndFeelChangedEventArgs = (DevExpress.LookAndFeel.LookAndFeelChangedEventArgs)e;
-            //MessageBox.Show("MyStyleChanged: " + lookAndFeelChangedEventArgs.Reason.ToString() + ", " + userLookAndFeel.SkinName + ", " + userLookAndFeel.ActiveSvgPaletteName);
-            iniConfig.Write("SkinName", userLookAndFeel.SkinName, "DevExpress");
-            iniConfig.Write("SkinPalette", userLookAndFeel.ActiveSvgPaletteName, "DevExpress");
+            cUtility.SaveRegistry(@"Software\MDS", "SkinName", userLookAndFeel.SkinName);
+            cUtility.SaveRegistry(@"Software\MDS", "SkinPalette", userLookAndFeel.ActiveSvgPaletteName);
         }
 
         private void XtraForm1_Load(object sender, EventArgs e)
