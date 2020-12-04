@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DDD31D86-D14C-41CF-AC75-576FB1D537AC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MDS00</RootNamespace>
+    <AssemblyName>MDS00</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TheepClass">
+      <HintPath>..\..\Class\TheepClass\TheepClass\bin\Debug\TheepClass.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IniFile.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="XtraForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraForm1.Designer.cs">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraForm2.Designer.cs">
+      <DependentUpon>XtraForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraForm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraForm3.Designer.cs">
+      <DependentUpon>XtraForm3.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraForm1.resx">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraForm2.resx">
+      <DependentUpon>XtraForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraForm3.resx">
+      <DependentUpon>XtraForm3.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DEV01\DEV01.csproj">
+      <Project>{12120b65-5261-4384-a222-ef254d929b48}</Project>
+      <Name>DEV01</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DEV02\DEV02.csproj">
+      <Project>{eefe3530-0156-444a-96b6-1f7a4ad63d41}</Project>
+      <Name>DEV02</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DEV03\DEV03.csproj">
+      <Project>{0adb9106-1a7b-4922-8dba-18dccc8498ca}</Project>
+      <Name>DEV03</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\F01\F01.csproj">
+      <Project>{7ee900af-c5bb-4c28-a529-4169e8c9b78a}</Project>
+      <Name>F01</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\F02\F02.csproj">
+      <Project>{8ec2cc7a-eb06-464d-b363-cb1c87782d28}</Project>
+      <Name>F02</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\F03\F03.csproj">
+      <Project>{a3f162f8-8388-4995-9cd1-3952b396adef}</Project>
+      <Name>F03</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\F05\F05.csproj">
+      <Project>{29f49094-f9c4-4491-b5e5-36310ff40727}</Project>
+      <Name>F05</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M01\M01.csproj">
+      <Project>{543d2b50-0f1b-40a8-a0a7-10823973f7b0}</Project>
+      <Name>M01</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M02\M02.csproj">
+      <Project>{4240566c-fcfd-4eb5-a1d5-2adc4eb29aed}</Project>
+      <Name>M02</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M03\M03.csproj">
+      <Project>{231e4fa3-0f67-432f-993e-6984b952fd24}</Project>
+      <Name>M03</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M04\M04.csproj">
+      <Project>{956938a3-c784-4c01-ab48-251795d62fd2}</Project>
+      <Name>M04</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M05\M05.csproj">
+      <Project>{efef2e4e-d6ee-4618-becf-46465bfa6485}</Project>
+      <Name>M05</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M06\M06.csproj">
+      <Project>{b6f2d625-7d19-4b79-9c3b-56bad4a31f1b}</Project>
+      <Name>M06</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M07\M07.csproj">
+      <Project>{759dfba2-b95b-4254-a091-df436f1da547}</Project>
+      <Name>M07</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M08\M08.csproj">
+      <Project>{44cc1105-eb29-4f54-9749-fb27e9a44192}</Project>
+      <Name>M08</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M09\M09.csproj">
+      <Project>{dd299025-2944-476b-9fdb-613742d17954}</Project>
+      <Name>M09</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M10\M10.csproj">
+      <Project>{d4bdde0f-5d50-4cfb-af02-e06023c72427}</Project>
+      <Name>M10</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M11\M11.csproj">
+      <Project>{83c205bc-ebe2-4431-b57b-545772819184}</Project>
+      <Name>M11</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M12\M12.csproj">
+      <Project>{838b18ca-5ddf-464c-8b0f-149e7d3dff6a}</Project>
+      <Name>M12</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M13\M13.csproj">
+      <Project>{a3c2c92a-1d80-427c-b092-f5ed1b1835f8}</Project>
+      <Name>M13</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M14\M14.csproj">
+      <Project>{5405845c-086f-4e85-afe7-26f32a227746}</Project>
+      <Name>M14</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M15\M15.csproj">
+      <Project>{f931cc83-6cf9-4838-880a-dfb199f11c78}</Project>
+      <Name>M15</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M17\M17.csproj">
+      <Project>{0901e8aa-c978-4172-974e-6259813b9188}</Project>
+      <Name>M17</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
