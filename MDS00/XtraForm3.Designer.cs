@@ -38,6 +38,7 @@ namespace MDS00
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement29 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -62,7 +63,7 @@ namespace MDS00
             this.accordionControlElement27 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.accordionControlElement29 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement30 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -76,7 +77,8 @@ namespace MDS00
             this.accordionControlElement2,
             this.accordionControlElement23,
             this.accordionControlElement26,
-            this.accordionControlElement27});
+            this.accordionControlElement27,
+            this.accordionControlElement30});
             this.accordionControl1.Location = new System.Drawing.Point(0, 0);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.Size = new System.Drawing.Size(177, 715);
@@ -136,6 +138,14 @@ namespace MDS00
             this.accordionControlElement7.Name = "accordionControlElement7";
             this.accordionControlElement7.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement7.Text = "Department";
+            // 
+            // accordionControlElement29
+            // 
+            this.accordionControlElement29.Hint = "F04";
+            this.accordionControlElement29.ImageOptions.Image = global::MDS00.Resource1.F04;
+            this.accordionControlElement29.Name = "accordionControlElement29";
+            this.accordionControlElement29.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement29.Text = "Function";
             // 
             // accordionControlElement8
             // 
@@ -314,6 +324,7 @@ namespace MDS00
             // 
             // accordionControlElement26
             // 
+            this.accordionControlElement26.Expanded = true;
             this.accordionControlElement26.Name = "accordionControlElement26";
             this.accordionControlElement26.Text = "Shipment";
             // 
@@ -329,13 +340,10 @@ namespace MDS00
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
             // 
-            // accordionControlElement29
+            // accordionControlElement30
             // 
-            this.accordionControlElement29.Hint = "F04";
-            this.accordionControlElement29.ImageOptions.Image = global::MDS00.Resource1.F04;
-            this.accordionControlElement29.Name = "accordionControlElement29";
-            this.accordionControlElement29.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement29.Text = "Function";
+            this.accordionControlElement30.Name = "accordionControlElement30";
+            this.accordionControlElement30.Text = "Element30";
             // 
             // XtraForm3
             // 
@@ -387,5 +395,6 @@ namespace MDS00
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement25;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement28;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement29;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement30;
     }
 }
