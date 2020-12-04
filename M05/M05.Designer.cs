@@ -427,7 +427,7 @@
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(217, 24);
-            this.layoutControlItem2.Text = "OID Currency";
+            this.layoutControlItem2.Text = "Currency ID";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(83, 14);
             // 
             // emptySpaceItem1
