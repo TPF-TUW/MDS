@@ -64,7 +64,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="TheepClass">
-      <HintPath>..\..\Class\TheepClass\TheepClass\bin\Debug\TheepClass.dll</HintPath>
+      <HintPath>\\172.16.0.190\MDS_Project\MDS\FileConfig\TheepClass.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

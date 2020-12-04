@@ -495,7 +495,7 @@
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(139, 24);
-            this.layoutControlItem2.Text = "OID Branch";
+            this.layoutControlItem2.Text = "Branch ID";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(73, 14);
             // 
             // layoutControlItem3
