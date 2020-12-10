@@ -54,6 +54,7 @@ namespace MDS00
             this.accordionControlElement19 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement20 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement21 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement31 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement22 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement23 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement24 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -171,6 +172,7 @@ namespace MDS00
             this.accordionControlElement19,
             this.accordionControlElement20,
             this.accordionControlElement21,
+            this.accordionControlElement31,
             this.accordionControlElement22});
             this.accordionControlElement2.Expanded = true;
             this.accordionControlElement2.Name = "accordionControlElement2";
@@ -279,6 +281,14 @@ namespace MDS00
             this.accordionControlElement21.Name = "accordionControlElement21";
             this.accordionControlElement21.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement21.Text = "Payment Term";
+            // 
+            // accordionControlElement31
+            // 
+            this.accordionControlElement31.Hint = "M16";
+            this.accordionControlElement31.ImageOptions.Image = global::MDS00.Resource1.M16;
+            this.accordionControlElement31.Name = "accordionControlElement31";
+            this.accordionControlElement31.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement31.Text = "Vessel Schedule";
             // 
             // accordionControlElement22
             // 
@@ -396,5 +406,6 @@ namespace MDS00
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement28;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement29;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement30;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement31;
     }
 }

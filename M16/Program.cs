@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace M09
+namespace M16
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace M09
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new M09());
+            Application.Run(new M16());
         }
     }
 }

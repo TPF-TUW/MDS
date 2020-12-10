@@ -130,7 +130,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DEV01\DEV01.csproj">
       <Project>{12120b65-5261-4384-a222-ef254d929b48}</Project>
@@ -155,6 +154,10 @@
     <ProjectReference Include="..\F03\F03.csproj">
       <Project>{a3f162f8-8388-4995-9cd1-3952b396adef}</Project>
       <Name>F03</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\F04\F04.csproj">
+      <Project>{8c798f61-b3f0-4195-bda7-f5b6e4622850}</Project>
+      <Name>F04</Name>
     </ProjectReference>
     <ProjectReference Include="..\F05\F05.csproj">
       <Project>{29f49094-f9c4-4491-b5e5-36310ff40727}</Project>
@@ -220,10 +223,17 @@
       <Project>{f931cc83-6cf9-4838-880a-dfb199f11c78}</Project>
       <Name>M15</Name>
     </ProjectReference>
+    <ProjectReference Include="..\M16\M16.csproj">
+      <Project>{bc434d43-3351-4a60-a47b-c7bba29cfa2a}</Project>
+      <Name>M16</Name>
+    </ProjectReference>
     <ProjectReference Include="..\M17\M17.csproj">
       <Project>{0901e8aa-c978-4172-974e-6259813b9188}</Project>
       <Name>M17</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

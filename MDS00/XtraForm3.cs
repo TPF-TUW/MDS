@@ -90,10 +90,6 @@ namespace MDS00
             CloseSplashScreen();
         }
 
-        private void accordionControlElement4_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 
     

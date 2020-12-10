@@ -293,6 +293,16 @@ namespace MDS00 {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap M16 {
+            get {
+                object obj = ResourceManager.GetObject("M16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap M17 {
             get {
                 object obj = ResourceManager.GetObject("M17", resourceCulture);

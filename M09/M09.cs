@@ -13,7 +13,7 @@ using DevExpress.Data.Extensions;
 using System.Linq;
 using TheepClass;
 
-namespace M08
+namespace M09
 {
     public partial class M09 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
