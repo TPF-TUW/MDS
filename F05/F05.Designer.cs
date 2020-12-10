@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F05));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();

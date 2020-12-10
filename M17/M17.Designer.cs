@@ -54,15 +54,17 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.slueCountry = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txeCity = new DevExpress.XtraEditors.TextEdit();
-            this.txeDescription = new DevExpress.XtraEditors.TextEdit();
             this.txeName = new DevExpress.XtraEditors.TextEdit();
+            this.txeCode = new DevExpress.XtraEditors.TextEdit();
             this.lblStatus = new DevExpress.XtraEditors.LabelControl();
             this.txeDATE = new DevExpress.XtraEditors.TextEdit();
             this.txeCREATE = new DevExpress.XtraEditors.TextEdit();
             this.txeID = new DevExpress.XtraEditors.TextEdit();
-            this.gcPTerm = new DevExpress.XtraGrid.GridControl();
-            this.gvPTerm = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcPort = new DevExpress.XtraGrid.GridControl();
+            this.gvPort = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -76,20 +78,20 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.slueCountry.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeCity.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txeDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeDATE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeCREATE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcPTerm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPTerm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPort)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -103,9 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -307,15 +307,15 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.searchLookUpEdit1);
+            this.layoutControl1.Controls.Add(this.slueCountry);
             this.layoutControl1.Controls.Add(this.txeCity);
-            this.layoutControl1.Controls.Add(this.txeDescription);
             this.layoutControl1.Controls.Add(this.txeName);
+            this.layoutControl1.Controls.Add(this.txeCode);
             this.layoutControl1.Controls.Add(this.lblStatus);
             this.layoutControl1.Controls.Add(this.txeDATE);
             this.layoutControl1.Controls.Add(this.txeCREATE);
             this.layoutControl1.Controls.Add(this.txeID);
-            this.layoutControl1.Controls.Add(this.gcPTerm);
+            this.layoutControl1.Controls.Add(this.gcPort);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 160);
             this.layoutControl1.Name = "layoutControl1";
@@ -324,6 +324,27 @@
             this.layoutControl1.Size = new System.Drawing.Size(994, 402);
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // slueCountry
+            // 
+            this.slueCountry.Location = new System.Drawing.Point(89, 100);
+            this.slueCountry.MenuManager = this.ribbonControl;
+            this.slueCountry.Name = "slueCountry";
+            this.slueCountry.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.slueCountry.Properties.NullText = "";
+            this.slueCountry.Properties.PopupView = this.searchLookUpEdit1View;
+            this.slueCountry.Size = new System.Drawing.Size(263, 20);
+            this.slueCountry.StyleController = this.layoutControl1;
+            this.slueCountry.TabIndex = 12;
+            this.slueCountry.Popup += new System.EventHandler(this.slueCountry_Popup);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // txeCity
             // 
@@ -334,32 +355,33 @@
             this.txeCity.Size = new System.Drawing.Size(263, 20);
             this.txeCity.StyleController = this.layoutControl1;
             this.txeCity.TabIndex = 3;
-            this.txeCity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeDueDate_KeyDown);
-            // 
-            // txeDescription
-            // 
-            this.txeDescription.Location = new System.Drawing.Point(89, 52);
-            this.txeDescription.MenuManager = this.ribbonControl;
-            this.txeDescription.Name = "txeDescription";
-            this.txeDescription.Properties.MaxLength = 10;
-            this.txeDescription.Size = new System.Drawing.Size(263, 20);
-            this.txeDescription.StyleController = this.layoutControl1;
-            this.txeDescription.TabIndex = 2;
-            this.txeDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeDescription_KeyDown);
+            this.txeCity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeCity_KeyDown);
+            this.txeCity.Leave += new System.EventHandler(this.txeCity_Leave);
             // 
             // txeName
             // 
-            this.txeName.EditValue = "";
-            this.txeName.Location = new System.Drawing.Point(89, 28);
+            this.txeName.Location = new System.Drawing.Point(89, 52);
             this.txeName.MenuManager = this.ribbonControl;
             this.txeName.Name = "txeName";
-            this.txeName.Properties.MaxLength = 5;
-            this.txeName.Size = new System.Drawing.Size(109, 20);
+            this.txeName.Properties.MaxLength = 10;
+            this.txeName.Size = new System.Drawing.Size(263, 20);
             this.txeName.StyleController = this.layoutControl1;
-            this.txeName.TabIndex = 1;
+            this.txeName.TabIndex = 2;
             this.txeName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeName_KeyDown);
             this.txeName.Leave += new System.EventHandler(this.txeName_Leave);
-            this.txeName.LostFocus += new System.EventHandler(this.txeName_LostFocus);
+            // 
+            // txeCode
+            // 
+            this.txeCode.EditValue = "";
+            this.txeCode.Location = new System.Drawing.Point(89, 28);
+            this.txeCode.MenuManager = this.ribbonControl;
+            this.txeCode.Name = "txeCode";
+            this.txeCode.Properties.MaxLength = 5;
+            this.txeCode.Size = new System.Drawing.Size(109, 20);
+            this.txeCode.StyleController = this.layoutControl1;
+            this.txeCode.TabIndex = 1;
+            this.txeCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeCode_KeyDown);
+            this.txeCode.Leave += new System.EventHandler(this.txeCode_Leave);
             // 
             // lblStatus
             // 
@@ -402,30 +424,28 @@
             this.txeID.StyleController = this.layoutControl1;
             this.txeID.TabIndex = 0;
             // 
-            // gcPTerm
+            // gcPort
             // 
-            this.gcPTerm.Location = new System.Drawing.Point(361, 30);
-            this.gcPTerm.MainView = this.gvPTerm;
-            this.gcPTerm.MenuManager = this.ribbonControl;
-            this.gcPTerm.Name = "gcPTerm";
-            this.gcPTerm.Size = new System.Drawing.Size(624, 363);
-            this.gcPTerm.TabIndex = 7;
-            this.gcPTerm.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvPTerm});
+            this.gcPort.Location = new System.Drawing.Point(361, 30);
+            this.gcPort.MainView = this.gvPort;
+            this.gcPort.MenuManager = this.ribbonControl;
+            this.gcPort.Name = "gcPort";
+            this.gcPort.Size = new System.Drawing.Size(624, 363);
+            this.gcPort.TabIndex = 7;
+            this.gcPort.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvPort});
             // 
-            // gvPTerm
+            // gvPort
             // 
-            this.gvPTerm.DetailHeight = 377;
-            this.gvPTerm.GridControl = this.gcPTerm;
-            this.gvPTerm.Name = "gvPTerm";
-            this.gvPTerm.OptionsBehavior.Editable = false;
-            this.gvPTerm.OptionsBehavior.ReadOnly = true;
-            this.gvPTerm.OptionsView.EnableAppearanceEvenRow = true;
-            this.gvPTerm.OptionsView.EnableAppearanceOddRow = true;
-            this.gvPTerm.OptionsView.ShowGroupPanel = false;
-            this.gvPTerm.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvPTerm_RowClick);
-            this.gvPTerm.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gvGarment_RowCellClick);
-            this.gvPTerm.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gvPTerm_RowStyle);
+            this.gvPort.DetailHeight = 377;
+            this.gvPort.GridControl = this.gcPort;
+            this.gvPort.Name = "gvPort";
+            this.gvPort.OptionsBehavior.Editable = false;
+            this.gvPort.OptionsBehavior.ReadOnly = true;
+            this.gvPort.OptionsView.EnableAppearanceEvenRow = true;
+            this.gvPort.OptionsView.EnableAppearanceOddRow = true;
+            this.gvPort.OptionsView.ShowGroupPanel = false;
+            this.gvPort.DoubleClick += new System.EventHandler(this.gvPort_DoubleClick);
             // 
             // Root
             // 
@@ -443,7 +463,7 @@
             this.layoutControlItem7,
             this.layoutControlItem8,
             this.emptySpaceItem3,
-            this.layoutControlItem9});
+            this.layoutControlItem10});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.Root.Size = new System.Drawing.Size(994, 402);
@@ -461,7 +481,7 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.gcPTerm;
+            this.layoutControlItem1.Control = this.gcPort;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(628, 367);
@@ -522,7 +542,7 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.txeName;
+            this.layoutControlItem3.Control = this.txeCode;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(198, 24);
@@ -531,7 +551,7 @@
             // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.txeDescription;
+            this.layoutControlItem7.Control = this.txeName;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(352, 24);
@@ -555,34 +575,14 @@
             this.emptySpaceItem3.Size = new System.Drawing.Size(154, 24);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // searchLookUpEdit1
+            // layoutControlItem10
             // 
-            this.searchLookUpEdit1.Location = new System.Drawing.Point(89, 100);
-            this.searchLookUpEdit1.MenuManager = this.ribbonControl;
-            this.searchLookUpEdit1.Name = "searchLookUpEdit1";
-            this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEdit1.Properties.NullText = "";
-            this.searchLookUpEdit1.Properties.PopupView = this.searchLookUpEdit1View;
-            this.searchLookUpEdit1.Size = new System.Drawing.Size(263, 20);
-            this.searchLookUpEdit1.StyleController = this.layoutControl1;
-            this.searchLookUpEdit1.TabIndex = 11;
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.searchLookUpEdit1;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 96);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(352, 24);
-            this.layoutControlItem9.Text = "Country";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(73, 14);
-            // 
-            // searchLookUpEdit1View
-            // 
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.layoutControlItem10.Control = this.slueCountry;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(352, 24);
+            this.layoutControlItem10.Text = "Country";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(73, 14);
             // 
             // M17
             // 
@@ -601,14 +601,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.slueCountry.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeCity.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txeDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeDATE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeCREATE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcPTerm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPTerm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPort)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPort)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -622,9 +624,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -657,8 +657,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraEditors.TextEdit txeID;
-        private DevExpress.XtraGrid.GridControl gcPTerm;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvPTerm;
+        private DevExpress.XtraGrid.GridControl gcPort;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvPort;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
@@ -670,15 +670,15 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraEditors.LabelControl lblStatus;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraEditors.TextEdit txeName;
+        private DevExpress.XtraEditors.TextEdit txeCode;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.TextEdit txeCity;
-        private DevExpress.XtraEditors.TextEdit txeDescription;
+        private DevExpress.XtraEditors.TextEdit txeName;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
-        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraEditors.SearchLookUpEdit slueCountry;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
     }
 }
