@@ -9,6 +9,8 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraEditors;
 using DevExpress.XtraLayout.Utils;
 using TheepClass;
+using System.IO;
+using DevExpress.Spreadsheet;
 
 namespace M16
 {
@@ -268,6 +270,56 @@ namespace M16
             //        txeDescription.Focus();
             //    }
             //}
+        }
+
+        private void sbOpenFile_Click(object sender, EventArgs e)
+        {
+            xtraOpenFileDialog1.Filter = "Excel Files|*.xlsx;*.xls;";
+            xtraOpenFileDialog1.FileName = "";
+            xtraOpenFileDialog1.Title = "Select Excel File";
+
+            if (xtraOpenFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                txeFilePath.Text = xtraOpenFileDialog1.FileName;
+
+                IWorkbook workbook = spsVessel.Document;
+
+                // Load a workbook from a stream.
+                using (FileStream stream = new FileStream(txeFilePath.Text, FileMode.Open))
+                {
+                    workbook.LoadDocument(stream, DocumentFormat.Xlsx);
+                }
+
+
+                //// Access a collection of worksheets.
+                //WorksheetCollection worksheets = workbook.Worksheets;
+
+                // Access a worksheet by its index.
+                Worksheet worksheet2 = workbook.Worksheets[1];
+
+                //// Access a worksheet by its name.
+                //Worksheet worksheet2 = workbook.Worksheets["Sheet2"];
+
+                txeLimit.Text = worksheet2.Rows[0]["B"].DisplayText;
+
+
+                for (int i = 5; i < worksheet2.GetDataRange().RowCount; i++)
+                {
+                    string SIZE = worksheet2.Rows[i][0].Value.ToString();
+                    string COLOR_LD = worksheet2.Rows[i][1].Value.ToString();
+                    string COLOR_TUW = worksheet2.Rows[i][2].Value.ToString();
+                    string ITEM_CODE = worksheet2.Rows[i][3].Value.ToString();
+                    string QTY_PCS = worksheet2.Rows[i][4].Value.ToString();
+                    string SEND = worksheet2.Rows[i][5].Value.ToString();
+                    string STICKER = worksheet2.Rows[i][6].Value.ToString();
+                    string REMARK = worksheet2.Rows[i][7].Value.ToString();
+
+                    MessageBox.Show(SIZE + ", " + COLOR_LD + ", " + COLOR_TUW + ", " + ITEM_CODE + ", " + QTY_PCS + ", " + SEND + ", " + STICKER + ", " + REMARK);
+                }
+            }
+
+
+
         }
     }
 }

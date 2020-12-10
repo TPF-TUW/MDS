@@ -54,17 +54,17 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.sbOpenFile = new DevExpress.XtraEditors.SimpleButton();
+            this.txeFilePath = new DevExpress.XtraEditors.TextEdit();
             this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.txeLimit = new DevExpress.XtraEditors.TextEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.spreadsheetControl1 = new DevExpress.XtraSpreadsheet.SpreadsheetControl();
+            this.spsVessel = new DevExpress.XtraSpreadsheet.SpreadsheetControl();
             this.searchLookUpEdit3 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit3View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
+            this.rgStatus = new DevExpress.XtraEditors.RadioGroup();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.searchLookUpEdit2 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -72,6 +72,7 @@
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txeDATE = new DevExpress.XtraEditors.TextEdit();
             this.txeCREATE = new DevExpress.XtraEditors.TextEdit();
+            this.timeEdit1 = new DevExpress.XtraEditors.SpinEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -91,19 +92,19 @@
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.timeEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeFilePath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeLimit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit3View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).BeginInit();
@@ -112,6 +113,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeDATE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeCREATE.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -131,7 +133,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -333,16 +334,16 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.simpleButton1);
-            this.layoutControl1.Controls.Add(this.textEdit6);
+            this.layoutControl1.Controls.Add(this.sbOpenFile);
+            this.layoutControl1.Controls.Add(this.txeFilePath);
             this.layoutControl1.Controls.Add(this.textEdit5);
             this.layoutControl1.Controls.Add(this.textEdit4);
             this.layoutControl1.Controls.Add(this.textEdit3);
-            this.layoutControl1.Controls.Add(this.textEdit2);
+            this.layoutControl1.Controls.Add(this.txeLimit);
             this.layoutControl1.Controls.Add(this.textEdit1);
-            this.layoutControl1.Controls.Add(this.spreadsheetControl1);
+            this.layoutControl1.Controls.Add(this.spsVessel);
             this.layoutControl1.Controls.Add(this.searchLookUpEdit3);
-            this.layoutControl1.Controls.Add(this.radioGroup1);
+            this.layoutControl1.Controls.Add(this.rgStatus);
             this.layoutControl1.Controls.Add(this.dateEdit1);
             this.layoutControl1.Controls.Add(this.searchLookUpEdit2);
             this.layoutControl1.Controls.Add(this.searchLookUpEdit1);
@@ -358,23 +359,24 @@
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // simpleButton1
+            // sbOpenFile
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(968, 4);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(22, 22);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 24;
+            this.sbOpenFile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.sbOpenFile.Location = new System.Drawing.Point(968, 4);
+            this.sbOpenFile.Name = "sbOpenFile";
+            this.sbOpenFile.Size = new System.Drawing.Size(22, 22);
+            this.sbOpenFile.StyleController = this.layoutControl1;
+            this.sbOpenFile.TabIndex = 24;
+            this.sbOpenFile.Click += new System.EventHandler(this.sbOpenFile_Click);
             // 
-            // textEdit6
+            // txeFilePath
             // 
-            this.textEdit6.Location = new System.Drawing.Point(693, 4);
-            this.textEdit6.MenuManager = this.ribbonControl;
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(271, 20);
-            this.textEdit6.StyleController = this.layoutControl1;
-            this.textEdit6.TabIndex = 23;
+            this.txeFilePath.Location = new System.Drawing.Point(693, 4);
+            this.txeFilePath.MenuManager = this.ribbonControl;
+            this.txeFilePath.Name = "txeFilePath";
+            this.txeFilePath.Size = new System.Drawing.Size(271, 20);
+            this.txeFilePath.StyleController = this.layoutControl1;
+            this.txeFilePath.TabIndex = 23;
             // 
             // textEdit5
             // 
@@ -412,17 +414,17 @@
             this.textEdit3.StyleController = this.layoutControl1;
             this.textEdit3.TabIndex = 20;
             // 
-            // textEdit2
+            // txeLimit
             // 
-            this.textEdit2.Location = new System.Drawing.Point(496, 78);
-            this.textEdit2.MenuManager = this.ribbonControl;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.BeepOnError = false;
-            this.textEdit2.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textEdit2.Properties.MaskSettings.Set("mask", "n");
-            this.textEdit2.Size = new System.Drawing.Size(50, 20);
-            this.textEdit2.StyleController = this.layoutControl1;
-            this.textEdit2.TabIndex = 19;
+            this.txeLimit.Location = new System.Drawing.Point(496, 78);
+            this.txeLimit.MenuManager = this.ribbonControl;
+            this.txeLimit.Name = "txeLimit";
+            this.txeLimit.Properties.BeepOnError = false;
+            this.txeLimit.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txeLimit.Properties.MaskSettings.Set("mask", "n");
+            this.txeLimit.Size = new System.Drawing.Size(50, 20);
+            this.txeLimit.StyleController = this.layoutControl1;
+            this.txeLimit.TabIndex = 19;
             // 
             // textEdit1
             // 
@@ -436,14 +438,14 @@
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 18;
             // 
-            // spreadsheetControl1
+            // spsVessel
             // 
-            this.spreadsheetControl1.Location = new System.Drawing.Point(4, 116);
-            this.spreadsheetControl1.MenuManager = this.ribbonControl;
-            this.spreadsheetControl1.Name = "spreadsheetControl1";
-            this.spreadsheetControl1.Size = new System.Drawing.Size(986, 282);
-            this.spreadsheetControl1.TabIndex = 16;
-            this.spreadsheetControl1.Text = "spreadsheetControl1";
+            this.spsVessel.Location = new System.Drawing.Point(4, 116);
+            this.spsVessel.MenuManager = this.ribbonControl;
+            this.spsVessel.Name = "spsVessel";
+            this.spsVessel.Size = new System.Drawing.Size(986, 282);
+            this.spsVessel.TabIndex = 16;
+            this.spsVessel.Text = "spreadsheetControl1";
             // 
             // searchLookUpEdit3
             // 
@@ -465,18 +467,18 @@
             this.searchLookUpEdit3View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit3View.OptionsView.ShowGroupPanel = false;
             // 
-            // radioGroup1
+            // rgStatus
             // 
-            this.radioGroup1.AutoSizeInLayoutControl = true;
-            this.radioGroup1.Location = new System.Drawing.Point(147, 78);
-            this.radioGroup1.MenuManager = this.ribbonControl;
-            this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Active"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "Non Active")});
-            this.radioGroup1.Size = new System.Drawing.Size(202, 34);
-            this.radioGroup1.StyleController = this.layoutControl1;
-            this.radioGroup1.TabIndex = 14;
+            this.rgStatus.AutoSizeInLayoutControl = true;
+            this.rgStatus.Location = new System.Drawing.Point(147, 78);
+            this.rgStatus.MenuManager = this.ribbonControl;
+            this.rgStatus.Name = "rgStatus";
+            this.rgStatus.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Active"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "Non Active")});
+            this.rgStatus.Size = new System.Drawing.Size(202, 34);
+            this.rgStatus.StyleController = this.layoutControl1;
+            this.rgStatus.TabIndex = 14;
             // 
             // dateEdit1
             // 
@@ -552,6 +554,24 @@
             this.txeCREATE.StyleController = this.layoutControl1;
             this.txeCREATE.TabIndex = 5;
             // 
+            // timeEdit1
+            // 
+            this.timeEdit1.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.timeEdit1.Location = new System.Drawing.Point(385, 4);
+            this.timeEdit1.MenuManager = this.ribbonControl;
+            this.timeEdit1.Name = "timeEdit1";
+            this.timeEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.timeEdit1.Properties.Mask.EditMask = "T";
+            this.timeEdit1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
+            this.timeEdit1.Size = new System.Drawing.Size(50, 20);
+            this.timeEdit1.StyleController = this.layoutControl1;
+            this.timeEdit1.TabIndex = 17;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -609,7 +629,7 @@
             // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.radioGroup1;
+            this.layoutControlItem7.Control = this.rgStatus;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 74);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(349, 38);
@@ -629,7 +649,7 @@
             // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.spreadsheetControl1;
+            this.layoutControlItem9.Control = this.spsVessel;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 112);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(990, 286);
@@ -667,7 +687,7 @@
             // 
             // layoutControlItem12
             // 
-            this.layoutControlItem12.Control = this.textEdit2;
+            this.layoutControlItem12.Control = this.txeLimit;
             this.layoutControlItem12.Location = new System.Drawing.Point(349, 74);
             this.layoutControlItem12.Name = "layoutControlItem12";
             this.layoutControlItem12.Size = new System.Drawing.Size(197, 38);
@@ -712,7 +732,7 @@
             // 
             // layoutControlItem4
             // 
-            this.layoutControlItem4.Control = this.textEdit6;
+            this.layoutControlItem4.Control = this.txeFilePath;
             this.layoutControlItem4.Location = new System.Drawing.Point(546, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(418, 26);
@@ -721,7 +741,7 @@
             // 
             // layoutControlItem16
             // 
-            this.layoutControlItem16.Control = this.simpleButton1;
+            this.layoutControlItem16.Control = this.sbOpenFile;
             this.layoutControlItem16.Location = new System.Drawing.Point(964, 0);
             this.layoutControlItem16.MaxSize = new System.Drawing.Size(26, 26);
             this.layoutControlItem16.MinSize = new System.Drawing.Size(26, 26);
@@ -747,23 +767,9 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(111, 24);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // timeEdit1
+            // xtraOpenFileDialog1
             // 
-            this.timeEdit1.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.timeEdit1.Location = new System.Drawing.Point(385, 4);
-            this.timeEdit1.MenuManager = this.ribbonControl;
-            this.timeEdit1.Name = "timeEdit1";
-            this.timeEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.timeEdit1.Properties.Mask.EditMask = "T";
-            this.timeEdit1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
-            this.timeEdit1.Size = new System.Drawing.Size(50, 20);
-            this.timeEdit1.StyleController = this.layoutControl1;
-            this.timeEdit1.TabIndex = 17;
+            this.xtraOpenFileDialog1.FileName = "xtraOpenFileDialog1";
             // 
             // M16
             // 
@@ -782,15 +788,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeFilePath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeLimit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit3View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).EndInit();
@@ -799,6 +805,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeDATE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeCREATE.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -818,7 +825,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -857,12 +863,12 @@
         private DevExpress.XtraEditors.TextEdit textEdit5;
         private DevExpress.XtraEditors.TextEdit textEdit4;
         private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txeLimit;
         private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraSpreadsheet.SpreadsheetControl spreadsheetControl1;
+        private DevExpress.XtraSpreadsheet.SpreadsheetControl spsVessel;
         private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit3;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit3View;
-        private DevExpress.XtraEditors.RadioGroup radioGroup1;
+        private DevExpress.XtraEditors.RadioGroup rgStatus;
         private DevExpress.XtraEditors.DateEdit dateEdit1;
         private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit2;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit2View;
@@ -880,12 +886,13 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
+        private DevExpress.XtraEditors.SimpleButton sbOpenFile;
+        private DevExpress.XtraEditors.TextEdit txeFilePath;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraEditors.SpinEdit timeEdit1;
+        private DevExpress.XtraEditors.XtraOpenFileDialog xtraOpenFileDialog1;
     }
 }
