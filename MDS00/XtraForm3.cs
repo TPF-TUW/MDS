@@ -66,7 +66,7 @@ namespace MDS00
                     return;
                 }
             }
-            FileInfo f = new FileInfo(processName + ".dll");
+            FileInfo f = new FileInfo(Application.StartupPath+"\\"+ processName + ".dll");
             var a = Assembly.LoadFrom(f.FullName);
             var t = a.GetType(processName+"."+processName);
             DevExpress.XtraBars.Ribbon.RibbonForm frm = (DevExpress.XtraBars.Ribbon.RibbonForm)Activator.CreateInstance(t);

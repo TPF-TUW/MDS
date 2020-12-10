@@ -15,7 +15,7 @@ namespace M01
 {
     public partial class M01 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        //private Functionality.Function FUNC = new Functionality.Function();
+        private Functionality.Function FUNC = new Functionality.Function();
         public M01()
         {
             InitializeComponent();
