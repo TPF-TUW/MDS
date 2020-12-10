@@ -214,6 +214,22 @@ namespace M16
 
         private void bbiExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            IWorkbook workbook = spsVessel.Document;
+            Worksheet worksheet2 = workbook.Worksheets[1];
+            for (int i = 5; i < worksheet2.GetDataRange().RowCount; i++)
+            {
+                string SIZE = worksheet2.Rows[i][0].Value.ToString();
+                string COLOR_LD = worksheet2.Rows[i][1].Value.ToString();
+                string COLOR_TUW = worksheet2.Rows[i][2].Value.ToString();
+                string ITEM_CODE = worksheet2.Rows[i][3].Value.ToString();
+                string QTY_PCS = worksheet2.Rows[i][4].Value.ToString();
+                string SEND = worksheet2.Rows[i][5].Value.ToString();
+                string STICKER = worksheet2.Rows[i][6].Value.ToString();
+                string REMARK = worksheet2.Rows[i][7].Value.ToString();
+
+                MessageBox.Show(SIZE + ", " + COLOR_LD + ", " + COLOR_TUW + ", " + ITEM_CODE + ", " + QTY_PCS + ", " + SEND + ", " + STICKER + ", " + REMARK);
+            }
+
             //string pathFile = new ObjSet.Folder(@"C:\MDS\Export\").GetPath() + "PaymentTermList_" + DateTime.Now.ToString("yyyyMMdd") + ".xlsx";
             //gvPTerm.ExportToXlsx(pathFile);
             //System.Diagnostics.Process.Start(pathFile);
@@ -303,19 +319,7 @@ namespace M16
                 txeLimit.Text = worksheet2.Rows[0]["B"].DisplayText;
 
 
-                for (int i = 5; i < worksheet2.GetDataRange().RowCount; i++)
-                {
-                    string SIZE = worksheet2.Rows[i][0].Value.ToString();
-                    string COLOR_LD = worksheet2.Rows[i][1].Value.ToString();
-                    string COLOR_TUW = worksheet2.Rows[i][2].Value.ToString();
-                    string ITEM_CODE = worksheet2.Rows[i][3].Value.ToString();
-                    string QTY_PCS = worksheet2.Rows[i][4].Value.ToString();
-                    string SEND = worksheet2.Rows[i][5].Value.ToString();
-                    string STICKER = worksheet2.Rows[i][6].Value.ToString();
-                    string REMARK = worksheet2.Rows[i][7].Value.ToString();
-
-                    MessageBox.Show(SIZE + ", " + COLOR_LD + ", " + COLOR_TUW + ", " + ITEM_CODE + ", " + QTY_PCS + ", " + SEND + ", " + STICKER + ", " + REMARK);
-                }
+                
             }
 
 
