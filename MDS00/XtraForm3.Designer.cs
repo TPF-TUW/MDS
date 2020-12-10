@@ -62,9 +62,32 @@ namespace MDS00
             this.accordionControlElement28 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement26 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement27 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement30 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.accordionControlElement32 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement33 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement30 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement34 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement35 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement36 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement37 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement38 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement39 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement40 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement41 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement42 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement43 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement44 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement45 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement46 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement47 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement48 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement49 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement50 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement51 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement52 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement53 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement54 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -77,9 +100,10 @@ namespace MDS00
             this.accordionControlElement1,
             this.accordionControlElement2,
             this.accordionControlElement23,
+            this.accordionControlElement30,
+            this.accordionControlElement41,
             this.accordionControlElement26,
-            this.accordionControlElement27,
-            this.accordionControlElement30});
+            this.accordionControlElement27});
             this.accordionControl1.Location = new System.Drawing.Point(0, 0);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.Size = new System.Drawing.Size(195, 715);
@@ -303,7 +327,9 @@ namespace MDS00
             this.accordionControlElement23.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement24,
             this.accordionControlElement25,
-            this.accordionControlElement28});
+            this.accordionControlElement28,
+            this.accordionControlElement32,
+            this.accordionControlElement33});
             this.accordionControlElement23.Expanded = true;
             this.accordionControlElement23.Name = "accordionControlElement23";
             this.accordionControlElement23.Text = "Development";
@@ -334,7 +360,11 @@ namespace MDS00
             // 
             // accordionControlElement26
             // 
-            this.accordionControlElement26.Expanded = true;
+            this.accordionControlElement26.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement51,
+            this.accordionControlElement52,
+            this.accordionControlElement53,
+            this.accordionControlElement54});
             this.accordionControlElement26.Name = "accordionControlElement26";
             this.accordionControlElement26.Text = "Shipment";
             // 
@@ -343,17 +373,176 @@ namespace MDS00
             this.accordionControlElement27.Name = "accordionControlElement27";
             this.accordionControlElement27.Text = "EXIMs";
             // 
-            // accordionControlElement30
-            // 
-            this.accordionControlElement30.Name = "accordionControlElement30";
-            this.accordionControlElement30.Text = "Element30";
-            // 
             // documentManager1
             // 
             this.documentManager1.MdiParent = this;
             this.documentManager1.View = this.tabbedView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
+            // 
+            // accordionControlElement32
+            // 
+            this.accordionControlElement32.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement32.ImageOptions.Image")));
+            this.accordionControlElement32.Name = "accordionControlElement32";
+            this.accordionControlElement32.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement32.Text = "Cost Sheet";
+            // 
+            // accordionControlElement33
+            // 
+            this.accordionControlElement33.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement33.ImageOptions.Image")));
+            this.accordionControlElement33.Name = "accordionControlElement33";
+            this.accordionControlElement33.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement33.Text = "Order Sheet";
+            // 
+            // accordionControlElement30
+            // 
+            this.accordionControlElement30.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement34,
+            this.accordionControlElement35,
+            this.accordionControlElement36,
+            this.accordionControlElement37,
+            this.accordionControlElement38,
+            this.accordionControlElement39,
+            this.accordionControlElement40});
+            this.accordionControlElement30.Hint = "Master Production Schedule";
+            this.accordionControlElement30.Name = "accordionControlElement30";
+            this.accordionControlElement30.Text = "MPS";
+            // 
+            // accordionControlElement34
+            // 
+            this.accordionControlElement34.Name = "accordionControlElement34";
+            this.accordionControlElement34.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement34.Text = "Forecast Order";
+            // 
+            // accordionControlElement35
+            // 
+            this.accordionControlElement35.Name = "accordionControlElement35";
+            this.accordionControlElement35.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement35.Text = "Sales Order";
+            // 
+            // accordionControlElement36
+            // 
+            this.accordionControlElement36.Name = "accordionControlElement36";
+            this.accordionControlElement36.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement36.Text = "Calculate MPS";
+            // 
+            // accordionControlElement37
+            // 
+            this.accordionControlElement37.Name = "accordionControlElement37";
+            this.accordionControlElement37.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement37.Text = "MPS Schedule";
+            // 
+            // accordionControlElement38
+            // 
+            this.accordionControlElement38.Name = "accordionControlElement38";
+            this.accordionControlElement38.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement38.Text = "Production Schedule";
+            // 
+            // accordionControlElement39
+            // 
+            this.accordionControlElement39.Name = "accordionControlElement39";
+            this.accordionControlElement39.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement39.Text = "Production Order";
+            // 
+            // accordionControlElement40
+            // 
+            this.accordionControlElement40.Name = "accordionControlElement40";
+            this.accordionControlElement40.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement40.Text = "Delivery Order";
+            // 
+            // accordionControlElement41
+            // 
+            this.accordionControlElement41.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement42,
+            this.accordionControlElement43,
+            this.accordionControlElement44,
+            this.accordionControlElement45,
+            this.accordionControlElement46,
+            this.accordionControlElement47,
+            this.accordionControlElement48,
+            this.accordionControlElement49,
+            this.accordionControlElement50});
+            this.accordionControlElement41.Hint = "Material Resource Planning";
+            this.accordionControlElement41.Name = "accordionControlElement41";
+            this.accordionControlElement41.Text = "MRP";
+            // 
+            // accordionControlElement42
+            // 
+            this.accordionControlElement42.Name = "accordionControlElement42";
+            this.accordionControlElement42.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement42.Text = "Calculate MRP";
+            // 
+            // accordionControlElement43
+            // 
+            this.accordionControlElement43.Name = "accordionControlElement43";
+            this.accordionControlElement43.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement43.Text = "Booking Material";
+            // 
+            // accordionControlElement44
+            // 
+            this.accordionControlElement44.Name = "accordionControlElement44";
+            this.accordionControlElement44.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement44.Text = "Purchase Request (P/R)";
+            // 
+            // accordionControlElement45
+            // 
+            this.accordionControlElement45.Name = "accordionControlElement45";
+            this.accordionControlElement45.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement45.Text = "Purchase Order (P/O)";
+            // 
+            // accordionControlElement46
+            // 
+            this.accordionControlElement46.Name = "accordionControlElement46";
+            this.accordionControlElement46.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement46.Text = "Calculate Withdrawal";
+            // 
+            // accordionControlElement47
+            // 
+            this.accordionControlElement47.Name = "accordionControlElement47";
+            this.accordionControlElement47.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement47.Text = "Transfer Material";
+            // 
+            // accordionControlElement48
+            // 
+            this.accordionControlElement48.Name = "accordionControlElement48";
+            this.accordionControlElement48.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement48.Text = "Approved Over Issue";
+            // 
+            // accordionControlElement49
+            // 
+            this.accordionControlElement49.Name = "accordionControlElement49";
+            this.accordionControlElement49.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement49.Text = "Interface PO Data";
+            // 
+            // accordionControlElement50
+            // 
+            this.accordionControlElement50.Name = "accordionControlElement50";
+            this.accordionControlElement50.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement50.Text = "Interface Withdrawal";
+            // 
+            // accordionControlElement51
+            // 
+            this.accordionControlElement51.Name = "accordionControlElement51";
+            this.accordionControlElement51.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement51.Text = "Ship Schedule";
+            // 
+            // accordionControlElement52
+            // 
+            this.accordionControlElement52.Name = "accordionControlElement52";
+            this.accordionControlElement52.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement52.Text = "End Order";
+            // 
+            // accordionControlElement53
+            // 
+            this.accordionControlElement53.Name = "accordionControlElement53";
+            this.accordionControlElement53.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement53.Text = "Interface Ship";
+            // 
+            // accordionControlElement54
+            // 
+            this.accordionControlElement54.Name = "accordionControlElement54";
+            this.accordionControlElement54.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement54.Text = "Order Balance";
             // 
             // XtraForm3
             // 
@@ -405,7 +594,30 @@ namespace MDS00
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement25;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement28;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement29;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement30;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement31;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement32;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement33;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement30;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement34;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement35;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement36;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement37;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement38;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement39;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement40;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement41;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement42;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement43;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement44;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement45;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement46;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement47;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement48;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement49;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement50;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement51;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement52;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement53;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement54;
     }
 }
