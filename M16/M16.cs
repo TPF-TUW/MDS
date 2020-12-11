@@ -71,10 +71,10 @@ namespace M16
 
         private void NewData()
         {
-            lblStatus.Text = "* Add Vessel";
-            lblStatus.ForeColor = Color.Green;
+            //lblStatus.Text = "* Add Vessel";
+            //lblStatus.ForeColor = Color.Green;
 
-            txeID.Text = new DBQuery("SELECT CASE WHEN ISNULL(MAX(OIDVessel), '') = '' THEN 1 ELSE MAX(OIDVessel) + 1 END AS NewNo FROM Vessel").getString();
+            //txeID.Text = new DBQuery("SELECT CASE WHEN ISNULL(MAX(OIDVessel), '') = '' THEN 1 ELSE MAX(OIDVessel) + 1 END AS NewNo FROM Vessel").getString();
 
             slueCarrier.EditValue = "";
             slueFrom.EditValue = "";
