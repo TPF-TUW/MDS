@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-using DBConnection;
+//using DBConnection;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
 using DevExpress.Utils.Extensions;
@@ -14,7 +14,7 @@ namespace F02
 {
     public partial class F02 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private Functionality.Function FUNC = new Functionality.Function();
+        //private Functionality.Function FUNC = new Functionality.Function();
         public F02()
         {
             InitializeComponent();
