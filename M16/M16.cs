@@ -20,8 +20,6 @@ namespace M16
         private Functionality.Function FUNC = new Functionality.Function();
         private const string xlsxPathFile = @"\\172.16.0.190\MDS_Project\MDS\ImportFile\Vessel\";
         string LongGestDays = "";
-        string VID = "";
-        string nowSheet = "";
         public M16()
         {
             InitializeComponent();
@@ -37,9 +35,9 @@ namespace M16
 
         private void XtraForm1_Load(object sender, EventArgs e)
         {
+            tabbedControlGroup1.SelectedTabPage = layoutControlGroup1;
             LoadData();
             NewData();
-
         }
 
         private void LoadData()
@@ -59,28 +57,24 @@ namespace M16
             new ObjDevEx.setSearchLookUpEdit(slueTo, sbSQL, "City", "ID").getData();
 
             sbSQL.Clear();
-            //sbSQL.Append("SELECT TOP(1) OIDPORT FROM PortAndCity WHERE (City = N'Bangkok') ");
-            //slueFrom.EditValue = new DBQuery(sbSQL).getInt();
-
-            //sbSQL.Append("SELECT OIDPayment AS No, Name, Description, DuedateCalculation, Status, CreatedBy, CreatedDate ");
-            //sbSQL.Append("FROM PaymentTerm ");
-            //sbSQL.Append("ORDER BY OIDPayment ");
-            //new ObjDevEx.setGridControl(gcPTerm, gvPTerm, sbSQL).getData(false, false, false, true);
-
+            sbSQL.Append("SELECT TOP(1) OIDPORT FROM PortAndCity WHERE (City = N'Bangkok') ");
+            slueFrom.EditValue = new DBQuery(sbSQL).getInt();
         }
 
         private void NewData()
         {
-            //lblStatus.Text = "* Add Vessel";
-            //lblStatus.ForeColor = Color.Green;
-
-            //txeID.Text = new DBQuery("SELECT CASE WHEN ISNULL(MAX(OIDVessel), '') = '' THEN 1 ELSE MAX(OIDVessel) + 1 END AS NewNo FROM Vessel").getString();
+            bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            layoutBrowse.Visibility = LayoutVisibility.Always;
+            rpgPrint.Visible = false;
+            rpgExport.Visible = false;
 
             slueCarrier.EditValue = "";
+            speYear.Value = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
+
             slueFrom.EditValue = "";
             dteFileDate.EditValue = DateTime.Now;
 
-            teTime.Value = 1;
+            speTime.Value = 1;
 
             slueTo.EditValue = "";
 
@@ -99,6 +93,8 @@ namespace M16
             spsVessel.CloseCellEditor(DevExpress.XtraSpreadsheet.CellEditorEnterValueMode.Default);
             spsVessel.CreateNewDocument();
 
+            gcVessel.DataSource = null;
+
             slueCarrier.Focus();
         }
 
@@ -106,76 +102,6 @@ namespace M16
         {
             LoadData();
             NewData();
-        }
-
-        private void gvGarment_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
-        {
-            
-        }
-
-        private bool chkDuplicate()
-        {
-            bool chkDup = true;
-            //if (txeName.Text != "")
-            //{
-            //    txeName.Text = txeName.Text.Trim();
-            //    if (txeName.Text.Trim() != "" && lblStatus.Text == "* Add Payment Term")
-            //    {
-            //        StringBuilder sbSQL = new StringBuilder();
-            //        sbSQL.Append("SELECT TOP(1) Name FROM PaymentTerm WHERE (Name = N'" + txeName.Text.Trim() + "') ");
-            //        if (new DBQuery(sbSQL).getString() != "")
-            //        {
-            //            chkDup = false;
-            //        }
-            //    }
-            //    else if (txeName.Text.Trim() != "" && lblStatus.Text == "* Edit Payment Term")
-            //    {
-            //        StringBuilder sbSQL = new StringBuilder();
-            //        sbSQL.Append("SELECT TOP(1) OIDPayment ");
-            //        sbSQL.Append("FROM PaymentTerm ");
-            //        sbSQL.Append("WHERE (Name = N'" + txeName.Text.Trim() + "') ");
-            //        string strCHK = new DBQuery(sbSQL).getString();
-            //        if (strCHK != "" && strCHK != txeID.Text.Trim())
-            //        {
-            //            chkDup = false;
-            //        }
-            //    }
-            //}
-            return chkDup;
-        }
-
-        private void txeName_KeyDown(object sender, KeyEventArgs e)
-        {
-            //if (e.KeyCode == Keys.Enter)
-            //{
-            //    txeDescription.Focus();
-            //}
-        }
-
-        private void txeName_LostFocus(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void txeDescription_KeyDown(object sender, KeyEventArgs e)
-        {
-            //if (e.KeyCode == Keys.Enter)
-            //{
-            //    txeCity.Focus();
-            //}
-        }
-
-        private void txeDueDate_KeyDown(object sender, KeyEventArgs e)
-        {
-            //if (e.KeyCode == Keys.Enter)
-            //{
-            //    rgStatus.Focus();
-            //}
-        }
-
-        private void gvPTerm_RowStyle(object sender, RowStyleEventArgs e)
-        {
-            
         }
 
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -200,6 +126,31 @@ namespace M16
                 FUNC.msgWarning("Please select date.");
                 dteFileDate.Focus();
             }
+            else if (txeStdDay.Text.Trim() == "")
+            {
+                FUNC.msgWarning("Please input Standard days(Longest).");
+                txeStdDay.Focus();
+            }
+            else if (txeLimit.Text.Trim() == "")
+            {
+                FUNC.msgWarning("Please input Limit of LCL>>FCL.");
+                txeLimit.Focus();
+            }
+            else if (txeCyCut.Text.Trim() == "")
+            {
+                FUNC.msgWarning("Please input CY Cut>>ETD(day).");
+                txeCyCut.Focus();
+            }
+            else if (txeEtdEta.Text.Trim() == "")
+            {
+                FUNC.msgWarning("Please input ETD>>ETA(day).");
+                txeEtdEta.Focus();
+            }
+            else if (txeEtaWh.Text.Trim() == "")
+            {
+                FUNC.msgWarning("Please input ETA>>WH(day).");
+                txeEtaWh.Focus();
+            }
             else if (txeFilePath.Text.Trim() == "")
             {
                 FUNC.msgWarning("Please select excel file.");
@@ -207,7 +158,7 @@ namespace M16
             }
             else
             {
-                if (FUNC.msgQuiz("Confirm save data ?") == true)
+                if (FUNC.msgQuiz("The system will save data from the excel files only the first 2 sheets.\nConfirm save data ?") == true)
                 {
                     StringBuilder sbSQL = new StringBuilder();
                     string strCREATE = "0";
@@ -222,130 +173,174 @@ namespace M16
                         Status = rgStatus.Properties.Items[rgStatus.SelectedIndex].Value.ToString();
                     }
 
+                    string newPathFileName = "";
                     //**** SAVE EXCEL FILE ******
-                    IWorkbook workbook = spsVessel.Document;
-                    // Save the modified document to a stream.
-                    System.IO.FileInfo fi = new System.IO.FileInfo(txeFilePath.Text);
-                    string extn = fi.Extension;
-                    string newFileName = slueCarrier.Text.Trim().Replace(" ", "_") + "-" + teTime.Value.ToString() + extn;
-                    string newPathFileName = xlsxPathFile + newFileName;
-                    using (FileStream stream = new FileStream(newPathFileName, FileMode.Create, FileAccess.ReadWrite))
+                    if (txeFilePath.Text.Trim() != "")
                     {
-                        workbook.SaveDocument(stream, DocumentFormat.Xlsx);
+                        IWorkbook workbook = spsVessel.Document;
+                        // Save the modified document to a stream.
+                        System.IO.FileInfo fi = new System.IO.FileInfo(txeFilePath.Text);
+                        string extn = fi.Extension;
+                        string newFileName = slueCarrier.Text.Trim().Replace(" ", "_") + "-" + speYear.Value.ToString() + "-" + speTime.Value.ToString() + extn;
+                        newPathFileName = xlsxPathFile + newFileName;
+                        using (FileStream stream = new FileStream(newPathFileName, FileMode.Create, FileAccess.ReadWrite))
+                        {
+                            workbook.SaveDocument(stream, DocumentFormat.Xlsx);
+                        }
                     }
 
-                    // MessageBox.Show(Status);
-                    //if (lblStatus.Text == "* Add Vessel")
-                    //{
-                    //    sbSQL.Append("  INSERT INTO PaymentTerm(Name, Description, DueDateCalculation, Status, CreatedBy, CreatedDate) ");
-                    //    sbSQL.Append("  VALUES(N'" + txeName.Text.Trim().Replace("'", "''") + "', N'" + txeDescription.Text.Trim().Replace("'", "''") + "', N'" + txeCity.Text.Trim().Replace("'", "''") + "', " + Status + ", '" + strCREATE + "', GETDATE()) ");
-                    //}
-                    //else if (lblStatus.Text == "* Edit Vessel")
-                    //{
-                    //    sbSQL.Append("  UPDATE PaymentTerm SET ");
-                    //    sbSQL.Append("      Name=N'" + txeName.Text.Trim().Replace("'", "''") + "', ");
-                    //    sbSQL.Append("      Description=N'" + txeDescription.Text.Trim().Replace("'", "''") + "', ");
-                    //    sbSQL.Append("      DueDateCalculation=N'" + txeCity.Text.Trim().Replace("'", "''") + "', ");
-                    //    sbSQL.Append("      Status=" + Status + " ");
-                    //    sbSQL.Append("  WHERE(OIDPayment = '" + txeID.Text.Trim() + "') ");
-                    //}
+                    //*** Vessel ****
+                    sbSQL.Append("IF NOT EXISTS(SELECT OIDVessel FROM Vessel WHERE OIDVend = '" + slueCarrier.EditValue.ToString() + "' AND FileYear = '" + speYear.Value.ToString() + "' AND TimeOfDocument = '" + speTime.Value.ToString() + "') ");
+                    sbSQL.Append(" BEGIN ");
+                    sbSQL.Append("  INSERT INTO Vessel(OIDVend, TimeOfDocument, OIDDeparturePort, OIDDestinationPort, FileDate, FileYear, StdLongestDay, Status, LCLLimitOfCBM, DayOfCYCutToETD, DayOfETDtoETA, DayOfETAtoWH, PathFile, UpdatedBy, UpdatedDate) ");
+                    sbSQL.Append("   VALUES('" + slueCarrier.EditValue.ToString() + "', '" + speTime.Value.ToString() + "', '" + slueFrom.EditValue.ToString() + "', '" + slueTo.EditValue.ToString() + "', '" + Convert.ToDateTime(dteFileDate.EditValue.ToString()).ToString("yyyy-MM-dd") + "', '" + speYear.Value.ToString() + "', '" + txeStdDay.Text.Trim() + "', " + Status + ", '" + txeLimit.Text.Trim() + "', '" + txeCyCut.Text.Trim() + "', '" + txeEtdEta.Text.Trim() + "', '" + txeEtaWh.Text.Trim() + "', N'" + newPathFileName + "', '" + strCREATE + "', GETDATE())  ");
+                    sbSQL.Append(" END  ");
+                    sbSQL.Append("ELSE ");
+                    sbSQL.Append(" BEGIN ");
+                    sbSQL.Append("  UPDATE Vessel SET ");
+                    sbSQL.Append("     OIDDeparturePort='" + slueFrom.EditValue.ToString() + "', ");
+                    sbSQL.Append("     OIDDestinationPort='" + slueTo.EditValue.ToString() + "', ");
+                    sbSQL.Append("     FileDate='" + Convert.ToDateTime(dteFileDate.EditValue.ToString()).ToString("yyyy-MM-dd") + "', ");
+                    sbSQL.Append("     StdLongestDay='" + txeStdDay.Text.Trim() + "', ");
+                    sbSQL.Append("     Status=" + Status + ", ");
+                    sbSQL.Append("     LCLLimitOfCBM='" + txeLimit.Text.Trim() + "', ");
+                    sbSQL.Append("     DayOfCYCutToETD='" + txeCyCut.Text.Trim() + "', ");
+                    sbSQL.Append("     DayOfETDtoETA='" + txeEtdEta.Text.Trim() + "', ");
+                    sbSQL.Append("     DayOfETAtoWH='" + txeEtaWh.Text.Trim() + "', ");
+                    sbSQL.Append("     PathFile=N'" + newPathFileName + "' ");
+                    sbSQL.Append("  WHERE (OIDVend = '" + slueCarrier.EditValue.ToString() + "') AND (FileYear = '" + speYear.Value.ToString() + "') AND (TimeOfDocument = '" + speTime.Value.ToString() + "') ");
+                    sbSQL.Append(" END ");
 
-                    ////MessageBox.Show(sbSQL.ToString());
-                    //if (sbSQL.Length > 0)
-                    //{
-                    //    try
-                    //    {
-                    //        bool chkSAVE = new DBQuery(sbSQL).runSQL();
-                    //        if (chkSAVE == true)
-                    //        {
-                    //            FUNC.msgInfo("Save complete.");
-                    //            bbiNew.PerformClick();
-                    //        }
-                    //    }
-                    //    catch (Exception)
-                    //    { }
-                    //}
+                    sbSQL.Append("UPDATE Vessel SET Status = 0 WHERE (OIDVend = '" + slueCarrier.EditValue.ToString() + "') AND (FileYear = '" + speYear.Value.ToString() + "') AND (TimeOfDocument < " + speTime.Value.ToString() + ") ");
+
+                    if (sbSQL.Length > 0)
+                    {
+                        try
+                        {
+                            bool chkSAVE = new DBQuery(sbSQL).runSQL();
+                            if (chkSAVE == true)
+                            {
+                                sbSQL.Clear();
+                                sbSQL.Append("SELECT MAX(OIDVessel) AS ID FROM Vessel WHERE (OIDVend = '" + slueCarrier.EditValue.ToString() + "') ");
+                                string OIDVessel = new DBQuery(sbSQL).getString();
+
+                                sbSQL.Clear();
+                                sbSQL.Append("DELETE FROM VesselDetail WHERE (OIDVessel = '" + OIDVessel + "')  ");
+                                if (OIDVessel != "")
+                                {
+                                    //*** VesselDetail ****
+                                    IWorkbook workbook = spsVessel.Document;
+                                    int TTSHEET = workbook.Worksheets.Count;
+                                    if (TTSHEET > 2)
+                                    {
+                                        TTSHEET = 2;
+                                    }
+                                    for (int Sheet = 0; Sheet < TTSHEET; Sheet++)
+                                    {
+                                        Worksheet WSHEET = workbook.Worksheets[Sheet];
+                                        for (int i = 4; i < WSHEET.GetDataRange().RowCount; i++)
+                                        {
+                                            string Vessel = WSHEET.Rows[i][0].DisplayText.ToString();
+                                            string Voy = WSHEET.Rows[i][1].DisplayText.ToString();
+                                            string TSorDirect = WSHEET.Rows[i][2].DisplayText.ToString();
+                                            string TSPort = WSHEET.Rows[i][3].DisplayText.ToString();
+                                            string VesselType = WSHEET.Rows[i][4].DisplayText.ToString();
+                                            string Carrier = WSHEET.Rows[i][5].DisplayText.ToString();
+                                            string CFSCutDate = WSHEET.Rows[i][6].DisplayText.ToString();
+                                            string CFSCutDay = WSHEET.Rows[i][7].DisplayText.ToString();
+                                            string CFSCutTime = WSHEET.Rows[i][8].DisplayText.ToString();
+                                            string ETDDate = WSHEET.Rows[i][9].DisplayText.ToString();
+                                            string ETDDay = WSHEET.Rows[i][10].DisplayText.ToString();
+                                            string ETADate = WSHEET.Rows[i][11].DisplayText.ToString();
+                                            string ETADay = WSHEET.Rows[i][12].DisplayText.ToString();
+                                            string ETAWHDate = WSHEET.Rows[i][13].DisplayText.ToString();
+                                            string ETAWHDay = WSHEET.Rows[i][14].DisplayText.ToString();
+                                            string ETDtoWHDays = WSHEET.Rows[i][15].DisplayText.ToString();
+                                            string ETAtoWHDays = WSHEET.Rows[i][16].DisplayText.ToString();
+                                            string Priority = WSHEET.Rows[i][17].DisplayText.ToString();
+                                            string Remarks = WSHEET.Rows[i][18].DisplayText.ToString();
+
+                                            if (Vessel != "")
+                                            {
+                                                sbSQL.Append("INSERT INTO VesselDetail(OIDVessel, Vessel, Voy, TSorDirect, TSPort, VesselType, Carrier, CFSCutDate, CFSCutDay, CFSCutTime, ETDDate, ETDDay, ETADate, ETADay, ETAWHDate, ETAWHDay, ETDtoWHDays, ETAtoWHDays, Priority, Remarks) ");
+                                                sbSQL.Append(" VALUES('" + OIDVessel + "', N'" + Vessel + "', N'" + Voy + "', N'" + TSorDirect + "', N'" + TSPort + "', N'" + VesselType + "', N'" + Carrier + "', '" + Convert.ToDateTime(CFSCutDate).ToString("yyyy-MM-dd HH:mm:ss") + "', N'" + CFSCutDay + "', '" + Convert.ToDateTime(CFSCutTime).ToString("HH:mm:ss") + "', '" + Convert.ToDateTime(ETDDate).ToString("yyyy-MM-dd HH:mm:ss") + "', N'" + ETDDay + "', '" + Convert.ToDateTime(ETADate).ToString("yyyy-MM-dd HH:mm:ss") + "', N'" + ETADay + "', '" + Convert.ToDateTime(ETAWHDate).ToString("yyyy-MM-dd HH:mm:ss") + "', N'" + ETAWHDay + "', '" + ETDtoWHDays + "', '" + ETAtoWHDays + "', N'" + Priority + "', N'" + Remarks + "')  ");
+                                            }
+                                        }
+                                    }
+
+                                    if (sbSQL.Length > 0)
+                                    {
+                                        try
+                                        {
+                                            chkSAVE = new DBQuery(sbSQL).runSQL();
+                                            if (chkSAVE == true)
+                                            {
+                                                FUNC.msgInfo("Save complete.");
+                                                bbiNew.PerformClick();
+                                            }
+                                        }
+                                        catch (Exception)
+                                        { }
+                                    }
+                                }
+                            }
+                        }
+                        catch (Exception)
+                        { }
+                    }
+                    
                 }
             }
-
-            
+          
         }
 
         private void bbiExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            IWorkbook workbook = spsVessel.Document;
-            Worksheet worksheet2 = workbook.Worksheets[1];
-            for (int i = 5; i < worksheet2.GetDataRange().RowCount; i++)
+            if (tabbedControlGroup1.SelectedTabPage == layoutControlGroup1) //Excel
             {
-                string SIZE = worksheet2.Rows[i][0].Value.ToString();
-                string COLOR_LD = worksheet2.Rows[i][1].Value.ToString();
-                string COLOR_TUW = worksheet2.Rows[i][2].Value.ToString();
-                string ITEM_CODE = worksheet2.Rows[i][3].Value.ToString();
-                string QTY_PCS = worksheet2.Rows[i][4].Value.ToString();
-                string SEND = worksheet2.Rows[i][5].Value.ToString();
-                string STICKER = worksheet2.Rows[i][6].Value.ToString();
-                string REMARK = worksheet2.Rows[i][7].Value.ToString();
-
-                MessageBox.Show(SIZE + ", " + COLOR_LD + ", " + COLOR_TUW + ", " + ITEM_CODE + ", " + QTY_PCS + ", " + SEND + ", " + STICKER + ", " + REMARK);
+                IWorkbook workbook = spsVessel.Document;
+                string pathFile = new ObjSet.Folder(@"C:\MDS\Export\").GetPath() + slueCarrier.Text.Trim().Replace(" ", "_") + "-" + speYear.Value.ToString() + "-" + speTime.Value.ToString() + ".xlsx";
+                using (FileStream stream = new FileStream(pathFile, FileMode.Create, FileAccess.ReadWrite))
+                {
+                    workbook.SaveDocument(stream, DocumentFormat.Xlsx);
+                    System.Diagnostics.Process.Start(pathFile);
+                }
+                
+            }
+            else //GridControl
+            {
+                string pathFile = new ObjSet.Folder(@"C:\MDS\Export\").GetPath() + "VesselList_" + slueCarrier.Text.Trim().Replace(" ", "_") + "-" + speYear.Value.ToString() + "-" + speTime.Value.ToString() + "-" + DateTime.Now.ToString("yyyyMMdd") + ".xlsx";
+                gvVessel.ExportToXlsx(pathFile);
+                System.Diagnostics.Process.Start(pathFile);
             }
 
-            //string pathFile = new ObjSet.Folder(@"C:\MDS\Export\").GetPath() + "PaymentTermList_" + DateTime.Now.ToString("yyyyMMdd") + ".xlsx";
-            //gvPTerm.ExportToXlsx(pathFile);
-            //System.Diagnostics.Process.Start(pathFile);
         }
 
-        private void gvPTerm_RowClick(object sender, RowClickEventArgs e)
-        {
-            //if (gvPTerm.IsFilterRow(e.RowHandle)) return;
-
-            //lblStatus.Text = "* Edit Payment Term";
-            //lblStatus.ForeColor = Color.Red;
-
-            //txeID.Text = gvPTerm.GetFocusedRowCellValue("No").ToString();
-            //txeName.Text = gvPTerm.GetFocusedRowCellValue("Name").ToString();
-            //txeDescription.Text = gvPTerm.GetFocusedRowCellValue("Description").ToString();
-            //txeCity.Text = gvPTerm.GetFocusedRowCellValue("DuedateCalculation").ToString();
-
-            //int status = -1;
-            //if (gvPTerm.GetFocusedRowCellValue("Status").ToString() != "")
-            //{
-            //    status = Convert.ToInt32(gvPTerm.GetFocusedRowCellValue("Status").ToString());
-            //}
-
-            //selectStatus(status);
-
-            //txeCREATE.Text = gvPTerm.GetFocusedRowCellValue("CreatedBy").ToString();
-            //txeDATE.Text = gvPTerm.GetFocusedRowCellValue("CreatedDate").ToString();
-        }
 
         private void bbiPrintPreview_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //gcPTerm.ShowPrintPreview();
+            if (tabbedControlGroup1.SelectedTabPage == layoutControlGroup1) //Excel
+            {
+                spsVessel.ShowPrintPreview();
+            }
+            else //GridControl
+            {
+                gcVessel.ShowPrintPreview();
+            }
         }
 
         private void bbiPrint_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //gcPTerm.Print();
+            if (tabbedControlGroup1.SelectedTabPage == layoutControlGroup1) //Excel
+            {
+                spsVessel.Print();
+            }
+            else //GridControl
+            {
+                gcVessel.Print();
+            }
         }
 
-        private void txeName_Leave(object sender, EventArgs e)
-        {
-            //if (txeName.Text.Trim() != "")
-            //{
-            //    txeName.Text = txeName.Text.ToUpper().Trim();
-            //    bool chkDup = chkDuplicate();
-            //    if (chkDup == false)
-            //    {
-            //        txeName.Text = "";
-            //        txeName.Focus();
-            //        FUNC.msgWarning("Duplicate payment term. !! Please Change.");
-            //    }
-            //    else
-            //    {
-            //        txeDescription.Focus();
-            //    }
-            //}
-        }
 
         private void sbOpenFile_Click(object sender, EventArgs e)
         {
@@ -365,8 +360,18 @@ namespace M16
                     // Load a workbook from a stream.
                     using (FileStream stream = new FileStream(txeFilePath.Text, FileMode.Open))
                     {
+                       // workbook.CalculateFull();
                         workbook.LoadDocument(stream, DocumentFormat.Xlsx);
                         workbook.Worksheets.ActiveWorksheet = workbook.Worksheets[0];
+   
+                        //*** Delete sheet > 2
+                        //if (workbook.Worksheets.Count > 2)
+                        //{
+                        //    for (int i = workbook.Worksheets.Count - 1; i > 1; i--)
+                        //    {
+                        //        workbook.Worksheets.RemoveAt(i);
+                        //    }
+                        //}
 
                         LoadSheetHead(workbook.Worksheets[0]);
                     }
@@ -387,13 +392,8 @@ namespace M16
                 //Worksheet worksheet2 = workbook.Worksheets["Sheet2"];
 
                // txeLimit.Text = worksheet2.Rows[0]["B"].DisplayText;
-
-
-                
+  
             }
-
-
-
         }
 
         private void spsVessel_SelectionChanged(object sender, EventArgs e)
@@ -476,24 +476,34 @@ namespace M16
             StringBuilder sbSQL = new StringBuilder();
             sbSQL.Append("SELECT TOP(1) OIDPORT FROM PortAndCity WHERE (City = N'Bangkok') ");
             slueFrom.EditValue = new DBQuery(sbSQL).getInt();
-
         }
 
         private void slueCarrier_EditValueChanged(object sender, EventArgs e)
         {
+            speTime.Value = 1;
             if (slueCarrier.Text.Trim() != "")
             {
-                int strTime = new DBQuery("SELECT CASE WHEN ISNULL(MAX(TimeOfDocument), '') = '' THEN 1 ELSE MAX(TimeOfDocument) + 1 END AS NewNo FROM Vessel WHERE (OIDVend = '" + slueCarrier.EditValue.ToString() + "') ").getInt();
+                findTime();
+            }
+        }
+
+        private void findTime()
+        {
+            if (slueCarrier.Text.Trim() != "" && speYear.Value.ToString() != "")
+            {
+                int strTime = new DBQuery("SELECT MAX(TimeOfDocument) + 1 AS NewNo FROM Vessel WHERE (OIDVend = '" + slueCarrier.EditValue.ToString() + "') AND (FileYear = '" + speYear.Value.ToString() + "') ").getInt();
                 if (strTime == 0)
                 {
                     strTime = 1;
                 }
-                teTime.Value = strTime;
+                speTime.Value = strTime;
             }
             else
             {
-                teTime.Value = 1;
+                speTime.Value = 1;
             }
+
+            LoadVessel();
         }
 
         private void spsVessel_CellEndEdit(object sender, DevExpress.XtraSpreadsheet.SpreadsheetCellValidatingEventArgs e)
@@ -504,6 +514,137 @@ namespace M16
         private void spsVessel_CellValueChanged(object sender, DevExpress.XtraSpreadsheet.SpreadsheetCellEventArgs e)
         {
 
+        }
+
+        private void speYear_EditValueChanged(object sender, EventArgs e)
+        {
+            speTime.Value = 1;
+            if (slueCarrier.Text.Trim() != "")
+            {
+                findTime();
+            }
+        }
+
+        private void LoadVessel()
+        {
+            bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            layoutBrowse.Visibility = LayoutVisibility.Always;
+            rpgPrint.Visible = false;
+            rpgExport.Visible = false;
+
+            //SET DEFALUT
+            StringBuilder sbSQL = new StringBuilder();
+            sbSQL.Append("SELECT TOP(1) OIDPORT FROM PortAndCity WHERE (City = N'Bangkok') ");
+            slueFrom.EditValue = new DBQuery(sbSQL).getInt();
+
+            dteFileDate.EditValue = DateTime.Now;
+            slueTo.EditValue = "";
+
+            txeLimit.Text = "";
+            txeStdDay.Text = "";
+            txeCyCut.Text = "";
+            txeEtdEta.Text = "";
+            txeEtaWh.Text = "";
+            rgStatus.EditValue = 1;
+
+            txeFilePath.Text = "";
+
+            txeDATE.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
+            spsVessel.CloseCellEditor(DevExpress.XtraSpreadsheet.CellEditorEnterValueMode.Default);
+            spsVessel.CreateNewDocument();
+
+            gcVessel.DataSource = null;
+
+            int Defalut_Time = Convert.ToInt32(speTime.Value);
+            //LOAD DATA
+            sbSQL.Clear();
+            sbSQL.Append("SELECT OIDVessel, OIDVend, TimeOfDocument, OIDDeparturePort, OIDDestinationPort, FileDate, FileYear, StdLongestDay, Status, LCLLimitOfCBM, DayOfCYCutToETD, DayOfETDtoETA, DayOfETAtoWH, PathFile, UpdatedBy, UpdatedDate ");
+            sbSQL.Append("FROM Vessel ");
+            sbSQL.Append("WHERE(OIDVend = '" + slueCarrier.EditValue.ToString() + "') AND(FileYear = '" + speYear.Value.ToString() + "') AND(TimeOfDocument = '" + speTime.Value.ToString() + "') ");
+            string[] arrVessel = new DBQuery(sbSQL).getMultipleValue();
+            if (arrVessel.Length > 0)
+            {
+                bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                rpgPrint.Visible = true;
+                rpgExport.Visible = true;
+                layoutBrowse.Visibility = LayoutVisibility.Never;
+
+                string OIDVessel = arrVessel[0];
+                slueFrom.EditValue = Convert.ToInt32(arrVessel[3]);
+                slueTo.EditValue = Convert.ToInt32(arrVessel[4]);
+                dteFileDate.EditValue = Convert.ToDateTime(arrVessel[5]);
+                txeStdDay.Text = arrVessel[7];
+                rgStatus.EditValue = Convert.ToInt32(arrVessel[8]);
+                txeLimit.Text = arrVessel[9];
+                txeCyCut.Text = arrVessel[10];
+                txeEtdEta.Text = arrVessel[11];
+                txeEtaWh.Text = arrVessel[12];
+
+                txeFilePath.Text = arrVessel[13];
+                txeCREATE.Text = arrVessel[14];
+                txeDATE.Text = Convert.ToDateTime(arrVessel[15]).ToString("dd/MM/yyyy HH:mm:ss");
+
+                if (txeFilePath.Text.Trim() != "")
+                {
+                    //OPEN EXCEL
+                    try
+                    {
+                        IWorkbook workbook = spsVessel.Document;
+                        using (FileStream stream = new FileStream(txeFilePath.Text.Trim(), FileMode.Open))
+                        {
+                            workbook.LoadDocument(stream, DocumentFormat.Xlsx);
+                            workbook.Worksheets.ActiveWorksheet = workbook.Worksheets[0];
+                            LoadSheetHead(workbook.Worksheets[0]);
+                        }
+                    }
+                    catch (Exception)
+                    { }
+                }
+
+                //Load to GridControl
+                sbSQL.Clear();
+                sbSQL.Append("SELECT VSD.OIDVesselDT AS ID, VSD.OIDVessel AS [Vessel ID], VD.Code AS [Vendor Code], VD.Name AS [Vendor Name], VD.ShotName AS [Vendor Short Name], VSD.Vessel, VSD.Voy, VSD.TSorDirect AS [T/S or Direct], ");
+                sbSQL.Append("       VSD.TSPort AS[T / S Port], VSD.VesselType AS[FCL / LCL], VSD.Carrier, VSD.CFSCutDate AS[CY - Cut Date], VSD.CFSCutDay AS[CY - Cut Day], VSD.CFSCutTime AS[CY - Cut Time], VSD.ETDDate AS[ETD Date], ");
+                sbSQL.Append("       VSD.ETDDay AS[ETD Day], VSD.ETADate AS[ETA Date], VSD.ETADay AS[ETA Day], VSD.ETAWHDate AS[ETA - WH Date], VSD.ETAWHDay AS[ETA - WH Day], VSD.ETDtoWHDays AS[Days ETD - WH], ");
+                sbSQL.Append("       VSD.ETAtoWHDays AS[Days ETA - WH], VSD.Priority, VSD.Remarks ");
+                sbSQL.Append("FROM   VesselDetail AS VSD INNER JOIN ");
+                sbSQL.Append("       Vessel AS VS ON VSD.OIDVessel = VS.OIDVessel LEFT OUTER JOIN ");
+                sbSQL.Append("       Vendor AS VD ON VS.OIDVend = VD.OIDVEND ");
+                sbSQL.Append("WHERE (VSD.OIDVessel = '" + OIDVessel + "') ");
+                sbSQL.Append("ORDER BY[FCL / LCL], [CY - Cut Date] ");
+                new ObjDevEx.setGridControl(gcVessel, gvVessel, sbSQL).getDataShowOrder(false, false, false, true);
+                gvVessel.Columns["ID"].Visible = false;
+                gvVessel.Columns["Vessel ID"].Visible = false;
+            }
+
+        }
+
+        private void speTime_EditValueChanged(object sender, EventArgs e)
+        {
+            int strTime = new DBQuery("SELECT MAX(TimeOfDocument) + 1 AS NewNo FROM Vessel WHERE (OIDVend = '" + slueCarrier.EditValue.ToString() + "') AND (FileYear = '" + speYear.Value.ToString() + "') ").getInt();
+            if (strTime == 0)
+            {
+                strTime = 1;
+            }
+
+            if (speTime.Value > strTime)
+            {
+                speTime.Value = strTime;
+            }
+
+            LoadVessel();
+        }
+
+        private void ribbonControl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gvVessel_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
+        {
+            //if (e.Info.IsRowIndicator) e.Info.DisplayText = (e.RowHandle + 1).ToString();
+            //gvVessel.IndicatorWidth = 45;
         }
     }
 }
