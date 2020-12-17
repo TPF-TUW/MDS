@@ -40,42 +40,42 @@ namespace MPS01
 
         private void LoadData()
         {
-            StringBuilder sbSQL = new StringBuilder();
-            sbSQL.Append("SELECT OIDPORT, PortCode, PortName, City, Country, CreatedBy, CreatedDate ");
-            sbSQL.Append("FROM PortAndCity ");
-            sbSQL.Append("ORDER BY Country, City, PortCode ");
-            new ObjDevEx.setGridControl(gcPort, gvPort, sbSQL).getData(false, false, false, true);
-            gvPort.Columns["OIDPORT"].Visible = false;
+            //StringBuilder sbSQL = new StringBuilder();
+            //sbSQL.Append("SELECT OIDPORT, PortCode, PortName, City, Country, CreatedBy, CreatedDate ");
+            //sbSQL.Append("FROM PortAndCity ");
+            //sbSQL.Append("ORDER BY Country, City, PortCode ");
+            //new ObjDevEx.setGridControl(gcPort, gvPort, sbSQL).getData(false, false, false, true);
+            //gvPort.Columns["OIDPORT"].Visible = false;
 
-            DataTable dtCountries = new DataTable();
-            dtCountries.Columns.Add("Country", typeof(System.String));
-            int count = 0;
-            foreach (string element in GetCountries())
-            {
-                count++;
-                dtCountries.Rows.Add(element);
-            }
+            //DataTable dtCountries = new DataTable();
+            //dtCountries.Columns.Add("Country", typeof(System.String));
+            //int count = 0;
+            //foreach (string element in GetCountries())
+            //{
+            //    count++;
+            //    dtCountries.Rows.Add(element);
+            //}
 
-            slueCountry.Properties.DataSource = dtCountries;
-            slueCountry.Properties.DisplayMember = "Country";
-            slueCountry.Properties.ValueMember = "Country";
+            //slueCountry.Properties.DataSource = dtCountries;
+            //slueCountry.Properties.DisplayMember = "Country";
+            //slueCountry.Properties.ValueMember = "Country";
             
         }
 
         private void NewData()
         {
-            lblStatus.Text = "* Add Port";
-            lblStatus.ForeColor = Color.Green;
+            //lblStatus.Text = "* Add Port";
+            //lblStatus.ForeColor = Color.Green;
 
-            txeID.Text = new DBQuery("SELECT CASE WHEN ISNULL(MAX(OIDPORT), '') = '' THEN 1 ELSE MAX(OIDPORT) + 1 END AS NewNo FROM PortAndCity").getString();
-            txeCode.Text = "";
-            txeName.Text = "";
-            txeCity.Text = "";
-            slueCountry.EditValue = "";
-            txeCREATE.Text = "0";
-            txeDATE.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            //txeID.Text = new DBQuery("SELECT CASE WHEN ISNULL(MAX(OIDPORT), '') = '' THEN 1 ELSE MAX(OIDPORT) + 1 END AS NewNo FROM PortAndCity").getString();
+            //txeCode.Text = "";
+            //txeName.Text = "";
+            //txeCity.Text = "";
+            //slueCountry.EditValue = "";
+            //txeCREATE.Text = "0";
+            //txeDATE.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 
-            txeCode.Focus();
+            //txeCode.Focus();
         }
 
         private void bbiNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -86,159 +86,159 @@ namespace MPS01
 
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (txeCode.Text.Trim() == "")
-            {
-                FUNC.msgWarning("Please input code.");
-                txeCode.Focus();
-            }
-            else if (txeName.Text.Trim() == "")
-            {
-                FUNC.msgWarning("Please input name.");
-                txeName.Focus();
-            }
-            else if (txeCity.Text.Trim() == "")
-            {
-                FUNC.msgWarning("Please input city.");
-                txeCity.Focus();
-            }
-            else if (slueCountry.Text.Trim() == "")
-            {
-                FUNC.msgWarning("Please select country.");
-                txeCity.Focus();
-            }
-            else
-            {
-                bool chkGMP = chkDuplicateNo();
-                if (chkGMP == true)
-                {
-                    chkGMP = chkDuplicateName();
-                    if (chkGMP == true)
-                    {
-                        if (FUNC.msgQuiz("Confirm save data ?") == true)
-                        {
-                            StringBuilder sbSQL = new StringBuilder();
-                            string strCREATE = "0";
-                            if (txeCREATE.Text.Trim() != "")
-                            {
-                                strCREATE = txeCREATE.Text.Trim();
-                            }
+            //if (txeCode.Text.Trim() == "")
+            //{
+            //    FUNC.msgWarning("Please input code.");
+            //    txeCode.Focus();
+            //}
+            //else if (txeName.Text.Trim() == "")
+            //{
+            //    FUNC.msgWarning("Please input name.");
+            //    txeName.Focus();
+            //}
+            //else if (txeCity.Text.Trim() == "")
+            //{
+            //    FUNC.msgWarning("Please input city.");
+            //    txeCity.Focus();
+            //}
+            //else if (slueCountry.Text.Trim() == "")
+            //{
+            //    FUNC.msgWarning("Please select country.");
+            //    txeCity.Focus();
+            //}
+            //else
+            //{
+            //    bool chkGMP = chkDuplicateNo();
+            //    if (chkGMP == true)
+            //    {
+            //        chkGMP = chkDuplicateName();
+            //        if (chkGMP == true)
+            //        {
+            //            if (FUNC.msgQuiz("Confirm save data ?") == true)
+            //            {
+            //                StringBuilder sbSQL = new StringBuilder();
+            //                string strCREATE = "0";
+            //                if (txeCREATE.Text.Trim() != "")
+            //                {
+            //                    strCREATE = txeCREATE.Text.Trim();
+            //                }
 
-                            if (lblStatus.Text == "* Add Port")
-                            {
-                                sbSQL.Append("  INSERT INTO PortAndCity(PortCode, PortName, City, Country, CreatedBy, CreatedDate) ");
-                                sbSQL.Append("  VALUES(N'" + txeCode.Text.Trim().Replace("'", "''") + "', N'" + txeName.Text.Trim().Replace("'", "''") + "', N'" + txeCity.Text.Trim().Replace("'", "''") + "', N'" + slueCountry.EditValue.ToString().Trim().Replace("'", "''") + "', '" + strCREATE + "', GETDATE()) ");
-                            }
-                            else if (lblStatus.Text == "* Edit Port")
-                            {
-                                sbSQL.Append("  UPDATE PortAndCity SET ");
-                                sbSQL.Append("      PortCode=N'" + txeCode.Text.Trim().Replace("'", "''") + "', ");
-                                sbSQL.Append("      PortName=N'" + txeName.Text.Trim().Replace("'", "''") + "', ");
-                                sbSQL.Append("      City=N'" + txeCity.Text.Trim().Replace("'", "''") + "', ");
-                                sbSQL.Append("      Country=N'" + slueCountry.EditValue.ToString().Trim().Replace("'", "''") + "' ");
-                                sbSQL.Append("  WHERE(OIDPORT = '" + txeID.Text.Trim() + "') ");
-                            }
+            //                if (lblStatus.Text == "* Add Port")
+            //                {
+            //                    sbSQL.Append("  INSERT INTO PortAndCity(PortCode, PortName, City, Country, CreatedBy, CreatedDate) ");
+            //                    sbSQL.Append("  VALUES(N'" + txeCode.Text.Trim().Replace("'", "''") + "', N'" + txeName.Text.Trim().Replace("'", "''") + "', N'" + txeCity.Text.Trim().Replace("'", "''") + "', N'" + slueCountry.EditValue.ToString().Trim().Replace("'", "''") + "', '" + strCREATE + "', GETDATE()) ");
+            //                }
+            //                else if (lblStatus.Text == "* Edit Port")
+            //                {
+            //                    sbSQL.Append("  UPDATE PortAndCity SET ");
+            //                    sbSQL.Append("      PortCode=N'" + txeCode.Text.Trim().Replace("'", "''") + "', ");
+            //                    sbSQL.Append("      PortName=N'" + txeName.Text.Trim().Replace("'", "''") + "', ");
+            //                    sbSQL.Append("      City=N'" + txeCity.Text.Trim().Replace("'", "''") + "', ");
+            //                    sbSQL.Append("      Country=N'" + slueCountry.EditValue.ToString().Trim().Replace("'", "''") + "' ");
+            //                    sbSQL.Append("  WHERE(OIDPORT = '" + txeID.Text.Trim() + "') ");
+            //                }
 
-                            //MessageBox.Show(sbSQL.ToString());
-                            if (sbSQL.Length > 0)
-                            {
-                                try
-                                {
-                                    bool chkSAVE = new DBQuery(sbSQL).runSQL();
-                                    if (chkSAVE == true)
-                                    {
-                                        FUNC.msgInfo("Save complete.");
-                                        bbiNew.PerformClick();
-                                    }
-                                }
-                                catch (Exception)
-                                { }
-                            }
-                        }
-                    }
-                }
-            }
+            //                //MessageBox.Show(sbSQL.ToString());
+            //                if (sbSQL.Length > 0)
+            //                {
+            //                    try
+            //                    {
+            //                        bool chkSAVE = new DBQuery(sbSQL).runSQL();
+            //                        if (chkSAVE == true)
+            //                        {
+            //                            FUNC.msgInfo("Save complete.");
+            //                            bbiNew.PerformClick();
+            //                        }
+            //                    }
+            //                    catch (Exception)
+            //                    { }
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
         }
 
         private void bbiExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string pathFile = new ObjSet.Folder(@"C:\MDS\Export\").GetPath() + "PortAndCityList_" + DateTime.Now.ToString("yyyyMMdd") + ".xlsx";
-            gvPort.ExportToXlsx(pathFile);
-            System.Diagnostics.Process.Start(pathFile);
+            //string pathFile = new ObjSet.Folder(@"C:\MDS\Export\").GetPath() + "PortAndCityList_" + DateTime.Now.ToString("yyyyMMdd") + ".xlsx";
+            //gvPort.ExportToXlsx(pathFile);
+            //System.Diagnostics.Process.Start(pathFile);
         }
 
 
         private void bbiPrintPreview_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            gcPort.ShowPrintPreview();
+            //gcPort.ShowPrintPreview();
         }
 
         private void bbiPrint_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            gcPort.Print();
+            //gcPort.Print();
         }
 
         private void txeCode_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                txeName.Focus();
-            }
+            //if (e.KeyCode == Keys.Enter)
+            //{
+            //    txeName.Focus();
+            //}
         }
 
         private void txeCode_Leave(object sender, EventArgs e)
         {
-            if (txeCode.Text.Trim() != "")
-            {
-                txeCode.Text = txeCode.Text.ToUpper().Trim();
-                bool chkDup = chkDuplicateNo();
-                if (chkDup == true)
-                {
-                    txeName.Focus();
-                }
-                else
-                {
-                    txeCode.Text = "";
-                    txeCode.Focus();
-                    //FUNC.msgWarning("Duplicate code. !! Please Change.");
+            //if (txeCode.Text.Trim() != "")
+            //{
+            //    txeCode.Text = txeCode.Text.ToUpper().Trim();
+            //    bool chkDup = chkDuplicateNo();
+            //    if (chkDup == true)
+            //    {
+            //        txeName.Focus();
+            //    }
+            //    else
+            //    {
+            //        txeCode.Text = "";
+            //        txeCode.Focus();
+            //        //FUNC.msgWarning("Duplicate code. !! Please Change.");
 
-                }
-            }
+            //    }
+            //}
         }
 
         private void txeName_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                txeCity.Focus();
-            }
+            //if (e.KeyCode == Keys.Enter)
+            //{
+            //    txeCity.Focus();
+            //}
         }
 
         private void txeName_Leave(object sender, EventArgs e)
         {
-            if (txeName.Text.Trim() != "")
-            {
-                txeName.Text = txeName.Text.ToUpper().Trim();
-                bool chkDup = chkDuplicateName();
-                if (chkDup == true)
-                {
-                    txeCity.Focus();
-                }
-                else
-                {
-                    txeName.Text = "";
-                    txeName.Focus();
-                    //FUNC.msgWarning("Duplicate name. !! Please Change.");
+            //if (txeName.Text.Trim() != "")
+            //{
+            //    txeName.Text = txeName.Text.ToUpper().Trim();
+            //    bool chkDup = chkDuplicateName();
+            //    if (chkDup == true)
+            //    {
+            //        txeCity.Focus();
+            //    }
+            //    else
+            //    {
+            //        txeName.Text = "";
+            //        txeName.Focus();
+            //        //FUNC.msgWarning("Duplicate name. !! Please Change.");
 
-                }
-            }
+            //    }
+            //}
         }
 
         private void txeCity_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                slueCountry.Focus();
-            }
+            //if (e.KeyCode == Keys.Enter)
+            //{
+            //    slueCountry.Focus();
+            //}
         }
 
         private void txeCity_Leave(object sender, EventArgs e)
@@ -246,79 +246,79 @@ namespace MPS01
 
         }
 
-        private bool chkDuplicateNo()
-        {
-            bool chkDup = true;
-            if (txeCode.Text != "")
-            {
-                txeCode.Text = txeCode.Text.ToUpper().Trim();
-                if (txeCode.Text.Trim() != "" && lblStatus.Text == "* Add Port")
-                {
-                    StringBuilder sbSQL = new StringBuilder();
-                    sbSQL.Append("SELECT TOP(1) PortCode FROM PortAndCity WHERE (PortCode = N'" + txeCode.Text.Trim().Trim().Replace("'", "''") + "') ");
-                    if (new DBQuery(sbSQL).getString() != "")
-                    {
-                        txeCode.Text = "";
-                        txeCode.Focus();
-                        chkDup = false;
-                        FUNC.msgWarning("Duplicate code. !! Please Change.");
-                    }
-                }
-                else if (txeCode.Text.Trim() != "" && lblStatus.Text == "* Edit Port")
-                {
-                    StringBuilder sbSQL = new StringBuilder();
-                    sbSQL.Append("SELECT TOP(1) OIDPORT ");
-                    sbSQL.Append("FROM PortAndCity ");
-                    sbSQL.Append("WHERE (PortCode = N'" + txeCode.Text.Trim().Trim().Replace("'", "''") + "') ");
-                    string strCHK = new DBQuery(sbSQL).getString();
-                    if (strCHK != "" && strCHK != txeID.Text.Trim())
-                    {
-                        txeCode.Text = "";
-                        txeCode.Focus();
-                        chkDup = false;
-                        FUNC.msgWarning("Duplicate code. !! Please Change.");
-                    }
-                }
-            }
-            return chkDup;
-        }
+        //private bool chkDuplicateNo()
+        //{
+        //    bool chkDup = true;
+        //    if (txeCode.Text != "")
+        //    {
+        //        txeCode.Text = txeCode.Text.ToUpper().Trim();
+        //        if (txeCode.Text.Trim() != "" && lblStatus.Text == "* Add Port")
+        //        {
+        //            StringBuilder sbSQL = new StringBuilder();
+        //            sbSQL.Append("SELECT TOP(1) PortCode FROM PortAndCity WHERE (PortCode = N'" + txeCode.Text.Trim().Trim().Replace("'", "''") + "') ");
+        //            if (new DBQuery(sbSQL).getString() != "")
+        //            {
+        //                txeCode.Text = "";
+        //                txeCode.Focus();
+        //                chkDup = false;
+        //                FUNC.msgWarning("Duplicate code. !! Please Change.");
+        //            }
+        //        }
+        //        else if (txeCode.Text.Trim() != "" && lblStatus.Text == "* Edit Port")
+        //        {
+        //            StringBuilder sbSQL = new StringBuilder();
+        //            sbSQL.Append("SELECT TOP(1) OIDPORT ");
+        //            sbSQL.Append("FROM PortAndCity ");
+        //            sbSQL.Append("WHERE (PortCode = N'" + txeCode.Text.Trim().Trim().Replace("'", "''") + "') ");
+        //            string strCHK = new DBQuery(sbSQL).getString();
+        //            if (strCHK != "" && strCHK != txeID.Text.Trim())
+        //            {
+        //                txeCode.Text = "";
+        //                txeCode.Focus();
+        //                chkDup = false;
+        //                FUNC.msgWarning("Duplicate code. !! Please Change.");
+        //            }
+        //        }
+        //    }
+        //    return chkDup;
+        //}
 
-        private bool chkDuplicateName()
-        {
-            bool chkDup = true;
-            if (txeName.Text != "")
-            {
-                txeName.Text = txeName.Text.ToUpper().Trim();
-                if (txeName.Text.Trim() != "" && lblStatus.Text == "* Add Port")
-                {
-                    StringBuilder sbSQL = new StringBuilder();
-                    sbSQL.Append("SELECT TOP(1) PortName FROM PortAndCity WHERE (PortName = N'" + txeName.Text.Trim().Replace("'", "''") + "') ");
-                    if (new DBQuery(sbSQL).getString() != "")
-                    {
-                        txeName.Text = "";
-                        txeName.Focus();
-                        chkDup = false;
-                        FUNC.msgWarning("Duplicate name. !! Please Change.");
-                    }
-                }
-                else if (txeName.Text.Trim() != "" && lblStatus.Text == "* Edit Port")
-                {
-                    StringBuilder sbSQL = new StringBuilder();
-                    sbSQL.Append("SELECT TOP(1) OIDPORT ");
-                    sbSQL.Append("FROM PortAndCity ");
-                    sbSQL.Append("WHERE (PortName = N'" + txeName.Text.Trim().Replace("'", "''") + "') ");
-                    string strCHK = new DBQuery(sbSQL).getString();
-                    if (strCHK != "" && strCHK != txeID.Text.Trim())
-                    {
-                        txeName.Text = "";
-                        txeName.Focus();
-                        chkDup = false;
-                        FUNC.msgWarning("Duplicate name. !! Please Change.");
-                    }
-                }
-            }
-            return chkDup;
-        }
+        //private bool chkDuplicateName()
+        //{
+        //    bool chkDup = true;
+        //    if (txeName.Text != "")
+        //    {
+        //        txeName.Text = txeName.Text.ToUpper().Trim();
+        //        if (txeName.Text.Trim() != "" && lblStatus.Text == "* Add Port")
+        //        {
+        //            StringBuilder sbSQL = new StringBuilder();
+        //            sbSQL.Append("SELECT TOP(1) PortName FROM PortAndCity WHERE (PortName = N'" + txeName.Text.Trim().Replace("'", "''") + "') ");
+        //            if (new DBQuery(sbSQL).getString() != "")
+        //            {
+        //                txeName.Text = "";
+        //                txeName.Focus();
+        //                chkDup = false;
+        //                FUNC.msgWarning("Duplicate name. !! Please Change.");
+        //            }
+        //        }
+        //        else if (txeName.Text.Trim() != "" && lblStatus.Text == "* Edit Port")
+        //        {
+        //            StringBuilder sbSQL = new StringBuilder();
+        //            sbSQL.Append("SELECT TOP(1) OIDPORT ");
+        //            sbSQL.Append("FROM PortAndCity ");
+        //            sbSQL.Append("WHERE (PortName = N'" + txeName.Text.Trim().Replace("'", "''") + "') ");
+        //            string strCHK = new DBQuery(sbSQL).getString();
+        //            if (strCHK != "" && strCHK != txeID.Text.Trim())
+        //            {
+        //                txeName.Text = "";
+        //                txeName.Focus();
+        //                chkDup = false;
+        //                FUNC.msgWarning("Duplicate name. !! Please Change.");
+        //            }
+        //        }
+        //    }
+        //    return chkDup;
+        //}
 
         //*********** REGION ************
         public class LocalesRetrievalException : Exception
@@ -421,28 +421,28 @@ namespace MPS01
 
         private void gvPort_DoubleClick(object sender, EventArgs e)
         {
-            GridView view = (GridView)sender;
-            Point pt = view.GridControl.PointToClient(Control.MousePosition);
-            DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo info = view.CalcHitInfo(pt);
-            if (info.InRow || info.InRowCell)
-            {
-                DataTable dtCP = (DataTable)gcPort.DataSource;
-                if (dtCP.Rows.Count > 0)
-                {
-                    lblStatus.Text = "* Edit Port";
-                    lblStatus.ForeColor = Color.Red;
+        //    GridView view = (GridView)sender;
+        //    Point pt = view.GridControl.PointToClient(Control.MousePosition);
+        //    DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo info = view.CalcHitInfo(pt);
+        //    if (info.InRow || info.InRowCell)
+        //    {
+        //        DataTable dtCP = (DataTable)gcPort.DataSource;
+        //        if (dtCP.Rows.Count > 0)
+        //        {
+        //            lblStatus.Text = "* Edit Port";
+        //            lblStatus.ForeColor = Color.Red;
 
-                    DataRow drCP = dtCP.Rows[info.RowHandle];
-                    txeID.Text = drCP["OIDPORT"].ToString();
-                    txeCode.Text = drCP["PortCode"].ToString();
-                    txeName.Text = drCP["PortName"].ToString();
-                    txeCity.Text = drCP["City"].ToString();
-                    slueCountry.EditValue = drCP["Country"].ToString();
+        //            DataRow drCP = dtCP.Rows[info.RowHandle];
+        //            txeID.Text = drCP["OIDPORT"].ToString();
+        //            txeCode.Text = drCP["PortCode"].ToString();
+        //            txeName.Text = drCP["PortName"].ToString();
+        //            txeCity.Text = drCP["City"].ToString();
+        //            slueCountry.EditValue = drCP["Country"].ToString();
 
-                    txeCREATE.Text = drCP["CreatedBy"].ToString();
-                    txeDATE.Text = drCP["CreatedDate"].ToString();
-                }
-            }
+        //            txeCREATE.Text = drCP["CreatedBy"].ToString();
+        //            txeDATE.Text = drCP["CreatedDate"].ToString();
+        //        }
+        //    }
         }
     }
 }

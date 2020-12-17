@@ -240,6 +240,10 @@
       <Project>{0901e8aa-c978-4172-974e-6259813b9188}</Project>
       <Name>M17</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MPS01\MPS01.csproj">
+      <Project>{e3827f97-86ce-4a22-92be-db661d99c4b6}</Project>
+      <Name>MPS01</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

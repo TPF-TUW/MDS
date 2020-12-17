@@ -60,10 +60,6 @@ namespace MDS00
             this.accordionControlElement24 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement25 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement28 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement26 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement27 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
-            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.accordionControlElement32 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement33 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement30 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -84,10 +80,14 @@ namespace MDS00
             this.accordionControlElement48 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement49 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement50 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement26 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement51 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement52 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement53 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement54 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement27 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -358,30 +358,9 @@ namespace MDS00
             this.accordionControlElement28.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement28.Text = "BOM";
             // 
-            // accordionControlElement26
-            // 
-            this.accordionControlElement26.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement51,
-            this.accordionControlElement52,
-            this.accordionControlElement53,
-            this.accordionControlElement54});
-            this.accordionControlElement26.Name = "accordionControlElement26";
-            this.accordionControlElement26.Text = "Shipment";
-            // 
-            // accordionControlElement27
-            // 
-            this.accordionControlElement27.Name = "accordionControlElement27";
-            this.accordionControlElement27.Text = "EXIMs";
-            // 
-            // documentManager1
-            // 
-            this.documentManager1.MdiParent = this;
-            this.documentManager1.View = this.tabbedView1;
-            this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
-            this.tabbedView1});
-            // 
             // accordionControlElement32
             // 
+            this.accordionControlElement32.Hint = "DEV04";
             this.accordionControlElement32.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement32.ImageOptions.Image")));
             this.accordionControlElement32.Name = "accordionControlElement32";
             this.accordionControlElement32.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -389,6 +368,7 @@ namespace MDS00
             // 
             // accordionControlElement33
             // 
+            this.accordionControlElement33.Hint = "DEV05";
             this.accordionControlElement33.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement33.ImageOptions.Image")));
             this.accordionControlElement33.Name = "accordionControlElement33";
             this.accordionControlElement33.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -404,12 +384,14 @@ namespace MDS00
             this.accordionControlElement38,
             this.accordionControlElement39,
             this.accordionControlElement40});
+            this.accordionControlElement30.Expanded = true;
             this.accordionControlElement30.Hint = "Master Production Schedule";
             this.accordionControlElement30.Name = "accordionControlElement30";
             this.accordionControlElement30.Text = "MPS";
             // 
             // accordionControlElement34
             // 
+            this.accordionControlElement34.Hint = "MPS01";
             this.accordionControlElement34.Name = "accordionControlElement34";
             this.accordionControlElement34.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement34.Text = "Forecast Order";
@@ -520,6 +502,16 @@ namespace MDS00
             this.accordionControlElement50.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement50.Text = "Interface Withdrawal";
             // 
+            // accordionControlElement26
+            // 
+            this.accordionControlElement26.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement51,
+            this.accordionControlElement52,
+            this.accordionControlElement53,
+            this.accordionControlElement54});
+            this.accordionControlElement26.Name = "accordionControlElement26";
+            this.accordionControlElement26.Text = "Shipment";
+            // 
             // accordionControlElement51
             // 
             this.accordionControlElement51.Name = "accordionControlElement51";
@@ -543,6 +535,18 @@ namespace MDS00
             this.accordionControlElement54.Name = "accordionControlElement54";
             this.accordionControlElement54.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement54.Text = "Order Balance";
+            // 
+            // accordionControlElement27
+            // 
+            this.accordionControlElement27.Name = "accordionControlElement27";
+            this.accordionControlElement27.Text = "EXIMs";
+            // 
+            // documentManager1
+            // 
+            this.documentManager1.MdiParent = this;
+            this.documentManager1.View = this.tabbedView1;
+            this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
+            this.tabbedView1});
             // 
             // XtraForm3
             // 
