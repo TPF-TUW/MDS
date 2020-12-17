@@ -137,9 +137,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\DEV01\DEV01.csproj">
       <Project>{12120b65-5261-4384-a222-ef254d929b48}</Project>
       <Name>DEV01</Name>
@@ -244,6 +241,9 @@
       <Project>{e3827f97-86ce-4a22-92be-db661d99c4b6}</Project>
       <Name>MPS01</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

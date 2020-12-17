@@ -392,6 +392,7 @@ namespace MDS00
             // accordionControlElement34
             // 
             this.accordionControlElement34.Hint = "MPS01";
+            this.accordionControlElement34.ImageOptions.Image = global::MDS00.Resource1.MPS01;
             this.accordionControlElement34.Name = "accordionControlElement34";
             this.accordionControlElement34.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement34.Text = "Forecast Order";
