@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
-using MDS00;
 using DevExpress.XtraGrid.Views.Grid;
 using System.Data.SqlClient;
 using DevExpress.Utils;
@@ -14,6 +13,7 @@ using DevExpress.XtraGrid;
 using System.Collections;
 using DevExpress.XtraPrinting;
 using System.Diagnostics;
+using TheepClass;
 
 namespace DEV01
 {
@@ -40,19 +40,13 @@ namespace DEV01
         {
             InitializeComponent();
             UserLookAndFeel.Default.StyleChanged += MyStyleChanged;
-            iniConfig = new IniFile("Config.ini");
-            UserLookAndFeel.Default.SetSkinStyle(iniConfig.Read("SkinName", "DevExpress"), iniConfig.Read("SkinPalette", "DevExpress"));
         }
-
-        private IniFile iniConfig;
 
         private void MyStyleChanged(object sender, EventArgs e)
         {
             UserLookAndFeel userLookAndFeel = (UserLookAndFeel)sender;
-            LookAndFeelChangedEventArgs lookAndFeelChangedEventArgs = (DevExpress.LookAndFeel.LookAndFeelChangedEventArgs)e;
-            //MessageBox.Show("MyStyleChanged: " + lookAndFeelChangedEventArgs.Reason.ToString() + ", " + userLookAndFeel.SkinName + ", " + userLookAndFeel.ActiveSvgPaletteName);
-            iniConfig.Write("SkinName", userLookAndFeel.SkinName, "DevExpress");
-            iniConfig.Write("SkinPalette", userLookAndFeel.ActiveSvgPaletteName, "DevExpress");
+            cUtility.SaveRegistry(@"Software\MDS", "SkinName", userLookAndFeel.SkinName);
+            cUtility.SaveRegistry(@"Software\MDS", "SkinPalette", userLookAndFeel.ActiveSvgPaletteName);
         }
 
         private void XtraForm1_Load(object sender, EventArgs ex)
