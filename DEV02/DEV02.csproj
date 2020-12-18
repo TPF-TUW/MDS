@@ -61,6 +61,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TheepClass">
+      <HintPath>\\172.16.0.190\mds_project\MDS\FileConfig\TheepClass.dll</HintPath>
+    </Reference>
     <Reference Include="_goClass, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>\\172.16.0.190\MDS_Project\MDS\DLL\_goClass.dll</HintPath>
