@@ -9,7 +9,6 @@ using DevExpress.Utils.Drawing.Helpers;
 using DevExpress.Utils.Extensions;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
-using MDS00;
 using TheepClass;
 
 namespace M02

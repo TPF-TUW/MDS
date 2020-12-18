@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using DevExpress.LookAndFeel;
 using DevExpress.Utils.Extensions;
 using DBConnection;
-using MDS00;
 using System.Data;
 using DevExpress.XtraEditors.Controls;
 using System.CodeDom;

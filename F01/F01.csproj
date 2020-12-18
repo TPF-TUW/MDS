@@ -71,7 +71,6 @@
     <Compile Include="F01.Designer.cs">
       <DependentUpon>F01.cs</DependentUpon>
     </Compile>
-    <Compile Include="IniFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="F01.resx">

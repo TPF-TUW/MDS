@@ -70,7 +70,6 @@
     <Compile Include="F02.Designer.cs">
       <DependentUpon>F02.cs</DependentUpon>
     </Compile>
-    <Compile Include="IniFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="F02.resx">
