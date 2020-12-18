@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace DEV01
+namespace MDS00
 {
     class IniFile
     {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
+using MDS00;
 using DevExpress.XtraGrid.Views.Grid;
 using System.Data.SqlClient;
 using DevExpress.Utils;
@@ -13,7 +14,6 @@ using DevExpress.XtraGrid;
 using System.Collections;
 using DevExpress.XtraPrinting;
 using System.Diagnostics;
-using TheepClass;
 
 namespace DEV01
 {
@@ -40,13 +40,19 @@ namespace DEV01
         {
             InitializeComponent();
             UserLookAndFeel.Default.StyleChanged += MyStyleChanged;
+            iniConfig = new IniFile("Config.ini");
+            UserLookAndFeel.Default.SetSkinStyle(iniConfig.Read("SkinName", "DevExpress"), iniConfig.Read("SkinPalette", "DevExpress"));
         }
+
+        private IniFile iniConfig;
 
         private void MyStyleChanged(object sender, EventArgs e)
         {
             UserLookAndFeel userLookAndFeel = (UserLookAndFeel)sender;
-            cUtility.SaveRegistry(@"Software\MDS", "SkinName", userLookAndFeel.SkinName);
-            cUtility.SaveRegistry(@"Software\MDS", "SkinPalette", userLookAndFeel.ActiveSvgPaletteName);
+            LookAndFeelChangedEventArgs lookAndFeelChangedEventArgs = (DevExpress.LookAndFeel.LookAndFeelChangedEventArgs)e;
+            //MessageBox.Show("MyStyleChanged: " + lookAndFeelChangedEventArgs.Reason.ToString() + ", " + userLookAndFeel.SkinName + ", " + userLookAndFeel.ActiveSvgPaletteName);
+            iniConfig.Write("SkinName", userLookAndFeel.SkinName, "DevExpress");
+            iniConfig.Write("SkinPalette", userLookAndFeel.ActiveSvgPaletteName, "DevExpress");
         }
 
         private void XtraForm1_Load(object sender, EventArgs ex)
@@ -1102,7 +1108,8 @@ namespace DEV01
                     txtSampleID_Mat.Text = dosetOIDSMPL;
                     txtMatRecordID_Mat.Text = db.get_newOIDMat();
                     db.getGrid_FBListSample(gridControl6, " And smplQR.OIDSMPL = " + dosetOIDSMPL + " ");
-                    db.getGl("Select OIDDEPT,b.Name as Branch,d.Name as Department From Departments d inner join Branchs b on b.OIDBranch = d.OIDBRANCH", mainConn, glWorkStation_Mat, "OIDDEPT", "Department");
+                    //db.getGl("Select OIDDEPT,b.Name as Branch,d.Name as Department From Departments d inner join Branchs b on b.OIDBranch = d.OIDBRANCH", mainConn, glWorkStation_Mat, "OIDDEPT", "Department");
+                    db.get_gl_WorkStationMat(glWorkStation_Mat);
                     db.getSl("Select OIDVEND,Code,Name From Vendor", mainConn, slVendor_Mat, "OIDVEND", "Code");
                     db.getSl("Select OIDCOLOR,ColorName From ProductColor", mainConn, slMatColor_Mat, "OIDCOLOR", "ColorName");
                     db.getSl("Select OIDITEM,Code From Items Where MaterialType in(2,3)", mainConn, slMatCode_Mat, "OIDITEM", "Code");

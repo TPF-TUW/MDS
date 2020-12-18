@@ -14,6 +14,10 @@ namespace DEV03
 {
     public partial class DEV03 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        goClass.dbConn db   = new goClass.dbConn();
+        goClass.ctool ct    = new goClass.ctool();
+        hardQuery q         = new hardQuery();
+
         private Functionality.Function FUNC = new Functionality.Function();
         public DEV03()
         {
@@ -30,7 +34,16 @@ namespace DEV03
 
         private void XtraForm1_Load(object sender, EventArgs e)
         {
-            bbiNew.PerformClick();
+            //bbiNew.PerformClick(); 
+
+            // Set Tabbed
+            tabbed_Master.SelectedTabPageIndex = 0;
+            tabbedBom.SelectedTabPageIndex = 0;
+
+            q.get_sl_smplNo(sl_smplNo);
+            q.get_sl_Customer(sl_Customer);
+            q.get_gl_Season(gl_Season);
+            q.get_gcListof_Bom(gcListof_Bom); gvListof_Bom.OptionsBehavior.Editable = false;
         }
 
         private void LoadData()
@@ -62,8 +75,14 @@ namespace DEV03
 
         private void bbiNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //LoadData();
-            //NewData();
+            if (tabbed_Master.SelectedTabPageIndex == 0) //List
+            {
+                tabbed_Master.SelectedTabPageIndex = 1;
+            }
+            else //Entry
+            { 
+                //
+            }
         }
 
         private void gvGarment_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
@@ -272,6 +291,32 @@ namespace DEV03
             //gcPTerm.Print();
         }
 
-  
+        private void tabbed_Master_SelectedPageChanged(object sender, DevExpress.XtraLayout.LayoutTabPageChangedEventArgs e)
+        {
+            if (tabbed_Master.SelectedTabPageIndex == 1) //Entry
+            {
+                q.get_sl_smplNo(sl_smplNo_Entry);
+                q.get_gl_Branch(gl_branch_entry);
+                q.get_gl_Season(gl_Season_Entry);
+                q.get_sl_Customer(sl_Customer_Entry);
+                q.get_gcListof_SMPL(gcListof_SMPL); gvListof_SMPL.OptionsBehavior.Editable = false;
+                txtCreateBy.EditValue = 0;
+                txtCreateDate.EditValue = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                txtUpdateBy.EditValue = 0;
+                txtUpdateDate.EditValue = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+                // Header
+                txtBomNo.EditValue = q.get_running_BomNo(); txtBomNo.ReadOnly = true;
+                dtLastDate.EditValue = DateTime.Now;
+                q.get_sl_StyleNmae(sl_StyleName);
+                q.get_gl_Category(gl_Category);
+                q.get_gl_Season(gl_Season_Header);
+                q.get_sl_Customer(sl_Customer_Header);
+                q.get_sl_Color(sl_Color);
+                q.get_sl_Size(sl_Size);
+                q.get_gl_Unit(gl_Unit);
+                rdoStatus.SelectedIndex = 0;
+            }
+        }
     }
 }

@@ -64,6 +64,9 @@
     <Reference Include="TheepClass">
       <HintPath>\\172.16.0.190\mds_project\MDS\FileConfig\TheepClass.dll</HintPath>
     </Reference>
+    <Reference Include="_goClass">
+      <HintPath>\\172.16.0.190\MDS_Project\MDS\DLL\_goClass.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DEV03.cs">
@@ -72,6 +75,7 @@
     <Compile Include="DEV03.Designer.cs">
       <DependentUpon>DEV03.cs</DependentUpon>
     </Compile>
+    <Compile Include="hQuery.cs" />
     <Compile Include="IniFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,6 +104,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

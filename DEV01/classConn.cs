@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid;
+using MDS00;
 using System;
 using System.ComponentModel;
 using System.Data;
@@ -301,6 +302,11 @@ namespace DEV01
         {
             string sqlMat = "Select m.OIDSMPLMT as MatID,q.OIDSMPL as SampleID,d.Name as WorkStation,VendMTCode,SMPLotNo,v.Name as Vendor,c.ColorName as MatColor,s.SizeName as MatSize,m.Composition,Details,Price,cr.Currency as Currency,i.Code as NAVCode,m.Situation,Comment,Remark,m.PathFile ,Consumption/*,m.OIDUNIT */ From SMPLRequestMaterial m inner join SMPLQuantityRequired q on q.OIDSMPLDT = m.OIDSMPLDT inner join Departments d on d.OIDDEPT = m.OIDDEPT inner join Vendor v on v.OIDVEND = m.OIDVEND left join ProductColor c on c.OIDCOLOR = m.MTColor inner join ProductSize s on s.OIDSIZE = m.MTSize left join Currency cr on cr.OIDCURR = m.OIDCURR left join Items i on i.OIDITEM = m.OIDITEM Where q.OIDSMPL = " + dosetOIDSMPL + " ";
             getDgv(sqlMat, gc, MDS());
+        }
+        public void get_gl_WorkStationMat(GridLookUpEdit gl)
+        {
+            string sql = "Select Code,Name From DepartmentType Where Code in (1,4,5)";
+            getGl(sql,MDS(),gl, "Code", "Name");
         }
     }
 }
