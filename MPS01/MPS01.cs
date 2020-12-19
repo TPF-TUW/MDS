@@ -19,6 +19,8 @@ namespace MPS01
     public partial class MPS01 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private Functionality.Function FUNC = new Functionality.Function();
+
+        StringBuilder sbSTATUS = new StringBuilder();
         public MPS01()
         {
             InitializeComponent();
@@ -34,36 +36,171 @@ namespace MPS01
 
         private void XtraForm1_Load(object sender, EventArgs e)
         {
+            sbSTATUS.Clear();
+            sbSTATUS.Append("SELECT '1' AS ID, 'Ph1 - New Order' AS Status ");
+            sbSTATUS.Append("UNION ALL ");
+            sbSTATUS.Append("SELECT '2' AS ID, 'Ph2 - Repeat Order' AS Status ");
+            sbSTATUS.Append("UNION ALL ");
+            sbSTATUS.Append("SELECT '3' AS ID, 'Ph3 - Urgent, (Adjust) Revise(+/-)' AS Status ");
+            sbSTATUS.Append("UNION ALL ");
+            sbSTATUS.Append("SELECT '4' AS ID, 'Cancel' AS Status ");
+            sbSTATUS.Append("UNION ALL ");
+            sbSTATUS.Append("SELECT '5' AS ID, 'End Order' AS Status ");
+
+            glueUnit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            glueUnit.Properties.AcceptEditorTextAsNewValue = DevExpress.Utils.DefaultBoolean.True;
+
+            glueLogisticsType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            glueLogisticsType.Properties.AcceptEditorTextAsNewValue = DevExpress.Utils.DefaultBoolean.True;
+
             LoadData();
             NewData();
         }
 
+        private void LoadSummary()
+        {
+            StringBuilder sbSQL = new StringBuilder();
+            sbSQL.Append("SELECT COF.OIDFC AS ID, COF.ProductionPlanID, COF.Season, COF.OIDCUST AS [Customer ID], CUS.Name AS Customer, COF.BusinessUnit, COF.OIDCSITEM, ITC.ItemCode, ITC.ItemName, COF.ModelNo AS MainSampleCode, ");
+            sbSQL.Append("       COF.OIDVEND AS SupplierID, VD.Name AS Supplier, COF.SewingDifficulty, COF.ProductionPlanType, COF.Status AS StatusID, STS.Status, COF.LastUpdate AS LastUpdateDate, COF.RequestedWHDate, COF.ContractedDate, ");
+            sbSQL.Append("       COF.TransportMethod AS TransportMethodName, COF.LogisticsType AS LogisticsTypeName, COF.OrderQty AS[Order Qty(Pcs)], COF.FabricOrderNO AS[FabricOrderNo.], COF.FabricActualOrderQty AS[FB Actual Order Qty(Pcs)], ");
+            sbSQL.Append("       COF.FabricUpdateDate AS[FB Update Date], COF.TrimOrderNO AS[TrimOrderNo.], COF.TrimActualOrderQty AS[TrimOrderActualQty(Pcs)], COF.TrimUpdateDate, COF.POOrderNO AS[PO Order No.], ");
+            sbSQL.Append("       COF.POActualOrderQty AS[PO Actual Order Qty(Pcs)], COF.POUpdateDate, COF.ColorOrderNO AS[Color Order No.], COF.ColorActualOrderQty AS[Color Actual Order Qty(Pcs)], COF.ColorUpdateDate, ");
+            sbSQL.Append("       COF.OrderQTYOld AS[Order Qty(Old)], COF.BookingFabric, COF.BookingAccessory, COF.FileOrderDate, COF.DataUpdate, COF.CreateBy, COF.CreateDate, COF.UpdateBy, COF.Updatedate ");
+            sbSQL.Append("FROM   COForecast AS COF LEFT OUTER JOIN ");
+            sbSQL.Append("       Customer AS CUS ON COF.OIDCUST = CUS.OIDCUST LEFT OUTER JOIN ");
+            sbSQL.Append("       Vendor AS VD ON COF.OIDVEND = VD.OIDVEND LEFT OUTER JOIN ");
+            sbSQL.Append("       ItemCustomer AS ITC ON COF.OIDCSITEM = ITC.OIDCSITEM LEFT OUTER JOIN ");
+            sbSQL.Append("       (");
+            sbSQL.Append(sbSTATUS);
+            sbSQL.Append("       ) AS STS ON COF.Status = STS.ID ");
+            sbSQL.Append("ORDER BY COF.ProductionPlanID ");
+            new ObjDevEx.setGridControl(gcFO, gvFO, sbSQL).getData(false, false, false, true);
+        }
+
         private void LoadData()
         {
-            //StringBuilder sbSQL = new StringBuilder();
-            //sbSQL.Append("SELECT OIDPORT, PortCode, PortName, City, Country, CreatedBy, CreatedDate ");
-            //sbSQL.Append("FROM PortAndCity ");
-            //sbSQL.Append("ORDER BY Country, City, PortCode ");
-            //new ObjDevEx.setGridControl(gcPort, gvPort, sbSQL).getData(false, false, false, true);
-            //gvPort.Columns["OIDPORT"].Visible = false;
+            new ObjDevEx.setGridLookUpEdit(glueStatus, sbSTATUS, "Status", "ID").getData();
 
-            //DataTable dtCountries = new DataTable();
-            //dtCountries.Columns.Add("Country", typeof(System.String));
-            //int count = 0;
-            //foreach (string element in GetCountries())
-            //{
-            //    count++;
-            //    dtCountries.Rows.Add(element);
-            //}
+            StringBuilder sbSQL = new StringBuilder();
+            sbSQL.Append("SELECT Code, Name AS Supplier, OIDVEND AS ID ");
+            sbSQL.Append("FROM Vendor ");
+            sbSQL.Append("WHERE (VendorType = 6) ");
+            sbSQL.Append("ORDER BY Code ");
+            new ObjDevEx.setSearchLookUpEdit(slueSupplier, sbSQL, "Supplier", "ID").getData();
 
-            //slueCountry.Properties.DataSource = dtCountries;
-            //slueCountry.Properties.DisplayMember = "Country";
-            //slueCountry.Properties.ValueMember = "Country";
-            
+            sbSQL.Clear();
+            sbSQL.Append("SELECT Code, Name AS Customer, OIDCUST AS ID ");
+            sbSQL.Append("FROM Customer ");
+            sbSQL.Append("ORDER BY Code ");
+            new ObjDevEx.setSearchLookUpEdit(slueCustomer, sbSQL, "Customer", "ID").getData();
+
+            sbSQL.Clear();
+            sbSQL.Append("SELECT ITC.ItemCode, ITC.ItemName, CUS.Name AS Customer, ITC.StyleNo AS [StyleNo.], ITC.Season, ITC.OIDCSITEM AS ID ");
+            sbSQL.Append("FROM   ItemCustomer AS ITC LEFT OUTER JOIN ");
+            sbSQL.Append("       Customer AS CUS ON ITC.OIDCUST = CUS.OIDCUST ");
+            sbSQL.Append("ORDER BY ITC.ItemCode ");
+            new ObjDevEx.setSearchLookUpEdit(slueItemCode, sbSQL, "ItemCode", "ItemCode").getData();
+
+            sbSQL.Clear();
+            sbSQL.Append("SELECT BusinessUnit ");
+            sbSQL.Append("FROM COForecast ");
+            sbSQL.Append("ORDER BY BusinessUnit");
+            new ObjDevEx.setGridLookUpEdit(glueUnit, sbSQL, "BusinessUnit", "BusinessUnit").getData();
+
+            sbSQL.Clear();
+            sbSQL.Append("SELECT SeasonNo AS [Season No.], SeasonName AS [Season Name] ");
+            sbSQL.Append("FROM Season ");
+            sbSQL.Append("ORDER BY OIDSEASON");
+            new ObjDevEx.setGridLookUpEdit(glueSeason, sbSQL, "Season No.", "Season No.").getData();
+
+            sbSQL.Clear();
+            sbSQL.Append("SELECT TransportMethod ");
+            sbSQL.Append("FROM (SELECT DISTINCT TransportMethod ");
+            sbSQL.Append("      FROM (SELECT DISTINCT TransportMethod ");
+            sbSQL.Append("            FROM COForecast ");
+            sbSQL.Append("            UNION ALL ");
+            sbSQL.Append("            SELECT '' AS TransportMethod ");
+            sbSQL.Append("            UNION ALL ");
+            sbSQL.Append("            SELECT 'Air' AS TransportMethod ");
+            sbSQL.Append("            UNION ALL ");
+            sbSQL.Append("            SELECT 'Ship' AS TransportMethod ");
+            sbSQL.Append("            UNION ALL ");
+            sbSQL.Append("            SELECT 'Truck' AS TransportMethod) AS DTM) AS TM ");
+            sbSQL.Append("ORDER BY CASE TransportMethod ");
+            sbSQL.Append("    WHEN '' THEN '0' ");
+            sbSQL.Append("    WHEN 'Air' THEN '1' ");
+            sbSQL.Append("    WHEN 'Ship' THEN '2' ");
+            sbSQL.Append("    WHEN 'Truck' THEN '3' ");
+            sbSQL.Append("    ELSE TransportMethod ");
+            sbSQL.Append("END ");
+            new ObjDevEx.setGridLookUpEdit(glueTransport, sbSQL, "TransportMethod", "TransportMethod").getData();
+
+            sbSQL.Clear();
+            sbSQL.Append("SELECT LogisticsType ");
+            sbSQL.Append("FROM (SELECT DISTINCT LogisticsType ");
+            sbSQL.Append("      FROM (SELECT DISTINCT LogisticsType ");
+            sbSQL.Append("            FROM COForecast ");
+            sbSQL.Append("            UNION ALL ");
+            sbSQL.Append("            SELECT '' AS LogisticsType ");
+            sbSQL.Append("            UNION ALL ");
+            sbSQL.Append("            SELECT 'ADC' AS LogisticsType ");
+            sbSQL.Append("            UNION ALL ");
+            sbSQL.Append("            SELECT 'MDC' AS LogisticsType) AS DTM) AS TM ");
+            sbSQL.Append("ORDER BY CASE LogisticsType ");
+            sbSQL.Append("    WHEN '' THEN '0' ");
+            sbSQL.Append("    WHEN 'ADC' THEN '1' ");
+            sbSQL.Append("    WHEN 'MDC' THEN '2' ");
+            sbSQL.Append("    ELSE LogisticsType ");
+            sbSQL.Append("END ");
+            new ObjDevEx.setGridLookUpEdit(glueLogisticsType, sbSQL, "LogisticsType", "LogisticsType").getData();
+
+            //*** SET GRIDCONTROL COLUMN *****
+            repositoryItemSearchLookUpEdit1.DataSource = slueCustomer.Properties.DataSource;
+            repositoryItemSearchLookUpEdit1.DisplayMember = "Customer";
+            repositoryItemSearchLookUpEdit1.ValueMember = "ID";
+            repositoryItemSearchLookUpEdit1.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+
+            repositoryItemGridLookUpEdit1.DataSource = glueSeason.Properties.DataSource;
+            repositoryItemGridLookUpEdit1.DisplayMember = "Season No.";
+            repositoryItemGridLookUpEdit1.ValueMember = "Season No.";
+            repositoryItemGridLookUpEdit1.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+
+            repositoryItemGridLookUpEdit2.DataSource = glueUnit.Properties.DataSource;
+            repositoryItemGridLookUpEdit2.DisplayMember = "BusinessUnit";
+            repositoryItemGridLookUpEdit2.ValueMember = "BusinessUnit";
+            repositoryItemGridLookUpEdit2.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            repositoryItemGridLookUpEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            repositoryItemGridLookUpEdit2.AcceptEditorTextAsNewValue = DevExpress.Utils.DefaultBoolean.True;
+
+            repositoryItemSearchLookUpEdit2.DataSource = slueItemCode.Properties.DataSource;
+            repositoryItemSearchLookUpEdit2.DisplayMember = "ItemCode";
+            repositoryItemSearchLookUpEdit2.ValueMember = "ItemCode";
+            repositoryItemSearchLookUpEdit2.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+
+            DataTable dtINPUT = new DataTable();
+            dtINPUT.Columns.Add("ProductionPlanID", typeof(String));
+            dtINPUT.Columns.Add("OIDCUST", typeof(String));
+            dtINPUT.Columns.Add("FileOrderDate", typeof(DateTime));
+            dtINPUT.Columns.Add("Year", typeof(Int32));
+            dtINPUT.Columns.Add("Season", typeof(String));
+            dtINPUT.Columns.Add("BusinessUnit", typeof(String));
+            dtINPUT.Columns.Add("OIDCSITEM", typeof(String));
+            dtINPUT.Columns.Add("ItemName", typeof(String));
+            dtINPUT.Columns.Add("StyleNo", typeof(String));
+            dtINPUT.Columns.Add("ModelNo", typeof(String));
+
+            //dtINPUT.Rows.Add("", "", null);
+            gcINPUT.DataSource = dtINPUT;
+
+            LoadSummary();
         }
 
         private void NewData()
         {
+            tabbedControlGroup1.SelectedTabPage = layoutControlGroup1;
+            bbiRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+
+            speSeason.Value = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
             //lblStatus.Text = "* Add Port";
             //lblStatus.ForeColor = Color.Green;
 
@@ -86,6 +223,8 @@ namespace MPS01
 
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            gvINPUT.CloseEditor();
+            gvINPUT.UpdateCurrentRow();
             //if (txeCode.Text.Trim() == "")
             //{
             //    FUNC.msgWarning("Please input code.");
@@ -443,6 +582,97 @@ namespace MPS01
         //            txeDATE.Text = drCP["CreatedDate"].ToString();
         //        }
         //    }
+        }
+
+        private void tabbedControlGroup1_SelectedPageChanged(object sender, DevExpress.XtraLayout.LayoutTabPageChangedEventArgs e)
+        {
+            if (tabbedControlGroup1.SelectedTabPage == layoutControlGroup1)
+            {
+                bbiRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                bbiRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+        }
+
+        private void bbiRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadSummary();
+        }
+
+        private void slueItemCode_EditValueChanged(object sender, EventArgs e)
+        {
+            if (slueItemCode.Text.Trim() != "")
+            {
+                GridView view = slueItemCode.Properties.View;
+                txeItemName.Text = view.GetFocusedRowCellValue("ItemName").ToString();
+                txeStyle.Text = view.GetFocusedRowCellValue("StyleNo.").ToString();
+            }
+            else
+            {
+                txeItemName.Text = "";
+                txeStyle.Text = "";
+            }
+        }
+
+        private void gvINPUT_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.Column.FieldName == "OIDCSITEM")
+            {
+                if (gvINPUT.GetRowCellValue(e.RowHandle, "OIDCSITEM") != null)
+                {
+                    string strITEM = gvINPUT.GetRowCellValue(e.RowHandle, "OIDCSITEM").ToString();
+                    StringBuilder sbSQL = new StringBuilder();
+                    sbSQL.Append("SELECT ITC.ItemCode, ITC.ItemName, CUS.Name AS Customer, ITC.StyleNo AS [StyleNo.], ITC.Season, ITC.OIDCSITEM AS ID ");
+                    sbSQL.Append("FROM   ItemCustomer AS ITC LEFT OUTER JOIN ");
+                    sbSQL.Append("       Customer AS CUS ON ITC.OIDCUST = CUS.OIDCUST ");
+                    sbSQL.Append("WHERE (ITC.ItemCode = '" + strITEM + "') ");
+                    string[] arrITEM = new DBQuery(sbSQL).getMultipleValue();
+                    if (arrITEM.Length > 0)
+                    {
+                        gvINPUT.SetRowCellValue(e.RowHandle, "ItemName", arrITEM[1]);
+                        gvINPUT.SetRowCellValue(e.RowHandle, "StyleNo", arrITEM[3]);
+                    }
+                    else
+                    {
+                        gvINPUT.SetRowCellValue(e.RowHandle, "ItemName", "");
+                        gvINPUT.SetRowCellValue(e.RowHandle, "StyleNo", "");
+                    }
+                }
+            }
+        }
+
+        private void gvINPUT_ShownEditor(object sender, EventArgs e)
+        {
+            //GridView view = sender as GridView;
+            //if (view.IsNewItemRow(view.FocusedRowHandle))
+            //    view.ActiveEditor.IsModified = true;
+        }
+
+        private void repositoryItemSearchLookUpEdit2_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bbiClone_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int FocusIndex = gvINPUT.FocusedRowHandle;
+            gvINPUT.AddNewRow();
+            gvINPUT.CloseEditor();
+            gvINPUT.UpdateCurrentRow();
+
+            int ind = 0;
+            foreach (DevExpress.XtraGrid.Columns.GridColumn column in gvINPUT.Columns)
+            {
+                gvINPUT.SetRowCellValue(gvINPUT.RowCount-2, column, gvINPUT.GetRowCellValue(FocusIndex, column));
+                ind++;
+            }
+        }
+
+        private void gvINPUT_InitNewRow(object sender, InitNewRowEventArgs e)
+        {
+
         }
     }
 }

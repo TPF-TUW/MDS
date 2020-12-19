@@ -71,9 +71,9 @@ namespace M09
             if (CusID != "" && CategoryID != "")
             {
                 StringBuilder sbSQL = new StringBuilder();
-                sbSQL.Append("SELECT B.Branch, B.OIDBranch AS ID ");
+                sbSQL.Append("SELECT B.Name AS Branch, B.OIDBranch AS ID ");
                 sbSQL.Append("FROM ProductionLine AS PL INNER JOIN ");
-                sbSQL.Append("     Branch AS B ON PL.Branch = B.OIDBranch ");
+                sbSQL.Append("     Branchs AS B ON PL.Branch = B.OIDBranch ");
                 sbSQL.Append("WHERE (PL.OIDCUST = '" + CusID + "') AND(PL.OIDCATEGORY = '" + CategoryID + "') ");
                 sbSQL.Append("ORDER BY B.OIDBranch ");
                 DataTable dtBranch = new DBQuery(sbSQL).getDataTable();
@@ -134,9 +134,9 @@ namespace M09
             if (CusID != "" && CategoryID != "")
             {
                 StringBuilder sbSQL = new StringBuilder();
-                sbSQL.Append("SELECT DISTINCT B.Branch, B.OIDBranch AS ID ");
+                sbSQL.Append("SELECT DISTINCT B.Name AS Branch, B.OIDBranch AS ID ");
                 sbSQL.Append("FROM ProductionLine AS PL INNER JOIN ");
-                sbSQL.Append("     Branch AS B ON PL.Branch = B.OIDBranch ");
+                sbSQL.Append("     Branchs AS B ON PL.Branch = B.OIDBranch ");
                 sbSQL.Append("WHERE (PL.OIDCUST = '" + CusID + "') AND(PL.OIDCATEGORY = '" + CategoryID + "') ");
                 sbSQL.Append("ORDER BY B.OIDBranch ");
                 DataTable dtBranch = new DBQuery(sbSQL).getDataTable();
