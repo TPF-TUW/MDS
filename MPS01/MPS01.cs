@@ -55,6 +55,7 @@ namespace MPS01
 
             LoadData();
             NewData();
+            //InputByTable();
         }
 
         private void LoadSummary()
@@ -177,6 +178,18 @@ namespace MPS01
             repositoryItemSearchLookUpEdit2.ValueMember = "ItemCode";
             repositoryItemSearchLookUpEdit2.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
 
+            repositoryItemSearchLookUpEdit3.DataSource = slueSupplier.Properties.DataSource;
+            repositoryItemSearchLookUpEdit3.DisplayMember = "Supplier";
+            repositoryItemSearchLookUpEdit3.ValueMember = "ID";
+            repositoryItemSearchLookUpEdit3.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+
+            repositoryItemGridLookUpEdit3.DataSource = glueLogisticsType.Properties.DataSource;
+            repositoryItemGridLookUpEdit3.DisplayMember = "LogisticsType";
+            repositoryItemGridLookUpEdit3.ValueMember = "LogisticsType";
+            repositoryItemGridLookUpEdit3.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            repositoryItemGridLookUpEdit3.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            repositoryItemGridLookUpEdit3.AcceptEditorTextAsNewValue = DevExpress.Utils.DefaultBoolean.True;
+
             DataTable dtINPUT = new DataTable();
             dtINPUT.Columns.Add("ProductionPlanID", typeof(String));
             dtINPUT.Columns.Add("OIDCUST", typeof(String));
@@ -188,9 +201,37 @@ namespace MPS01
             dtINPUT.Columns.Add("ItemName", typeof(String));
             dtINPUT.Columns.Add("StyleNo", typeof(String));
             dtINPUT.Columns.Add("ModelNo", typeof(String));
+            dtINPUT.Columns.Add("OIDVEND", typeof(String));
+            dtINPUT.Columns.Add("SewingDifficulty", typeof(String));
+            dtINPUT.Columns.Add("ProductionPlanType", typeof(String));
+            dtINPUT.Columns.Add("DataUpdate", typeof(DateTime));
+            dtINPUT.Columns.Add("BookingFabric", typeof(Int32));
+            dtINPUT.Columns.Add("BookingAccessory", typeof(Int32));
+            dtINPUT.Columns.Add("LastUpdate", typeof(DateTime));
+            dtINPUT.Columns.Add("RequestedWHDate", typeof(DateTime));
+            dtINPUT.Columns.Add("ContractedDate", typeof(DateTime));
+            dtINPUT.Columns.Add("TransportMethod", typeof(String));
+            dtINPUT.Columns.Add("LogisticsType", typeof(String));
+            dtINPUT.Columns.Add("OrderQty", typeof(Int32));
+            dtINPUT.Columns.Add("FabricOrderNO", typeof(String));
+            dtINPUT.Columns.Add("FabricUpdateDate", typeof(DateTime));
+            dtINPUT.Columns.Add("FabricActualOrderQty", typeof(Int32));
+            dtINPUT.Columns.Add("ColorOrderNO", typeof(String));
+            dtINPUT.Columns.Add("ColorUpdateDate", typeof(DateTime));
+            dtINPUT.Columns.Add("ColorActualOrderQty", typeof(Int32));
+            dtINPUT.Columns.Add("TrimOrderNO", typeof(String));
+            dtINPUT.Columns.Add("TrimUpdateDate", typeof(DateTime));
+            dtINPUT.Columns.Add("TrimActualOrderQty", typeof(Int32));
+            dtINPUT.Columns.Add("POOrderNO", typeof(String));
+            dtINPUT.Columns.Add("POUpdateDate", typeof(DateTime));
+            dtINPUT.Columns.Add("POActualOrderQty", typeof(Int32));
+            dtINPUT.Columns.Add("OrderQTYOld", typeof(Int32));
 
             //dtINPUT.Rows.Add("", "", null);
             gcINPUT.DataSource = dtINPUT;
+            gvINPUT.OptionsView.ColumnAutoWidth = false;
+            gvINPUT.BestFitColumns();
+            gvINPUT.Columns["ProductionPlanID"].Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
 
             LoadSummary();
         }
@@ -672,7 +713,54 @@ namespace MPS01
 
         private void gvINPUT_InitNewRow(object sender, InitNewRowEventArgs e)
         {
+            gvINPUT.SetRowCellValue(e.RowHandle, "BookingFabric", 0);
+            gvINPUT.SetRowCellValue(e.RowHandle, "BookingAccessory", 0);
+        }
 
+        private void InputByTable()
+        {
+            layoutControlItem3.Visibility = LayoutVisibility.Never;
+            layoutControlItem38.Visibility = LayoutVisibility.Never;
+            layoutControlItem40.Visibility = LayoutVisibility.Never;
+            emptySpaceItem3.Visibility = LayoutVisibility.Never;
+            layoutControlItem4.Visibility = LayoutVisibility.Never;
+            layoutControlItem5.Visibility = LayoutVisibility.Never;
+            emptySpaceItem9.Visibility = LayoutVisibility.Never;
+            layoutControlItem39.Visibility = LayoutVisibility.Never;
+            layoutControlItem6.Visibility = LayoutVisibility.Never;
+            emptySpaceItem8.Visibility = LayoutVisibility.Never;
+            layoutControlItem7.Visibility = LayoutVisibility.Never;
+            emptySpaceItem6.Visibility = LayoutVisibility.Never;
+            layoutControlItem8.Visibility = LayoutVisibility.Never;
+            emptySpaceItem7.Visibility = LayoutVisibility.Never;
+            layoutControlItem9.Visibility = LayoutVisibility.Never;
+            layoutControlItem10.Visibility = LayoutVisibility.Never;
+            emptySpaceItem14.Visibility = LayoutVisibility.Never;
+            layoutControlItem11.Visibility = LayoutVisibility.Never;
+            emptySpaceItem17.Visibility = LayoutVisibility.Never;
+            layoutControlItem12.Visibility = LayoutVisibility.Never;
+            layoutControlItem13.Visibility = LayoutVisibility.Never;
+            emptySpaceItem19.Visibility = LayoutVisibility.Never;
+            layoutControlItem14.Visibility = LayoutVisibility.Never;
+            emptySpaceItem18.Visibility = LayoutVisibility.Never;
+            layoutControlItem15.Visibility = LayoutVisibility.Never;
+            emptySpaceItem13.Visibility = LayoutVisibility.Never;
+            layoutControlItem17.Visibility = LayoutVisibility.Never;
+            emptySpaceItem10.Visibility = LayoutVisibility.Never;
+            layoutControlItem16.Visibility = LayoutVisibility.Never;
+            layoutControlItem18.Visibility = LayoutVisibility.Never;
+            layoutControlItem19.Visibility = LayoutVisibility.Never;
+            layoutControlItem20.Visibility = LayoutVisibility.Never;
+            layoutControlItem21.Visibility = LayoutVisibility.Never;
+            layoutControlItem22.Visibility = LayoutVisibility.Never;
+            layoutControlItem23.Visibility = LayoutVisibility.Never;
+            layoutControlItem24.Visibility = LayoutVisibility.Never;
+            layoutControlGroup4.Visibility = LayoutVisibility.Never;
+            layoutControlGroup5.Visibility = LayoutVisibility.Never;
+            layoutControlGroup6.Visibility = LayoutVisibility.Never;
+            emptySpaceItem16.Visibility = LayoutVisibility.Never;
+
+            gcINPUT.Visible = true;
         }
     }
 }

@@ -55,48 +55,50 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lblStatus = new DevExpress.XtraEditors.LabelControl();
+            this.txeID = new DevExpress.XtraEditors.TextEdit();
             this.speSeason = new DevExpress.XtraEditors.SpinEdit();
-            this.textEdit16 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit15 = new DevExpress.XtraEditors.TextEdit();
-            this.dateEdit9 = new DevExpress.XtraEditors.DateEdit();
-            this.textEdit14 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit13 = new DevExpress.XtraEditors.TextEdit();
-            this.dateEdit8 = new DevExpress.XtraEditors.DateEdit();
-            this.textEdit12 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit11 = new DevExpress.XtraEditors.TextEdit();
-            this.dateEdit7 = new DevExpress.XtraEditors.DateEdit();
-            this.textEdit10 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
-            this.dateEdit6 = new DevExpress.XtraEditors.DateEdit();
-            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
+            this.txeOrderQtyOld = new DevExpress.XtraEditors.TextEdit();
+            this.txePOQty = new DevExpress.XtraEditors.TextEdit();
+            this.dtePOUpdate = new DevExpress.XtraEditors.DateEdit();
+            this.txePOOrderNo = new DevExpress.XtraEditors.TextEdit();
+            this.txeTrimQty = new DevExpress.XtraEditors.TextEdit();
+            this.dteTrimUpdate = new DevExpress.XtraEditors.DateEdit();
+            this.txeTrimOrderNo = new DevExpress.XtraEditors.TextEdit();
+            this.txeColorQty = new DevExpress.XtraEditors.TextEdit();
+            this.dteColorUpdate = new DevExpress.XtraEditors.DateEdit();
+            this.txeColorOrderNo = new DevExpress.XtraEditors.TextEdit();
+            this.txeFabricQty = new DevExpress.XtraEditors.TextEdit();
+            this.dteFabricUpdate = new DevExpress.XtraEditors.DateEdit();
+            this.txeFabricOrderNo = new DevExpress.XtraEditors.TextEdit();
+            this.txeOrderQty = new DevExpress.XtraEditors.TextEdit();
             this.glueLogisticsType = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit4View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.glueTransport = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit3View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dateEdit5 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit4 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit3 = new DevExpress.XtraEditors.DateEdit();
-            this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
-            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
-            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
+            this.dteContractDate = new DevExpress.XtraEditors.DateEdit();
+            this.dteWHDate = new DevExpress.XtraEditors.DateEdit();
+            this.dteLastUpdate = new DevExpress.XtraEditors.DateEdit();
+            this.chkBookAcc = new DevExpress.XtraEditors.CheckEdit();
+            this.chkBookFabric = new DevExpress.XtraEditors.CheckEdit();
+            this.dteDataUpdate = new DevExpress.XtraEditors.DateEdit();
             this.glueStatus = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.txePlanType = new DevExpress.XtraEditors.TextEdit();
+            this.txeSewingDifficulty = new DevExpress.XtraEditors.TextEdit();
             this.slueSupplier = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit4View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txeStyle = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.txeSampleCode = new DevExpress.XtraEditors.TextEdit();
             this.txeItemName = new DevExpress.XtraEditors.TextEdit();
             this.slueItemCode = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit3View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.glueSeason = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.dteOrderDate = new DevExpress.XtraEditors.DateEdit();
             this.slueCustomer = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txePlanID = new DevExpress.XtraEditors.TextEdit();
             this.gcINPUT = new DevExpress.XtraGrid.GridControl();
             this.gvINPUT = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ProductionPlanID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -119,8 +121,64 @@
             this.repositoryItemSearchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ItemName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.StyleNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ModelNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.OIDVEND = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemSearchLookUpEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
+            this.repositoryItemSearchLookUpEdit3View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.SewingDifficulty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.ProductionPlanType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.DataUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.BookingFabric = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.BookingAccessory = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.LastUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.RequestedWHDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit6 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.ContractedDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.TransportMethod = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.LogisticsType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemGridLookUpEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEdit3View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.OrderQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit7 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.FabricOrderNO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit8 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.FabricUpdateDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit7 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.FabricActualOrderQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit9 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.ColorOrderNO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit10 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.ColorUpdateDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit8 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.ColorActualOrderQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit12 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.TrimOrderNO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit13 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.TrimUpdateDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit9 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.TrimActualOrderQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit14 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.POOrderNO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit15 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.POUpdateDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit10 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.POActualOrderQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit16 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.OrderQTYOld = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit17 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.repositoryItemTextEdit6 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.repositoryItemTextEdit11 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.gcFO = new DevExpress.XtraGrid.GridControl();
             this.gvFO = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.glueUnit = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -180,65 +238,66 @@
             this.emptySpaceItem13 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem10 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem39 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem38 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem40 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ModelNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txeID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speSeason.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit16.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit15.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit9.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit9.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit14.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit13.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit8.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit6.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeOrderQtyOld.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txePOQty.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtePOUpdate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtePOUpdate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txePOOrderNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeTrimQty.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteTrimUpdate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteTrimUpdate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeTrimOrderNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeColorQty.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteColorUpdate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteColorUpdate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeColorOrderNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeFabricQty.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteFabricUpdate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteFabricUpdate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeFabricOrderNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeOrderQty.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueLogisticsType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit4View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueTransport.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit5.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit4.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit3.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteContractDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteContractDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteWHDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteWHDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteLastUpdate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteLastUpdate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkBookAcc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkBookFabric.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteDataUpdate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteDataUpdate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txePlanType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeSewingDifficulty.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueSupplier.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit4View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeStyle.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeSampleCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeItemName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueItemCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit3View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueSeason.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteOrderDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteOrderDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueCustomer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txePlanID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcINPUT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvINPUT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -253,9 +312,47 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit2View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit3View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit5.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit6.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit3View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit7.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit8.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit9.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit10.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcFO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvFO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueUnit.Properties)).BeginInit();
@@ -315,10 +412,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem39)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem38)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem40)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -528,41 +626,43 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.lblStatus);
+            this.layoutControl1.Controls.Add(this.txeID);
             this.layoutControl1.Controls.Add(this.speSeason);
-            this.layoutControl1.Controls.Add(this.textEdit16);
-            this.layoutControl1.Controls.Add(this.textEdit15);
-            this.layoutControl1.Controls.Add(this.dateEdit9);
-            this.layoutControl1.Controls.Add(this.textEdit14);
-            this.layoutControl1.Controls.Add(this.textEdit13);
-            this.layoutControl1.Controls.Add(this.dateEdit8);
-            this.layoutControl1.Controls.Add(this.textEdit12);
-            this.layoutControl1.Controls.Add(this.textEdit11);
-            this.layoutControl1.Controls.Add(this.dateEdit7);
-            this.layoutControl1.Controls.Add(this.textEdit10);
-            this.layoutControl1.Controls.Add(this.textEdit9);
-            this.layoutControl1.Controls.Add(this.dateEdit6);
-            this.layoutControl1.Controls.Add(this.textEdit8);
-            this.layoutControl1.Controls.Add(this.textEdit7);
+            this.layoutControl1.Controls.Add(this.txeOrderQtyOld);
+            this.layoutControl1.Controls.Add(this.txePOQty);
+            this.layoutControl1.Controls.Add(this.dtePOUpdate);
+            this.layoutControl1.Controls.Add(this.txePOOrderNo);
+            this.layoutControl1.Controls.Add(this.txeTrimQty);
+            this.layoutControl1.Controls.Add(this.dteTrimUpdate);
+            this.layoutControl1.Controls.Add(this.txeTrimOrderNo);
+            this.layoutControl1.Controls.Add(this.txeColorQty);
+            this.layoutControl1.Controls.Add(this.dteColorUpdate);
+            this.layoutControl1.Controls.Add(this.txeColorOrderNo);
+            this.layoutControl1.Controls.Add(this.txeFabricQty);
+            this.layoutControl1.Controls.Add(this.dteFabricUpdate);
+            this.layoutControl1.Controls.Add(this.txeFabricOrderNo);
+            this.layoutControl1.Controls.Add(this.txeOrderQty);
             this.layoutControl1.Controls.Add(this.glueLogisticsType);
             this.layoutControl1.Controls.Add(this.glueTransport);
-            this.layoutControl1.Controls.Add(this.dateEdit5);
-            this.layoutControl1.Controls.Add(this.dateEdit4);
-            this.layoutControl1.Controls.Add(this.dateEdit3);
-            this.layoutControl1.Controls.Add(this.checkEdit2);
-            this.layoutControl1.Controls.Add(this.checkEdit1);
-            this.layoutControl1.Controls.Add(this.dateEdit2);
+            this.layoutControl1.Controls.Add(this.dteContractDate);
+            this.layoutControl1.Controls.Add(this.dteWHDate);
+            this.layoutControl1.Controls.Add(this.dteLastUpdate);
+            this.layoutControl1.Controls.Add(this.chkBookAcc);
+            this.layoutControl1.Controls.Add(this.chkBookFabric);
+            this.layoutControl1.Controls.Add(this.dteDataUpdate);
             this.layoutControl1.Controls.Add(this.glueStatus);
-            this.layoutControl1.Controls.Add(this.textEdit6);
-            this.layoutControl1.Controls.Add(this.textEdit5);
+            this.layoutControl1.Controls.Add(this.txePlanType);
+            this.layoutControl1.Controls.Add(this.txeSewingDifficulty);
             this.layoutControl1.Controls.Add(this.slueSupplier);
             this.layoutControl1.Controls.Add(this.txeStyle);
-            this.layoutControl1.Controls.Add(this.textEdit3);
+            this.layoutControl1.Controls.Add(this.txeSampleCode);
             this.layoutControl1.Controls.Add(this.txeItemName);
             this.layoutControl1.Controls.Add(this.slueItemCode);
             this.layoutControl1.Controls.Add(this.glueSeason);
-            this.layoutControl1.Controls.Add(this.dateEdit1);
+            this.layoutControl1.Controls.Add(this.dteOrderDate);
             this.layoutControl1.Controls.Add(this.slueCustomer);
-            this.layoutControl1.Controls.Add(this.textEdit1);
+            this.layoutControl1.Controls.Add(this.txePlanID);
             this.layoutControl1.Controls.Add(this.gcINPUT);
             this.layoutControl1.Controls.Add(this.gcFO);
             this.layoutControl1.Controls.Add(this.glueUnit);
@@ -571,9 +671,30 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1222, 361, 650, 400);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(994, 452);
+            this.layoutControl1.Size = new System.Drawing.Size(994, 463);
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Location = new System.Drawing.Point(409, 9);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(70, 14);
+            this.lblStatus.StyleController = this.layoutControl1;
+            this.lblStatus.TabIndex = 45;
+            this.lblStatus.Text = "labelControl1";
+            // 
+            // txeID
+            // 
+            this.txeID.Location = new System.Drawing.Point(355, 9);
+            this.txeID.MenuManager = this.ribbonControl;
+            this.txeID.Name = "txeID";
+            this.txeID.Properties.Appearance.Options.UseTextOptions = true;
+            this.txeID.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txeID.Properties.ReadOnly = true;
+            this.txeID.Size = new System.Drawing.Size(50, 20);
+            this.txeID.StyleController = this.layoutControl1;
+            this.txeID.TabIndex = 44;
             // 
             // speSeason
             // 
@@ -609,179 +730,179 @@
             this.speSeason.StyleController = this.layoutControl1;
             this.speSeason.TabIndex = 43;
             // 
-            // textEdit16
+            // txeOrderQtyOld
             // 
-            this.textEdit16.Location = new System.Drawing.Point(904, 210);
-            this.textEdit16.MenuManager = this.ribbonControl;
-            this.textEdit16.Name = "textEdit16";
-            this.textEdit16.Properties.BeepOnError = false;
-            this.textEdit16.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textEdit16.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.textEdit16.Properties.MaskSettings.Set("mask", "d");
-            this.textEdit16.Size = new System.Drawing.Size(76, 20);
-            this.textEdit16.StyleController = this.layoutControl1;
-            this.textEdit16.TabIndex = 41;
+            this.txeOrderQtyOld.Location = new System.Drawing.Point(904, 210);
+            this.txeOrderQtyOld.MenuManager = this.ribbonControl;
+            this.txeOrderQtyOld.Name = "txeOrderQtyOld";
+            this.txeOrderQtyOld.Properties.BeepOnError = false;
+            this.txeOrderQtyOld.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txeOrderQtyOld.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txeOrderQtyOld.Properties.MaskSettings.Set("mask", "d");
+            this.txeOrderQtyOld.Size = new System.Drawing.Size(76, 20);
+            this.txeOrderQtyOld.StyleController = this.layoutControl1;
+            this.txeOrderQtyOld.TabIndex = 41;
             // 
-            // textEdit15
+            // txePOQty
             // 
-            this.textEdit15.Location = new System.Drawing.Point(904, 186);
-            this.textEdit15.MenuManager = this.ribbonControl;
-            this.textEdit15.Name = "textEdit15";
-            this.textEdit15.Properties.BeepOnError = false;
-            this.textEdit15.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textEdit15.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.textEdit15.Properties.MaskSettings.Set("mask", "d");
-            this.textEdit15.Size = new System.Drawing.Size(76, 20);
-            this.textEdit15.StyleController = this.layoutControl1;
-            this.textEdit15.TabIndex = 40;
+            this.txePOQty.Location = new System.Drawing.Point(904, 186);
+            this.txePOQty.MenuManager = this.ribbonControl;
+            this.txePOQty.Name = "txePOQty";
+            this.txePOQty.Properties.BeepOnError = false;
+            this.txePOQty.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txePOQty.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txePOQty.Properties.MaskSettings.Set("mask", "d");
+            this.txePOQty.Size = new System.Drawing.Size(76, 20);
+            this.txePOQty.StyleController = this.layoutControl1;
+            this.txePOQty.TabIndex = 40;
             // 
-            // dateEdit9
+            // dtePOUpdate
             // 
-            this.dateEdit9.EditValue = null;
-            this.dateEdit9.Location = new System.Drawing.Point(904, 162);
-            this.dateEdit9.MenuManager = this.ribbonControl;
-            this.dateEdit9.Name = "dateEdit9";
-            this.dateEdit9.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtePOUpdate.EditValue = null;
+            this.dtePOUpdate.Location = new System.Drawing.Point(904, 162);
+            this.dtePOUpdate.MenuManager = this.ribbonControl;
+            this.dtePOUpdate.Name = "dtePOUpdate";
+            this.dtePOUpdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit9.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtePOUpdate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit9.Size = new System.Drawing.Size(76, 20);
-            this.dateEdit9.StyleController = this.layoutControl1;
-            this.dateEdit9.TabIndex = 39;
+            this.dtePOUpdate.Size = new System.Drawing.Size(76, 20);
+            this.dtePOUpdate.StyleController = this.layoutControl1;
+            this.dtePOUpdate.TabIndex = 39;
             // 
-            // textEdit14
+            // txePOOrderNo
             // 
-            this.textEdit14.Location = new System.Drawing.Point(904, 138);
-            this.textEdit14.MenuManager = this.ribbonControl;
-            this.textEdit14.Name = "textEdit14";
-            this.textEdit14.Properties.MaxLength = 30;
-            this.textEdit14.Size = new System.Drawing.Size(76, 20);
-            this.textEdit14.StyleController = this.layoutControl1;
-            this.textEdit14.TabIndex = 38;
+            this.txePOOrderNo.Location = new System.Drawing.Point(904, 138);
+            this.txePOOrderNo.MenuManager = this.ribbonControl;
+            this.txePOOrderNo.Name = "txePOOrderNo";
+            this.txePOOrderNo.Properties.MaxLength = 30;
+            this.txePOOrderNo.Size = new System.Drawing.Size(76, 20);
+            this.txePOOrderNo.StyleController = this.layoutControl1;
+            this.txePOOrderNo.TabIndex = 38;
             // 
-            // textEdit13
+            // txeTrimQty
             // 
-            this.textEdit13.Location = new System.Drawing.Point(904, 83);
-            this.textEdit13.MenuManager = this.ribbonControl;
-            this.textEdit13.Name = "textEdit13";
-            this.textEdit13.Properties.BeepOnError = false;
-            this.textEdit13.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textEdit13.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.textEdit13.Properties.MaskSettings.Set("mask", "d");
-            this.textEdit13.Size = new System.Drawing.Size(76, 20);
-            this.textEdit13.StyleController = this.layoutControl1;
-            this.textEdit13.TabIndex = 37;
+            this.txeTrimQty.Location = new System.Drawing.Point(904, 83);
+            this.txeTrimQty.MenuManager = this.ribbonControl;
+            this.txeTrimQty.Name = "txeTrimQty";
+            this.txeTrimQty.Properties.BeepOnError = false;
+            this.txeTrimQty.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txeTrimQty.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txeTrimQty.Properties.MaskSettings.Set("mask", "d");
+            this.txeTrimQty.Size = new System.Drawing.Size(76, 20);
+            this.txeTrimQty.StyleController = this.layoutControl1;
+            this.txeTrimQty.TabIndex = 37;
             // 
-            // dateEdit8
+            // dteTrimUpdate
             // 
-            this.dateEdit8.EditValue = null;
-            this.dateEdit8.Location = new System.Drawing.Point(904, 59);
-            this.dateEdit8.MenuManager = this.ribbonControl;
-            this.dateEdit8.Name = "dateEdit8";
-            this.dateEdit8.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dteTrimUpdate.EditValue = null;
+            this.dteTrimUpdate.Location = new System.Drawing.Point(904, 59);
+            this.dteTrimUpdate.MenuManager = this.ribbonControl;
+            this.dteTrimUpdate.Name = "dteTrimUpdate";
+            this.dteTrimUpdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit8.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dteTrimUpdate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit8.Size = new System.Drawing.Size(76, 20);
-            this.dateEdit8.StyleController = this.layoutControl1;
-            this.dateEdit8.TabIndex = 36;
+            this.dteTrimUpdate.Size = new System.Drawing.Size(76, 20);
+            this.dteTrimUpdate.StyleController = this.layoutControl1;
+            this.dteTrimUpdate.TabIndex = 36;
             // 
-            // textEdit12
+            // txeTrimOrderNo
             // 
-            this.textEdit12.Location = new System.Drawing.Point(904, 35);
-            this.textEdit12.MenuManager = this.ribbonControl;
-            this.textEdit12.Name = "textEdit12";
-            this.textEdit12.Properties.MaxLength = 30;
-            this.textEdit12.Size = new System.Drawing.Size(76, 20);
-            this.textEdit12.StyleController = this.layoutControl1;
-            this.textEdit12.TabIndex = 35;
+            this.txeTrimOrderNo.Location = new System.Drawing.Point(904, 35);
+            this.txeTrimOrderNo.MenuManager = this.ribbonControl;
+            this.txeTrimOrderNo.Name = "txeTrimOrderNo";
+            this.txeTrimOrderNo.Properties.MaxLength = 30;
+            this.txeTrimOrderNo.Size = new System.Drawing.Size(76, 20);
+            this.txeTrimOrderNo.StyleController = this.layoutControl1;
+            this.txeTrimOrderNo.TabIndex = 35;
             // 
-            // textEdit11
+            // txeColorQty
             // 
-            this.textEdit11.Location = new System.Drawing.Point(657, 323);
-            this.textEdit11.MenuManager = this.ribbonControl;
-            this.textEdit11.Name = "textEdit11";
-            this.textEdit11.Properties.BeepOnError = false;
-            this.textEdit11.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textEdit11.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.textEdit11.Properties.MaskSettings.Set("mask", "d");
-            this.textEdit11.Size = new System.Drawing.Size(76, 20);
-            this.textEdit11.StyleController = this.layoutControl1;
-            this.textEdit11.TabIndex = 34;
+            this.txeColorQty.Location = new System.Drawing.Point(657, 323);
+            this.txeColorQty.MenuManager = this.ribbonControl;
+            this.txeColorQty.Name = "txeColorQty";
+            this.txeColorQty.Properties.BeepOnError = false;
+            this.txeColorQty.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txeColorQty.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txeColorQty.Properties.MaskSettings.Set("mask", "d");
+            this.txeColorQty.Size = new System.Drawing.Size(76, 20);
+            this.txeColorQty.StyleController = this.layoutControl1;
+            this.txeColorQty.TabIndex = 34;
             // 
-            // dateEdit7
+            // dteColorUpdate
             // 
-            this.dateEdit7.EditValue = null;
-            this.dateEdit7.Location = new System.Drawing.Point(657, 299);
-            this.dateEdit7.MenuManager = this.ribbonControl;
-            this.dateEdit7.Name = "dateEdit7";
-            this.dateEdit7.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dteColorUpdate.EditValue = null;
+            this.dteColorUpdate.Location = new System.Drawing.Point(657, 299);
+            this.dteColorUpdate.MenuManager = this.ribbonControl;
+            this.dteColorUpdate.Name = "dteColorUpdate";
+            this.dteColorUpdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit7.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dteColorUpdate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit7.Size = new System.Drawing.Size(76, 20);
-            this.dateEdit7.StyleController = this.layoutControl1;
-            this.dateEdit7.TabIndex = 33;
+            this.dteColorUpdate.Size = new System.Drawing.Size(76, 20);
+            this.dteColorUpdate.StyleController = this.layoutControl1;
+            this.dteColorUpdate.TabIndex = 33;
             // 
-            // textEdit10
+            // txeColorOrderNo
             // 
-            this.textEdit10.Location = new System.Drawing.Point(657, 275);
-            this.textEdit10.MenuManager = this.ribbonControl;
-            this.textEdit10.Name = "textEdit10";
-            this.textEdit10.Properties.MaxLength = 30;
-            this.textEdit10.Size = new System.Drawing.Size(76, 20);
-            this.textEdit10.StyleController = this.layoutControl1;
-            this.textEdit10.TabIndex = 32;
+            this.txeColorOrderNo.Location = new System.Drawing.Point(657, 275);
+            this.txeColorOrderNo.MenuManager = this.ribbonControl;
+            this.txeColorOrderNo.Name = "txeColorOrderNo";
+            this.txeColorOrderNo.Properties.MaxLength = 30;
+            this.txeColorOrderNo.Size = new System.Drawing.Size(76, 20);
+            this.txeColorOrderNo.StyleController = this.layoutControl1;
+            this.txeColorOrderNo.TabIndex = 32;
             // 
-            // textEdit9
+            // txeFabricQty
             // 
-            this.textEdit9.Location = new System.Drawing.Point(657, 251);
-            this.textEdit9.MenuManager = this.ribbonControl;
-            this.textEdit9.Name = "textEdit9";
-            this.textEdit9.Properties.BeepOnError = false;
-            this.textEdit9.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textEdit9.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.textEdit9.Properties.MaskSettings.Set("mask", "d");
-            this.textEdit9.Size = new System.Drawing.Size(76, 20);
-            this.textEdit9.StyleController = this.layoutControl1;
-            this.textEdit9.TabIndex = 31;
+            this.txeFabricQty.Location = new System.Drawing.Point(657, 251);
+            this.txeFabricQty.MenuManager = this.ribbonControl;
+            this.txeFabricQty.Name = "txeFabricQty";
+            this.txeFabricQty.Properties.BeepOnError = false;
+            this.txeFabricQty.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txeFabricQty.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txeFabricQty.Properties.MaskSettings.Set("mask", "d");
+            this.txeFabricQty.Size = new System.Drawing.Size(76, 20);
+            this.txeFabricQty.StyleController = this.layoutControl1;
+            this.txeFabricQty.TabIndex = 31;
             // 
-            // dateEdit6
+            // dteFabricUpdate
             // 
-            this.dateEdit6.EditValue = null;
-            this.dateEdit6.Location = new System.Drawing.Point(657, 227);
-            this.dateEdit6.MenuManager = this.ribbonControl;
-            this.dateEdit6.Name = "dateEdit6";
-            this.dateEdit6.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dteFabricUpdate.EditValue = null;
+            this.dteFabricUpdate.Location = new System.Drawing.Point(657, 227);
+            this.dteFabricUpdate.MenuManager = this.ribbonControl;
+            this.dteFabricUpdate.Name = "dteFabricUpdate";
+            this.dteFabricUpdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit6.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dteFabricUpdate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit6.Size = new System.Drawing.Size(76, 20);
-            this.dateEdit6.StyleController = this.layoutControl1;
-            this.dateEdit6.TabIndex = 30;
+            this.dteFabricUpdate.Size = new System.Drawing.Size(76, 20);
+            this.dteFabricUpdate.StyleController = this.layoutControl1;
+            this.dteFabricUpdate.TabIndex = 30;
             // 
-            // textEdit8
+            // txeFabricOrderNo
             // 
-            this.textEdit8.Location = new System.Drawing.Point(657, 203);
-            this.textEdit8.MenuManager = this.ribbonControl;
-            this.textEdit8.Name = "textEdit8";
-            this.textEdit8.Properties.MaxLength = 30;
-            this.textEdit8.Size = new System.Drawing.Size(76, 20);
-            this.textEdit8.StyleController = this.layoutControl1;
-            this.textEdit8.TabIndex = 29;
+            this.txeFabricOrderNo.Location = new System.Drawing.Point(657, 203);
+            this.txeFabricOrderNo.MenuManager = this.ribbonControl;
+            this.txeFabricOrderNo.Name = "txeFabricOrderNo";
+            this.txeFabricOrderNo.Properties.MaxLength = 30;
+            this.txeFabricOrderNo.Size = new System.Drawing.Size(76, 20);
+            this.txeFabricOrderNo.StyleController = this.layoutControl1;
+            this.txeFabricOrderNo.TabIndex = 29;
             // 
-            // textEdit7
+            // txeOrderQty
             // 
-            this.textEdit7.Location = new System.Drawing.Point(652, 153);
-            this.textEdit7.MenuManager = this.ribbonControl;
-            this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Properties.BeepOnError = false;
-            this.textEdit7.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textEdit7.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.textEdit7.Properties.MaskSettings.Set("mask", "d");
-            this.textEdit7.Size = new System.Drawing.Size(86, 20);
-            this.textEdit7.StyleController = this.layoutControl1;
-            this.textEdit7.TabIndex = 28;
+            this.txeOrderQty.Location = new System.Drawing.Point(652, 153);
+            this.txeOrderQty.MenuManager = this.ribbonControl;
+            this.txeOrderQty.Name = "txeOrderQty";
+            this.txeOrderQty.Properties.BeepOnError = false;
+            this.txeOrderQty.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txeOrderQty.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txeOrderQty.Properties.MaskSettings.Set("mask", "d");
+            this.txeOrderQty.Size = new System.Drawing.Size(86, 20);
+            this.txeOrderQty.StyleController = this.layoutControl1;
+            this.txeOrderQty.TabIndex = 28;
             // 
             // glueLogisticsType
             // 
@@ -825,81 +946,81 @@
             this.gridLookUpEdit3View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit3View.OptionsView.ShowGroupPanel = false;
             // 
-            // dateEdit5
+            // dteContractDate
             // 
-            this.dateEdit5.EditValue = null;
-            this.dateEdit5.Location = new System.Drawing.Point(652, 81);
-            this.dateEdit5.MenuManager = this.ribbonControl;
-            this.dateEdit5.Name = "dateEdit5";
-            this.dateEdit5.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dteContractDate.EditValue = null;
+            this.dteContractDate.Location = new System.Drawing.Point(652, 81);
+            this.dteContractDate.MenuManager = this.ribbonControl;
+            this.dteContractDate.Name = "dteContractDate";
+            this.dteContractDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit5.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dteContractDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit5.Size = new System.Drawing.Size(86, 20);
-            this.dateEdit5.StyleController = this.layoutControl1;
-            this.dateEdit5.TabIndex = 25;
+            this.dteContractDate.Size = new System.Drawing.Size(86, 20);
+            this.dteContractDate.StyleController = this.layoutControl1;
+            this.dteContractDate.TabIndex = 25;
             // 
-            // dateEdit4
+            // dteWHDate
             // 
-            this.dateEdit4.EditValue = null;
-            this.dateEdit4.Location = new System.Drawing.Point(652, 57);
-            this.dateEdit4.MenuManager = this.ribbonControl;
-            this.dateEdit4.Name = "dateEdit4";
-            this.dateEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dteWHDate.EditValue = null;
+            this.dteWHDate.Location = new System.Drawing.Point(652, 57);
+            this.dteWHDate.MenuManager = this.ribbonControl;
+            this.dteWHDate.Name = "dteWHDate";
+            this.dteWHDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit4.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dteWHDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit4.Size = new System.Drawing.Size(86, 20);
-            this.dateEdit4.StyleController = this.layoutControl1;
-            this.dateEdit4.TabIndex = 24;
+            this.dteWHDate.Size = new System.Drawing.Size(86, 20);
+            this.dteWHDate.StyleController = this.layoutControl1;
+            this.dteWHDate.TabIndex = 24;
             // 
-            // dateEdit3
+            // dteLastUpdate
             // 
-            this.dateEdit3.EditValue = null;
-            this.dateEdit3.Location = new System.Drawing.Point(652, 33);
-            this.dateEdit3.MenuManager = this.ribbonControl;
-            this.dateEdit3.Name = "dateEdit3";
-            this.dateEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dteLastUpdate.EditValue = null;
+            this.dteLastUpdate.Location = new System.Drawing.Point(652, 33);
+            this.dteLastUpdate.MenuManager = this.ribbonControl;
+            this.dteLastUpdate.Name = "dteLastUpdate";
+            this.dteLastUpdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit3.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dteLastUpdate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit3.Size = new System.Drawing.Size(86, 20);
-            this.dateEdit3.StyleController = this.layoutControl1;
-            this.dateEdit3.TabIndex = 23;
+            this.dteLastUpdate.Size = new System.Drawing.Size(86, 20);
+            this.dteLastUpdate.StyleController = this.layoutControl1;
+            this.dteLastUpdate.TabIndex = 23;
             // 
-            // checkEdit2
+            // chkBookAcc
             // 
-            this.checkEdit2.Location = new System.Drawing.Point(600, 9);
-            this.checkEdit2.MenuManager = this.ribbonControl;
-            this.checkEdit2.Name = "checkEdit2";
-            this.checkEdit2.Properties.Caption = "Booking Accessory";
-            this.checkEdit2.Size = new System.Drawing.Size(138, 20);
-            this.checkEdit2.StyleController = this.layoutControl1;
-            this.checkEdit2.TabIndex = 22;
+            this.chkBookAcc.Location = new System.Drawing.Point(600, 9);
+            this.chkBookAcc.MenuManager = this.ribbonControl;
+            this.chkBookAcc.Name = "chkBookAcc";
+            this.chkBookAcc.Properties.Caption = "Booking Accessory";
+            this.chkBookAcc.Size = new System.Drawing.Size(138, 20);
+            this.chkBookAcc.StyleController = this.layoutControl1;
+            this.chkBookAcc.TabIndex = 22;
             // 
-            // checkEdit1
+            // chkBookFabric
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(495, 9);
-            this.checkEdit1.MenuManager = this.ribbonControl;
-            this.checkEdit1.Name = "checkEdit1";
-            this.checkEdit1.Properties.Caption = "Booking Fabric";
-            this.checkEdit1.Size = new System.Drawing.Size(101, 20);
-            this.checkEdit1.StyleController = this.layoutControl1;
-            this.checkEdit1.TabIndex = 21;
+            this.chkBookFabric.Location = new System.Drawing.Point(495, 9);
+            this.chkBookFabric.MenuManager = this.ribbonControl;
+            this.chkBookFabric.Name = "chkBookFabric";
+            this.chkBookFabric.Properties.Caption = "Booking Fabric";
+            this.chkBookFabric.Size = new System.Drawing.Size(101, 20);
+            this.chkBookFabric.StyleController = this.layoutControl1;
+            this.chkBookFabric.TabIndex = 21;
             // 
-            // dateEdit2
+            // dteDataUpdate
             // 
-            this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(166, 321);
-            this.dateEdit2.MenuManager = this.ribbonControl;
-            this.dateEdit2.Name = "dateEdit2";
-            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dteDataUpdate.EditValue = null;
+            this.dteDataUpdate.Location = new System.Drawing.Point(166, 321);
+            this.dteDataUpdate.MenuManager = this.ribbonControl;
+            this.dteDataUpdate.Name = "dteDataUpdate";
+            this.dteDataUpdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dteDataUpdate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Size = new System.Drawing.Size(122, 20);
-            this.dateEdit2.StyleController = this.layoutControl1;
-            this.dateEdit2.TabIndex = 20;
+            this.dteDataUpdate.Size = new System.Drawing.Size(122, 20);
+            this.dteDataUpdate.StyleController = this.layoutControl1;
+            this.dteDataUpdate.TabIndex = 20;
             // 
             // glueStatus
             // 
@@ -921,28 +1042,28 @@
             this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
             // 
-            // textEdit6
+            // txePlanType
             // 
-            this.textEdit6.Location = new System.Drawing.Point(166, 273);
-            this.textEdit6.MenuManager = this.ribbonControl;
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Properties.MaxLength = 10;
-            this.textEdit6.Size = new System.Drawing.Size(185, 20);
-            this.textEdit6.StyleController = this.layoutControl1;
-            this.textEdit6.TabIndex = 17;
+            this.txePlanType.Location = new System.Drawing.Point(166, 273);
+            this.txePlanType.MenuManager = this.ribbonControl;
+            this.txePlanType.Name = "txePlanType";
+            this.txePlanType.Properties.MaxLength = 10;
+            this.txePlanType.Size = new System.Drawing.Size(185, 20);
+            this.txePlanType.StyleController = this.layoutControl1;
+            this.txePlanType.TabIndex = 17;
             // 
-            // textEdit5
+            // txeSewingDifficulty
             // 
-            this.textEdit5.Location = new System.Drawing.Point(166, 249);
-            this.textEdit5.MenuManager = this.ribbonControl;
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Properties.BeepOnError = false;
-            this.textEdit5.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textEdit5.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.textEdit5.Properties.MaskSettings.Set("mask", "n");
-            this.textEdit5.Size = new System.Drawing.Size(122, 20);
-            this.textEdit5.StyleController = this.layoutControl1;
-            this.textEdit5.TabIndex = 16;
+            this.txeSewingDifficulty.Location = new System.Drawing.Point(166, 249);
+            this.txeSewingDifficulty.MenuManager = this.ribbonControl;
+            this.txeSewingDifficulty.Name = "txeSewingDifficulty";
+            this.txeSewingDifficulty.Properties.BeepOnError = false;
+            this.txeSewingDifficulty.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txeSewingDifficulty.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txeSewingDifficulty.Properties.MaskSettings.Set("mask", "f");
+            this.txeSewingDifficulty.Size = new System.Drawing.Size(122, 20);
+            this.txeSewingDifficulty.StyleController = this.layoutControl1;
+            this.txeSewingDifficulty.TabIndex = 16;
             // 
             // slueSupplier
             // 
@@ -974,15 +1095,15 @@
             this.txeStyle.StyleController = this.layoutControl1;
             this.txeStyle.TabIndex = 14;
             // 
-            // textEdit3
+            // txeSampleCode
             // 
-            this.textEdit3.Location = new System.Drawing.Point(166, 177);
-            this.textEdit3.MenuManager = this.ribbonControl;
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.MaxLength = 30;
-            this.textEdit3.Size = new System.Drawing.Size(185, 20);
-            this.textEdit3.StyleController = this.layoutControl1;
-            this.textEdit3.TabIndex = 13;
+            this.txeSampleCode.Location = new System.Drawing.Point(166, 177);
+            this.txeSampleCode.MenuManager = this.ribbonControl;
+            this.txeSampleCode.Name = "txeSampleCode";
+            this.txeSampleCode.Properties.MaxLength = 30;
+            this.txeSampleCode.Size = new System.Drawing.Size(185, 20);
+            this.txeSampleCode.StyleController = this.layoutControl1;
+            this.txeSampleCode.TabIndex = 13;
             // 
             // txeItemName
             // 
@@ -1036,19 +1157,19 @@
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // dateEdit1
+            // dteOrderDate
             // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(166, 57);
-            this.dateEdit1.MenuManager = this.ribbonControl;
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dteOrderDate.EditValue = null;
+            this.dteOrderDate.Location = new System.Drawing.Point(166, 57);
+            this.dteOrderDate.MenuManager = this.ribbonControl;
+            this.dteOrderDate.Name = "dteOrderDate";
+            this.dteOrderDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dteOrderDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(122, 20);
-            this.dateEdit1.StyleController = this.layoutControl1;
-            this.dateEdit1.TabIndex = 8;
+            this.dteOrderDate.Size = new System.Drawing.Size(122, 20);
+            this.dteOrderDate.StyleController = this.layoutControl1;
+            this.dteOrderDate.TabIndex = 8;
             // 
             // slueCustomer
             // 
@@ -1070,15 +1191,15 @@
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // textEdit1
+            // txePlanID
             // 
-            this.textEdit1.Location = new System.Drawing.Point(166, 9);
-            this.textEdit1.MenuManager = this.ribbonControl;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.MaxLength = 15;
-            this.textEdit1.Size = new System.Drawing.Size(185, 20);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 6;
+            this.txePlanID.Location = new System.Drawing.Point(166, 9);
+            this.txePlanID.MenuManager = this.ribbonControl;
+            this.txePlanID.Name = "txePlanID";
+            this.txePlanID.Properties.MaxLength = 15;
+            this.txePlanID.Size = new System.Drawing.Size(185, 20);
+            this.txePlanID.StyleController = this.layoutControl1;
+            this.txePlanID.TabIndex = 6;
             // 
             // gcINPUT
             // 
@@ -1096,8 +1217,35 @@
             this.repositoryItemTextEdit1,
             this.repositoryItemGridLookUpEdit2,
             this.repositoryItemSearchLookUpEdit2,
-            this.repositoryItemTextEdit2});
-            this.gcINPUT.Size = new System.Drawing.Size(976, 67);
+            this.repositoryItemTextEdit2,
+            this.repositoryItemSearchLookUpEdit3,
+            this.repositoryItemTextEdit3,
+            this.repositoryItemTextEdit4,
+            this.repositoryItemDateEdit3,
+            this.repositoryItemCheckEdit1,
+            this.repositoryItemCheckEdit2,
+            this.repositoryItemDateEdit4,
+            this.repositoryItemDateEdit5,
+            this.repositoryItemDateEdit6,
+            this.repositoryItemTextEdit5,
+            this.repositoryItemTextEdit6,
+            this.repositoryItemTextEdit7,
+            this.repositoryItemGridLookUpEdit3,
+            this.repositoryItemTextEdit8,
+            this.repositoryItemDateEdit7,
+            this.repositoryItemTextEdit9,
+            this.repositoryItemTextEdit10,
+            this.repositoryItemTextEdit11,
+            this.repositoryItemDateEdit8,
+            this.repositoryItemTextEdit12,
+            this.repositoryItemTextEdit13,
+            this.repositoryItemDateEdit9,
+            this.repositoryItemTextEdit14,
+            this.repositoryItemTextEdit15,
+            this.repositoryItemDateEdit10,
+            this.repositoryItemTextEdit16,
+            this.repositoryItemTextEdit17});
+            this.gcINPUT.Size = new System.Drawing.Size(976, 78);
             this.gcINPUT.TabIndex = 5;
             this.gcINPUT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvINPUT});
@@ -1114,7 +1262,32 @@
             this.OIDCSITEM,
             this.ItemName,
             this.StyleNo,
-            this.ModelNo});
+            this.ModelNo,
+            this.OIDVEND,
+            this.SewingDifficulty,
+            this.ProductionPlanType,
+            this.DataUpdate,
+            this.BookingFabric,
+            this.BookingAccessory,
+            this.LastUpdate,
+            this.RequestedWHDate,
+            this.ContractedDate,
+            this.TransportMethod,
+            this.LogisticsType,
+            this.OrderQty,
+            this.FabricOrderNO,
+            this.FabricUpdateDate,
+            this.FabricActualOrderQty,
+            this.ColorOrderNO,
+            this.ColorUpdateDate,
+            this.ColorActualOrderQty,
+            this.TrimOrderNO,
+            this.TrimUpdateDate,
+            this.TrimActualOrderQty,
+            this.POOrderNO,
+            this.POUpdateDate,
+            this.POActualOrderQty,
+            this.OrderQTYOld});
             this.gvINPUT.GridControl = this.gcINPUT;
             this.gvINPUT.Name = "gvINPUT";
             this.gvINPUT.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
@@ -1309,6 +1482,464 @@
             this.StyleNo.Visible = true;
             this.StyleNo.VisibleIndex = 8;
             // 
+            // ModelNo
+            // 
+            this.ModelNo.Caption = "Model No.";
+            this.ModelNo.ColumnEdit = this.repositoryItemTextEdit2;
+            this.ModelNo.FieldName = "ModelNo";
+            this.ModelNo.Name = "ModelNo";
+            this.ModelNo.Visible = true;
+            this.ModelNo.VisibleIndex = 9;
+            // 
+            // repositoryItemTextEdit2
+            // 
+            this.repositoryItemTextEdit2.AutoHeight = false;
+            this.repositoryItemTextEdit2.MaxLength = 30;
+            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
+            // 
+            // OIDVEND
+            // 
+            this.OIDVEND.Caption = "Raw Material Supplier";
+            this.OIDVEND.ColumnEdit = this.repositoryItemSearchLookUpEdit3;
+            this.OIDVEND.FieldName = "OIDVEND";
+            this.OIDVEND.Name = "OIDVEND";
+            this.OIDVEND.Visible = true;
+            this.OIDVEND.VisibleIndex = 10;
+            // 
+            // repositoryItemSearchLookUpEdit3
+            // 
+            this.repositoryItemSearchLookUpEdit3.AutoHeight = false;
+            this.repositoryItemSearchLookUpEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSearchLookUpEdit3.Name = "repositoryItemSearchLookUpEdit3";
+            this.repositoryItemSearchLookUpEdit3.NullText = "";
+            this.repositoryItemSearchLookUpEdit3.PopupView = this.repositoryItemSearchLookUpEdit3View;
+            // 
+            // repositoryItemSearchLookUpEdit3View
+            // 
+            this.repositoryItemSearchLookUpEdit3View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemSearchLookUpEdit3View.Name = "repositoryItemSearchLookUpEdit3View";
+            this.repositoryItemSearchLookUpEdit3View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemSearchLookUpEdit3View.OptionsView.ShowGroupPanel = false;
+            // 
+            // SewingDifficulty
+            // 
+            this.SewingDifficulty.AppearanceCell.Options.UseTextOptions = true;
+            this.SewingDifficulty.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.SewingDifficulty.Caption = "Sewing Difficulty";
+            this.SewingDifficulty.ColumnEdit = this.repositoryItemTextEdit3;
+            this.SewingDifficulty.FieldName = "SewingDifficulty";
+            this.SewingDifficulty.Name = "SewingDifficulty";
+            this.SewingDifficulty.Visible = true;
+            this.SewingDifficulty.VisibleIndex = 11;
+            // 
+            // repositoryItemTextEdit3
+            // 
+            this.repositoryItemTextEdit3.AutoHeight = false;
+            this.repositoryItemTextEdit3.BeepOnError = false;
+            this.repositoryItemTextEdit3.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.repositoryItemTextEdit3.MaskSettings.Set("mask", "f");
+            this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
+            // 
+            // ProductionPlanType
+            // 
+            this.ProductionPlanType.Caption = "Production Plan Type";
+            this.ProductionPlanType.ColumnEdit = this.repositoryItemTextEdit4;
+            this.ProductionPlanType.FieldName = "ProductionPlanType";
+            this.ProductionPlanType.Name = "ProductionPlanType";
+            this.ProductionPlanType.Visible = true;
+            this.ProductionPlanType.VisibleIndex = 12;
+            // 
+            // repositoryItemTextEdit4
+            // 
+            this.repositoryItemTextEdit4.AutoHeight = false;
+            this.repositoryItemTextEdit4.MaxLength = 10;
+            this.repositoryItemTextEdit4.Name = "repositoryItemTextEdit4";
+            // 
+            // DataUpdate
+            // 
+            this.DataUpdate.Caption = "Data Update";
+            this.DataUpdate.ColumnEdit = this.repositoryItemDateEdit3;
+            this.DataUpdate.FieldName = "DataUpdate";
+            this.DataUpdate.Name = "DataUpdate";
+            this.DataUpdate.Visible = true;
+            this.DataUpdate.VisibleIndex = 13;
+            // 
+            // repositoryItemDateEdit3
+            // 
+            this.repositoryItemDateEdit3.AutoHeight = false;
+            this.repositoryItemDateEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit3.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit3.Name = "repositoryItemDateEdit3";
+            // 
+            // BookingFabric
+            // 
+            this.BookingFabric.Caption = "Booking Fabric";
+            this.BookingFabric.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.BookingFabric.FieldName = "BookingFabric";
+            this.BookingFabric.Name = "BookingFabric";
+            this.BookingFabric.Visible = true;
+            this.BookingFabric.VisibleIndex = 14;
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            this.repositoryItemCheckEdit1.ValueChecked = 1;
+            this.repositoryItemCheckEdit1.ValueUnchecked = 0;
+            // 
+            // BookingAccessory
+            // 
+            this.BookingAccessory.Caption = "Booking Accessory";
+            this.BookingAccessory.ColumnEdit = this.repositoryItemCheckEdit2;
+            this.BookingAccessory.FieldName = "BookingAccessory";
+            this.BookingAccessory.Name = "BookingAccessory";
+            this.BookingAccessory.Visible = true;
+            this.BookingAccessory.VisibleIndex = 15;
+            // 
+            // repositoryItemCheckEdit2
+            // 
+            this.repositoryItemCheckEdit2.AutoHeight = false;
+            this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
+            this.repositoryItemCheckEdit2.ValueChecked = 1;
+            this.repositoryItemCheckEdit2.ValueUnchecked = 0;
+            // 
+            // LastUpdate
+            // 
+            this.LastUpdate.Caption = "Last Update";
+            this.LastUpdate.ColumnEdit = this.repositoryItemDateEdit5;
+            this.LastUpdate.FieldName = "LastUpdate";
+            this.LastUpdate.Name = "LastUpdate";
+            this.LastUpdate.Visible = true;
+            this.LastUpdate.VisibleIndex = 16;
+            // 
+            // repositoryItemDateEdit5
+            // 
+            this.repositoryItemDateEdit5.AutoHeight = false;
+            this.repositoryItemDateEdit5.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit5.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit5.Name = "repositoryItemDateEdit5";
+            // 
+            // RequestedWHDate
+            // 
+            this.RequestedWHDate.Caption = "Requested WH Date";
+            this.RequestedWHDate.ColumnEdit = this.repositoryItemDateEdit6;
+            this.RequestedWHDate.FieldName = "RequestedWHDate";
+            this.RequestedWHDate.Name = "RequestedWHDate";
+            this.RequestedWHDate.Visible = true;
+            this.RequestedWHDate.VisibleIndex = 17;
+            // 
+            // repositoryItemDateEdit6
+            // 
+            this.repositoryItemDateEdit6.AutoHeight = false;
+            this.repositoryItemDateEdit6.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit6.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit6.Name = "repositoryItemDateEdit6";
+            // 
+            // ContractedDate
+            // 
+            this.ContractedDate.Caption = "Contracted Date";
+            this.ContractedDate.ColumnEdit = this.repositoryItemDateEdit4;
+            this.ContractedDate.FieldName = "ContractedDate";
+            this.ContractedDate.Name = "ContractedDate";
+            this.ContractedDate.Visible = true;
+            this.ContractedDate.VisibleIndex = 18;
+            // 
+            // repositoryItemDateEdit4
+            // 
+            this.repositoryItemDateEdit4.AutoHeight = false;
+            this.repositoryItemDateEdit4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit4.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit4.Name = "repositoryItemDateEdit4";
+            // 
+            // TransportMethod
+            // 
+            this.TransportMethod.Caption = "Transport Method Name";
+            this.TransportMethod.ColumnEdit = this.repositoryItemTextEdit5;
+            this.TransportMethod.FieldName = "TransportMethod";
+            this.TransportMethod.Name = "TransportMethod";
+            this.TransportMethod.Visible = true;
+            this.TransportMethod.VisibleIndex = 19;
+            // 
+            // repositoryItemTextEdit5
+            // 
+            this.repositoryItemTextEdit5.AutoHeight = false;
+            this.repositoryItemTextEdit5.MaxLength = 10;
+            this.repositoryItemTextEdit5.Name = "repositoryItemTextEdit5";
+            // 
+            // LogisticsType
+            // 
+            this.LogisticsType.Caption = "Logistics Type Name";
+            this.LogisticsType.ColumnEdit = this.repositoryItemGridLookUpEdit3;
+            this.LogisticsType.FieldName = "LogisticsType";
+            this.LogisticsType.Name = "LogisticsType";
+            this.LogisticsType.Visible = true;
+            this.LogisticsType.VisibleIndex = 20;
+            // 
+            // repositoryItemGridLookUpEdit3
+            // 
+            this.repositoryItemGridLookUpEdit3.AutoHeight = false;
+            this.repositoryItemGridLookUpEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemGridLookUpEdit3.Name = "repositoryItemGridLookUpEdit3";
+            this.repositoryItemGridLookUpEdit3.NullText = "";
+            this.repositoryItemGridLookUpEdit3.PopupView = this.repositoryItemGridLookUpEdit3View;
+            // 
+            // repositoryItemGridLookUpEdit3View
+            // 
+            this.repositoryItemGridLookUpEdit3View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit3View.Name = "repositoryItemGridLookUpEdit3View";
+            this.repositoryItemGridLookUpEdit3View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit3View.OptionsView.ShowGroupPanel = false;
+            // 
+            // OrderQty
+            // 
+            this.OrderQty.Caption = "Order Qty (Pcs.)";
+            this.OrderQty.ColumnEdit = this.repositoryItemTextEdit7;
+            this.OrderQty.FieldName = "OrderQty";
+            this.OrderQty.Name = "OrderQty";
+            this.OrderQty.Visible = true;
+            this.OrderQty.VisibleIndex = 21;
+            // 
+            // repositoryItemTextEdit7
+            // 
+            this.repositoryItemTextEdit7.AutoHeight = false;
+            this.repositoryItemTextEdit7.BeepOnError = false;
+            this.repositoryItemTextEdit7.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.repositoryItemTextEdit7.MaskSettings.Set("mask", "d");
+            this.repositoryItemTextEdit7.MaxLength = 7;
+            this.repositoryItemTextEdit7.Name = "repositoryItemTextEdit7";
+            // 
+            // FabricOrderNO
+            // 
+            this.FabricOrderNO.Caption = "Fabric Order No.";
+            this.FabricOrderNO.ColumnEdit = this.repositoryItemTextEdit8;
+            this.FabricOrderNO.FieldName = "FabricOrderNO";
+            this.FabricOrderNO.Name = "FabricOrderNO";
+            this.FabricOrderNO.Visible = true;
+            this.FabricOrderNO.VisibleIndex = 22;
+            // 
+            // repositoryItemTextEdit8
+            // 
+            this.repositoryItemTextEdit8.AutoHeight = false;
+            this.repositoryItemTextEdit8.MaxLength = 30;
+            this.repositoryItemTextEdit8.Name = "repositoryItemTextEdit8";
+            // 
+            // FabricUpdateDate
+            // 
+            this.FabricUpdateDate.Caption = "Fabric Update Date";
+            this.FabricUpdateDate.ColumnEdit = this.repositoryItemDateEdit7;
+            this.FabricUpdateDate.FieldName = "FabricUpdateDate";
+            this.FabricUpdateDate.Name = "FabricUpdateDate";
+            this.FabricUpdateDate.Visible = true;
+            this.FabricUpdateDate.VisibleIndex = 23;
+            // 
+            // repositoryItemDateEdit7
+            // 
+            this.repositoryItemDateEdit7.AutoHeight = false;
+            this.repositoryItemDateEdit7.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit7.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit7.Name = "repositoryItemDateEdit7";
+            // 
+            // FabricActualOrderQty
+            // 
+            this.FabricActualOrderQty.Caption = "Fabric Actual Order Qty.";
+            this.FabricActualOrderQty.ColumnEdit = this.repositoryItemTextEdit9;
+            this.FabricActualOrderQty.FieldName = "FabricActualOrderQty";
+            this.FabricActualOrderQty.Name = "FabricActualOrderQty";
+            this.FabricActualOrderQty.Visible = true;
+            this.FabricActualOrderQty.VisibleIndex = 24;
+            // 
+            // repositoryItemTextEdit9
+            // 
+            this.repositoryItemTextEdit9.AutoHeight = false;
+            this.repositoryItemTextEdit9.BeepOnError = false;
+            this.repositoryItemTextEdit9.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.repositoryItemTextEdit9.MaskSettings.Set("mask", "d");
+            this.repositoryItemTextEdit9.MaxLength = 7;
+            this.repositoryItemTextEdit9.Name = "repositoryItemTextEdit9";
+            // 
+            // ColorOrderNO
+            // 
+            this.ColorOrderNO.Caption = "Color Order No.";
+            this.ColorOrderNO.ColumnEdit = this.repositoryItemTextEdit10;
+            this.ColorOrderNO.FieldName = "ColorOrderNO";
+            this.ColorOrderNO.Name = "ColorOrderNO";
+            this.ColorOrderNO.Visible = true;
+            this.ColorOrderNO.VisibleIndex = 25;
+            // 
+            // repositoryItemTextEdit10
+            // 
+            this.repositoryItemTextEdit10.AutoHeight = false;
+            this.repositoryItemTextEdit10.MaxLength = 30;
+            this.repositoryItemTextEdit10.Name = "repositoryItemTextEdit10";
+            // 
+            // ColorUpdateDate
+            // 
+            this.ColorUpdateDate.Caption = "Color Update Date";
+            this.ColorUpdateDate.ColumnEdit = this.repositoryItemDateEdit8;
+            this.ColorUpdateDate.FieldName = "ColorUpdateDate";
+            this.ColorUpdateDate.Name = "ColorUpdateDate";
+            this.ColorUpdateDate.Visible = true;
+            this.ColorUpdateDate.VisibleIndex = 26;
+            // 
+            // repositoryItemDateEdit8
+            // 
+            this.repositoryItemDateEdit8.AutoHeight = false;
+            this.repositoryItemDateEdit8.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit8.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit8.Name = "repositoryItemDateEdit8";
+            // 
+            // ColorActualOrderQty
+            // 
+            this.ColorActualOrderQty.Caption = "Color Actual Order Qty.";
+            this.ColorActualOrderQty.ColumnEdit = this.repositoryItemTextEdit12;
+            this.ColorActualOrderQty.FieldName = "ColorActualOrderQty";
+            this.ColorActualOrderQty.Name = "ColorActualOrderQty";
+            this.ColorActualOrderQty.Visible = true;
+            this.ColorActualOrderQty.VisibleIndex = 27;
+            // 
+            // repositoryItemTextEdit12
+            // 
+            this.repositoryItemTextEdit12.AutoHeight = false;
+            this.repositoryItemTextEdit12.BeepOnError = false;
+            this.repositoryItemTextEdit12.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.repositoryItemTextEdit12.MaskSettings.Set("mask", "d");
+            this.repositoryItemTextEdit12.MaxLength = 7;
+            this.repositoryItemTextEdit12.Name = "repositoryItemTextEdit12";
+            // 
+            // TrimOrderNO
+            // 
+            this.TrimOrderNO.Caption = "Trim Order No.";
+            this.TrimOrderNO.ColumnEdit = this.repositoryItemTextEdit13;
+            this.TrimOrderNO.FieldName = "TrimOrderNO";
+            this.TrimOrderNO.Name = "TrimOrderNO";
+            this.TrimOrderNO.Visible = true;
+            this.TrimOrderNO.VisibleIndex = 28;
+            // 
+            // repositoryItemTextEdit13
+            // 
+            this.repositoryItemTextEdit13.AutoHeight = false;
+            this.repositoryItemTextEdit13.MaxLength = 30;
+            this.repositoryItemTextEdit13.Name = "repositoryItemTextEdit13";
+            // 
+            // TrimUpdateDate
+            // 
+            this.TrimUpdateDate.Caption = "Trim Update Date";
+            this.TrimUpdateDate.ColumnEdit = this.repositoryItemDateEdit9;
+            this.TrimUpdateDate.FieldName = "TrimUpdateDate";
+            this.TrimUpdateDate.Name = "TrimUpdateDate";
+            this.TrimUpdateDate.Visible = true;
+            this.TrimUpdateDate.VisibleIndex = 29;
+            // 
+            // repositoryItemDateEdit9
+            // 
+            this.repositoryItemDateEdit9.AutoHeight = false;
+            this.repositoryItemDateEdit9.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit9.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit9.Name = "repositoryItemDateEdit9";
+            // 
+            // TrimActualOrderQty
+            // 
+            this.TrimActualOrderQty.Caption = "Trim Actual Order Qty.";
+            this.TrimActualOrderQty.ColumnEdit = this.repositoryItemTextEdit14;
+            this.TrimActualOrderQty.FieldName = "TrimActualOrderQty";
+            this.TrimActualOrderQty.Name = "TrimActualOrderQty";
+            this.TrimActualOrderQty.Visible = true;
+            this.TrimActualOrderQty.VisibleIndex = 30;
+            // 
+            // repositoryItemTextEdit14
+            // 
+            this.repositoryItemTextEdit14.AutoHeight = false;
+            this.repositoryItemTextEdit14.BeepOnError = false;
+            this.repositoryItemTextEdit14.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.repositoryItemTextEdit14.MaskSettings.Set("mask", "d");
+            this.repositoryItemTextEdit14.MaxLength = 7;
+            this.repositoryItemTextEdit14.Name = "repositoryItemTextEdit14";
+            // 
+            // POOrderNO
+            // 
+            this.POOrderNO.Caption = "PO Order No.";
+            this.POOrderNO.ColumnEdit = this.repositoryItemTextEdit15;
+            this.POOrderNO.FieldName = "POOrderNO";
+            this.POOrderNO.Name = "POOrderNO";
+            this.POOrderNO.Visible = true;
+            this.POOrderNO.VisibleIndex = 31;
+            // 
+            // repositoryItemTextEdit15
+            // 
+            this.repositoryItemTextEdit15.AutoHeight = false;
+            this.repositoryItemTextEdit15.MaxLength = 30;
+            this.repositoryItemTextEdit15.Name = "repositoryItemTextEdit15";
+            // 
+            // POUpdateDate
+            // 
+            this.POUpdateDate.Caption = "PO Update Date";
+            this.POUpdateDate.ColumnEdit = this.repositoryItemDateEdit10;
+            this.POUpdateDate.FieldName = "POUpdateDate";
+            this.POUpdateDate.Name = "POUpdateDate";
+            this.POUpdateDate.Visible = true;
+            this.POUpdateDate.VisibleIndex = 32;
+            // 
+            // repositoryItemDateEdit10
+            // 
+            this.repositoryItemDateEdit10.AutoHeight = false;
+            this.repositoryItemDateEdit10.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit10.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit10.Name = "repositoryItemDateEdit10";
+            // 
+            // POActualOrderQty
+            // 
+            this.POActualOrderQty.Caption = "PO Actual Order Qty. (Pcs)";
+            this.POActualOrderQty.ColumnEdit = this.repositoryItemTextEdit16;
+            this.POActualOrderQty.FieldName = "POActualOrderQty";
+            this.POActualOrderQty.Name = "POActualOrderQty";
+            this.POActualOrderQty.Visible = true;
+            this.POActualOrderQty.VisibleIndex = 33;
+            // 
+            // repositoryItemTextEdit16
+            // 
+            this.repositoryItemTextEdit16.AutoHeight = false;
+            this.repositoryItemTextEdit16.BeepOnError = false;
+            this.repositoryItemTextEdit16.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.repositoryItemTextEdit16.MaskSettings.Set("mask", "d");
+            this.repositoryItemTextEdit16.MaxLength = 7;
+            this.repositoryItemTextEdit16.Name = "repositoryItemTextEdit16";
+            // 
+            // OrderQTYOld
+            // 
+            this.OrderQTYOld.Caption = "Order Qty Pcs. (Old)";
+            this.OrderQTYOld.ColumnEdit = this.repositoryItemTextEdit17;
+            this.OrderQTYOld.FieldName = "OrderQTYOld";
+            this.OrderQTYOld.Name = "OrderQTYOld";
+            this.OrderQTYOld.Visible = true;
+            this.OrderQTYOld.VisibleIndex = 34;
+            // 
+            // repositoryItemTextEdit17
+            // 
+            this.repositoryItemTextEdit17.AutoHeight = false;
+            this.repositoryItemTextEdit17.BeepOnError = false;
+            this.repositoryItemTextEdit17.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.repositoryItemTextEdit17.MaskSettings.Set("mask", "d");
+            this.repositoryItemTextEdit17.MaxLength = 7;
+            this.repositoryItemTextEdit17.Name = "repositoryItemTextEdit17";
+            // 
             // repositoryItemDateEdit1
             // 
             this.repositoryItemDateEdit1.AutoHeight = false;
@@ -1325,13 +1956,24 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemSpinEdit1.Name = "repositoryItemSpinEdit1";
             // 
+            // repositoryItemTextEdit6
+            // 
+            this.repositoryItemTextEdit6.AutoHeight = false;
+            this.repositoryItemTextEdit6.MaxLength = 20;
+            this.repositoryItemTextEdit6.Name = "repositoryItemTextEdit6";
+            // 
+            // repositoryItemTextEdit11
+            // 
+            this.repositoryItemTextEdit11.AutoHeight = false;
+            this.repositoryItemTextEdit11.Name = "repositoryItemTextEdit11";
+            // 
             // gcFO
             // 
             this.gcFO.Location = new System.Drawing.Point(14, 35);
             this.gcFO.MainView = this.gvFO;
             this.gcFO.MenuManager = this.ribbonControl;
             this.gcFO.Name = "gcFO";
-            this.gcFO.Size = new System.Drawing.Size(966, 379);
+            this.gcFO.Size = new System.Drawing.Size(966, 390);
             this.gcFO.TabIndex = 4;
             this.gcFO.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvFO});
@@ -1340,6 +1982,7 @@
             // 
             this.gvFO.GridControl = this.gcFO;
             this.gvFO.Name = "gvFO";
+            this.gvFO.OptionsBehavior.Editable = false;
             this.gvFO.OptionsView.EnableAppearanceEvenRow = true;
             this.gvFO.OptionsView.EnableAppearanceOddRow = true;
             this.gvFO.OptionsView.ShowAutoFilterRow = true;
@@ -1374,7 +2017,7 @@
             this.tabbedControlGroup1});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.Root.Size = new System.Drawing.Size(994, 452);
+            this.Root.Size = new System.Drawing.Size(994, 463);
             this.Root.TextVisible = false;
             // 
             // tabbedControlGroup1
@@ -1383,7 +2026,7 @@
             this.tabbedControlGroup1.Name = "tabbedControlGroup1";
             this.tabbedControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup2;
-            this.tabbedControlGroup1.Size = new System.Drawing.Size(990, 448);
+            this.tabbedControlGroup1.Size = new System.Drawing.Size(990, 459);
             this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1,
             this.layoutControlGroup2});
@@ -1431,15 +2074,17 @@
             this.emptySpaceItem18,
             this.emptySpaceItem13,
             this.emptySpaceItem10,
-            this.layoutControlItem39});
+            this.layoutControlItem39,
+            this.layoutControlItem38,
+            this.layoutControlItem40});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(980, 414);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(980, 425);
             this.layoutControlGroup2.Text = "Entry Forecast";
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.textEdit1;
+            this.layoutControlItem3.Control = this.txePlanID;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(346, 24);
@@ -1457,7 +2102,7 @@
             // 
             // layoutControlItem17
             // 
-            this.layoutControlItem17.Control = this.dateEdit2;
+            this.layoutControlItem17.Control = this.dteDataUpdate;
             this.layoutControlItem17.Location = new System.Drawing.Point(0, 312);
             this.layoutControlItem17.Name = "layoutControlItem17";
             this.layoutControlItem17.Size = new System.Drawing.Size(283, 31);
@@ -1467,9 +2112,9 @@
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(346, 0);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(474, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(140, 24);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(12, 24);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem16
@@ -1485,13 +2130,13 @@
             this.layoutControlItem2.Control = this.gcINPUT;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 343);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(980, 71);
+            this.layoutControlItem2.Size = new System.Drawing.Size(980, 82);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.dateEdit1;
+            this.layoutControlItem5.Control = this.dteOrderDate;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(283, 24);
@@ -1537,7 +2182,7 @@
             // 
             // layoutControlItem10
             // 
-            this.layoutControlItem10.Control = this.textEdit3;
+            this.layoutControlItem10.Control = this.txeSampleCode;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 168);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(346, 24);
@@ -1564,7 +2209,7 @@
             // 
             // layoutControlItem13
             // 
-            this.layoutControlItem13.Control = this.textEdit5;
+            this.layoutControlItem13.Control = this.txeSewingDifficulty;
             this.layoutControlItem13.Location = new System.Drawing.Point(0, 240);
             this.layoutControlItem13.Name = "layoutControlItem13";
             this.layoutControlItem13.Size = new System.Drawing.Size(283, 24);
@@ -1573,7 +2218,7 @@
             // 
             // layoutControlItem14
             // 
-            this.layoutControlItem14.Control = this.textEdit6;
+            this.layoutControlItem14.Control = this.txePlanType;
             this.layoutControlItem14.Location = new System.Drawing.Point(0, 264);
             this.layoutControlItem14.Name = "layoutControlItem14";
             this.layoutControlItem14.Size = new System.Drawing.Size(346, 24);
@@ -1591,7 +2236,7 @@
             // 
             // layoutControlItem16
             // 
-            this.layoutControlItem16.Control = this.checkEdit1;
+            this.layoutControlItem16.Control = this.chkBookFabric;
             this.layoutControlItem16.Location = new System.Drawing.Point(486, 0);
             this.layoutControlItem16.Name = "layoutControlItem16";
             this.layoutControlItem16.Size = new System.Drawing.Size(105, 24);
@@ -1600,7 +2245,7 @@
             // 
             // layoutControlItem19
             // 
-            this.layoutControlItem19.Control = this.dateEdit3;
+            this.layoutControlItem19.Control = this.dteLastUpdate;
             this.layoutControlItem19.Location = new System.Drawing.Point(486, 24);
             this.layoutControlItem19.Name = "layoutControlItem19";
             this.layoutControlItem19.Size = new System.Drawing.Size(247, 24);
@@ -1609,7 +2254,7 @@
             // 
             // layoutControlItem18
             // 
-            this.layoutControlItem18.Control = this.checkEdit2;
+            this.layoutControlItem18.Control = this.chkBookAcc;
             this.layoutControlItem18.Location = new System.Drawing.Point(591, 0);
             this.layoutControlItem18.Name = "layoutControlItem18";
             this.layoutControlItem18.Size = new System.Drawing.Size(142, 24);
@@ -1618,7 +2263,7 @@
             // 
             // layoutControlItem20
             // 
-            this.layoutControlItem20.Control = this.dateEdit4;
+            this.layoutControlItem20.Control = this.dteWHDate;
             this.layoutControlItem20.Location = new System.Drawing.Point(486, 48);
             this.layoutControlItem20.Name = "layoutControlItem20";
             this.layoutControlItem20.Size = new System.Drawing.Size(247, 24);
@@ -1627,7 +2272,7 @@
             // 
             // layoutControlItem21
             // 
-            this.layoutControlItem21.Control = this.dateEdit5;
+            this.layoutControlItem21.Control = this.dteContractDate;
             this.layoutControlItem21.Location = new System.Drawing.Point(486, 72);
             this.layoutControlItem21.Name = "layoutControlItem21";
             this.layoutControlItem21.Size = new System.Drawing.Size(247, 24);
@@ -1654,7 +2299,7 @@
             // 
             // layoutControlItem24
             // 
-            this.layoutControlItem24.Control = this.textEdit7;
+            this.layoutControlItem24.Control = this.txeOrderQty;
             this.layoutControlItem24.Location = new System.Drawing.Point(486, 144);
             this.layoutControlItem24.Name = "layoutControlItem24";
             this.layoutControlItem24.Size = new System.Drawing.Size(247, 24);
@@ -1678,7 +2323,7 @@
             // 
             // layoutControlItem25
             // 
-            this.layoutControlItem25.Control = this.textEdit8;
+            this.layoutControlItem25.Control = this.txeFabricOrderNo;
             this.layoutControlItem25.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem25.Name = "layoutControlItem25";
             this.layoutControlItem25.Size = new System.Drawing.Size(237, 24);
@@ -1687,7 +2332,7 @@
             // 
             // layoutControlItem26
             // 
-            this.layoutControlItem26.Control = this.dateEdit6;
+            this.layoutControlItem26.Control = this.dteFabricUpdate;
             this.layoutControlItem26.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem26.Name = "layoutControlItem26";
             this.layoutControlItem26.Size = new System.Drawing.Size(237, 24);
@@ -1696,7 +2341,7 @@
             // 
             // layoutControlItem27
             // 
-            this.layoutControlItem27.Control = this.textEdit9;
+            this.layoutControlItem27.Control = this.txeFabricQty;
             this.layoutControlItem27.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem27.Name = "layoutControlItem27";
             this.layoutControlItem27.Size = new System.Drawing.Size(237, 24);
@@ -1705,7 +2350,7 @@
             // 
             // layoutControlItem28
             // 
-            this.layoutControlItem28.Control = this.textEdit10;
+            this.layoutControlItem28.Control = this.txeColorOrderNo;
             this.layoutControlItem28.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem28.Name = "layoutControlItem28";
             this.layoutControlItem28.Size = new System.Drawing.Size(237, 24);
@@ -1714,7 +2359,7 @@
             // 
             // layoutControlItem29
             // 
-            this.layoutControlItem29.Control = this.dateEdit7;
+            this.layoutControlItem29.Control = this.dteColorUpdate;
             this.layoutControlItem29.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem29.Name = "layoutControlItem29";
             this.layoutControlItem29.Size = new System.Drawing.Size(237, 24);
@@ -1723,7 +2368,7 @@
             // 
             // layoutControlItem30
             // 
-            this.layoutControlItem30.Control = this.textEdit11;
+            this.layoutControlItem30.Control = this.txeColorQty;
             this.layoutControlItem30.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem30.Name = "layoutControlItem30";
             this.layoutControlItem30.Size = new System.Drawing.Size(237, 24);
@@ -1744,7 +2389,7 @@
             // 
             // layoutControlItem31
             // 
-            this.layoutControlItem31.Control = this.textEdit12;
+            this.layoutControlItem31.Control = this.txeTrimOrderNo;
             this.layoutControlItem31.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem31.Name = "layoutControlItem31";
             this.layoutControlItem31.Size = new System.Drawing.Size(237, 24);
@@ -1753,7 +2398,7 @@
             // 
             // layoutControlItem32
             // 
-            this.layoutControlItem32.Control = this.dateEdit8;
+            this.layoutControlItem32.Control = this.dteTrimUpdate;
             this.layoutControlItem32.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem32.Name = "layoutControlItem32";
             this.layoutControlItem32.Size = new System.Drawing.Size(237, 24);
@@ -1762,7 +2407,7 @@
             // 
             // layoutControlItem33
             // 
-            this.layoutControlItem33.Control = this.textEdit13;
+            this.layoutControlItem33.Control = this.txeTrimQty;
             this.layoutControlItem33.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem33.Name = "layoutControlItem33";
             this.layoutControlItem33.Size = new System.Drawing.Size(237, 24);
@@ -1784,7 +2429,7 @@
             // 
             // layoutControlItem34
             // 
-            this.layoutControlItem34.Control = this.textEdit14;
+            this.layoutControlItem34.Control = this.txePOOrderNo;
             this.layoutControlItem34.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem34.Name = "layoutControlItem34";
             this.layoutControlItem34.Size = new System.Drawing.Size(237, 24);
@@ -1793,7 +2438,7 @@
             // 
             // layoutControlItem35
             // 
-            this.layoutControlItem35.Control = this.dateEdit9;
+            this.layoutControlItem35.Control = this.dtePOUpdate;
             this.layoutControlItem35.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem35.Name = "layoutControlItem35";
             this.layoutControlItem35.Size = new System.Drawing.Size(237, 24);
@@ -1802,7 +2447,7 @@
             // 
             // layoutControlItem36
             // 
-            this.layoutControlItem36.Control = this.textEdit15;
+            this.layoutControlItem36.Control = this.txePOQty;
             this.layoutControlItem36.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem36.Name = "layoutControlItem36";
             this.layoutControlItem36.Size = new System.Drawing.Size(237, 24);
@@ -1811,7 +2456,7 @@
             // 
             // layoutControlItem37
             // 
-            this.layoutControlItem37.Control = this.textEdit16;
+            this.layoutControlItem37.Control = this.txeOrderQtyOld;
             this.layoutControlItem37.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem37.Name = "layoutControlItem37";
             this.layoutControlItem37.Size = new System.Drawing.Size(237, 24);
@@ -1907,13 +2552,31 @@
             this.layoutControlItem39.Text = "Season";
             this.layoutControlItem39.TextSize = new System.Drawing.Size(145, 14);
             // 
+            // layoutControlItem38
+            // 
+            this.layoutControlItem38.Control = this.txeID;
+            this.layoutControlItem38.Location = new System.Drawing.Point(346, 0);
+            this.layoutControlItem38.Name = "layoutControlItem38";
+            this.layoutControlItem38.Size = new System.Drawing.Size(54, 24);
+            this.layoutControlItem38.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem38.TextVisible = false;
+            // 
+            // layoutControlItem40
+            // 
+            this.layoutControlItem40.Control = this.lblStatus;
+            this.layoutControlItem40.Location = new System.Drawing.Point(400, 0);
+            this.layoutControlItem40.Name = "layoutControlItem40";
+            this.layoutControlItem40.Size = new System.Drawing.Size(74, 24);
+            this.layoutControlItem40.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem40.TextVisible = false;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(980, 414);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(980, 425);
             this.layoutControlGroup1.Text = "SummaryImport Forecast";
             // 
             // layoutControlGroup3
@@ -1923,7 +2586,7 @@
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutControlGroup3.Size = new System.Drawing.Size(980, 414);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(980, 425);
             this.layoutControlGroup3.Text = "Forecast Order";
             // 
             // layoutControlItem1
@@ -1931,30 +2594,15 @@
             this.layoutControlItem1.Control = this.gcFO;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(970, 383);
+            this.layoutControlItem1.Size = new System.Drawing.Size(970, 394);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // ModelNo
-            // 
-            this.ModelNo.Caption = "Model No.";
-            this.ModelNo.ColumnEdit = this.repositoryItemTextEdit2;
-            this.ModelNo.FieldName = "ModelNo";
-            this.ModelNo.Name = "ModelNo";
-            this.ModelNo.Visible = true;
-            this.ModelNo.VisibleIndex = 9;
-            // 
-            // repositoryItemTextEdit2
-            // 
-            this.repositoryItemTextEdit2.AutoHeight = false;
-            this.repositoryItemTextEdit2.MaxLength = 30;
-            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
             // 
             // MPS01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 612);
+            this.ClientSize = new System.Drawing.Size(994, 623);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonControl);
             this.Name = "MPS01";
@@ -1965,57 +2613,58 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txeID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speSeason.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit16.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit15.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit9.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit9.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit14.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit13.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit8.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit6.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeOrderQtyOld.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txePOQty.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtePOUpdate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtePOUpdate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txePOOrderNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeTrimQty.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteTrimUpdate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteTrimUpdate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeTrimOrderNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeColorQty.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteColorUpdate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteColorUpdate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeColorOrderNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeFabricQty.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteFabricUpdate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteFabricUpdate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeFabricOrderNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeOrderQty.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueLogisticsType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit4View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueTransport.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit5.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit4.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit3.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteContractDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteContractDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteWHDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteWHDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteLastUpdate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteLastUpdate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkBookAcc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkBookFabric.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteDataUpdate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteDataUpdate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txePlanType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeSewingDifficulty.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueSupplier.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit4View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeStyle.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeSampleCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeItemName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueItemCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit3View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueSeason.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteOrderDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteOrderDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueCustomer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txePlanID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcINPUT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvINPUT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
@@ -2030,9 +2679,47 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit2View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit3View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit5.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit6.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit3View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit7.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit8.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit9.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit10.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcFO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvFO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueUnit.Properties)).EndInit();
@@ -2092,10 +2779,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem39)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem38)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem40)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2126,47 +2814,47 @@
         private DevExpress.XtraBars.BarButtonItem bbiExcel;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
-        private DevExpress.XtraEditors.TextEdit textEdit16;
-        private DevExpress.XtraEditors.TextEdit textEdit15;
-        private DevExpress.XtraEditors.DateEdit dateEdit9;
-        private DevExpress.XtraEditors.TextEdit textEdit14;
-        private DevExpress.XtraEditors.TextEdit textEdit13;
-        private DevExpress.XtraEditors.DateEdit dateEdit8;
-        private DevExpress.XtraEditors.TextEdit textEdit12;
-        private DevExpress.XtraEditors.TextEdit textEdit11;
-        private DevExpress.XtraEditors.DateEdit dateEdit7;
-        private DevExpress.XtraEditors.TextEdit textEdit10;
-        private DevExpress.XtraEditors.TextEdit textEdit9;
-        private DevExpress.XtraEditors.DateEdit dateEdit6;
-        private DevExpress.XtraEditors.TextEdit textEdit8;
-        private DevExpress.XtraEditors.TextEdit textEdit7;
+        private DevExpress.XtraEditors.TextEdit txeOrderQtyOld;
+        private DevExpress.XtraEditors.TextEdit txePOQty;
+        private DevExpress.XtraEditors.DateEdit dtePOUpdate;
+        private DevExpress.XtraEditors.TextEdit txePOOrderNo;
+        private DevExpress.XtraEditors.TextEdit txeTrimQty;
+        private DevExpress.XtraEditors.DateEdit dteTrimUpdate;
+        private DevExpress.XtraEditors.TextEdit txeTrimOrderNo;
+        private DevExpress.XtraEditors.TextEdit txeColorQty;
+        private DevExpress.XtraEditors.DateEdit dteColorUpdate;
+        private DevExpress.XtraEditors.TextEdit txeColorOrderNo;
+        private DevExpress.XtraEditors.TextEdit txeFabricQty;
+        private DevExpress.XtraEditors.DateEdit dteFabricUpdate;
+        private DevExpress.XtraEditors.TextEdit txeFabricOrderNo;
+        private DevExpress.XtraEditors.TextEdit txeOrderQty;
         private DevExpress.XtraEditors.GridLookUpEdit glueLogisticsType;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit4View;
         private DevExpress.XtraEditors.GridLookUpEdit glueTransport;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit3View;
-        private DevExpress.XtraEditors.DateEdit dateEdit5;
-        private DevExpress.XtraEditors.DateEdit dateEdit4;
-        private DevExpress.XtraEditors.DateEdit dateEdit3;
-        private DevExpress.XtraEditors.CheckEdit checkEdit2;
-        private DevExpress.XtraEditors.CheckEdit checkEdit1;
-        private DevExpress.XtraEditors.DateEdit dateEdit2;
+        private DevExpress.XtraEditors.DateEdit dteContractDate;
+        private DevExpress.XtraEditors.DateEdit dteWHDate;
+        private DevExpress.XtraEditors.DateEdit dteLastUpdate;
+        private DevExpress.XtraEditors.CheckEdit chkBookAcc;
+        private DevExpress.XtraEditors.CheckEdit chkBookFabric;
+        private DevExpress.XtraEditors.DateEdit dteDataUpdate;
         private DevExpress.XtraEditors.GridLookUpEdit glueStatus;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit2View;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.TextEdit txePlanType;
+        private DevExpress.XtraEditors.TextEdit txeSewingDifficulty;
         private DevExpress.XtraEditors.SearchLookUpEdit slueSupplier;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit4View;
         private DevExpress.XtraEditors.TextEdit txeStyle;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit txeSampleCode;
         private DevExpress.XtraEditors.TextEdit txeItemName;
         private DevExpress.XtraEditors.SearchLookUpEdit slueItemCode;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit3View;
         private DevExpress.XtraEditors.GridLookUpEdit glueSeason;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit dteOrderDate;
         private DevExpress.XtraEditors.SearchLookUpEdit slueCustomer;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txePlanID;
         private DevExpress.XtraGrid.GridControl gcINPUT;
         private DevExpress.XtraGrid.Views.Grid.GridView gvINPUT;
         private DevExpress.XtraGrid.GridControl gcFO;
@@ -2257,5 +2945,63 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgClone;
         private DevExpress.XtraGrid.Columns.GridColumn ModelNo;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
+        private DevExpress.XtraGrid.Columns.GridColumn OIDVEND;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repositoryItemSearchLookUpEdit3;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit3View;
+        private DevExpress.XtraGrid.Columns.GridColumn SewingDifficulty;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
+        private DevExpress.XtraGrid.Columns.GridColumn ProductionPlanType;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit4;
+        private DevExpress.XtraGrid.Columns.GridColumn DataUpdate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit3;
+        private DevExpress.XtraGrid.Columns.GridColumn BookingFabric;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn BookingAccessory;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
+        private DevExpress.XtraGrid.Columns.GridColumn LastUpdate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit5;
+        private DevExpress.XtraGrid.Columns.GridColumn RequestedWHDate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit6;
+        private DevExpress.XtraGrid.Columns.GridColumn ContractedDate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit4;
+        private DevExpress.XtraGrid.Columns.GridColumn TransportMethod;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit5;
+        private DevExpress.XtraGrid.Columns.GridColumn LogisticsType;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit6;
+        private DevExpress.XtraGrid.Columns.GridColumn OrderQty;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit7;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit3;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit3View;
+        private DevExpress.XtraGrid.Columns.GridColumn FabricOrderNO;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit8;
+        private DevExpress.XtraGrid.Columns.GridColumn FabricUpdateDate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit7;
+        private DevExpress.XtraGrid.Columns.GridColumn FabricActualOrderQty;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit9;
+        private DevExpress.XtraGrid.Columns.GridColumn ColorOrderNO;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit10;
+        private DevExpress.XtraGrid.Columns.GridColumn ColorUpdateDate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit8;
+        private DevExpress.XtraGrid.Columns.GridColumn ColorActualOrderQty;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit12;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit11;
+        private DevExpress.XtraGrid.Columns.GridColumn TrimOrderNO;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit13;
+        private DevExpress.XtraGrid.Columns.GridColumn TrimUpdateDate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit9;
+        private DevExpress.XtraGrid.Columns.GridColumn TrimActualOrderQty;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit14;
+        private DevExpress.XtraGrid.Columns.GridColumn POOrderNO;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit15;
+        private DevExpress.XtraGrid.Columns.GridColumn POUpdateDate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit10;
+        private DevExpress.XtraGrid.Columns.GridColumn POActualOrderQty;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit16;
+        private DevExpress.XtraGrid.Columns.GridColumn OrderQTYOld;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit17;
+        private DevExpress.XtraEditors.LabelControl lblStatus;
+        private DevExpress.XtraEditors.TextEdit txeID;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem38;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem40;
     }
 }
