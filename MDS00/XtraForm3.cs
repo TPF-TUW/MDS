@@ -58,21 +58,42 @@ namespace MDS00
         }
         private void RunProcess(string processName)
         {
-            foreach (DevExpress.XtraBars.Ribbon.RibbonForm frmActive in this.MdiChildren)
+            if (processName == "F01")
             {
-                if (frmActive.Name == processName)
+                foreach (DevExpress.XtraEditors.XtraForm frmActive in this.MdiChildren)
                 {
-                    frmActive.Activate();
-                    return;
+                    if (frmActive.Name == processName)
+                    {
+                        frmActive.Activate();
+                        return;
+                    }
                 }
+                FileInfo f = new FileInfo(Application.StartupPath + "\\" + processName + ".dll");
+                var a = Assembly.LoadFrom(f.FullName);
+                var t = a.GetType(processName + "." + processName);
+                DevExpress.XtraBars.ToolbarForm.ToolbarForm frm = (DevExpress.XtraBars.ToolbarForm.ToolbarForm)Activator.CreateInstance(t);
+                frm.MdiParent = this;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
             }
-            FileInfo f = new FileInfo(Application.StartupPath+"\\"+ processName + ".dll");
-            var a = Assembly.LoadFrom(f.FullName);
-            var t = a.GetType(processName+"."+processName);
-            DevExpress.XtraBars.Ribbon.RibbonForm frm = (DevExpress.XtraBars.Ribbon.RibbonForm)Activator.CreateInstance(t);
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            else
+            {
+                foreach (DevExpress.XtraEditors.XtraForm frmActive in this.MdiChildren)
+                {
+                    if (frmActive.Name == processName)
+                    {
+                        frmActive.Activate();
+                        return;
+                    }
+                }
+                FileInfo f = new FileInfo(Application.StartupPath + "\\" + processName + ".dll");
+                var a = Assembly.LoadFrom(f.FullName);
+                var t = a.GetType(processName + "." + processName);
+                DevExpress.XtraBars.Ribbon.RibbonForm frm = (DevExpress.XtraBars.Ribbon.RibbonForm)Activator.CreateInstance(t);
+                frm.MdiParent = this;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            }
         }
 
         private void AccordionControl1_ElementClick(object sender, ElementClickEventArgs e)

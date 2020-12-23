@@ -13,7 +13,7 @@ using TheepClass;
 
 namespace F01
 {
-    public partial class F01 : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class F01 : DevExpress.XtraBars.ToolbarForm.ToolbarForm
     {
         private Functionality.Function FUNC = new Functionality.Function();
         public F01()
