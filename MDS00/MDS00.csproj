@@ -149,6 +149,10 @@
       <Project>{0adb9106-1a7b-4922-8dba-18dccc8498ca}</Project>
       <Name>DEV03</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DEV04\DEV04.csproj">
+      <Project>{e306cc2a-c2d0-4c14-9988-85e3d18466b8}</Project>
+      <Name>DEV04</Name>
+    </ProjectReference>
     <ProjectReference Include="..\F01\F01.csproj">
       <Project>{7ee900af-c5bb-4c28-a529-4169e8c9b78a}</Project>
       <Name>F01</Name>
