@@ -83,6 +83,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MPS01-01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPS01-01.Designer.cs">
+      <DependentUpon>MPS01-01.cs</DependentUpon>
+    </Compile>
     <Compile Include="MPS01.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MPS01-01.resx">
+      <DependentUpon>MPS01-01.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MPS01.resx">
       <DependentUpon>MPS01.cs</DependentUpon>
     </EmbeddedResource>

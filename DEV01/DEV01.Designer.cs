@@ -310,41 +310,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.tabbedControlGroup1 = new DevExpress.XtraLayout.TabbedControlGroup();
-            this.layoutControlGroup8 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlGroup9 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem41 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup10 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem42 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem49 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem43 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem50 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem44 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem51 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem45 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem47 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem48 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem53 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem52 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem46 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem15 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem14 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem56 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem54 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem55 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem57 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem65 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem58 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup11 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem63 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem60 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem61 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem62 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup12 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup13 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem74 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -376,6 +341,41 @@
             this.layoutControlItem83 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem16 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem59 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup8 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlGroup9 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem41 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup10 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem42 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem49 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem43 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem50 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem44 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem51 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem45 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem47 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem48 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem53 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem52 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem46 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem15 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem14 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem56 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem54 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem55 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem57 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem65 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem58 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup11 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem63 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem60 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem61 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem62 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
@@ -568,41 +568,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem42)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem49)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem43)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem50)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem44)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem51)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem45)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem47)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem48)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem53)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem52)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem46)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem56)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem54)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem55)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem57)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem65)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem58)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem63)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem60)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem61)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem62)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem74)).BeginInit();
@@ -634,6 +599,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem83)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem59)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem42)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem49)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem43)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem50)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem44)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem51)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem45)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem47)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem48)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem53)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem52)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem46)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem56)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem54)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem55)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem57)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem65)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem58)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem63)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem60)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem61)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem62)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -3608,7 +3608,7 @@
             this.tabbedControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.tabbedControlGroup1.Name = "tabbedControlGroup1";
             this.tabbedControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup12;
+            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup1;
             this.tabbedControlGroup1.Size = new System.Drawing.Size(1336, 606);
             this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1,
@@ -3617,375 +3617,6 @@
             this.layoutControlGroup12});
             this.tabbedControlGroup1.TextLocation = DevExpress.Utils.Locations.Bottom;
             this.tabbedControlGroup1.SelectedPageChanged += new DevExpress.XtraLayout.LayoutTabPageChangedEventHandler(this.tabbedControlGroup1_SelectedPageChanged);
-            // 
-            // layoutControlGroup8
-            // 
-            this.layoutControlGroup8.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlGroup9,
-            this.layoutControlGroup10,
-            this.layoutControlGroup11,
-            this.layoutControlItem61,
-            this.layoutControlItem62});
-            this.layoutControlGroup8.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup8.Name = "layoutControlGroup8";
-            this.layoutControlGroup8.Size = new System.Drawing.Size(1326, 572);
-            this.layoutControlGroup8.Text = "Fabric";
-            // 
-            // layoutControlGroup9
-            // 
-            this.layoutControlGroup9.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem41});
-            this.layoutControlGroup9.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup9.Name = "layoutControlGroup9";
-            this.layoutControlGroup9.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutControlGroup9.Size = new System.Drawing.Size(465, 339);
-            this.layoutControlGroup9.Text = "List of Sample";
-            // 
-            // layoutControlItem41
-            // 
-            this.layoutControlItem41.Control = this.gridControl3;
-            this.layoutControlItem41.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem41.Name = "layoutControlItem41";
-            this.layoutControlItem41.Size = new System.Drawing.Size(455, 308);
-            this.layoutControlItem41.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem41.TextVisible = false;
-            // 
-            // layoutControlGroup10
-            // 
-            this.layoutControlGroup10.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem42,
-            this.layoutControlItem49,
-            this.layoutControlItem43,
-            this.layoutControlItem50,
-            this.layoutControlItem44,
-            this.layoutControlItem51,
-            this.layoutControlItem45,
-            this.layoutControlItem47,
-            this.layoutControlItem48,
-            this.layoutControlItem53,
-            this.layoutControlItem52,
-            this.layoutControlItem46,
-            this.emptySpaceItem15,
-            this.emptySpaceItem14,
-            this.layoutControlItem56,
-            this.layoutControlItem54,
-            this.layoutControlItem55,
-            this.layoutControlItem57,
-            this.layoutControlItem65,
-            this.layoutControlItem10,
-            this.layoutControlItem58});
-            this.layoutControlGroup10.Location = new System.Drawing.Point(465, 0);
-            this.layoutControlGroup10.Name = "layoutControlGroup10";
-            this.layoutControlGroup10.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutControlGroup10.Size = new System.Drawing.Size(861, 396);
-            this.layoutControlGroup10.Text = "Fabric Details";
-            // 
-            // layoutControlItem42
-            // 
-            this.layoutControlItem42.Control = this.txtSampleID_FB;
-            this.layoutControlItem42.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem42.Name = "layoutControlItem42";
-            this.layoutControlItem42.Size = new System.Drawing.Size(303, 24);
-            this.layoutControlItem42.Text = "Sample ID.";
-            this.layoutControlItem42.TextSize = new System.Drawing.Size(117, 14);
-            // 
-            // layoutControlItem49
-            // 
-            this.layoutControlItem49.Control = this.slFGColor_FB;
-            this.layoutControlItem49.Location = new System.Drawing.Point(303, 0);
-            this.layoutControlItem49.Name = "layoutControlItem49";
-            this.layoutControlItem49.Size = new System.Drawing.Size(359, 24);
-            this.layoutControlItem49.Text = "FG Color";
-            this.layoutControlItem49.TextSize = new System.Drawing.Size(117, 14);
-            // 
-            // layoutControlItem43
-            // 
-            this.layoutControlItem43.Control = this.txtFabricRacordID_FB;
-            this.layoutControlItem43.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem43.Name = "layoutControlItem43";
-            this.layoutControlItem43.Size = new System.Drawing.Size(303, 24);
-            this.layoutControlItem43.Text = "Fabric Record ID";
-            this.layoutControlItem43.TextSize = new System.Drawing.Size(117, 14);
-            // 
-            // layoutControlItem50
-            // 
-            this.layoutControlItem50.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
-            this.layoutControlItem50.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem50.Control = this.txtComposition_FB;
-            this.layoutControlItem50.Location = new System.Drawing.Point(303, 24);
-            this.layoutControlItem50.Name = "layoutControlItem50";
-            this.layoutControlItem50.Size = new System.Drawing.Size(359, 24);
-            this.layoutControlItem50.Text = "Composition";
-            this.layoutControlItem50.TextSize = new System.Drawing.Size(117, 14);
-            // 
-            // layoutControlItem44
-            // 
-            this.layoutControlItem44.Control = this.txtVendorFBCode_FB;
-            this.layoutControlItem44.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem44.Name = "layoutControlItem44";
-            this.layoutControlItem44.Size = new System.Drawing.Size(303, 24);
-            this.layoutControlItem44.Text = "Vendor Fabric Code";
-            this.layoutControlItem44.TextSize = new System.Drawing.Size(117, 14);
-            // 
-            // layoutControlItem51
-            // 
-            this.layoutControlItem51.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
-            this.layoutControlItem51.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem51.Control = this.txtWeightFB_FB;
-            this.layoutControlItem51.Location = new System.Drawing.Point(303, 48);
-            this.layoutControlItem51.Name = "layoutControlItem51";
-            this.layoutControlItem51.Size = new System.Drawing.Size(359, 24);
-            this.layoutControlItem51.Text = "Weight(Fabric)";
-            this.layoutControlItem51.TextSize = new System.Drawing.Size(117, 14);
-            // 
-            // layoutControlItem45
-            // 
-            this.layoutControlItem45.Control = this.txtSampleLotNo_FB;
-            this.layoutControlItem45.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem45.Name = "layoutControlItem45";
-            this.layoutControlItem45.Size = new System.Drawing.Size(303, 24);
-            this.layoutControlItem45.Text = "Sample Lot No.";
-            this.layoutControlItem45.TextSize = new System.Drawing.Size(117, 14);
-            // 
-            // layoutControlItem47
-            // 
-            this.layoutControlItem47.Control = this.slFBColor_FB;
-            this.layoutControlItem47.Location = new System.Drawing.Point(0, 120);
-            this.layoutControlItem47.Name = "layoutControlItem47";
-            this.layoutControlItem47.Size = new System.Drawing.Size(303, 24);
-            this.layoutControlItem47.Text = "Fabric Color";
-            this.layoutControlItem47.TextSize = new System.Drawing.Size(117, 14);
-            // 
-            // layoutControlItem48
-            // 
-            this.layoutControlItem48.Control = this.slFBCode_FB;
-            this.layoutControlItem48.Location = new System.Drawing.Point(0, 144);
-            this.layoutControlItem48.Name = "layoutControlItem48";
-            this.layoutControlItem48.Size = new System.Drawing.Size(303, 24);
-            this.layoutControlItem48.Text = "Fabric Code";
-            this.layoutControlItem48.TextSize = new System.Drawing.Size(117, 14);
-            // 
-            // layoutControlItem53
-            // 
-            this.layoutControlItem53.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
-            this.layoutControlItem53.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem53.Control = this.txtPrice_FB;
-            this.layoutControlItem53.Location = new System.Drawing.Point(303, 96);
-            this.layoutControlItem53.Name = "layoutControlItem53";
-            this.layoutControlItem53.Size = new System.Drawing.Size(220, 24);
-            this.layoutControlItem53.Text = "Price";
-            this.layoutControlItem53.TextSize = new System.Drawing.Size(117, 14);
-            // 
-            // layoutControlItem52
-            // 
-            this.layoutControlItem52.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
-            this.layoutControlItem52.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem52.Control = this.txtWidthCuttable_FB;
-            this.layoutControlItem52.Location = new System.Drawing.Point(303, 72);
-            this.layoutControlItem52.Name = "layoutControlItem52";
-            this.layoutControlItem52.Size = new System.Drawing.Size(359, 24);
-            this.layoutControlItem52.Text = "Width Cuttable";
-            this.layoutControlItem52.TextSize = new System.Drawing.Size(117, 14);
-            // 
-            // layoutControlItem46
-            // 
-            this.layoutControlItem46.Control = this.slVendor_FB;
-            this.layoutControlItem46.Location = new System.Drawing.Point(0, 96);
-            this.layoutControlItem46.Name = "layoutControlItem46";
-            this.layoutControlItem46.Size = new System.Drawing.Size(303, 24);
-            this.layoutControlItem46.Text = "Vendor";
-            this.layoutControlItem46.TextSize = new System.Drawing.Size(117, 14);
-            // 
-            // emptySpaceItem15
-            // 
-            this.emptySpaceItem15.AllowHotTrack = false;
-            this.emptySpaceItem15.Location = new System.Drawing.Point(523, 120);
-            this.emptySpaceItem15.Name = "emptySpaceItem15";
-            this.emptySpaceItem15.Size = new System.Drawing.Size(97, 24);
-            this.emptySpaceItem15.Text = "cm.";
-            this.emptySpaceItem15.TextSize = new System.Drawing.Size(117, 0);
-            this.emptySpaceItem15.TextVisible = true;
-            // 
-            // emptySpaceItem14
-            // 
-            this.emptySpaceItem14.AllowHotTrack = false;
-            this.emptySpaceItem14.Location = new System.Drawing.Point(523, 144);
-            this.emptySpaceItem14.Name = "emptySpaceItem14";
-            this.emptySpaceItem14.Size = new System.Drawing.Size(97, 24);
-            this.emptySpaceItem14.Text = "cm.";
-            this.emptySpaceItem14.TextSize = new System.Drawing.Size(117, 0);
-            this.emptySpaceItem14.TextVisible = true;
-            // 
-            // layoutControlItem56
-            // 
-            this.layoutControlItem56.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
-            this.layoutControlItem56.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem56.Control = this.glCurrency_FB;
-            this.layoutControlItem56.Location = new System.Drawing.Point(523, 96);
-            this.layoutControlItem56.Name = "layoutControlItem56";
-            this.layoutControlItem56.Size = new System.Drawing.Size(139, 24);
-            this.layoutControlItem56.Text = "Currency";
-            this.layoutControlItem56.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem56.TextSize = new System.Drawing.Size(48, 14);
-            this.layoutControlItem56.TextToControlDistance = 5;
-            // 
-            // layoutControlItem54
-            // 
-            this.layoutControlItem54.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
-            this.layoutControlItem54.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem54.Control = this.txtTotalWidth_FB;
-            this.layoutControlItem54.Location = new System.Drawing.Point(303, 120);
-            this.layoutControlItem54.Name = "layoutControlItem54";
-            this.layoutControlItem54.Size = new System.Drawing.Size(220, 24);
-            this.layoutControlItem54.Text = "Total Width";
-            this.layoutControlItem54.TextSize = new System.Drawing.Size(117, 14);
-            // 
-            // layoutControlItem55
-            // 
-            this.layoutControlItem55.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
-            this.layoutControlItem55.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem55.Control = this.txtUsableWidth_FB;
-            this.layoutControlItem55.Location = new System.Drawing.Point(303, 144);
-            this.layoutControlItem55.Name = "layoutControlItem55";
-            this.layoutControlItem55.Size = new System.Drawing.Size(220, 24);
-            this.layoutControlItem55.Text = "Usable Width";
-            this.layoutControlItem55.TextSize = new System.Drawing.Size(117, 14);
-            // 
-            // layoutControlItem57
-            // 
-            this.layoutControlItem57.Control = this.gcList_Fabric;
-            this.layoutControlItem57.Location = new System.Drawing.Point(0, 168);
-            this.layoutControlItem57.Name = "layoutControlItem57";
-            this.layoutControlItem57.Size = new System.Drawing.Size(662, 197);
-            this.layoutControlItem57.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem57.TextVisible = false;
-            // 
-            // layoutControlItem65
-            // 
-            this.layoutControlItem65.Control = this.btngetListFB_FB;
-            this.layoutControlItem65.Location = new System.Drawing.Point(620, 120);
-            this.layoutControlItem65.MaxSize = new System.Drawing.Size(42, 48);
-            this.layoutControlItem65.MinSize = new System.Drawing.Size(42, 48);
-            this.layoutControlItem65.Name = "layoutControlItem65";
-            this.layoutControlItem65.Size = new System.Drawing.Size(42, 48);
-            this.layoutControlItem65.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem65.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem65.TextVisible = false;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.gcPart_Fabric;
-            this.layoutControlItem10.Location = new System.Drawing.Point(662, 168);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(189, 197);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
-            // 
-            // layoutControlItem58
-            // 
-            this.layoutControlItem58.Control = this.gcSize_Fabric;
-            this.layoutControlItem58.Location = new System.Drawing.Point(662, 0);
-            this.layoutControlItem58.Name = "layoutControlItem58";
-            this.layoutControlItem58.Size = new System.Drawing.Size(189, 168);
-            this.layoutControlItem58.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem58.TextVisible = false;
-            // 
-            // layoutControlGroup11
-            // 
-            this.layoutControlGroup11.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem63,
-            this.layoutControlItem60});
-            this.layoutControlGroup11.Location = new System.Drawing.Point(0, 339);
-            this.layoutControlGroup11.Name = "layoutControlGroup11";
-            this.layoutControlGroup11.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutControlGroup11.Size = new System.Drawing.Size(465, 57);
-            this.layoutControlGroup11.Text = "Illustration of Fabric";
-            // 
-            // layoutControlItem63
-            // 
-            this.layoutControlItem63.Control = this.txtImgUpload_FB;
-            this.layoutControlItem63.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem63.Name = "layoutControlItem63";
-            this.layoutControlItem63.Size = new System.Drawing.Size(429, 26);
-            this.layoutControlItem63.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem63.TextVisible = false;
-            // 
-            // layoutControlItem60
-            // 
-            this.layoutControlItem60.Control = this.simpleButton5;
-            this.layoutControlItem60.Location = new System.Drawing.Point(429, 0);
-            this.layoutControlItem60.MaxSize = new System.Drawing.Size(26, 26);
-            this.layoutControlItem60.MinSize = new System.Drawing.Size(26, 26);
-            this.layoutControlItem60.Name = "layoutControlItem60";
-            this.layoutControlItem60.Size = new System.Drawing.Size(26, 26);
-            this.layoutControlItem60.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem60.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem60.TextVisible = false;
-            // 
-            // layoutControlItem61
-            // 
-            this.layoutControlItem61.Control = this.picUpload_FB;
-            this.layoutControlItem61.Location = new System.Drawing.Point(0, 396);
-            this.layoutControlItem61.Name = "layoutControlItem61";
-            this.layoutControlItem61.Size = new System.Drawing.Size(166, 176);
-            this.layoutControlItem61.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem61.TextVisible = false;
-            // 
-            // layoutControlItem62
-            // 
-            this.layoutControlItem62.Control = this.gridControl5;
-            this.layoutControlItem62.Location = new System.Drawing.Point(166, 396);
-            this.layoutControlItem62.Name = "layoutControlItem62";
-            this.layoutControlItem62.Size = new System.Drawing.Size(1160, 176);
-            this.layoutControlItem62.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem62.TextVisible = false;
-            // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlGroup3});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1326, 572);
-            this.layoutControlGroup1.Text = "List of Sample";
-            // 
-            // layoutControlGroup3
-            // 
-            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1});
-            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutControlGroup3.Size = new System.Drawing.Size(1326, 572);
-            this.layoutControlGroup3.Text = "List of Sample";
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.gridControl1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1316, 541);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
-            // layoutControlGroup2
-            // 
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem2});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1326, 572);
-            this.layoutControlGroup2.Text = "Main";
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.layoutControl2;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1326, 572);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlGroup12
             // 
@@ -4311,6 +3942,375 @@
             this.layoutControlItem59.TextSize = new System.Drawing.Size(117, 14);
             this.layoutControlItem59.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroup3});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1326, 572);
+            this.layoutControlGroup1.Text = "List of Sample";
+            // 
+            // layoutControlGroup3
+            // 
+            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1});
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup3.Name = "layoutControlGroup3";
+            this.layoutControlGroup3.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(1326, 572);
+            this.layoutControlGroup3.Text = "List of Sample";
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.gridControl1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(1316, 541);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem2});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1326, 572);
+            this.layoutControlGroup2.Text = "Main";
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.layoutControl2;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(1326, 572);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // layoutControlGroup8
+            // 
+            this.layoutControlGroup8.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroup9,
+            this.layoutControlGroup10,
+            this.layoutControlGroup11,
+            this.layoutControlItem61,
+            this.layoutControlItem62});
+            this.layoutControlGroup8.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup8.Name = "layoutControlGroup8";
+            this.layoutControlGroup8.Size = new System.Drawing.Size(1326, 572);
+            this.layoutControlGroup8.Text = "Fabric";
+            // 
+            // layoutControlGroup9
+            // 
+            this.layoutControlGroup9.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem41});
+            this.layoutControlGroup9.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup9.Name = "layoutControlGroup9";
+            this.layoutControlGroup9.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.layoutControlGroup9.Size = new System.Drawing.Size(465, 339);
+            this.layoutControlGroup9.Text = "List of Sample";
+            // 
+            // layoutControlItem41
+            // 
+            this.layoutControlItem41.Control = this.gridControl3;
+            this.layoutControlItem41.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem41.Name = "layoutControlItem41";
+            this.layoutControlItem41.Size = new System.Drawing.Size(455, 308);
+            this.layoutControlItem41.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem41.TextVisible = false;
+            // 
+            // layoutControlGroup10
+            // 
+            this.layoutControlGroup10.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem42,
+            this.layoutControlItem49,
+            this.layoutControlItem43,
+            this.layoutControlItem50,
+            this.layoutControlItem44,
+            this.layoutControlItem51,
+            this.layoutControlItem45,
+            this.layoutControlItem47,
+            this.layoutControlItem48,
+            this.layoutControlItem53,
+            this.layoutControlItem52,
+            this.layoutControlItem46,
+            this.emptySpaceItem15,
+            this.emptySpaceItem14,
+            this.layoutControlItem56,
+            this.layoutControlItem54,
+            this.layoutControlItem55,
+            this.layoutControlItem57,
+            this.layoutControlItem65,
+            this.layoutControlItem10,
+            this.layoutControlItem58});
+            this.layoutControlGroup10.Location = new System.Drawing.Point(465, 0);
+            this.layoutControlGroup10.Name = "layoutControlGroup10";
+            this.layoutControlGroup10.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.layoutControlGroup10.Size = new System.Drawing.Size(861, 396);
+            this.layoutControlGroup10.Text = "Fabric Details";
+            // 
+            // layoutControlItem42
+            // 
+            this.layoutControlItem42.Control = this.txtSampleID_FB;
+            this.layoutControlItem42.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem42.Name = "layoutControlItem42";
+            this.layoutControlItem42.Size = new System.Drawing.Size(303, 24);
+            this.layoutControlItem42.Text = "Sample ID.";
+            this.layoutControlItem42.TextSize = new System.Drawing.Size(117, 14);
+            // 
+            // layoutControlItem49
+            // 
+            this.layoutControlItem49.Control = this.slFGColor_FB;
+            this.layoutControlItem49.Location = new System.Drawing.Point(303, 0);
+            this.layoutControlItem49.Name = "layoutControlItem49";
+            this.layoutControlItem49.Size = new System.Drawing.Size(359, 24);
+            this.layoutControlItem49.Text = "FG Color";
+            this.layoutControlItem49.TextSize = new System.Drawing.Size(117, 14);
+            // 
+            // layoutControlItem43
+            // 
+            this.layoutControlItem43.Control = this.txtFabricRacordID_FB;
+            this.layoutControlItem43.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem43.Name = "layoutControlItem43";
+            this.layoutControlItem43.Size = new System.Drawing.Size(303, 24);
+            this.layoutControlItem43.Text = "Fabric Record ID";
+            this.layoutControlItem43.TextSize = new System.Drawing.Size(117, 14);
+            // 
+            // layoutControlItem50
+            // 
+            this.layoutControlItem50.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
+            this.layoutControlItem50.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem50.Control = this.txtComposition_FB;
+            this.layoutControlItem50.Location = new System.Drawing.Point(303, 24);
+            this.layoutControlItem50.Name = "layoutControlItem50";
+            this.layoutControlItem50.Size = new System.Drawing.Size(359, 24);
+            this.layoutControlItem50.Text = "Composition";
+            this.layoutControlItem50.TextSize = new System.Drawing.Size(117, 14);
+            // 
+            // layoutControlItem44
+            // 
+            this.layoutControlItem44.Control = this.txtVendorFBCode_FB;
+            this.layoutControlItem44.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem44.Name = "layoutControlItem44";
+            this.layoutControlItem44.Size = new System.Drawing.Size(303, 24);
+            this.layoutControlItem44.Text = "Vendor Fabric Code";
+            this.layoutControlItem44.TextSize = new System.Drawing.Size(117, 14);
+            // 
+            // layoutControlItem51
+            // 
+            this.layoutControlItem51.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
+            this.layoutControlItem51.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem51.Control = this.txtWeightFB_FB;
+            this.layoutControlItem51.Location = new System.Drawing.Point(303, 48);
+            this.layoutControlItem51.Name = "layoutControlItem51";
+            this.layoutControlItem51.Size = new System.Drawing.Size(359, 24);
+            this.layoutControlItem51.Text = "Weight(Fabric)";
+            this.layoutControlItem51.TextSize = new System.Drawing.Size(117, 14);
+            // 
+            // layoutControlItem45
+            // 
+            this.layoutControlItem45.Control = this.txtSampleLotNo_FB;
+            this.layoutControlItem45.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem45.Name = "layoutControlItem45";
+            this.layoutControlItem45.Size = new System.Drawing.Size(303, 24);
+            this.layoutControlItem45.Text = "Sample Lot No.";
+            this.layoutControlItem45.TextSize = new System.Drawing.Size(117, 14);
+            // 
+            // layoutControlItem47
+            // 
+            this.layoutControlItem47.Control = this.slFBColor_FB;
+            this.layoutControlItem47.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem47.Name = "layoutControlItem47";
+            this.layoutControlItem47.Size = new System.Drawing.Size(303, 24);
+            this.layoutControlItem47.Text = "Fabric Color";
+            this.layoutControlItem47.TextSize = new System.Drawing.Size(117, 14);
+            // 
+            // layoutControlItem48
+            // 
+            this.layoutControlItem48.Control = this.slFBCode_FB;
+            this.layoutControlItem48.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem48.Name = "layoutControlItem48";
+            this.layoutControlItem48.Size = new System.Drawing.Size(303, 24);
+            this.layoutControlItem48.Text = "Fabric Code";
+            this.layoutControlItem48.TextSize = new System.Drawing.Size(117, 14);
+            // 
+            // layoutControlItem53
+            // 
+            this.layoutControlItem53.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
+            this.layoutControlItem53.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem53.Control = this.txtPrice_FB;
+            this.layoutControlItem53.Location = new System.Drawing.Point(303, 96);
+            this.layoutControlItem53.Name = "layoutControlItem53";
+            this.layoutControlItem53.Size = new System.Drawing.Size(220, 24);
+            this.layoutControlItem53.Text = "Price";
+            this.layoutControlItem53.TextSize = new System.Drawing.Size(117, 14);
+            // 
+            // layoutControlItem52
+            // 
+            this.layoutControlItem52.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
+            this.layoutControlItem52.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem52.Control = this.txtWidthCuttable_FB;
+            this.layoutControlItem52.Location = new System.Drawing.Point(303, 72);
+            this.layoutControlItem52.Name = "layoutControlItem52";
+            this.layoutControlItem52.Size = new System.Drawing.Size(359, 24);
+            this.layoutControlItem52.Text = "Width Cuttable";
+            this.layoutControlItem52.TextSize = new System.Drawing.Size(117, 14);
+            // 
+            // layoutControlItem46
+            // 
+            this.layoutControlItem46.Control = this.slVendor_FB;
+            this.layoutControlItem46.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem46.Name = "layoutControlItem46";
+            this.layoutControlItem46.Size = new System.Drawing.Size(303, 24);
+            this.layoutControlItem46.Text = "Vendor";
+            this.layoutControlItem46.TextSize = new System.Drawing.Size(117, 14);
+            // 
+            // emptySpaceItem15
+            // 
+            this.emptySpaceItem15.AllowHotTrack = false;
+            this.emptySpaceItem15.Location = new System.Drawing.Point(523, 120);
+            this.emptySpaceItem15.Name = "emptySpaceItem15";
+            this.emptySpaceItem15.Size = new System.Drawing.Size(97, 24);
+            this.emptySpaceItem15.Text = "cm.";
+            this.emptySpaceItem15.TextSize = new System.Drawing.Size(117, 0);
+            this.emptySpaceItem15.TextVisible = true;
+            // 
+            // emptySpaceItem14
+            // 
+            this.emptySpaceItem14.AllowHotTrack = false;
+            this.emptySpaceItem14.Location = new System.Drawing.Point(523, 144);
+            this.emptySpaceItem14.Name = "emptySpaceItem14";
+            this.emptySpaceItem14.Size = new System.Drawing.Size(97, 24);
+            this.emptySpaceItem14.Text = "cm.";
+            this.emptySpaceItem14.TextSize = new System.Drawing.Size(117, 0);
+            this.emptySpaceItem14.TextVisible = true;
+            // 
+            // layoutControlItem56
+            // 
+            this.layoutControlItem56.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
+            this.layoutControlItem56.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem56.Control = this.glCurrency_FB;
+            this.layoutControlItem56.Location = new System.Drawing.Point(523, 96);
+            this.layoutControlItem56.Name = "layoutControlItem56";
+            this.layoutControlItem56.Size = new System.Drawing.Size(139, 24);
+            this.layoutControlItem56.Text = "Currency";
+            this.layoutControlItem56.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem56.TextSize = new System.Drawing.Size(48, 14);
+            this.layoutControlItem56.TextToControlDistance = 5;
+            // 
+            // layoutControlItem54
+            // 
+            this.layoutControlItem54.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
+            this.layoutControlItem54.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem54.Control = this.txtTotalWidth_FB;
+            this.layoutControlItem54.Location = new System.Drawing.Point(303, 120);
+            this.layoutControlItem54.Name = "layoutControlItem54";
+            this.layoutControlItem54.Size = new System.Drawing.Size(220, 24);
+            this.layoutControlItem54.Text = "Total Width";
+            this.layoutControlItem54.TextSize = new System.Drawing.Size(117, 14);
+            // 
+            // layoutControlItem55
+            // 
+            this.layoutControlItem55.AppearanceItemCaption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Question;
+            this.layoutControlItem55.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem55.Control = this.txtUsableWidth_FB;
+            this.layoutControlItem55.Location = new System.Drawing.Point(303, 144);
+            this.layoutControlItem55.Name = "layoutControlItem55";
+            this.layoutControlItem55.Size = new System.Drawing.Size(220, 24);
+            this.layoutControlItem55.Text = "Usable Width";
+            this.layoutControlItem55.TextSize = new System.Drawing.Size(117, 14);
+            // 
+            // layoutControlItem57
+            // 
+            this.layoutControlItem57.Control = this.gcList_Fabric;
+            this.layoutControlItem57.Location = new System.Drawing.Point(0, 168);
+            this.layoutControlItem57.Name = "layoutControlItem57";
+            this.layoutControlItem57.Size = new System.Drawing.Size(662, 197);
+            this.layoutControlItem57.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem57.TextVisible = false;
+            // 
+            // layoutControlItem65
+            // 
+            this.layoutControlItem65.Control = this.btngetListFB_FB;
+            this.layoutControlItem65.Location = new System.Drawing.Point(620, 120);
+            this.layoutControlItem65.MaxSize = new System.Drawing.Size(42, 48);
+            this.layoutControlItem65.MinSize = new System.Drawing.Size(42, 48);
+            this.layoutControlItem65.Name = "layoutControlItem65";
+            this.layoutControlItem65.Size = new System.Drawing.Size(42, 48);
+            this.layoutControlItem65.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem65.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem65.TextVisible = false;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.gcPart_Fabric;
+            this.layoutControlItem10.Location = new System.Drawing.Point(662, 168);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(189, 197);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem10.TextVisible = false;
+            // 
+            // layoutControlItem58
+            // 
+            this.layoutControlItem58.Control = this.gcSize_Fabric;
+            this.layoutControlItem58.Location = new System.Drawing.Point(662, 0);
+            this.layoutControlItem58.Name = "layoutControlItem58";
+            this.layoutControlItem58.Size = new System.Drawing.Size(189, 168);
+            this.layoutControlItem58.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem58.TextVisible = false;
+            // 
+            // layoutControlGroup11
+            // 
+            this.layoutControlGroup11.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem63,
+            this.layoutControlItem60});
+            this.layoutControlGroup11.Location = new System.Drawing.Point(0, 339);
+            this.layoutControlGroup11.Name = "layoutControlGroup11";
+            this.layoutControlGroup11.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.layoutControlGroup11.Size = new System.Drawing.Size(465, 57);
+            this.layoutControlGroup11.Text = "Illustration of Fabric";
+            // 
+            // layoutControlItem63
+            // 
+            this.layoutControlItem63.Control = this.txtImgUpload_FB;
+            this.layoutControlItem63.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem63.Name = "layoutControlItem63";
+            this.layoutControlItem63.Size = new System.Drawing.Size(429, 26);
+            this.layoutControlItem63.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem63.TextVisible = false;
+            // 
+            // layoutControlItem60
+            // 
+            this.layoutControlItem60.Control = this.simpleButton5;
+            this.layoutControlItem60.Location = new System.Drawing.Point(429, 0);
+            this.layoutControlItem60.MaxSize = new System.Drawing.Size(26, 26);
+            this.layoutControlItem60.MinSize = new System.Drawing.Size(26, 26);
+            this.layoutControlItem60.Name = "layoutControlItem60";
+            this.layoutControlItem60.Size = new System.Drawing.Size(26, 26);
+            this.layoutControlItem60.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem60.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem60.TextVisible = false;
+            // 
+            // layoutControlItem61
+            // 
+            this.layoutControlItem61.Control = this.picUpload_FB;
+            this.layoutControlItem61.Location = new System.Drawing.Point(0, 396);
+            this.layoutControlItem61.Name = "layoutControlItem61";
+            this.layoutControlItem61.Size = new System.Drawing.Size(166, 176);
+            this.layoutControlItem61.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem61.TextVisible = false;
+            // 
+            // layoutControlItem62
+            // 
+            this.layoutControlItem62.Control = this.gridControl5;
+            this.layoutControlItem62.Location = new System.Drawing.Point(166, 396);
+            this.layoutControlItem62.Name = "layoutControlItem62";
+            this.layoutControlItem62.Size = new System.Drawing.Size(1160, 176);
+            this.layoutControlItem62.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem62.TextVisible = false;
+            // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
@@ -4526,41 +4526,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem42)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem49)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem43)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem50)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem44)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem51)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem45)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem47)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem48)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem53)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem52)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem46)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem56)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem54)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem55)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem57)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem65)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem58)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem63)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem60)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem61)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem62)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem74)).EndInit();
@@ -4592,6 +4557,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem83)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem59)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem42)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem49)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem43)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem50)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem44)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem51)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem45)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem47)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem48)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem53)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem52)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem46)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem56)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem54)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem55)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem57)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem65)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem58)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem63)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem60)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem61)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem62)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

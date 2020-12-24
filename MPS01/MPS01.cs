@@ -1923,5 +1923,11 @@ namespace MPS01
                 }
             }
         }
+
+        private void sbAddItem_Click(object sender, EventArgs e)
+        {
+            var frm = new MPS01_01();
+            frm.ShowDialog(this);
+        }
     }
 }

@@ -99,12 +99,12 @@
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bbiPrint = new DevExpress.XtraBars.BarButtonItem();
             this.bbiExcel = new DevExpress.XtraBars.BarButtonItem();
+            this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
-            this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -806,7 +806,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.skinDropDownButtonItem1, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.skinPaletteDropDownButtonItem1)});
             this.bar1.OptionsBar.UseWholeRow = true;
-            this.bar1.Text = "Custom 2";
+            this.bar1.Text = "Tools";
             // 
             // bbiNew
             // 
@@ -888,6 +888,18 @@
             this.bbiExcel.Name = "bbiExcel";
             this.bbiExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExcel_ItemClick);
             // 
+            // skinDropDownButtonItem1
+            // 
+            this.skinDropDownButtonItem1.Id = 8;
+            this.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
+            this.skinDropDownButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // skinPaletteDropDownButtonItem1
+            // 
+            this.skinPaletteDropDownButtonItem1.Id = 9;
+            this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
+            this.skinPaletteDropDownButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -919,18 +931,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1118, 71);
             this.barDockControlRight.Manager = this.toolbarFormManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 673);
-            // 
-            // skinDropDownButtonItem1
-            // 
-            this.skinDropDownButtonItem1.Id = 8;
-            this.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
-            this.skinDropDownButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // skinPaletteDropDownButtonItem1
-            // 
-            this.skinPaletteDropDownButtonItem1.Id = 9;
-            this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
-            this.skinPaletteDropDownButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // F01
             // 
