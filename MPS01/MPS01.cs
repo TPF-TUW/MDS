@@ -185,7 +185,7 @@ namespace MPS01
             new ObjDevEx.setSearchLookUpEdit(slueItemCode, sbSQL, "ItemCode", "ID").getData();
 
             sbSQL.Clear();
-            sbSQL.Append("SELECT BusinessUnit ");
+            sbSQL.Append("SELECT DISTINCT BusinessUnit ");
             sbSQL.Append("FROM COForecast ");
             sbSQL.Append("ORDER BY BusinessUnit");
             new ObjDevEx.setGridLookUpEdit(glueUnit, sbSQL, "BusinessUnit", "BusinessUnit").getData();

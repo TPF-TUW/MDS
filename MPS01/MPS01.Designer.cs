@@ -3200,7 +3200,6 @@
         private DevExpress.XtraEditors.TextEdit txeStyle;
         private DevExpress.XtraEditors.TextEdit txeSampleCode;
         private DevExpress.XtraEditors.TextEdit txeItemName;
-        private DevExpress.XtraEditors.SearchLookUpEdit slueItemCode;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit3View;
         private DevExpress.XtraEditors.GridLookUpEdit glueSeason;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
@@ -3381,5 +3380,6 @@
         private DevExpress.XtraLayout.LayoutControlItem lciPregressSave;
         private DevExpress.XtraEditors.SimpleButton sbAddItem;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem46;
+        internal DevExpress.XtraEditors.SearchLookUpEdit slueItemCode;
     }
 }
