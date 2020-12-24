@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
+using DBConnection;
 
 namespace MPS01
 {
@@ -20,7 +21,7 @@ namespace MPS01
         //SqlConnection mainConn = new classConn().MDS();
         SqlConnection conn;
         string sql = string.Empty;
-
+        private Functionality.Function FUNC = new Functionality.Function();
         public MPS01_01()
         {
             InitializeComponent();
@@ -33,39 +34,159 @@ namespace MPS01
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            //string CustomerName = txtCustomerName.Text.ToString().Trim().Replace("'","''");
-            //string CustomerShortName = txtCustomerShortName.Text.ToString().Trim().Replace("'", "''");
-            //string CustomerCode = txtCustomerCode.Text.ToString().Trim().Replace("'", "''");
+            if (slueCustomer.Text.Trim() == "")
+            {
+                FUNC.msgWarning("Please select customer.");
+                slueCustomer.Focus();
+            }
+            else if (txeItemCode.Text.Trim() == "")
+            {
+                FUNC.msgWarning("Please input item code.");
+                txeItemCode.Focus();
+            }
+            else if (txeItemName.Text.Trim() == "")
+            {
+                FUNC.msgWarning("Please input item name.");
+                txeItemName.Focus();
+            }
+            else if (txeStyleNo.Text.Trim() == "")
+            {
+                FUNC.msgWarning("Please input style no.");
+                txeStyleNo.Focus();
+            }
+            else if (glueSeason.Text.Trim() == "")
+            {
+                FUNC.msgWarning("Please select season.");
+                glueSeason.Focus();
+            }
+            else
+            {
+                txeItemCode.Text = txeItemCode.Text.ToUpper().Trim();
+                bool chkGMP = chkDuplicate();
 
-            //if (CustomerName == "") { chkNull("CustomerName", txtCustomerName); }
-            //else if (CustomerShortName == "") { chkNull("CustomerShortName", txtCustomerShortName); }
-            //else if (CustomerCode == "") { chkNull("CustomerCode", txtCustomerCode); }
-            //else
-            //{
-            //    //chkDup
-            //    if (db.get("Select ShortName From Customer Where ShortName = '" + CustomerShortName + "' ", mainConn) == true)
-            //    {
-            //        ct.showWarningMessage("CustomerShortName is Duplicate!"); txtCustomerShortName.Focus(); return;
-            //    }
-            //    else if (db.get("Select Code From Customer Where Code = '" + CustomerCode + "' ", mainConn) == true)
-            //    {
-            //        ct.showWarningMessage("CustomerCode is Duplicate!"); txtCustomerCode.Focus(); return;
-            //    }
-            //    else
-            //    {
-            //        if (ct.doConfirm("SAVE Customer?") == true)
-            //        {
-            //            sql = "Insert into Customer(Name,/**/ShortName,/**/Code,CustomerType) Values ('" + CustomerName + "','" + CustomerShortName + "','" + CustomerCode + "',9)";
-            //            Console.WriteLine(sql);
-            //            int i = db.Query(sql, mainConn);
-            //            if (i > 0)
-            //            {
-            //                ct.showInfoMessage("Save Customer is Successfull.");
-            //                this.Close();
-            //            }
-            //        }
-            //    }
-            //}
+                if (chkGMP == true)
+                {
+                    if (FUNC.msgQuiz("Confirm save data ?") == true)
+                    {
+                        StringBuilder sbSQL = new StringBuilder();
+                        sbSQL.Append("  INSERT INTO ItemCustomer(OIDCUST, ItemCode, ItemName, StyleNo, Season) ");
+                        sbSQL.Append("  VALUES('" + slueCustomer.EditValue.ToString() + "', N'" + txeItemCode.Text.Trim().Replace("'", "''") + "', N'" + txeItemName.Text.Trim().Replace("'", "''") + "', N'" + txeStyleNo.Text.Trim().Replace("'", "''") + "', N'" + speSeason.Value.ToString() + glueSeason.EditValue.ToString() + "') ");
+
+                        if (sbSQL.Length > 0)
+                        {
+                            try
+                            {
+                                bool chkSAVE = new DBQuery(sbSQL).runSQL();
+                                if (chkSAVE == true)
+                                {
+                                    FUNC.msgInfo("Save complete.");
+                                    NewData();
+                                }
+                            }
+                            catch (Exception)
+                            { }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void NewData()
+        {
+            slueCustomer.EditValue = "";
+            txeItemCode.Text = "";
+            txeItemName.Text = "";
+            txeStyleNo.Text = "";
+            speSeason.Value = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
+            glueSeason.EditValue = "";
+            slueCustomer.Focus();
+        }
+
+        private void MPS01_01_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            StringBuilder sbSQL = new StringBuilder();
+            sbSQL.Append("SELECT ITC.ItemCode, ITC.ItemName, CUS.Name AS Customer, ITC.StyleNo AS [StyleNo.], ITC.Season, ITC.OIDCSITEM AS ID ");
+            sbSQL.Append("FROM   ItemCustomer AS ITC LEFT OUTER JOIN ");
+            sbSQL.Append("       Customer AS CUS ON ITC.OIDCUST = CUS.OIDCUST ");
+            sbSQL.Append("ORDER BY ITC.ItemCode ");
+            MPS01 frmMPS = Application.OpenForms.OfType<MPS01>().First();
+            new ObjDevEx.setSearchLookUpEdit(frmMPS.slueItemCode, sbSQL, "ItemCode", "ID").getData();
+        }
+
+        private void MPS01_01_Load(object sender, EventArgs e)
+        {
+            StringBuilder sbSQL = new StringBuilder();
+            sbSQL.Append("SELECT Code, Name AS Customer, OIDCUST AS ID ");
+            sbSQL.Append("FROM Customer ");
+            sbSQL.Append("ORDER BY Code ");
+            new ObjDevEx.setSearchLookUpEdit(slueCustomer, sbSQL, "Customer", "ID").getData();
+
+            sbSQL.Clear();
+            sbSQL.Append("SELECT SeasonNo AS [Season No.], SeasonName AS [Season Name] ");
+            sbSQL.Append("FROM Season ");
+            sbSQL.Append("ORDER BY OIDSEASON");
+            new ObjDevEx.setGridLookUpEdit(glueSeason, sbSQL, "Season No.", "Season No.").getData();
+
+            NewData();
+        }
+
+        private void slueCustomer_EditValueChanged(object sender, EventArgs e)
+        {
+            txeItemCode.Focus();
+        }
+
+        private void txeItemCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txeItemName.Focus();
+            }
+        }
+
+        private void txeItemCode_Leave(object sender, EventArgs e)
+        {
+            if (txeItemCode.Text.Trim() != "")
+            {
+                bool chkDup = chkDuplicate();
+                if (chkDup == false)
+                {
+                    txeItemCode.Text = "";
+                    txeItemCode.Focus();
+                    FUNC.msgWarning("Duplicate item code. !! Please Change.");
+                }
+            }
+        }
+
+        private bool chkDuplicate()
+        {
+            bool chkDup = true;
+            if (txeItemCode.Text != "")
+            {
+                txeItemCode.Text = txeItemCode.Text.ToUpper().Trim();
+                StringBuilder sbSQL = new StringBuilder();
+                sbSQL.Append("SELECT TOP(1) ItemCode FROM ItemCustomer WHERE (ItemCode = N'" + txeItemCode.Text.Trim().Replace("'", "''") + "') ");
+                if (new DBQuery(sbSQL).getString() != "")
+                {
+                    chkDup = false;
+                }
+            }
+            return chkDup;
+        }
+
+        private void txeItemName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txeStyleNo.Focus();
+            }
+        }
+
+        private void txeStyleNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                speSeason.Focus();
+            }
         }
     }
 }
