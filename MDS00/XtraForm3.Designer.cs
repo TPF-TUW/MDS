@@ -399,6 +399,7 @@ namespace MDS00
             // 
             // accordionControlElement35
             // 
+            this.accordionControlElement35.Hint = "MPS02";
             this.accordionControlElement35.Name = "accordionControlElement35";
             this.accordionControlElement35.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement35.Text = "Sales Order";
