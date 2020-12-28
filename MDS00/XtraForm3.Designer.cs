@@ -400,36 +400,42 @@ namespace MDS00
             // accordionControlElement35
             // 
             this.accordionControlElement35.Hint = "MPS02";
+            this.accordionControlElement35.ImageOptions.Image = global::MDS00.Resource1.MPS02;
             this.accordionControlElement35.Name = "accordionControlElement35";
             this.accordionControlElement35.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement35.Text = "Sales Order";
             // 
             // accordionControlElement36
             // 
+            this.accordionControlElement36.Hint = "MPS03";
             this.accordionControlElement36.Name = "accordionControlElement36";
             this.accordionControlElement36.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement36.Text = "Calculate MPS";
             // 
             // accordionControlElement37
             // 
+            this.accordionControlElement37.Hint = "MPS04";
             this.accordionControlElement37.Name = "accordionControlElement37";
             this.accordionControlElement37.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement37.Text = "MPS Schedule";
             // 
             // accordionControlElement38
             // 
+            this.accordionControlElement38.Hint = "MPS05";
             this.accordionControlElement38.Name = "accordionControlElement38";
             this.accordionControlElement38.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement38.Text = "Production Schedule";
             // 
             // accordionControlElement39
             // 
+            this.accordionControlElement39.Hint = "MPS06";
             this.accordionControlElement39.Name = "accordionControlElement39";
             this.accordionControlElement39.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement39.Text = "Production Order";
             // 
             // accordionControlElement40
             // 
+            this.accordionControlElement40.Hint = "MPS07";
             this.accordionControlElement40.Name = "accordionControlElement40";
             this.accordionControlElement40.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement40.Text = "Delivery Order";
