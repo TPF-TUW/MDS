@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(M12));
-            DevExpress.DataAccess.Json.CustomJsonSource customJsonSource1 = new DevExpress.DataAccess.Json.CustomJsonSource();
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode1 = new DevExpress.DataAccess.Json.JsonSchemaNode("root", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode2 = new DevExpress.DataAccess.Json.JsonSchemaNode("ID", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<long>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode3 = new DevExpress.DataAccess.Json.JsonSchemaNode("NAME", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
@@ -66,8 +62,6 @@
             this.slueTerm = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.glueVendor = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.jsonBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.jsonDataSource1 = new DevExpress.DataAccess.Json.JsonDataSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txeUDATE = new DevExpress.XtraEditors.TextEdit();
             this.txeUPDATE = new DevExpress.XtraEditors.TextEdit();
@@ -142,7 +136,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.slueTerm.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueVendor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jsonBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeUDATE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeUPDATE.Properties)).BeginInit();
@@ -530,7 +523,6 @@
             this.glueVendor.Name = "glueVendor";
             this.glueVendor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.glueVendor.Properties.DataSource = this.jsonBindingSource;
             this.glueVendor.Properties.DisplayMember = "NAME";
             this.glueVendor.Properties.NullText = "";
             this.glueVendor.Properties.PopupView = this.gridLookUpEdit1View;
@@ -539,22 +531,6 @@
             this.glueVendor.StyleController = this.layoutControl1;
             this.glueVendor.TabIndex = 11;
             this.glueVendor.EditValueChanged += new System.EventHandler(this.glueVendor_EditValueChanged);
-            // 
-            // jsonBindingSource
-            // 
-            this.jsonBindingSource.DataSource = this.jsonDataSource1;
-            // 
-            // jsonDataSource1
-            // 
-            this.jsonDataSource1.ConnectionName = null;
-            customJsonSource1.Json = " [{\r\n \t\"ID\": 0,\r\n \t\"NAME\": \"Finished Good\"\r\n }, {\r\n \t\"ID\": 1,\r\n \t\"NAME\": \"Fabric\"" +
-    "\r\n }, {\r\n \t\"ID\": 2,\r\n \t\"NAME\": \"Accessory\"\r\n }, {\r\n \t\"ID\": 3,\r\n \t\"NAME\": \"Packag" +
-    "ing\"\r\n }]";
-            this.jsonDataSource1.JsonSource = customJsonSource1;
-            this.jsonDataSource1.Name = "jsonDataSource1";
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode2);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode3);
-            this.jsonDataSource1.Schema = jsonSchemaNode1;
             // 
             // gridLookUpEdit1View
             // 
@@ -1267,7 +1243,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.slueTerm.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueVendor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jsonBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeUDATE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeUPDATE.Properties)).EndInit();
@@ -1416,8 +1391,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem23;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
-        private System.Windows.Forms.BindingSource jsonBindingSource;
-        private DevExpress.DataAccess.Json.JsonDataSource jsonDataSource1;
         private DevExpress.XtraEditors.GridLookUpEdit glueCalendar;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit4View;
         private DevExpress.XtraEditors.TextEdit txeEval;
