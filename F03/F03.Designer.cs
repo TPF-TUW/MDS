@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F03));
-            DevExpress.DataAccess.Json.CustomJsonSource customJsonSource7 = new DevExpress.DataAccess.Json.CustomJsonSource();
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode19 = new DevExpress.DataAccess.Json.JsonSchemaNode("root", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode20 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode21 = new DevExpress.DataAccess.Json.JsonSchemaNode("value", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<long>));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
@@ -65,8 +61,6 @@
             this.glueBranch = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit3View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.glueDPType = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.jsonBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.jsonDataSource1 = new DevExpress.DataAccess.Json.JsonDataSource(this.components);
             this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txeCREATE = new DevExpress.XtraEditors.TextEdit();
             this.txeCDATE = new DevExpress.XtraEditors.TextEdit();
@@ -83,15 +77,15 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).BeginInit();
@@ -102,7 +96,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.glueBranch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueDPType.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jsonBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeCREATE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeCDATE.Properties)).BeginInit();
@@ -119,15 +112,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -417,7 +410,6 @@
             this.glueDPType.Name = "glueDPType";
             this.glueDPType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.glueDPType.Properties.DataSource = this.jsonBindingSource;
             this.glueDPType.Properties.DisplayMember = "name";
             this.glueDPType.Properties.NullText = "";
             this.glueDPType.Properties.PopupView = this.gridLookUpEdit2View;
@@ -426,20 +418,6 @@
             this.glueDPType.StyleController = this.layoutControl1;
             this.glueDPType.TabIndex = 12;
             this.glueDPType.EditValueChanged += new System.EventHandler(this.glueDPType_EditValueChanged);
-            // 
-            // jsonBindingSource
-            // 
-            this.jsonBindingSource.DataSource = this.jsonDataSource1;
-            // 
-            // jsonDataSource1
-            // 
-            this.jsonDataSource1.ConnectionName = null;
-            customJsonSource7.Json = resources.GetString("customJsonSource7.Json");
-            this.jsonDataSource1.JsonSource = customJsonSource7;
-            this.jsonDataSource1.Name = "jsonDataSource1";
-            jsonSchemaNode19.Nodes.Add(jsonSchemaNode20);
-            jsonSchemaNode19.Nodes.Add(jsonSchemaNode21);
-            this.jsonDataSource1.Schema = jsonSchemaNode19;
             // 
             // gridLookUpEdit2View
             // 
@@ -620,15 +598,6 @@
             this.layoutControlItem4.Text = "Department Name";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(101, 14);
             // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.glueCompany;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(285, 24);
-            this.layoutControlItem5.Text = "Company";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(101, 14);
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.txeCDATE;
@@ -663,24 +632,6 @@
             this.emptySpaceItem4.Size = new System.Drawing.Size(111, 24);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.glueDPType;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(285, 24);
-            this.layoutControlItem9.Text = "Department Type";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(101, 14);
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.glueBranch;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(285, 24);
-            this.layoutControlItem10.Text = "Branch";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(101, 14);
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.rgStatus;
@@ -698,6 +649,33 @@
             this.layoutControlItem11.Size = new System.Drawing.Size(74, 24);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.glueCompany;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(285, 24);
+            this.layoutControlItem5.Text = "Company";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(101, 14);
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.glueBranch;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(285, 24);
+            this.layoutControlItem10.Text = "Branch";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(101, 14);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.glueDPType;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(285, 24);
+            this.layoutControlItem9.Text = "Department Type";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(101, 14);
             // 
             // F03
             // 
@@ -722,7 +700,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.glueBranch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueDPType.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jsonBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeCREATE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeCDATE.Properties)).EndInit();
@@ -739,15 +716,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -808,8 +785,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.DataAccess.Json.JsonDataSource jsonDataSource1;
-        private System.Windows.Forms.BindingSource jsonBindingSource;
         private DevExpress.XtraEditors.LabelControl lblStatus;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     }

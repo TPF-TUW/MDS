@@ -216,60 +216,6 @@
         bHVlIiAvPg0KICA8L2c+DQo8L3N2Zz4L
 </value>
   </data>
-  <metadata name="jsonBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>160, 17</value>
-  </metadata>
-  <metadata name="jsonDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="jsonDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="customJsonSource7.Json" xml:space="preserve">
-    <value>[{
-	"name": "Admin",
-	"value": 0
-}, {
-	"name": "Packing",
-	"value": 1
-}, {
-	"name": "NeedleRoom",
-	"value": 2
-}, {
-	"name": "Warehouse",
-	"value": 3
-}, {
-	"name": "StoreFabric",
-	"value": 4
-}, {
-	"name": "StoreAccessory",
-	"value": 5
-}, {
-	"name": "Delivery",
-	"value": 6
-}, {
-	"name": "FQA",
-	"value": 7
-}, {
-	"name": "CMT",
-	"value": 8
-}, {
-	"name": "Sales",
-	"value": 9
-}, {
-	"name": "Purchasing",
-	"value": 10
-}, {
-	"name": "Production",
-	"value": 11
-}, {
-	"name": "Export",
-	"value": 12
-}, {
-	"name": "Other",
-	"value": 99
-}]</value>
-  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>44</value>
   </metadata>
