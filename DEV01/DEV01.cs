@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
+using MDS00;
 using DevExpress.XtraGrid.Views.Grid;
 using System.Data.SqlClient;
 using DevExpress.Utils;
@@ -13,7 +14,6 @@ using DevExpress.XtraGrid;
 using System.Collections;
 using DevExpress.XtraPrinting;
 using System.Diagnostics;
-using TheepClass;
 
 namespace DEV01
 {
@@ -40,13 +40,19 @@ namespace DEV01
         {
             InitializeComponent();
             UserLookAndFeel.Default.StyleChanged += MyStyleChanged;
+            iniConfig = new IniFile("Config.ini");
+            UserLookAndFeel.Default.SetSkinStyle(iniConfig.Read("SkinName", "DevExpress"), iniConfig.Read("SkinPalette", "DevExpress"));
         }
+
+        private IniFile iniConfig;
 
         private void MyStyleChanged(object sender, EventArgs e)
         {
             UserLookAndFeel userLookAndFeel = (UserLookAndFeel)sender;
-            cUtility.SaveRegistry(@"Software\MDS", "SkinName", userLookAndFeel.SkinName);
-            cUtility.SaveRegistry(@"Software\MDS", "SkinPalette", userLookAndFeel.ActiveSvgPaletteName);
+            LookAndFeelChangedEventArgs lookAndFeelChangedEventArgs = (DevExpress.LookAndFeel.LookAndFeelChangedEventArgs)e;
+            //MessageBox.Show("MyStyleChanged: " + lookAndFeelChangedEventArgs.Reason.ToString() + ", " + userLookAndFeel.SkinName + ", " + userLookAndFeel.ActiveSvgPaletteName);
+            iniConfig.Write("SkinName", userLookAndFeel.SkinName, "DevExpress");
+            iniConfig.Write("SkinPalette", userLookAndFeel.ActiveSvgPaletteName, "DevExpress");
         }
 
         private void XtraForm1_Load(object sender, EventArgs ex)
@@ -158,6 +164,7 @@ namespace DEV01
         private void newMain()
         {
             //MessageBox.Show("newMain");
+            dosetOIDSMPL                                = string.Empty;
             bbiSave.Enabled                             = true;
             bbiEdit.Visibility                          = DevExpress.XtraBars.BarItemVisibility.Never;
             tabbedControlGroup1.SelectedTabPageIndex    = 1;
@@ -1059,6 +1066,17 @@ namespace DEV01
                 if (SaleSection != "" /*&& ReferenceNo != ""*/ && Season != "")
                 {
                     btnGenSMPLNo.Enabled = true;
+                }
+
+                if (dosetOIDSMPL == "")
+                {
+                    bbiSave.Enabled = true;
+                    bbiEdit.Enabled = false;
+                }
+                else
+                {
+                    bbiSave.Enabled = false;
+                    bbiEdit.Enabled = true;
                 }
             }
 
