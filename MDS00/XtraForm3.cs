@@ -27,6 +27,7 @@ namespace MDS00
             var skinPalette = cUtility.LoadRegistry(@"Software\MDS", "SkinPalette");
             UserLookAndFeel.Default.SetSkinStyle(skinName == null ? "Basic" : skinName.ToString(), skinPalette == null ? "Default" : skinPalette.ToString());
             accordionControl1.ElementClick += AccordionControl1_ElementClick;
+            SetMenuExpandedOrCollapse();
         }
 
         private const int SW_MAXIMIZE = 3;
@@ -95,20 +96,59 @@ namespace MDS00
                 frm.Show();
             }
         }
+        private void SetMenuExpandedOrCollapse()
+        {
+            accordionControlElement1.Expanded=Convert.ToBoolean(cUtility.LoadRegistry(@"Software\MDS", "MenuAdministratorExpanded"));
+            accordionControlElement2.Expanded = Convert.ToBoolean(cUtility.LoadRegistry(@"Software\MDS", "MenuMasterExpanded"));
+            accordionControlElement23.Expanded = Convert.ToBoolean(cUtility.LoadRegistry(@"Software\MDS", "MenuDevelopmentExpanded"));
+            accordionControlElement30.Expanded = Convert.ToBoolean(cUtility.LoadRegistry(@"Software\MDS", "MenuMPSExpanded"));
+            accordionControlElement41.Expanded = Convert.ToBoolean(cUtility.LoadRegistry(@"Software\MDS", "MenuMRPExpanded"));
+            accordionControlElement26.Expanded = Convert.ToBoolean(cUtility.LoadRegistry(@"Software\MDS", "MenuShipmentExpanded"));
+            accordionControlElement27.Expanded = Convert.ToBoolean(cUtility.LoadRegistry(@"Software\MDS", "MenuEXIMsExpanded"));
+        }
 
         private void AccordionControl1_ElementClick(object sender, ElementClickEventArgs e)
         {
-            if (e.Element.Style == ElementStyle.Group) return;
-            CreateSplashScreen(e.Element.Hint);
-            try
+            if (e.Element.Style == ElementStyle.Group)
             {
-                RunProcess(e.Element.Hint);
+                switch (e.Element.Text)
+                {
+                    case "Administrator":
+                        cUtility.SaveRegistry(@"Software\MDS", "MenuAdministratorExpanded", !e.Element.Expanded);
+                        break;
+                    case "Master":
+                        cUtility.SaveRegistry(@"Software\MDS", "MenuMasterExpanded", !e.Element.Expanded);
+                        break;
+                    case "Development":
+                        cUtility.SaveRegistry(@"Software\MDS", "MenuDevelopmentExpanded", !e.Element.Expanded);
+                        break;
+                    case "MPS":
+                        cUtility.SaveRegistry(@"Software\MDS", "MenuMPSExpanded", !e.Element.Expanded);
+                        break;
+                    case "MRP":
+                        cUtility.SaveRegistry(@"Software\MDS", "MenuMRPExpanded", !e.Element.Expanded);
+                        break;
+                    case "Shipment":
+                        cUtility.SaveRegistry(@"Software\MDS", "MenuShipmentExpanded", !e.Element.Expanded);
+                        break;
+                    case "EXIMs":
+                        cUtility.SaveRegistry(@"Software\MDS", "MenuEXIMsExpanded", !e.Element.Expanded);
+                        break;
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CreateSplashScreen(e.Element.Hint);
+                try
+                {
+                    RunProcess(e.Element.Hint);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                CloseSplashScreen();
             }
-            CloseSplashScreen();
         }
 
     }
