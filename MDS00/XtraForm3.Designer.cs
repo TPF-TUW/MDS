@@ -384,6 +384,7 @@ namespace MDS00
             this.accordionControlElement38,
             this.accordionControlElement39,
             this.accordionControlElement40});
+            this.accordionControlElement30.Expanded = true;
             this.accordionControlElement30.Hint = "Master Production Schedule";
             this.accordionControlElement30.Name = "accordionControlElement30";
             this.accordionControlElement30.Text = "MPS";
