@@ -282,6 +282,10 @@
       <Project>{baee57d1-5a39-42e1-aa87-7b6c4bd75da3}</Project>
       <Name>MPS06</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MPS07\MPS07.csproj">
+      <Project>{b132add3-d703-4163-892d-6d88e5d2fdfd}</Project>
+      <Name>MPS07</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
