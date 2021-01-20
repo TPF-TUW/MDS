@@ -120,7 +120,7 @@ namespace MDS00
             this.accordionControlElement7,
             this.accordionControlElement29,
             this.accordionControlElement8});
-            this.accordionControlElement1.Expanded = true;
+            this.accordionControlElement1.Hint = "Administrator";
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Administrator";
             // 
@@ -198,7 +198,7 @@ namespace MDS00
             this.accordionControlElement21,
             this.accordionControlElement31,
             this.accordionControlElement22});
-            this.accordionControlElement2.Expanded = true;
+            this.accordionControlElement2.Hint = "Master";
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Text = "Master";
             // 
@@ -330,7 +330,7 @@ namespace MDS00
             this.accordionControlElement28,
             this.accordionControlElement32,
             this.accordionControlElement33});
-            this.accordionControlElement23.Expanded = true;
+            this.accordionControlElement23.Hint = "Development";
             this.accordionControlElement23.Name = "accordionControlElement23";
             this.accordionControlElement23.Text = "Development";
             // 
@@ -517,6 +517,7 @@ namespace MDS00
             this.accordionControlElement52,
             this.accordionControlElement53,
             this.accordionControlElement54});
+            this.accordionControlElement26.Hint = "Shipment";
             this.accordionControlElement26.Name = "accordionControlElement26";
             this.accordionControlElement26.Text = "Shipment";
             // 
@@ -546,6 +547,7 @@ namespace MDS00
             // 
             // accordionControlElement27
             // 
+            this.accordionControlElement27.Hint = "EXIMs";
             this.accordionControlElement27.Name = "accordionControlElement27";
             this.accordionControlElement27.Text = "EXIMs";
             // 
