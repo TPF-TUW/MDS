@@ -37,18 +37,17 @@ namespace M09
 
         private void LoadData()
         {
-           
 
             StringBuilder sbSQL = new StringBuilder();
-            sbSQL.Append("SELECT PC.OIDPCAP AS CapacityID, PC.OIDCUST AS CustomerID, CUS.ShortName AS CustomerName, PC.OIDGCATEGORY AS CategoryID, GC.CategoryName, PC.OIDSTYLE AS StyleID, PS.StyleName, PC.QTYPerHour, PC.QTYPerDay, ");
-            sbSQL.Append("       PC.QTYPerOT, FORMAT(PC.STDTimeCUT, '###0.####') AS StandardTimeCutting, FORMAT(PC.STDTimePAD, '###0.####') AS StandardTimePadPrint, FORMAT(PC.STDTimeSEW, '###0.####') AS StandardTimeSewing, FORMAT(PC.STDTimePACK, '###0.####') AS StandardTimePacking, FORMAT(PC.STDTime, '###0.####') AS StandardTime, ");
-            sbSQL.Append("       PC.ProductionStartDate, PC.CreatedBy, PC.CreatedDate ");
-            sbSQL.Append("FROM   ProductionCapacity AS PC INNER JOIN ");
-            sbSQL.Append("       Customer AS CUS ON PC.OIDCUST = CUS.OIDCUST INNER JOIN ");
-            sbSQL.Append("       ProductStyle AS PS ON PC.OIDSTYLE = PS.OIDSTYLE INNER JOIN ");
-            sbSQL.Append("       GarmentCategory AS GC ON PC.OIDGCATEGORY = GC.OIDGCATEGORY ");
-            sbSQL.Append("ORDER BY CapacityID ");
-            new ObjDevEx.setGridControl(gcCapacity, gvCapacity, sbSQL).getData(false, false, false, true);
+            //sbSQL.Append("SELECT PC.OIDPCAP AS CapacityID, PC.OIDCUST AS CustomerID, CUS.ShortName AS CustomerName, PC.OIDGCATEGORY AS CategoryID, GC.CategoryName, PC.OIDSTYLE AS StyleID, PS.StyleName, PC.QTYPerHour, PC.QTYPerDay, ");
+            //sbSQL.Append("       PC.QTYPerOT, FORMAT(PC.STDTimeCUT, '###0.####') AS StandardTimeCutting, FORMAT(PC.STDTimePAD, '###0.####') AS StandardTimePadPrint, FORMAT(PC.STDTimeSEW, '###0.####') AS StandardTimeSewing, FORMAT(PC.STDTimePACK, '###0.####') AS StandardTimePacking, FORMAT(PC.STDTime, '###0.####') AS StandardTime, ");
+            //sbSQL.Append("       PC.ProductionStartDate, PC.CreatedBy, PC.CreatedDate ");
+            //sbSQL.Append("FROM   ProductionCapacity AS PC INNER JOIN ");
+            //sbSQL.Append("       Customer AS CUS ON PC.OIDCUST = CUS.OIDCUST INNER JOIN ");
+            //sbSQL.Append("       ProductStyle AS PS ON PC.OIDSTYLE = PS.OIDSTYLE INNER JOIN ");
+            //sbSQL.Append("       GarmentCategory AS GC ON PC.OIDGCATEGORY = GC.OIDGCATEGORY ");
+            //sbSQL.Append("ORDER BY CapacityID ");
+            //new ObjDevEx.setGridControl(gcCapacity, gvCapacity, sbSQL).getData(false, false, false, true);
             //MessageBox.Show("1");
 
        
@@ -61,6 +60,30 @@ namespace M09
             sbSQL.Append("ORDER BY CUS.ShortName ");
             new ObjDevEx.setSearchLookUpEdit(slueCustomer, sbSQL, "ShortName", "ID").getData(true);
             //MessageBox.Show("3");
+
+            LoadCapacity();
+        }
+
+        private void LoadCapacity()
+        {
+            StringBuilder sbSQL = new StringBuilder();
+            sbSQL.Append("SELECT PC.OIDPCAP AS CapacityID, PC.OIDCUST AS CustomerID, CUS.ShortName AS CustomerName, PC.OIDGCATEGORY AS CategoryID, GC.CategoryName, PC.OIDSTYLE AS StyleID, PS.StyleName, PC.QTYPerHour, PC.QTYPerDay, ");
+            sbSQL.Append("       PC.QTYPerOT, FORMAT(PC.STDTimeCUT, '###0.####') AS StandardTimeCutting, FORMAT(PC.STDTimePAD, '###0.####') AS StandardTimePadPrint, FORMAT(PC.STDTimeSEW, '###0.####') AS StandardTimeSewing, FORMAT(PC.STDTimePACK, '###0.####') AS StandardTimePacking, FORMAT(PC.STDTime, '###0.####') AS StandardTime, ");
+            sbSQL.Append("       PC.ProductionStartDate, PC.CreatedBy, PC.CreatedDate ");
+            sbSQL.Append("FROM   ProductionCapacity AS PC INNER JOIN ");
+            sbSQL.Append("       Customer AS CUS ON PC.OIDCUST = CUS.OIDCUST INNER JOIN ");
+            sbSQL.Append("       ProductStyle AS PS ON PC.OIDSTYLE = PS.OIDSTYLE INNER JOIN ");
+            sbSQL.Append("       GarmentCategory AS GC ON PC.OIDGCATEGORY = GC.OIDGCATEGORY ");
+            sbSQL.Append("WHERE (PC.OIDPCAP <> '') ");
+            if (slueCustomer.Text.Trim() != "")
+            {
+                sbSQL.Append("AND (PC.OIDCUST = '" + slueCustomer.EditValue.ToString() + "') ");
+            }
+            sbSQL.Append("ORDER BY CapacityID ");
+            new ObjDevEx.setGridControl(gcCapacity, gvCapacity, sbSQL).getData(false, false, false, true);
+            gvCapacity.Columns["CustomerID"].Visible = false;
+            gvCapacity.Columns["CategoryID"].Visible = false;
+            gvCapacity.Columns["StyleID"].Visible = false;
         }
 
         private void CreateTabPage(string CusID="", string CategoryID="")
@@ -306,6 +329,7 @@ namespace M09
 
                 CreateTabPageLine(CUSID);
             }
+            LoadCapacity();
             glueCategory.Focus();
         }
 
@@ -457,17 +481,35 @@ namespace M09
                     string CATEGORY = glueCategory.EditValue.ToString();
                     string STYLEID = slueStyle.EditValue.ToString();
 
+                    string QTYPerHour = txe1Hr.Text.Trim();
+                    QTYPerHour = QTYPerHour != "" ? QTYPerHour : "0";
+                    string QTYPerDay = txe1Day.Text.Trim();
+                    QTYPerDay = QTYPerDay != "" ? QTYPerDay : "0";
+                    string QTYPerOT = txeOT.Text.Trim();
+                    QTYPerOT = QTYPerOT != "" ? QTYPerOT : "0";
+
+                    string STDTimeCUT = txeCutting.Text.Trim();
+                    STDTimeCUT = STDTimeCUT != "" ? STDTimeCUT : "0";
+                    string STDTimePAD = txePadPrint.Text.Trim();
+                    STDTimePAD = STDTimePAD != "" ? STDTimePAD : "0";
+                    string STDTimeSEW = txeSewing.Text.Trim();
+                    STDTimeSEW = STDTimeSEW != "" ? STDTimeSEW : "0";
+                    string STDTimePACK = txePacking.Text.Trim();
+                    STDTimePACK = STDTimePACK != "" ? STDTimePACK : "0";
+                    string STDTime = txeStdTime.Text.Trim();
+                    STDTime = STDTime != "" ? STDTime : "0";
+
                     if (lblStatus.Text == "* Add Capacity")
                     {
                         sbSAVE.Append(" INSERT INTO ProductionCapacity(OIDCUST, OIDGCATEGORY, OIDSTYLE, QTYPerHour, QTYPerDay, QTYPerOT, STDTimeCUT, STDTimePAD, STDTimeSEW, STDTimePACK, STDTime, ProductionStartDate, CreatedBy, CreatedDate) ");
-                        sbSAVE.Append("  VALUES('" + CUSTOMER + "', '" + CATEGORY + "', '" + STYLEID + "', '" + txe1Hr.Text.Trim() + "', '" + txe1Day.Text.Trim() + "', '" + txeOT.Text.Trim() + "', '" + txeCutting.Text.Trim() + "', '" + txePadPrint.Text.Trim() + "', '" + txeSewing.Text.Trim() + "', '" + txePacking.Text.Trim() + "', '" + txeStdTime.Text.Trim() + "', '" + Convert.ToDateTime(dteStart.Text).ToString("yyyy-MM-dd") + "', '" + strCREATE + "', GETDATE()) ");
+                        sbSAVE.Append("  VALUES('" + CUSTOMER + "', '" + CATEGORY + "', '" + STYLEID + "', '" + QTYPerHour + "', '" + QTYPerDay + "', '" + QTYPerOT + "', '" + STDTimeCUT + "', '" + STDTimePAD + "', '" + STDTimeSEW + "', '" + STDTimePACK + "', '" + STDTime + "', '" + Convert.ToDateTime(dteStart.Text).ToString("yyyy-MM-dd") + "', '" + strCREATE + "', GETDATE()) ");
                     }
                     else if (lblStatus.Text == "* Edit Capacity")
                     {
                         sbSAVE.Append(" UPDATE ProductionCapacity SET ");
-                        sbSAVE.Append("  OIDCUST='" + CUSTOMER + "', OIDGCATEGORY='" + CATEGORY + "', OIDSTYLE='" + STYLEID + "', QTYPerHour='" + txe1Hr.Text.Trim() + "', QTYPerDay='" + txe1Day.Text.Trim() + "', ");
-                        sbSAVE.Append("  QTYPerOT='" + txeOT.Text.Trim() + "', STDTimeCUT='" + txeCutting.Text.Trim() + "', STDTimePAD='" + txePadPrint.Text.Trim() + "', STDTimeSEW='" + txeSewing.Text.Trim() + "', STDTimePACK='" + txePacking.Text.Trim() + "', ");
-                        sbSAVE.Append("  STDTime='" + txeStdTime.Text.Trim() + "', ProductionStartDate='" + Convert.ToDateTime(dteStart.Text).ToString("yyyy-MM-dd") + "' ");
+                        sbSAVE.Append("  OIDCUST='" + CUSTOMER + "', OIDGCATEGORY='" + CATEGORY + "', OIDSTYLE='" + STYLEID + "', QTYPerHour='" + QTYPerHour + "', QTYPerDay='" + QTYPerDay + "', ");
+                        sbSAVE.Append("  QTYPerOT='" + QTYPerOT + "', STDTimeCUT='" + STDTimeCUT + "', STDTimePAD='" + STDTimePAD + "', STDTimeSEW='" + STDTimeSEW + "', STDTimePACK='" + STDTimePACK + "', ");
+                        sbSAVE.Append("  STDTime='" + STDTime + "', ProductionStartDate='" + Convert.ToDateTime(dteStart.Text).ToString("yyyy-MM-dd") + "' ");
                         sbSAVE.Append(" WHERE (OIDPCAP = '" + txeID.Text.Trim() + "') ");
                     }
 
@@ -647,6 +689,90 @@ namespace M09
         private void bbiPrint_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             gcCapacity.Print();
+        }
+
+        private DateTime FIND_SUM_TIME(DateTime dtSUM, string strTIME)
+        {
+            int Minutes = 0;
+            int Seconds = 0;
+
+            if (strTIME.IndexOf('.') > -1)
+            {
+                string[] arrTIME = strTIME.Split('.');
+
+                if (arrTIME.Length > 0)
+                {
+                    Minutes = Convert.ToInt32(arrTIME[0]);
+                    Seconds = Convert.ToInt32(arrTIME[1]);
+                    if (Seconds.ToString().Length == 1)
+                        Seconds *= 10;
+                }
+            }
+            else
+                Minutes = Convert.ToInt32(strTIME);
+           
+            dtSUM = dtSUM.AddMinutes(Minutes).AddSeconds(Seconds);
+
+            return dtSUM;
+        }
+
+        private void SUM_TIME()
+        {
+            txeStdTime.Text = Convert.ToDateTime("01/01/2000 00:00:00").ToString("mm:ss");
+            DateTime dtSUM = Convert.ToDateTime("01/01/2000 00:00:00");
+            if (txeCutting.Text != "")
+                dtSUM = FIND_SUM_TIME(dtSUM, txeCutting.Text.Trim());
+            if (txePadPrint.Text != "")
+                dtSUM = FIND_SUM_TIME(dtSUM, txePadPrint.Text.Trim());
+            if (txeSewing.Text != "")
+                dtSUM = FIND_SUM_TIME(dtSUM, txeSewing.Text.Trim());
+            if (txePacking.Text != "")
+                dtSUM = FIND_SUM_TIME(dtSUM, txePacking.Text.Trim());
+            txeStdTime.Text = dtSUM.ToString("mm.ss");
+        }
+
+        private void txeCutting_Leave(object sender, EventArgs e)
+        {
+            if (txeCutting.Text != "")
+            {
+                DateTime dtSUM = Convert.ToDateTime("01/01/2000 00:00:00");
+                dtSUM = FIND_SUM_TIME(dtSUM, txeCutting.Text.Trim());
+                txeCutting.Text = Convert.ToDouble(dtSUM.ToString("mm.ss")).ToString("##.##");
+            }
+            SUM_TIME();
+        }
+
+        private void txePadPrint_Leave(object sender, EventArgs e)
+        {
+            if (txePadPrint.Text != "")
+            {
+                DateTime dtSUM = Convert.ToDateTime("01/01/2000 00:00:00");
+                dtSUM = FIND_SUM_TIME(dtSUM, txePadPrint.Text.Trim());
+                txePadPrint.Text = Convert.ToDouble(dtSUM.ToString("mm.ss")).ToString("##.##");
+            }
+            SUM_TIME();
+        }
+
+        private void txeSewing_Leave(object sender, EventArgs e)
+        {
+            if (txeSewing.Text != "")
+            {
+                DateTime dtSUM = Convert.ToDateTime("01/01/2000 00:00:00");
+                dtSUM = FIND_SUM_TIME(dtSUM, txeSewing.Text.Trim());
+                txeSewing.Text = Convert.ToDouble(dtSUM.ToString("mm.ss")).ToString("##.##");
+            }
+            SUM_TIME();
+        }
+
+        private void txePacking_Leave(object sender, EventArgs e)
+        {
+            if (txePacking.Text != "")
+            {
+                DateTime dtSUM = Convert.ToDateTime("01/01/2000 00:00:00");
+                dtSUM = FIND_SUM_TIME(dtSUM, txePacking.Text.Trim());
+                txePacking.Text = Convert.ToDouble(dtSUM.ToString("mm.ss")).ToString("##.##");
+            }
+            SUM_TIME();
         }
     }
 }

@@ -283,14 +283,19 @@ namespace MPS01
 
         private void NewData()
         {
-            lblStatus.Text = "* Add Plan";
+            lblStatus.Text = "* Add Forecast";
             lblStatus.ForeColor = Color.Green;
 
             txeID.Text = new DBQuery("SELECT CASE WHEN ISNULL(MAX(OIDFC), '') = '' THEN 1 ELSE MAX(OIDFC) + 1 END AS NewNo FROM COForecast").getString();
             txePlanID.Text = "";
             slueCustomer.EditValue = "";
             dteOrderDate.EditValue = DateTime.Now;
-            speSeason.Value = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
+
+            if (Convert.ToInt32(DateTime.Now.ToString("yyyy")) > 2500)
+                speSeason.Value = Convert.ToInt32(DateTime.Now.ToString("yyyy")) - 543;
+            else
+                speSeason.Value = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
+
             glueSeason.EditValue = "";
             glueUnit.EditValue = "";
             slueItemCode.EditValue = "";
@@ -340,6 +345,8 @@ namespace MPS01
             txeFilePath.Text = "";
             spsForecast.CloseCellEditor(DevExpress.XtraSpreadsheet.CellEditorEnterValueMode.Default);
             spsForecast.CreateNewDocument();
+            cbeSheet.Properties.Items.Clear();
+            cbeSheet.Text = "";
 
             txePlanID.Focus();
         }
@@ -421,7 +428,7 @@ namespace MPS01
                                 string POQty = txePOQty.Text.Trim() != "" ? txePOQty.Text.Trim() : "0";
                                 string OrderQtyOld = txeOrderQtyOld.Text.Trim() != "" ? txeOrderQtyOld.Text.Trim() : "0";
 
-                                if (lblStatus.Text == "* Add Plan")
+                                if (lblStatus.Text == "* Add Forecast")
                                 {
                                     sbSQL.Append("  INSERT INTO COForecast(ProductionPlanID, OIDCUST, FileOrderDate, Season, BusinessUnit, OIDCSITEM, ModelNo, OIDVEND, SewingDifficulty, ProductionPlanType, Status, DataUpdate, BookingFabric, BookingAccessory, LastUpdate, ");
                                     sbSQL.Append("      RequestedWHDate, ContractedDate, TransportMethod, LogisticsType, OrderQty, FabricOrderNO, FabricUpdateDate, FabricActualOrderQty, ColorOrderNO, ColorUpdateDate, ColorActualOrderQty, TrimOrderNO, TrimUpdateDate, ");
@@ -463,7 +470,7 @@ namespace MPS01
                                     sbSQL.Append("      '" + strCREATE + "', GETDATE(), '" + strCREATE + "', GETDATE() ");
                                     sbSQL.Append("  ) ");
                                 }
-                                else if (lblStatus.Text == "* Edit Plan")
+                                else if (lblStatus.Text == "* Edit Forecast")
                                 {
                                     sbSQL.Append("  UPDATE COForecast SET ");
                                     sbSQL.Append("      ProductionPlanID=N'" + txePlanID.Text.ToUpper().Trim().Replace("'", "''") + "', ");
@@ -505,7 +512,7 @@ namespace MPS01
                             }
                         }
 
-                        if (lblStatus.Text == "* Add Plan") //เพิ่มข้อมูลในตารางได้เฉพาะกรณีเพิ่มข้อมูลใหม่เท่านั้น
+                        if (lblStatus.Text == "* Add Forecast") //เพิ่มข้อมูลในตารางได้เฉพาะกรณีเพิ่มข้อมูลใหม่เท่านั้น
                         {
                             if (chkPass == true)
                             {
@@ -1312,7 +1319,7 @@ namespace MPS01
             if (txePlanID.Text != "")
             {
                 txePlanID.Text = txePlanID.Text.ToUpper().Trim();
-                if (txePlanID.Text.Trim() != "" && lblStatus.Text == "* Add Plan")
+                if (txePlanID.Text.Trim() != "" && lblStatus.Text == "* Add Forecast")
                 {
                     StringBuilder sbSQL = new StringBuilder();
                     sbSQL.Append("SELECT TOP(1) ProductionPlanID FROM COForecast WHERE (ProductionPlanID = N'" + txePlanID.Text.Trim().Trim().Replace("'", "''") + "') ");
@@ -1324,7 +1331,7 @@ namespace MPS01
                         FUNC.msgWarning("Duplicate production plan ID. !! Please Change.");
                     }
                 }
-                else if (txePlanID.Text.Trim() != "" && lblStatus.Text == "* Edit Plan")
+                else if (txePlanID.Text.Trim() != "" && lblStatus.Text == "* Edit Forecast")
                 {
                     StringBuilder sbSQL = new StringBuilder();
                     sbSQL.Append("SELECT TOP(1) OIDFC ");
@@ -1712,7 +1719,7 @@ namespace MPS01
                 {
                     if (typeLoad == "New")
                     {
-                        lblStatus.Text = "* Add Plan";
+                        lblStatus.Text = "* Add Forecast";
                         lblStatus.ForeColor = Color.Green;
 
                         txeID.Text = new DBQuery("SELECT CASE WHEN ISNULL(MAX(OIDFC), '') = '' THEN 1 ELSE MAX(OIDFC) + 1 END AS NewNo FROM COForecast").getString();
@@ -1723,7 +1730,7 @@ namespace MPS01
                     }
                     else if (typeLoad == "Edit")
                     {
-                        lblStatus.Text = "* Edit Plan";
+                        lblStatus.Text = "* Edit Forecast";
                         lblStatus.ForeColor = Color.Red;
 
                         txeID.Text = arrFC[0];
@@ -1872,7 +1879,7 @@ namespace MPS01
             cbeSheet.Properties.Items.Clear();
             cbeSheet.Text = "";
 
-            xtraOpenFileDialog1.Filter = "Excel Files|*.xlsx";
+            xtraOpenFileDialog1.Filter = "Excel files |*.xlsx;*.xls;*.csv";
             xtraOpenFileDialog1.FileName = "";
             xtraOpenFileDialog1.Title = "Select Excel File";
 
@@ -1883,7 +1890,13 @@ namespace MPS01
                 IWorkbook workbook = xss.Document;
                 using (FileStream stream = new FileStream(txeFilePath.Text, FileMode.Open))
                 {
-                    workbook.LoadDocument(stream, DocumentFormat.OpenXml);
+                    string ext = Path.GetExtension(txeFilePath.Text);
+                    if (ext == ".xlsx")
+                        workbook.LoadDocument(stream, DocumentFormat.Xlsx);
+                    else if (ext == ".xls")
+                        workbook.LoadDocument(stream, DocumentFormat.Xls);
+                    else if (ext == ".csv")
+                        workbook.LoadDocument(stream, DocumentFormat.Csv);
                 }
                 WorksheetCollection worksheets = workbook.Worksheets;
                 for (int i = 0; i < worksheets.Count; i++)
@@ -1902,7 +1915,13 @@ namespace MPS01
                     using (FileStream stream = new FileStream(txeFilePath.Text, FileMode.Open))
                     {
                         // workbook.CalculateFull();
-                        workbook.LoadDocument(stream, DocumentFormat.Xlsx);
+                        string ext = Path.GetExtension(txeFilePath.Text);
+                        if (ext == ".xlsx")
+                            workbook.LoadDocument(stream, DocumentFormat.Xlsx);
+                        else if (ext == ".xls")
+                            workbook.LoadDocument(stream, DocumentFormat.Xls);
+                        else if (ext == ".csv")
+                            workbook.LoadDocument(stream, DocumentFormat.Csv);
                         //workbook.Worksheets.ActiveWorksheet = workbook.Worksheets[0];
 
                         //***Delete sheet
@@ -1928,6 +1947,21 @@ namespace MPS01
         {
             var frm = new MPS01_01();
             frm.ShowDialog(this);
+        }
+
+        private void gvFO_RowCellClick(object sender, RowCellClickEventArgs e)
+        {
+            if (gvFO.IsFilterRow(e.RowHandle)) return;
+        }
+
+        private void gvINPUT_RowCellClick(object sender, RowCellClickEventArgs e)
+        {
+            if (gvINPUT.IsFilterRow(e.RowHandle)) return;
+        }
+
+        private void ribbonControl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

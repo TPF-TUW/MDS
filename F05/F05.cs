@@ -170,7 +170,7 @@ namespace F05
             glueCompany.EditValue = "";
             glueBranch.EditValue = "";
 
-            rgStatus.EditValue = 0;
+            rgStatus.EditValue = 1;
         }
 
         private void bbiNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -408,5 +408,15 @@ namespace M14
                 }
             }
         }
+
+        private void txeTelNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = char.IsLetter(e.KeyChar);
+        }
+
+        private void txeFaxNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = char.IsLetter(e.KeyChar);
+        }
     }
 }

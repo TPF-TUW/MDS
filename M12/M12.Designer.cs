@@ -647,6 +647,7 @@
             this.txeFax.StyleController = this.layoutControl1;
             this.txeFax.TabIndex = 10;
             this.txeFax.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeFax_KeyDown);
+            this.txeFax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txeFax_KeyPress);
             // 
             // txeTel
             // 
@@ -658,6 +659,7 @@
             this.txeTel.StyleController = this.layoutControl1;
             this.txeTel.TabIndex = 9;
             this.txeTel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeTel_KeyDown);
+            this.txeTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txeTel_KeyPress);
             // 
             // txeCountry
             // 

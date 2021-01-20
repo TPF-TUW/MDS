@@ -315,7 +315,7 @@
             // 
             // glueCategory
             // 
-            this.glueCategory.Location = new System.Drawing.Point(112, 52);
+            this.glueCategory.Location = new System.Drawing.Point(112, 28);
             this.glueCategory.MenuManager = this.ribbonControl;
             this.glueCategory.Name = "glueCategory";
             this.glueCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -325,6 +325,7 @@
             this.glueCategory.Size = new System.Drawing.Size(179, 20);
             this.glueCategory.StyleController = this.layoutControl1;
             this.glueCategory.TabIndex = 14;
+            this.glueCategory.EditValueChanged += new System.EventHandler(this.glueCategory_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 
@@ -338,7 +339,7 @@
             // txeStyleNo
             // 
             this.txeStyleNo.EditValue = "";
-            this.txeStyleNo.Location = new System.Drawing.Point(112, 28);
+            this.txeStyleNo.Location = new System.Drawing.Point(112, 52);
             this.txeStyleNo.MenuManager = this.ribbonControl;
             this.txeStyleNo.Name = "txeStyleNo";
             this.txeStyleNo.Properties.MaxLength = 200;
@@ -508,16 +509,16 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txeStyleNo;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(291, 24);
-            this.layoutControlItem3.Text = "Style No.";
+            this.layoutControlItem3.Text = "Style Name";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(96, 14);
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.glueCategory;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(291, 24);
             this.layoutControlItem8.Text = "Product Category";
@@ -540,6 +541,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            this.layoutControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glueCategory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeStyleNo.Properties)).EndInit();

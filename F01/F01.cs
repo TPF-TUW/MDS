@@ -74,7 +74,7 @@ namespace F01
             txeTaxTH.Text = "";
             txeBranchNoTH.Text = "";
 
-            rgStatus.EditValue = 0;
+            rgStatus.EditValue = 1;
 
             txeCREATE.EditValue = "0";
             txeCDATE.EditValue = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");

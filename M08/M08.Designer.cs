@@ -68,7 +68,7 @@
             this.gcLine = new DevExpress.XtraGrid.GridControl();
             this.gvLine = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.glueLineName = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -79,10 +79,10 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -99,7 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueLineName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -110,10 +110,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -367,7 +367,7 @@
             // 
             // glueBranch
             // 
-            this.glueBranch.Location = new System.Drawing.Point(89, 76);
+            this.glueBranch.Location = new System.Drawing.Point(89, 28);
             this.glueBranch.MenuManager = this.ribbonControl;
             this.glueBranch.Name = "glueBranch";
             this.glueBranch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -390,7 +390,7 @@
             // 
             // slueInCharge
             // 
-            this.slueInCharge.Location = new System.Drawing.Point(89, 52);
+            this.slueInCharge.Location = new System.Drawing.Point(89, 76);
             this.slueInCharge.MenuManager = this.ribbonControl;
             this.slueInCharge.Name = "slueInCharge";
             this.slueInCharge.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -478,14 +478,13 @@
             // 
             // glueLineName
             // 
-            this.glueLineName.Location = new System.Drawing.Point(89, 28);
+            this.glueLineName.Location = new System.Drawing.Point(89, 52);
             this.glueLineName.Name = "glueLineName";
             this.glueLineName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.glueLineName.Properties.MaxLength = 20;
             this.glueLineName.Properties.NullText = "";
-            this.glueLineName.Properties.PopupView = this.gridLookUpEdit2View;
-            this.glueLineName.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.glueLineName.Properties.PopupView = this.gridView2;
             this.glueLineName.Size = new System.Drawing.Size(127, 20);
             this.glueLineName.StyleController = this.layoutControl1;
             this.glueLineName.TabIndex = 0;
@@ -493,16 +492,16 @@
             this.glueLineName.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.glueLineName_Closed);
             this.glueLineName.EditValueChanged += new System.EventHandler(this.glueLineName_EditValueChanged);
             this.glueLineName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.glueLineName_KeyDown);
-            this.glueLineName.LostFocus += new System.EventHandler(this.glueLineName_LostFocus);
+            this.glueLineName.Leave += new System.EventHandler(this.glueLineName_Leave);
             // 
-            // gridLookUpEdit2View
+            // gridView2
             // 
-            this.gridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit2View.Name = "gridLookUpEdit2View";
-            this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit2View.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridLookUpEdit2View.OptionsView.EnableAppearanceOddRow = true;
-            this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridView2.OptionsView.EnableAppearanceOddRow = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // Root
             // 
@@ -517,10 +516,10 @@
             this.layoutControlItem5,
             this.layoutControlItem4,
             this.layoutControlItem7,
-            this.layoutControlItem8,
             this.layoutControlItem9,
             this.layoutControlItem10,
-            this.layoutControlItem11});
+            this.layoutControlItem11,
+            this.layoutControlItem8});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.Root.Size = new System.Drawing.Size(994, 402);
@@ -600,20 +599,11 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.slueInCharge;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(216, 24);
             this.layoutControlItem7.Text = "In-Charge";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(73, 14);
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.glueBranch;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(216, 24);
-            this.layoutControlItem8.Text = "Branch";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(73, 14);
             // 
             // layoutControlItem9
             // 
@@ -638,11 +628,20 @@
             this.layoutControlItem11.Control = this.glueLineName;
             this.layoutControlItem11.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem11.CustomizationFormText = "Vendor";
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(216, 24);
             this.layoutControlItem11.Text = "Line Name";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(73, 14);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.glueBranch;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(216, 24);
+            this.layoutControlItem8.Text = "Branch";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(73, 14);
             // 
             // M08
             // 
@@ -674,7 +673,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueLineName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -685,10 +684,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -745,8 +744,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private DevExpress.XtraEditors.GridLookUpEdit glueLineName;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit2View;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private DevExpress.XtraEditors.GridLookUpEdit glueLineName;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
     }
 }

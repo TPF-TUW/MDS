@@ -244,5 +244,19 @@ namespace M11
                 }
             }
         }
+
+        private void glueCategory_EditValueChanged(object sender, EventArgs e)
+        {
+            StringBuilder sbSQL = new StringBuilder();
+            sbSQL.Append("SELECT PS.OIDSTYLE AS No, PS.StyleName, PS.OIDGCATEGORY AS CategoryID, GC.CategoryName, PS.CreatedBy, PS.CreatedDate ");
+            sbSQL.Append("FROM   ProductStyle AS PS INNER JOIN ");
+            sbSQL.Append("       GarmentCategory AS GC ON PS.OIDGCATEGORY = GC.OIDGCATEGORY ");
+            if (glueCategory.Text.Trim() != "")
+                sbSQL.Append("WHERE (PS.OIDGCATEGORY = '" + glueCategory.EditValue.ToString() + "') ");
+            sbSQL.Append("ORDER BY PS.OIDSTYLE ");
+            new ObjDevEx.setGridControl(gcStyle, gvStyle, sbSQL).getData(false, false, false, true);
+
+            txeStyleNo.Focus();
+        }
     }
 }

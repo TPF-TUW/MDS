@@ -53,9 +53,11 @@ namespace M08
             new ObjDevEx.setSearchLookUpEdit(slueInCharge, sbSQL, "UserName", "ID").getData(true);
 
             sbSQL.Clear();
-            sbSQL.Append("SELECT OIDBranch AS ID, Name AS Branch ");
-            sbSQL.Append("FROM Branchs ");
-            sbSQL.Append("ORDER BY OIDBranch ");
+            sbSQL.Append("SELECT B.Code, B.Name AS Branch, C.Code AS CompnayCode, C.EngName AS CompanyName, ");
+            sbSQL.Append("       CASE WHEN B.BranchType = 0 THEN 'Branch' ELSE CASE WHEN B.BranchType = 1 THEN 'Branch Sub Contract' ELSE '' END END AS Type, B.OIDBranch AS ID ");
+            sbSQL.Append("FROM   Branchs AS B INNER JOIN ");
+            sbSQL.Append("       Company AS C ON B.OIDCOMPANY = C.OIDCOMPANY ");
+            sbSQL.Append("ORDER BY B.Code ");
             new ObjDevEx.setGridLookUpEdit(glueBranch, sbSQL, "Branch", "ID").getData(true);
 
             sbSQL.Clear();
@@ -106,12 +108,25 @@ namespace M08
             sbSQL.Append("     Customer AS CUS ON PL.OIDCUST = CUS.OIDCUST INNER JOIN ");
             sbSQL.Append("     Branchs AS BN ON PL.Branch = BN.OIDBranch INNER JOIN ");
             sbSQL.Append("     GarmentCategory AS GC ON PL.OIDCATEGORY = GC.OIDGCATEGORY ");
-            if (txeID.Text.Trim() != "" && glueBranch.Text.Trim() != "" && slueCustomer.Text.Trim() != "")
-            {
-                sbSQL.Append("WHERE (PL.OIDLine='" + txeID.Text.Trim() + "') AND (PL.Branch='" + glueBranch.EditValue.ToString() + "') AND (PL.OIDCUST='" + slueCustomer.EditValue.ToString() + "') ");
-            }
-            sbSQL.Append("ORDER BY LN.LINENAME, PL.Branch, PL.OIDCATEGORY ");
+            sbSQL.Append("WHERE (PL.OIDLine <> '') ");
+            if (glueLineName.Text.Trim() != "")
+                sbSQL.Append("AND (LN.LINENAME='" + glueLineName.EditValue.ToString() + "') ");
+            if (glueBranch.Text.Trim() != "")
+                sbSQL.Append("AND (PL.Branch='" + glueBranch.EditValue.ToString() + "') ");
+            if (slueCustomer.Text.Trim() != "")
+                sbSQL.Append("AND (PL.OIDCUST='" + slueCustomer.EditValue.ToString() + "') ");
+            //if (txeID.Text.Trim() != "" && glueBranch.Text.Trim() != "" && slueCustomer.Text.Trim() != "")
+            //{
+            //    sbSQL.Append("WHERE (PL.OIDLine='" + txeID.Text.Trim() + "') AND (PL.Branch='" + glueBranch.EditValue.ToString() + "') AND (PL.OIDCUST='" + slueCustomer.EditValue.ToString() + "') ");
+            //}
+            sbSQL.Append("ORDER BY LN.LINENAME, PL.Branch, PL.OIDCUST, PL.OIDCATEGORY ");
+            //MessageBox.Show(sbSQL.ToString());
             new ObjDevEx.setGridControl(gcLine, gvLine, sbSQL).getData(false, false, false, true);
+            gvLine.Columns["LineID"].Visible = false;
+            gvLine.Columns["InChangeID"].Visible = false;
+            gvLine.Columns["BranchID"].Visible = false;
+            gvLine.Columns["CustomerID"].Visible = false;
+            gvLine.Columns["CategoryID"].Visible = false;
 
         }
 
@@ -128,7 +143,20 @@ namespace M08
 
         private void glueLineName_EditValueChanged(object sender, EventArgs e)
         {
+            //if (glueLineName.Text.Trim() == "")
+            //{
+            //    lblStatus.Text = "* Add Line";
+            //    lblStatus.ForeColor = Color.Green;
+            //    txeID.Text = "";
+            //}
 
+            //if (glueLineName.Text.Trim() != "" && glueLineName.Text.ToUpper().Trim() != selCode)
+            //{
+            //    glueLineName.Text = glueLineName.Text.ToUpper().Trim();
+            //    selCode = glueLineName.Text;
+            //    LoadCode(glueLineName.Text);
+            //    //MessageBox.Show(glueCode.Text);
+            //}
         }
 
         private void glueLineName_KeyDown(object sender, KeyEventArgs e)
@@ -141,20 +169,20 @@ namespace M08
 
         private void glueLineName_LostFocus(object sender, EventArgs e)
         {
-            if (glueLineName.Text.Trim() == "")
-            {
-                lblStatus.Text = "* Add Line";
-                lblStatus.ForeColor = Color.Green;
-                txeID.Text = "";
-            }
+            //if (glueLineName.Text.Trim() == "")
+            //{
+            //    lblStatus.Text = "* Add Line";
+            //    lblStatus.ForeColor = Color.Green;
+            //    txeID.Text = "";
+            //}
 
-            if (glueLineName.Text.Trim() != "" && glueLineName.Text.ToUpper().Trim() != selCode)
-            {
-                glueLineName.Text = glueLineName.Text.ToUpper().Trim();
-                selCode = glueLineName.Text;
-                LoadCode(glueLineName.Text);
-                //MessageBox.Show(glueCode.Text);
-            }
+            //if (glueLineName.Text.Trim() != "" && glueLineName.Text.ToUpper().Trim() != selCode)
+            //{
+            //    glueLineName.Text = glueLineName.Text.ToUpper().Trim();
+            //    selCode = glueLineName.Text;
+            //    LoadCode(glueLineName.Text);
+            //    //MessageBox.Show(glueCode.Text);
+            //}
         }
 
         private void CheckLine()
@@ -177,6 +205,7 @@ namespace M08
             {
                 lblStatus.Text = "* Add Line";
                 lblStatus.ForeColor = Color.Green;
+                LoadCategory();
             }
             else
             {
@@ -198,8 +227,10 @@ namespace M08
             sbSQL.Append("SELECT OIDCATEGORY ");
             sbSQL.Append("FROM ProductionLine ");
             sbSQL.Append("WHERE (OIDLine = '" + txeID.Text.Trim() + "') ");
-            sbSQL.Append("AND (Branch = '" + glueBranch.EditValue.ToString() + "') ");
-            sbSQL.Append("AND (OIDCUST = '" + slueCustomer.EditValue.ToString() + "') ");
+            if(glueBranch.Text.Trim() != "")
+                sbSQL.Append("AND (Branch = '" + glueBranch.EditValue.ToString() + "') ");
+            if(slueCustomer.Text.Trim() != "")
+                sbSQL.Append("AND (OIDCUST = '" + slueCustomer.EditValue.ToString() + "') ");
             sbSQL.Append("ORDER BY OIDCATEGORY ");
             DataTable dtQC = new DBQuery(sbSQL).getDataTable();
 
@@ -249,6 +280,16 @@ namespace M08
 
         private void glueBranch_EditValueChanged(object sender, EventArgs e)
         {
+            if (glueBranch.Text.Trim() != "")
+            {
+                StringBuilder sbSQL = new StringBuilder();
+                sbSQL.Append("SELECT LN.OIDLINE AS ID, LN.LINENAME, B.Name AS Branch, LN.Branch AS BranchID ");
+                sbSQL.Append("FROM   LineNumber AS LN INNER JOIN ");
+                sbSQL.Append("       Branchs AS B ON LN.Branch = B.OIDBranch ");
+                sbSQL.Append("WHERE (B.OIDBranch = '" + glueBranch.EditValue.ToString() + "') ");
+                sbSQL.Append("ORDER BY LN.OIDLINE ");
+                new ObjDevEx.setGridLookUpEdit(glueLineName, sbSQL, "LINENAME", "LINENAME").getData(true);
+            }
             CheckLine();
         }
 
@@ -406,6 +447,24 @@ namespace M08
 
             txeCREATE.Text = gvLine.GetFocusedRowCellValue("CreatedBy").ToString();
             txeCDATE.Text = gvLine.GetFocusedRowCellValue("CreatedDate").ToString();
+        }
+
+        private void glueLineName_Leave(object sender, EventArgs e)
+        {
+            if (glueLineName.Text.Trim() == "")
+            {
+                lblStatus.Text = "* Add Line";
+                lblStatus.ForeColor = Color.Green;
+                txeID.Text = "";
+            }
+
+            if (glueLineName.Text.Trim() != "" && glueLineName.Text.ToUpper().Trim() != selCode)
+            {
+                glueLineName.Text = glueLineName.Text.ToUpper().Trim();
+                selCode = glueLineName.Text;
+                LoadCode(glueLineName.Text);
+                //MessageBox.Show(glueCode.Text);
+            }
         }
     }
 }

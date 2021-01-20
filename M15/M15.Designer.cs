@@ -329,8 +329,8 @@
             this.rgStatus.Name = "rgStatus";
             this.rgStatus.Properties.Columns = 2;
             this.rgStatus.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Active"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "Non Active")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Active"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "Non Active")});
             this.rgStatus.Size = new System.Drawing.Size(224, 34);
             this.rgStatus.StyleController = this.layoutControl1;
             this.rgStatus.TabIndex = 4;

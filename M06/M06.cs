@@ -174,6 +174,12 @@ namespace M06
                         }
                     }
                 }
+                else
+                {
+                    txeGarment.Text = "";
+                    txeGarment.Focus();
+                    FUNC.msgWarning("Duplicate garment parts. !! Please Change.");
+                }
             }
         }
 

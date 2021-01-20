@@ -114,7 +114,7 @@ namespace F03
             txeID.Text = new DBQuery("SELECT CASE WHEN ISNULL(MAX(OIDDEPT), '') = '' THEN 1 ELSE MAX(OIDDEPT) + 1 END AS NewNo FROM " + this.dbDP).getString();
             txeCode.Text = "";
             txeName.Text = "";
-            rgStatus.EditValue = 0;
+            rgStatus.EditValue = 1;
 
             glueDPType.EditValue = "";
             glueCompany.EditValue = "";

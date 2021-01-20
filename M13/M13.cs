@@ -184,6 +184,12 @@ namespace M13
                         }
                     }
                 }
+                else
+                {
+                    txeUnit.Text = "";
+                    txeUnit.Focus();
+                    FUNC.msgWarning("Duplicate unit. !! Please Change.");
+                }
             }
         }
 

@@ -39,16 +39,6 @@ namespace F02
         private void LoadData()
         {
             StringBuilder sbSQL = new StringBuilder();
-            sbSQL.Append("SELECT BN.OIDBranch AS [OID Branch], BN.Code AS [Branch No.], BN.Name AS [Branch Name], BN.OIDCOMPANY, CP.Code AS [Company Code], CP.EngName AS [Company Name (En)], CP.THName AS [Company Name (Th)], ");
-            sbSQL.Append("       BN.BranchType AS [Branch Type], CASE WHEN BN.BranchType = 0 THEN 'Branch' ELSE CASE WHEN BN.BranchType = 1 THEN 'Branch Sub Contract' ELSE '' END END AS [Type], BN.CreateBy AS[Created By], BN.CreateDate AS[Created Date] ");
-            sbSQL.Append("FROM   " + this.dbBranch + " AS BN LEFT OUTER JOIN ");
-            sbSQL.Append("       Company AS CP ON BN.OIDCOMPANY = CP.OIDCOMPANY ");
-            sbSQL.Append("ORDER BY [OID Branch] ");
-            new ObjDevEx.setGridControl(gcBranch, gvBranch, sbSQL).getData(false, false, false, true);
-            gvBranch.Columns[3].Visible = false; //OIDCOMPANY
-            gvBranch.Columns[7].Visible = false; //Branch Type
-
-            sbSQL.Clear();
             sbSQL.Append("SELECT Code AS [Company Code], EngName AS [Company Name (En)], THName AS [Company Name (Th)], OIDCOMPANY AS ID ");
             sbSQL.Append("FROM Company ");
             sbSQL.Append("ORDER BY ID ");
@@ -61,6 +51,23 @@ namespace F02
             sbSQL.Append("ORDER BY ID");
             new ObjDevEx.setGridLookUpEdit(glueBranchType, sbSQL, "Type", "ID").getData();
 
+            LoadBranch();
+        }
+
+        private void LoadBranch()
+        {
+            StringBuilder sbSQL = new StringBuilder();
+            sbSQL.Append("SELECT BN.OIDBranch AS [OID Branch], BN.Code AS [Branch No.], BN.Name AS [Branch Name], BN.OIDCOMPANY, CP.Code AS [Company Code], CP.EngName AS [Company Name (En)], CP.THName AS [Company Name (Th)], ");
+            sbSQL.Append("       BN.BranchType AS [Branch Type], CASE WHEN BN.BranchType = 0 THEN 'Branch' ELSE CASE WHEN BN.BranchType = 1 THEN 'Branch Sub Contract' ELSE '' END END AS [Type], BN.CreateBy AS[Created By], BN.CreateDate AS[Created Date] ");
+            sbSQL.Append("FROM   " + this.dbBranch + " AS BN LEFT OUTER JOIN ");
+            sbSQL.Append("       Company AS CP ON BN.OIDCOMPANY = CP.OIDCOMPANY ");
+            sbSQL.Append("WHERE (BN.OIDBranch <> '') ");
+            if (glueCompany.Text.Trim() != "")
+                sbSQL.Append("AND (BN.OIDCOMPANY = '" + glueCompany.EditValue.ToString() + "') ");
+            sbSQL.Append("ORDER BY [OID Branch] ");
+            new ObjDevEx.setGridControl(gcBranch, gvBranch, sbSQL).getData(false, false, false, true);
+            gvBranch.Columns[3].Visible = false; //OIDCOMPANY
+            gvBranch.Columns[7].Visible = false; //Branch Type
         }
 
         private void NewData()
@@ -277,6 +284,7 @@ namespace F02
                 bool chkDup = chkDuplicate();
                 if (chkDup == true)
                 {
+                    LoadBranch();
                     txeBranchNo.Focus();
                 }
             }

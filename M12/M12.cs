@@ -730,6 +730,15 @@ namespace M12
             return chkDup;
         }
 
+        private void txeTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = char.IsLetter(e.KeyChar);
+        }
+
+        private void txeFax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = char.IsLetter(e.KeyChar);
+        }
     }
 
     public class VendorType

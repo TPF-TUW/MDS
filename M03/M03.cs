@@ -209,10 +209,12 @@ namespace M03
             if (txeColorNo.Text != "")
             {
                 txeColorNo.Text = txeColorNo.Text.Trim();
+                string ColorType = cbeColorType.Text.Trim() != "" ? cbeColorType.EditValue.ToString() : "0";
+
                 if (txeColorNo.Text.Trim() != "" && lblStatus.Text == "* Add Color")
                 {
                     StringBuilder sbSQL = new StringBuilder();
-                    sbSQL.Append("SELECT TOP(1) ColorNo FROM ProductColor WHERE (ColorNo = N'" + txeColorNo.Text.Trim().Trim().Replace("'", "''") + "') ");
+                    sbSQL.Append("SELECT TOP(1) ColorNo FROM ProductColor WHERE (ColorType = '" + ColorType + "') AND (ColorNo = N'" + txeColorNo.Text.Trim().Trim().Replace("'", "''") + "') ");
                     if (new DBQuery(sbSQL).getString() != "")
                     {
                         
@@ -224,7 +226,7 @@ namespace M03
                     StringBuilder sbSQL = new StringBuilder();
                     sbSQL.Append("SELECT TOP(1) OIDCOLOR ");
                     sbSQL.Append("FROM ProductColor ");
-                    sbSQL.Append("WHERE (ColorNo = N'" + txeColorNo.Text.Trim().Trim().Replace("'", "''") + "') ");
+                    sbSQL.Append("WHERE (ColorType = '" + ColorType + "') AND (ColorNo = N'" + txeColorNo.Text.Trim().Trim().Replace("'", "''") + "') ");
                     string strCHK = new DBQuery(sbSQL).getString();
                     if (strCHK != "" && strCHK != txeColorID.Text.Trim())
                     {
@@ -244,10 +246,11 @@ namespace M03
             if (txeColorName.Text != "")
             {
                 txeColorName.Text = txeColorName.Text.Trim();
+                string ColorType = cbeColorType.Text.Trim() != "" ? cbeColorType.EditValue.ToString() : "0";
                 if (txeColorName.Text.Trim() != "" && lblStatus.Text == "* Add Color")
                 {
                     StringBuilder sbSQL = new StringBuilder();
-                    sbSQL.Append("SELECT TOP(1) ColorName FROM ProductColor WHERE (ColorName = N'" + txeColorName.Text.Trim().Replace("'", "''") + "') ");
+                    sbSQL.Append("SELECT TOP(1) ColorName FROM ProductColor WHERE (ColorType = '" + ColorType + "') AND (ColorName = N'" + txeColorName.Text.Trim().Replace("'", "''") + "') ");
                     if (new DBQuery(sbSQL).getString() != "")
                     {
                         FUNC.msgWarning("Duplicate color name. !! Please Change.");
@@ -261,7 +264,7 @@ namespace M03
                     StringBuilder sbSQL = new StringBuilder();
                     sbSQL.Append("SELECT TOP(1) OIDCOLOR ");
                     sbSQL.Append("FROM ProductColor ");
-                    sbSQL.Append("WHERE (ColorName = N'" + txeColorName.Text.Trim().Replace("'", "''") + "') ");
+                    sbSQL.Append("WHERE (ColorType = '" + ColorType + "') AND (ColorName = N'" + txeColorName.Text.Trim().Replace("'", "''") + "') ");
                     string strCHK = new DBQuery(sbSQL).getString();
                     if (strCHK != "" && strCHK != txeColorID.Text.Trim())
                     {

@@ -52,7 +52,7 @@ namespace M15
             txeID.Text = new DBQuery("SELECT CASE WHEN ISNULL(MAX(OIDPayment), '') = '' THEN 1 ELSE MAX(OIDPayment) + 1 END AS NewNo FROM PaymentTerm").getString();
             txeDescription.Text = "";
             txeDueDate.Text = "";
-            rgStatus.SelectedIndex = -1;
+            rgStatus.EditValue = 1;
 
             txeCREATE.Text = "0";
             txeDATE.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
@@ -73,18 +73,7 @@ namespace M15
 
         private void selectStatus(int value)
         {
-            switch (value)
-            {
-                case 0:
-                    rgStatus.SelectedIndex = 1;
-                    break;
-                case 1:
-                    rgStatus.SelectedIndex = 0;
-                    break;
-                default:
-                    rgStatus.SelectedIndex = -1;
-                    break;
-            }
+            rgStatus.EditValue = value;
         }
 
         private bool chkDuplicate()
@@ -178,11 +167,7 @@ namespace M15
                     bool chkGMP = chkDuplicate();
                     if (chkGMP == true)
                     {
-                        string Status = "NULL";
-                        if (rgStatus.SelectedIndex != -1)
-                        {
-                            Status = rgStatus.Properties.Items[rgStatus.SelectedIndex].Value.ToString();
-                        }
+                        string Status = rgStatus.EditValue.ToString();
 
                        // MessageBox.Show(Status);
                         if (lblStatus.Text == "* Add Payment Term")

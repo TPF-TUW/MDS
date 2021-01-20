@@ -128,10 +128,10 @@ namespace M10
                     sbSQL.Append("SELECT TOP(1) SizeName FROM ProductSize WHERE (SizeName = N'" + txeSizeName.Text.Trim() + "') ");
                     if (new DBQuery(sbSQL).getString() != "")
                     {
-                        FUNC.msgWarning("Duplicate size name. !! Please Change.");
                         txeSizeName.Text = "";
                         txeSizeName.Focus();
                         chkDup = false;
+                        FUNC.msgWarning("Duplicate size name. !! Please Change.");
                     }
                 }
                 else if (txeSizeName.Text.Trim() != "" && lblStatus.Text == "* Edit Size")
@@ -144,10 +144,10 @@ namespace M10
 
                     if (strCHK != "" && strCHK != txeID.Text.Trim())
                     {
-                        FUNC.msgWarning("Duplicate size name. !! Please Change.");
                         txeSizeName.Text = "";
                         txeSizeName.Focus();
                         chkDup = false;
+                        FUNC.msgWarning("Duplicate size name. !! Please Change.");
                     }
                 }
             }
@@ -173,57 +173,67 @@ namespace M10
             }
             else
             {
-                if (FUNC.msgQuiz("Confirm save data ?") == true)
+                bool chkGMP = chkDuplicateNo();
+
+                if (chkGMP == true)
                 {
-                    StringBuilder sbSQL = new StringBuilder();
+                    if (FUNC.msgQuiz("Confirm save data ?") == true)
+                    {
+                        StringBuilder sbSQL = new StringBuilder();
 
-                    string strCREATE = "0";
-                    if (txeCREATE.Text.Trim() != "")
-                    {
-                        strCREATE = txeCREATE.Text.Trim();
-                    }
-
-                    if (lblStatus.Text == "* Add Size")
-                    {
-                        sbSQL.Append("  INSERT INTO ProductSize(SizeNo, SizeName, CreatedBy, CreatedDate) ");
-                        sbSQL.Append("  VALUES(N'" + txeSizeNo.Text.Trim().Replace("'", "''") + "', N'" + txeSizeName.Text.Trim().Replace("'", "''") + "', '" + strCREATE + "', GETDATE()) ");
-                    }
-                    else if (lblStatus.Text == "* Edit Size")
-                    {
-                        sbSQL.Append("  UPDATE ProductSize SET ");
-                        sbSQL.Append("      SizeNo = N'" + txeSizeNo.Text.Trim().Replace("'", "''") + "', SizeName = N'" + txeSizeName.Text.Trim().Replace("'", "''") + "' ");
-                        sbSQL.Append("  WHERE (OIDSIZE = '" + txeID.Text.Trim() + "') ");
-                    }
-
-                    //sbSQL.Append("IF NOT EXISTS(SELECT OIDSIZE FROM ProductSize WHERE OIDSIZE = '" + txeID.Text.Trim() + "') ");
-                    //sbSQL.Append(" BEGIN ");
-                    //sbSQL.Append("  INSERT INTO ProductSize(SizeNo, SizeName, CreatedBy, CreatedDate) ");
-                    //sbSQL.Append("  VALUES(N'" + txeSizeNo.Text.Trim().Replace("'", "''") + "', N'" + txeSizeName.Text.Trim().Replace("'", "''") + "', '" + strCREATE + "', GETDATE()) ");
-                    //sbSQL.Append(" END ");
-                    //sbSQL.Append("ELSE ");
-                    //sbSQL.Append(" BEGIN ");
-                    //sbSQL.Append("  UPDATE ProductSize SET ");
-                    //sbSQL.Append("      SizeNo = N'" + txeSizeNo.Text.Trim().Replace("'", "''") + "', SizeName = N'" + txeSizeName.Text.Trim().Replace("'", "''") + "' ");
-                    //sbSQL.Append("  WHERE (OIDSIZE = '" + txeID.Text.Trim() + "') ");
-                    //sbSQL.Append(" END ");
-                    //MessageBox.Show(sbSQL.ToString());
-                    if (sbSQL.Length > 0)
-                    {
-                        try
+                        string strCREATE = "0";
+                        if (txeCREATE.Text.Trim() != "")
                         {
-                            bool chkSAVE = new DBQuery(sbSQL).runSQL();
-                            if (chkSAVE == true)
-                            {
-                                
-                                bbiNew.PerformClick();
-                                FUNC.msgInfo("Save complete.");
-                            }
+                            strCREATE = txeCREATE.Text.Trim();
                         }
-                        catch (Exception)
-                        { }
+
+                        if (lblStatus.Text == "* Add Size")
+                        {
+                            sbSQL.Append("  INSERT INTO ProductSize(SizeNo, SizeName, CreatedBy, CreatedDate) ");
+                            sbSQL.Append("  VALUES(N'" + txeSizeNo.Text.Trim().Replace("'", "''") + "', N'" + txeSizeName.Text.Trim().Replace("'", "''") + "', '" + strCREATE + "', GETDATE()) ");
+                        }
+                        else if (lblStatus.Text == "* Edit Size")
+                        {
+                            sbSQL.Append("  UPDATE ProductSize SET ");
+                            sbSQL.Append("      SizeNo = N'" + txeSizeNo.Text.Trim().Replace("'", "''") + "', SizeName = N'" + txeSizeName.Text.Trim().Replace("'", "''") + "' ");
+                            sbSQL.Append("  WHERE (OIDSIZE = '" + txeID.Text.Trim() + "') ");
+                        }
+
+                        //sbSQL.Append("IF NOT EXISTS(SELECT OIDSIZE FROM ProductSize WHERE OIDSIZE = '" + txeID.Text.Trim() + "') ");
+                        //sbSQL.Append(" BEGIN ");
+                        //sbSQL.Append("  INSERT INTO ProductSize(SizeNo, SizeName, CreatedBy, CreatedDate) ");
+                        //sbSQL.Append("  VALUES(N'" + txeSizeNo.Text.Trim().Replace("'", "''") + "', N'" + txeSizeName.Text.Trim().Replace("'", "''") + "', '" + strCREATE + "', GETDATE()) ");
+                        //sbSQL.Append(" END ");
+                        //sbSQL.Append("ELSE ");
+                        //sbSQL.Append(" BEGIN ");
+                        //sbSQL.Append("  UPDATE ProductSize SET ");
+                        //sbSQL.Append("      SizeNo = N'" + txeSizeNo.Text.Trim().Replace("'", "''") + "', SizeName = N'" + txeSizeName.Text.Trim().Replace("'", "''") + "' ");
+                        //sbSQL.Append("  WHERE (OIDSIZE = '" + txeID.Text.Trim() + "') ");
+                        //sbSQL.Append(" END ");
+                        //MessageBox.Show(sbSQL.ToString());
+                        if (sbSQL.Length > 0)
+                        {
+                            try
+                            {
+                                bool chkSAVE = new DBQuery(sbSQL).runSQL();
+                                if (chkSAVE == true)
+                                {
+
+                                    bbiNew.PerformClick();
+                                    FUNC.msgInfo("Save complete.");
+                                }
+                            }
+                            catch (Exception)
+                            { }
+                        }
                     }
                 }
-
+                else
+                {
+                    txeSizeNo.Text = "";
+                    txeSizeNo.Focus();
+                    FUNC.msgWarning("Duplicate size no. !! Please Change.");
+                }
             }
         }
 

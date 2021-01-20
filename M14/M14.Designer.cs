@@ -408,6 +408,7 @@
             this.txeFaxNo.StyleController = this.layoutControl1;
             this.txeFaxNo.TabIndex = 9;
             this.txeFaxNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeFaxNo_KeyDown);
+            this.txeFaxNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txeFaxNo_KeyPress);
             // 
             // txeTelNo
             // 
@@ -419,12 +420,17 @@
             this.txeTelNo.StyleController = this.layoutControl1;
             this.txeTelNo.TabIndex = 8;
             this.txeTelNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeTelNo_KeyDown);
+            this.txeTelNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txeTelNo_KeyPress);
             // 
             // txePostCode
             // 
             this.txePostCode.Location = new System.Drawing.Point(604, 76);
             this.txePostCode.MenuManager = this.ribbonControl;
             this.txePostCode.Name = "txePostCode";
+            this.txePostCode.Properties.BeepOnError = false;
+            this.txePostCode.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txePostCode.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txePostCode.Properties.MaskSettings.Set("mask", "d");
             this.txePostCode.Properties.MaxLength = 10;
             this.txePostCode.Size = new System.Drawing.Size(146, 20);
             this.txePostCode.StyleController = this.layoutControl1;
