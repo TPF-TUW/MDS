@@ -221,6 +221,37 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.layoutControlGroup13 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.layoutControlItem69 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.layoutControlItem70 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridLookUpEdit2 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.layoutControlItem71 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.layoutControlItem72 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.searchLookUpEdit2 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.layoutControlItem73 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.searchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridLookUpEdit3 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.layoutControlItem74 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridLookUpEdit3View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.searchLookUpEdit3 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.layoutControlItem75 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.searchLookUpEdit4 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.layoutControlItem76 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.searchLookUpEdit5 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.layoutControlItem77 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem12 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txeArrivalLead.Properties)).BeginInit();
@@ -394,10 +425,50 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem67)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem68)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem69)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem70)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem71)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem72)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem73)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem74)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem75)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem76)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem77)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.searchLookUpEdit5);
+            this.layoutControl1.Controls.Add(this.searchLookUpEdit4);
+            this.layoutControl1.Controls.Add(this.searchLookUpEdit3);
+            this.layoutControl1.Controls.Add(this.gridLookUpEdit3);
+            this.layoutControl1.Controls.Add(this.searchLookUpEdit2);
+            this.layoutControl1.Controls.Add(this.searchLookUpEdit1);
+            this.layoutControl1.Controls.Add(this.gridLookUpEdit2);
+            this.layoutControl1.Controls.Add(this.gridLookUpEdit1);
+            this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Controls.Add(this.lblIDVENDItem);
             this.layoutControl1.Controls.Add(this.btnDELETE);
             this.layoutControl1.Controls.Add(this.btnNEW);
@@ -1377,9 +1448,10 @@
             this.tabbedControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.tabbedControlGroup1.Name = "tabbedControlGroup1";
             this.tabbedControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup1;
+            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup13;
             this.tabbedControlGroup1.Size = new System.Drawing.Size(1094, 650);
             this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroup13,
             this.layoutControlGroup1,
             this.layoutControlGroup2});
             this.tabbedControlGroup1.TextLocation = DevExpress.Utils.Locations.Bottom;
@@ -2422,6 +2494,312 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.skinPaletteDropDownButtonItem1);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
+            // layoutControlGroup13
+            // 
+            this.layoutControlGroup13.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem69,
+            this.emptySpaceItem9,
+            this.layoutControlItem70,
+            this.layoutControlItem71,
+            this.layoutControlItem72,
+            this.layoutControlItem73,
+            this.layoutControlItem74,
+            this.layoutControlItem75,
+            this.layoutControlItem76,
+            this.layoutControlItem77,
+            this.emptySpaceItem11,
+            this.emptySpaceItem12});
+            this.layoutControlGroup13.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup13.Name = "layoutControlGroup13";
+            this.layoutControlGroup13.Size = new System.Drawing.Size(1084, 616);
+            this.layoutControlGroup13.Text = "List of Item";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(362, 9);
+            this.gridControl1.MainView = this.gridView2;
+            this.gridControl1.MenuManager = this.ribbonControl2;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(727, 612);
+            this.gridControl1.TabIndex = 82;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.gridControl1;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ColumnAutoWidth = false;
+            this.gridView2.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridView2.OptionsView.EnableAppearanceOddRow = true;
+            this.gridView2.OptionsView.ShowAutoFilterRow = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // layoutControlItem69
+            // 
+            this.layoutControlItem69.Control = this.gridControl1;
+            this.layoutControlItem69.Location = new System.Drawing.Point(353, 0);
+            this.layoutControlItem69.Name = "layoutControlItem69";
+            this.layoutControlItem69.Size = new System.Drawing.Size(731, 616);
+            this.layoutControlItem69.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem69.TextVisible = false;
+            // 
+            // emptySpaceItem9
+            // 
+            this.emptySpaceItem9.AllowHotTrack = false;
+            this.emptySpaceItem9.Location = new System.Drawing.Point(0, 192);
+            this.emptySpaceItem9.Name = "emptySpaceItem9";
+            this.emptySpaceItem9.Size = new System.Drawing.Size(353, 424);
+            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // gridLookUpEdit1
+            // 
+            this.gridLookUpEdit1.Location = new System.Drawing.Point(160, 9);
+            this.gridLookUpEdit1.MenuManager = this.ribbonControl2;
+            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
+            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEdit1.Properties.NullText = "";
+            this.gridLookUpEdit1.Properties.PopupView = this.gridView3;
+            this.gridLookUpEdit1.Size = new System.Drawing.Size(171, 20);
+            this.gridLookUpEdit1.StyleController = this.layoutControl1;
+            this.gridLookUpEdit1.TabIndex = 83;
+            // 
+            // layoutControlItem70
+            // 
+            this.layoutControlItem70.Control = this.gridLookUpEdit1;
+            this.layoutControlItem70.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem70.Name = "layoutControlItem70";
+            this.layoutControlItem70.Size = new System.Drawing.Size(326, 24);
+            this.layoutControlItem70.Text = "Material Type";
+            this.layoutControlItem70.TextSize = new System.Drawing.Size(139, 14);
+            // 
+            // gridView3
+            // 
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridLookUpEdit2
+            // 
+            this.gridLookUpEdit2.Location = new System.Drawing.Point(160, 33);
+            this.gridLookUpEdit2.MenuManager = this.ribbonControl2;
+            this.gridLookUpEdit2.Name = "gridLookUpEdit2";
+            this.gridLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEdit2.Properties.NullText = "";
+            this.gridLookUpEdit2.Properties.PopupView = this.gridView4;
+            this.gridLookUpEdit2.Size = new System.Drawing.Size(171, 20);
+            this.gridLookUpEdit2.StyleController = this.layoutControl1;
+            this.gridLookUpEdit2.TabIndex = 84;
+            // 
+            // layoutControlItem71
+            // 
+            this.layoutControlItem71.Control = this.gridLookUpEdit2;
+            this.layoutControlItem71.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem71.Name = "layoutControlItem71";
+            this.layoutControlItem71.Size = new System.Drawing.Size(326, 24);
+            this.layoutControlItem71.Text = "Branch";
+            this.layoutControlItem71.TextSize = new System.Drawing.Size(139, 14);
+            // 
+            // gridView4
+            // 
+            this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView4.OptionsView.ShowGroupPanel = false;
+            // 
+            // searchLookUpEdit1
+            // 
+            this.searchLookUpEdit1.Location = new System.Drawing.Point(160, 57);
+            this.searchLookUpEdit1.MenuManager = this.ribbonControl2;
+            this.searchLookUpEdit1.Name = "searchLookUpEdit1";
+            this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookUpEdit1.Properties.NullText = "";
+            this.searchLookUpEdit1.Properties.PopupView = this.gridView5;
+            this.searchLookUpEdit1.Size = new System.Drawing.Size(198, 20);
+            this.searchLookUpEdit1.StyleController = this.layoutControl1;
+            this.searchLookUpEdit1.TabIndex = 85;
+            // 
+            // layoutControlItem72
+            // 
+            this.layoutControlItem72.Control = this.searchLookUpEdit1;
+            this.layoutControlItem72.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem72.Name = "layoutControlItem72";
+            this.layoutControlItem72.Size = new System.Drawing.Size(353, 24);
+            this.layoutControlItem72.Text = "Customer";
+            this.layoutControlItem72.TextSize = new System.Drawing.Size(139, 14);
+            // 
+            // gridView5
+            // 
+            this.gridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView5.OptionsView.ShowGroupPanel = false;
+            // 
+            // searchLookUpEdit2
+            // 
+            this.searchLookUpEdit2.Location = new System.Drawing.Point(160, 81);
+            this.searchLookUpEdit2.MenuManager = this.ribbonControl2;
+            this.searchLookUpEdit2.Name = "searchLookUpEdit2";
+            this.searchLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookUpEdit2.Properties.NullText = "";
+            this.searchLookUpEdit2.Properties.PopupView = this.searchLookUpEdit2View;
+            this.searchLookUpEdit2.Size = new System.Drawing.Size(198, 20);
+            this.searchLookUpEdit2.StyleController = this.layoutControl1;
+            this.searchLookUpEdit2.TabIndex = 86;
+            // 
+            // layoutControlItem73
+            // 
+            this.layoutControlItem73.Control = this.searchLookUpEdit2;
+            this.layoutControlItem73.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem73.Name = "layoutControlItem73";
+            this.layoutControlItem73.Size = new System.Drawing.Size(353, 24);
+            this.layoutControlItem73.Text = "Vendor";
+            this.layoutControlItem73.TextSize = new System.Drawing.Size(139, 14);
+            // 
+            // searchLookUpEdit2View
+            // 
+            this.searchLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit2View.Name = "searchLookUpEdit2View";
+            this.searchLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridLookUpEdit3
+            // 
+            this.gridLookUpEdit3.Location = new System.Drawing.Point(160, 105);
+            this.gridLookUpEdit3.MenuManager = this.ribbonControl2;
+            this.gridLookUpEdit3.Name = "gridLookUpEdit3";
+            this.gridLookUpEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEdit3.Properties.NullText = "";
+            this.gridLookUpEdit3.Properties.PopupView = this.gridLookUpEdit3View;
+            this.gridLookUpEdit3.Size = new System.Drawing.Size(198, 20);
+            this.gridLookUpEdit3.StyleController = this.layoutControl1;
+            this.gridLookUpEdit3.TabIndex = 87;
+            // 
+            // layoutControlItem74
+            // 
+            this.layoutControlItem74.Control = this.gridLookUpEdit3;
+            this.layoutControlItem74.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem74.Name = "layoutControlItem74";
+            this.layoutControlItem74.Size = new System.Drawing.Size(353, 24);
+            this.layoutControlItem74.Text = "Category";
+            this.layoutControlItem74.TextSize = new System.Drawing.Size(139, 14);
+            // 
+            // gridLookUpEdit3View
+            // 
+            this.gridLookUpEdit3View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit3View.Name = "gridLookUpEdit3View";
+            this.gridLookUpEdit3View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit3View.OptionsView.ShowGroupPanel = false;
+            // 
+            // searchLookUpEdit3
+            // 
+            this.searchLookUpEdit3.Location = new System.Drawing.Point(160, 129);
+            this.searchLookUpEdit3.MenuManager = this.ribbonControl2;
+            this.searchLookUpEdit3.Name = "searchLookUpEdit3";
+            this.searchLookUpEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookUpEdit3.Properties.NullText = "";
+            this.searchLookUpEdit3.Properties.PopupView = this.gridView6;
+            this.searchLookUpEdit3.Size = new System.Drawing.Size(198, 20);
+            this.searchLookUpEdit3.StyleController = this.layoutControl1;
+            this.searchLookUpEdit3.TabIndex = 88;
+            // 
+            // layoutControlItem75
+            // 
+            this.layoutControlItem75.Control = this.searchLookUpEdit3;
+            this.layoutControlItem75.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem75.Name = "layoutControlItem75";
+            this.layoutControlItem75.Size = new System.Drawing.Size(353, 24);
+            this.layoutControlItem75.Text = "Style Name";
+            this.layoutControlItem75.TextSize = new System.Drawing.Size(139, 14);
+            // 
+            // gridView6
+            // 
+            this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView6.OptionsView.ShowGroupPanel = false;
+            // 
+            // searchLookUpEdit4
+            // 
+            this.searchLookUpEdit4.Location = new System.Drawing.Point(160, 153);
+            this.searchLookUpEdit4.MenuManager = this.ribbonControl2;
+            this.searchLookUpEdit4.Name = "searchLookUpEdit4";
+            this.searchLookUpEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookUpEdit4.Properties.NullText = "";
+            this.searchLookUpEdit4.Properties.PopupView = this.gridView7;
+            this.searchLookUpEdit4.Size = new System.Drawing.Size(198, 20);
+            this.searchLookUpEdit4.StyleController = this.layoutControl1;
+            this.searchLookUpEdit4.TabIndex = 89;
+            // 
+            // layoutControlItem76
+            // 
+            this.layoutControlItem76.Control = this.searchLookUpEdit4;
+            this.layoutControlItem76.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem76.Name = "layoutControlItem76";
+            this.layoutControlItem76.Size = new System.Drawing.Size(353, 24);
+            this.layoutControlItem76.Text = "Code";
+            this.layoutControlItem76.TextSize = new System.Drawing.Size(139, 14);
+            // 
+            // gridView7
+            // 
+            this.gridView7.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView7.Name = "gridView7";
+            this.gridView7.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView7.OptionsView.ShowGroupPanel = false;
+            // 
+            // searchLookUpEdit5
+            // 
+            this.searchLookUpEdit5.Location = new System.Drawing.Point(160, 177);
+            this.searchLookUpEdit5.MenuManager = this.ribbonControl2;
+            this.searchLookUpEdit5.Name = "searchLookUpEdit5";
+            this.searchLookUpEdit5.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookUpEdit5.Properties.NullText = "";
+            this.searchLookUpEdit5.Properties.PopupView = this.gridView8;
+            this.searchLookUpEdit5.Size = new System.Drawing.Size(198, 20);
+            this.searchLookUpEdit5.StyleController = this.layoutControl1;
+            this.searchLookUpEdit5.TabIndex = 90;
+            // 
+            // layoutControlItem77
+            // 
+            this.layoutControlItem77.Control = this.searchLookUpEdit5;
+            this.layoutControlItem77.Location = new System.Drawing.Point(0, 168);
+            this.layoutControlItem77.Name = "layoutControlItem77";
+            this.layoutControlItem77.Size = new System.Drawing.Size(353, 24);
+            this.layoutControlItem77.Text = "Model No.";
+            this.layoutControlItem77.TextSize = new System.Drawing.Size(139, 14);
+            // 
+            // gridView8
+            // 
+            this.gridView8.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView8.Name = "gridView8";
+            this.gridView8.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView8.OptionsView.ShowGroupPanel = false;
+            // 
+            // emptySpaceItem11
+            // 
+            this.emptySpaceItem11.AllowHotTrack = false;
+            this.emptySpaceItem11.Location = new System.Drawing.Point(326, 0);
+            this.emptySpaceItem11.Name = "emptySpaceItem11";
+            this.emptySpaceItem11.Size = new System.Drawing.Size(27, 24);
+            this.emptySpaceItem11.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem12
+            // 
+            this.emptySpaceItem12.AllowHotTrack = false;
+            this.emptySpaceItem12.Location = new System.Drawing.Point(326, 24);
+            this.emptySpaceItem12.Name = "emptySpaceItem12";
+            this.emptySpaceItem12.Size = new System.Drawing.Size(27, 24);
+            this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // M07
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -2607,6 +2985,37 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem67)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem68)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem69)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem70)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem71)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem72)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem73)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem74)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem75)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem76)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem77)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2804,5 +3213,36 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem10;
+        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit5;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView8;
+        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView7;
+        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit3View;
+        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit2;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit2View;
+        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup13;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem69;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem9;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem70;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem71;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem72;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem73;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem74;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem75;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem76;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem77;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem11;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem12;
     }
 }
