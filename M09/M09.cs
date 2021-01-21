@@ -693,8 +693,8 @@ namespace M09
 
         private DateTime FIND_SUM_TIME(DateTime dtSUM, string strTIME)
         {
-            int Minutes = 0;
-            int Seconds = 0;
+            string Minutes = "0";
+            string Seconds = "0";
 
             if (strTIME.IndexOf('.') > -1)
             {
@@ -702,16 +702,16 @@ namespace M09
 
                 if (arrTIME.Length > 0)
                 {
-                    Minutes = Convert.ToInt32(arrTIME[0]);
-                    Seconds = Convert.ToInt32(arrTIME[1]);
-                    if (Seconds.ToString().Length == 1)
-                        Seconds *= 10;
+                    Minutes = arrTIME[0];
+                    Seconds = arrTIME[1];
+                    if (Seconds.Length == 1)
+                        Seconds = (Convert.ToInt32(Seconds) * 10).ToString();
                 }
             }
             else
-                Minutes = Convert.ToInt32(strTIME);
+                Minutes = strTIME;
            
-            dtSUM = dtSUM.AddMinutes(Minutes).AddSeconds(Seconds);
+            dtSUM = dtSUM.AddMinutes(Convert.ToInt32(Minutes)).AddSeconds(Convert.ToInt32(Seconds));
 
             return dtSUM;
         }
