@@ -133,32 +133,68 @@ namespace MPS02
         {
             gcSumPO.DataSource = null;
             StringBuilder sbSQL = new StringBuilder();
-            //PO
-            sbSQL.Append("SELECT PO.OrderNo AS [PO Order No.], PO.RevisionNo AS [Revised No.], CONVERT(NVARCHAR(10), PO.RevisedDate, 103) AS RevisedDate, PO.DocumentStatus AS DocStatus, ST.Status AS DocumentStatus, PO.Lot AS [Lot No.], PO.OrderPlanNumber AS [Order Plan No.], PO.OIDCUST, CUS.Name AS Customer, ");
-            sbSQL.Append("       PO.Season, PO.BusinessUnit, PO.PatternDimensionCode, PO.ItemCode, IC.ItemName, PO.SampleCode, PO.OIDCOLOR AS ColorCode, PC.ColorName AS Color, PO.OIDSIZE, PS.SizeName AS Size, PO.SKUCode, ");
-            sbSQL.Append("       PO.OrderQtyPCS AS[Order Qty. (Pcs)], PO.OriginalSalesPrice, PO.Approver, CONVERT(NVARCHAR(10), PO.ApprovalDate, 103) AS ApprovalDate, PO.OIDBillto, VD.Name AS BillTo, VD.Address1 + ' ' + VD.Address2 + ' ' + VD.Address3 AS Address, VD.TelephoneNo AS Telephone, ");
-            sbSQL.Append("       PO.PaymentTerms, PO.OIDCURR, CUR.Currency AS PaymentCurrency, PO.Remark, PO.AllocationOrderNumber, PO.OID AS [OID PO] ");
+            //**** NEW (PO) ******
+            sbSQL.Append("SELECT PO.OrderNo AS [PO Order No.], PO.RevisionNo AS [Revision No.], CONVERT(NVARCHAR(10), PO.RevisedDate, 103) AS RevisedDate, ");
+            sbSQL.Append("       PO.DocumentStatus AS DocStatus, ST.Status AS DocumentStatus, PO.Lot AS [Lot No.], PO.OrderPlanNumber AS [Order Plan No.], PO.OIDCUST, CUS.Name AS Customer, ");
+            sbSQL.Append("       PO.Season, PO.BusinessUnit, PO.PatternDimensionCode, PO.ItemCode, IC.ItemName, PO.SampleCode, SUM(PO.OrderQtyPCS) AS [Order Qty. (Pcs)], PO.OriginalSalesPrice, PO.Approver, ");
+            sbSQL.Append("       CONVERT(NVARCHAR(10), PO.ApprovalDate, 103) AS ApprovalDate, PO.OIDBillto, VD.Name AS BillTo, VD.Address1 + ' ' + VD.Address2 + ' ' + VD.Address3 AS Address, VD.TelephoneNo AS Telephone, ");
+            sbSQL.Append("       PO.PaymentTerms, PO.OIDCURR, CUR.Currency AS PaymentCurrency, PO.Remark, PO.AllocationOrderNumber ");
             sbSQL.Append("FROM   COPO AS PO INNER JOIN ");
             sbSQL.Append("       ( ");
             sbSQL.Append(sbSTATUS);
             sbSQL.Append("       ) AS ST ON PO.DocumentStatus = ST.ID LEFT OUTER JOIN ");
             sbSQL.Append("       Customer AS CUS ON PO.OIDCUST = CUS.OIDCUST LEFT OUTER JOIN ");
             sbSQL.Append("       ItemCustomer AS IC ON PO.ItemCode = IC.OIDCSITEM LEFT OUTER JOIN ");
-            sbSQL.Append("       ProductColor AS PC ON PO.OIDCOLOR = PC.OIDCOLOR LEFT OUTER JOIN ");
-            sbSQL.Append("       ProductSize AS PS ON PO.OIDSIZE = PS.OIDSIZE LEFT OUTER JOIN ");
             sbSQL.Append("       Vendor AS VD ON VD.VendorType = 6 AND PO.OIDBillto = VD.OIDVEND LEFT OUTER JOIN ");
             sbSQL.Append("       Currency AS CUR ON PO.OIDCURR = CUR.OIDCURR ");
-            sbSQL.Append("ORDER BY [PO Order No.] ");
-            new ObjDevEx.setGridControl(gcSumPO, gvSumPO, sbSQL).getData(false, false, false, true);
+            sbSQL.Append("GROUP BY PO.OrderNo, PO.RevisionNo, PO.RevisedDate, PO.DocumentStatus, ST.Status, PO.Lot, PO.OrderPlanNumber, PO.OIDCUST, CUS.Name, ");
+            sbSQL.Append("       PO.Season, PO.BusinessUnit, PO.PatternDimensionCode, PO.ItemCode, IC.ItemName, PO.SampleCode, ");
+            sbSQL.Append("       PO.OriginalSalesPrice, PO.Approver, PO.ApprovalDate, PO.OIDBillto, VD.Name, VD.Address1, VD.Address2, VD.Address3, VD.TelephoneNo, ");
+            sbSQL.Append("       PO.PaymentTerms, PO.OIDCURR, CUR.Currency, PO.Remark, PO.AllocationOrderNumber ");
+            sbSQL.Append("ORDER BY PO.OrderNo, PO.RevisionNo ");
+            DataTable dtPO = new DBQuery(sbSQL).getDataTable();
+
+            sbSQL.Clear();
+            sbSQL.Append("SELECT PO.OrderNo AS [PO Order No.], PO.RevisionNo AS [Revision No.], PO.OIDCOLOR, PC.ColorNo AS ColorCode, PC.ColorName AS Color, PO.OIDSIZE, PS.SizeNo AS SizeCode, PS.SizeName AS Size, ");
+            sbSQL.Append("       PO.PatternDimensionCode, PO.SKUCode, PO.SampleCode, PO.OrderQtyPCS AS [Order Qty. (Pcs)] ");
+            sbSQL.Append("FROM   COPO AS PO LEFT OUTER JOIN ");
+            sbSQL.Append("       ProductColor AS PC ON PO.OIDCOLOR = PC.OIDCOLOR LEFT OUTER JOIN ");
+            sbSQL.Append("       ProductSize AS PS ON PO.OIDSIZE = PS.OIDSIZE ");
+            sbSQL.Append("ORDER BY PO.OrderNo, PO.RevisionNo, PO.OID ");
+            DataTable dtPO2 = new DBQuery(sbSQL).getDataTable();
+
+            DataSet dsPOS = new DataSet();
+            dsPOS.Tables.Add(dtPO);
+            dsPOS.Tables.Add(dtPO2);
+
+            dsPOS.Relations.Add("PO Detail", 
+                new DataColumn[] { dsPOS.Tables[0].Columns["PO Order No."], dsPOS.Tables[0].Columns["Revision No."] }, 
+                new DataColumn[] { dsPOS.Tables[1].Columns["PO Order No."], dsPOS.Tables[1].Columns["Revision No."] }
+                );
+            
+            gcSumPO.DataSource = dsPOS.Tables[0];
+            gvSumPO.OptionsView.ColumnAutoWidth = false;
+            gvSumPO.BestFitColumns();
+            gvSumPO.Columns["PO Order No."].Width = 160;
+
+            gvSumPO.Columns["PO Order No."].Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            gvSumPO.Columns["Revision No."].Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+
+            gvSumPO.Columns["DocStatus"].Visible = false;
+            gvSumPO.Columns["OIDCUST"].Visible = false;
+            gvSumPO.Columns["ItemCode"].Visible = false;
+            gvSumPO.Columns["OIDCURR"].Visible = false;
+            gvSumPO.Columns["Order Qty. (Pcs)"].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            //********************
 
 
-            //DO
+            //**** NEW (DO) ******
             gcSumDO.DataSource = null;
             sbSQL.Clear();
             sbSQL.Append("SELECT DO.DONo AS [DO No.], DO.OrderNo AS [PO Order No.], DO.RevisionNo AS [Revision No.], DO.DocStatus, ST.Status AS DocumentStatus, DO.ItemCode, IC.ItemName, DO.PatternDimensionCode,  ");
             sbSQL.Append("       DO.TransportationMethod AS TransMethod, CASE WHEN DO.TransportationMethod = 0 THEN 'Ship' ELSE CASE WHEN DO.TransportationMethod = 1 THEN 'Air' ELSE '' END END AS TransportationMethod, ");
-            sbSQL.Append("       DO.PortCode, PC.PortCode AS[Ship to Port Code], PC.PortName AS[Ship to Port], PC.City, PC.Country, DO.Incoterms, DO.Forwarder, DO.OIDVEND, VD.Name AS Vendor, CASE WHEN DO.ETAWH IS NOT NULL THEN CONVERT(VARCHAR(10), DO.ETAWH, 103) ELSE '' END AS ETAWH, CASE WHEN DO.ContractedETD IS NOT NULL THEN CONVERT(VARCHAR(10), DO.ContractedETD, 103) ELSE '' END AS ContractedETD, DO.UpdatedBy, ");
-            sbSQL.Append("       DO.UpdatedDate, DO.OIDDO AS[OID DO] ");
+            sbSQL.Append("       DO.PortCode AS [Ship to Port Code], PC.PortName AS [Ship to Port], PC.City, PC.Country, DO.Incoterms, DO.Forwarder, DO.OIDVEND, VD.Name AS Vendor, SUM(DO.QuantityBox) AS SumQuantityBox, ");
+            sbSQL.Append("       CASE WHEN DO.ETAWH IS NOT NULL THEN CONVERT(VARCHAR(10), DO.ETAWH, 103) ELSE '' END AS ETAWH, CASE WHEN DO.ContractedETD IS NOT NULL THEN CONVERT(VARCHAR(10), DO.ContractedETD, 103) ELSE '' END AS ContractedETD ");
             sbSQL.Append("FROM   CODO AS DO INNER JOIN ");
             sbSQL.Append("       ( ");
             sbSQL.Append(sbSTATUS);
@@ -166,34 +202,48 @@ namespace MPS02
             sbSQL.Append("       ItemCustomer AS IC ON DO.ItemCode = IC.OIDCSITEM LEFT OUTER JOIN ");
             sbSQL.Append("       PortAndCity AS PC ON DO.PortCode = PC.PortCode LEFT OUTER JOIN ");
             sbSQL.Append("       Vendor AS VD ON VD.VendorType = 6 AND DO.OIDVEND = VD.OIDVEND ");
-            sbSQL.Append("ORDER BY [PO Order No.], [Revision No.], [DO No.] ");
-            new ObjDevEx.setGridControl(gcSumDO, gvSumDO, sbSQL).getData(false, false, false, true);
+            sbSQL.Append("GROUP BY DO.DONo, DO.OrderNo, DO.RevisionNo, DO.DocStatus, ST.Status, DO.ItemCode, IC.ItemName, DO.PatternDimensionCode,  ");
+            sbSQL.Append("       DO.TransportationMethod, DO.PortCode, PC.PortName, PC.City, PC.Country, DO.Incoterms, DO.Forwarder, DO.OIDVEND, VD.Name, ");
+            sbSQL.Append("       DO.ETAWH, DO.ContractedETD  ");
+            sbSQL.Append("ORDER BY [DO No.], [PO Order No.], [Revision No.]");
+            DataTable dtDO = new DBQuery(sbSQL).getDataTable();
 
-            gvSumPO.Columns["DocStatus"].Visible = false;
-            gvSumPO.Columns["OIDCUST"].Visible = false;
-            gvSumPO.Columns["ItemCode"].Visible = false;
-            gvSumPO.Columns["ColorCode"].Visible = false;
-            gvSumPO.Columns["OIDSIZE"].Visible = false;
-            gvSumPO.Columns["OIDCURR"].Visible = false;
-            gvSumPO.Columns["OID PO"].Visible = false;
+            sbSQL.Clear();
+            sbSQL.Append("SELECT DO.DONo AS [DO No.], DO.OrderNo AS [PO Order No.], DO.RevisionNo AS [Revision No.],  ");
+            sbSQL.Append("       DO.SetCode, DO.QuantityBox, DO.OIDCOLOR, PC.ColorNo AS ColorCode, PC.ColorName AS Color, ");
+            sbSQL.Append("       DO.OIDSIZE, PS.SizeNo AS SizeCode, PS.SizeName AS Size, DO.PatternDimensionCode, DO.QtyperSet, DO.PickingUnit ");
+            sbSQL.Append("FROM   CODO AS DO LEFT OUTER JOIN ");
+            sbSQL.Append("       ProductColor AS PC ON DO.OIDCOLOR = PC.OIDCOLOR LEFT OUTER JOIN ");
+            sbSQL.Append("       ProductSize AS PS ON DO.OIDSIZE = PS.OIDSIZE ");
+            sbSQL.Append("ORDER BY [DO No.], [PO Order No.], [Revision No.], DO.OIDDO");
+            DataTable dtDO2 = new DBQuery(sbSQL).getDataTable();
+
+            DataSet dsDOS = new DataSet();
+            dsDOS.Tables.Add(dtDO);
+            dsDOS.Tables.Add(dtDO2);
+
+            dsDOS.Relations.Add("DO Detail",
+               new DataColumn[] { dsDOS.Tables[0].Columns["DO No."], dsDOS.Tables[0].Columns["PO Order No."], dsDOS.Tables[0].Columns["Revision No."] },
+               new DataColumn[] { dsDOS.Tables[1].Columns["DO No."], dsDOS.Tables[1].Columns["PO Order No."], dsDOS.Tables[1].Columns["Revision No."] }
+               );
+
+            gcSumDO.DataSource = dsDOS.Tables[0];
+
+            gvSumDO.Columns["DO No."].Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            gvSumDO.Columns["PO Order No."].Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            gvSumDO.Columns["Revision No."].Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
 
             gvSumDO.Columns["DocStatus"].Visible = false;
             gvSumDO.Columns["ItemCode"].Visible = false;
             gvSumDO.Columns["TransMethod"].Visible = false;
-            gvSumDO.Columns["PortCode"].Visible = false;
+            gvSumDO.Columns["Ship to Port Code"].Visible = false;
             gvSumDO.Columns["OIDVEND"].Visible = false;
-            gvSumDO.Columns["OID DO"].Visible = false;
+            gvSumDO.Columns["SumQuantityBox"].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
 
-            gvSumPO.Columns["Order Qty. (Pcs)"].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-
-            gvSumPO.Columns[0].Group();
-            gvSumPO.Columns[1].Group();
-            gvSumPO.ExpandAllGroups();
-            gvSumPO.BestFitColumns();
-
-            gvSumDO.Columns[0].Group();
-            gvSumDO.ExpandAllGroups();
+            gvSumDO.OptionsView.ColumnAutoWidth = false;
             gvSumDO.BestFitColumns();
+            gvSumDO.Columns["DO No."].Width = 180;
+            gvSumDO.Columns["PO Order No."].Width = 160;
         }
 
         private void LoadData()
@@ -1524,16 +1574,34 @@ namespace MPS02
 
         private void bbiExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (tabbedControlGroup2.SelectedTabPage == layoutControlGroup2) //PO
+            {
+                string pathFile = new ObjSet.Folder(@"C:\MDS\Export\").GetPath() + "SummaryPOList_" + DateTime.Now.ToString("yyyyMMdd") + ".xlsx";
+                gvSumPO.ExportToXlsx(pathFile);
+                System.Diagnostics.Process.Start(pathFile);
+            }
+            else if (tabbedControlGroup2.SelectedTabPage == layoutControlGroup3) //DO
+            {
+                string pathFile = new ObjSet.Folder(@"C:\MDS\Export\").GetPath() + "SummaryDOList_" + DateTime.Now.ToString("yyyyMMdd") + ".xlsx";
+                gvSumDO.ExportToXlsx(pathFile);
+                System.Diagnostics.Process.Start(pathFile);
+            }
         }
 
         private void bbiPrintPreview_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (tabbedControlGroup2.SelectedTabPage == layoutControlGroup2) //PO
+                gcSumPO.ShowPrintPreview();
+            else if (tabbedControlGroup2.SelectedTabPage == layoutControlGroup3) //DO
+                gcSumDO.ShowPrintPreview();
         }
 
         private void bbiPrint_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (tabbedControlGroup2.SelectedTabPage == layoutControlGroup2) //PO
+                gcSumPO.Print();
+            else if (tabbedControlGroup2.SelectedTabPage == layoutControlGroup3) //DO
+                gcSumDO.Print();
         }
 
         // This event is generated by Data Source Configuration Wizard
@@ -3198,7 +3266,7 @@ namespace MPS02
                 {
                     DataRow drPO = dtPO.Rows[info.RowHandle];
                     string PONO = drPO["PO Order No."].ToString();
-                    string REVISE = drPO["Revised No."].ToString();
+                    string REVISE = drPO["Revision No."].ToString();
                     tabbedControlGroup3.SelectedTabPage = layoutControlGroup5;
                     tabbedControlGroup4.SelectedTabPage = layoutControlGroup8;
                     gluePoDocumentStatus.EditValue = 2;
@@ -3234,6 +3302,49 @@ namespace MPS02
         private void bbiRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadSummary();
+        }
+
+        private void gvSumDO_MasterRowExpanded(object sender, CustomMasterRowEventArgs e)
+        {
+            DevExpress.XtraGrid.Views.Grid.GridView masterView = (DevExpress.XtraGrid.Views.Grid.GridView)sender;
+            DevExpress.XtraGrid.Views.Grid.GridView detailView = (DevExpress.XtraGrid.Views.Grid.GridView)masterView.GetDetailView(e.RowHandle, e.RelationIndex);
+
+            detailView.Columns["DO No."].Visible = false;
+            detailView.Columns["PO Order No."].Visible = false;
+            detailView.Columns["Revision No."].Visible = false;
+            detailView.Columns["OIDCOLOR"].Visible = false;
+            detailView.Columns["OIDSIZE"].Visible = false;
+            detailView.Columns["QuantityBox"].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            detailView.Columns["QtyperSet"].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            detailView.Columns["PickingUnit"].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+
+            detailView.OptionsView.ColumnAutoWidth = false;
+            detailView.BestFitColumns();
+        }
+
+        private void gvSumPO_MasterRowExpanded(object sender, CustomMasterRowEventArgs e)
+        {
+            DevExpress.XtraGrid.Views.Grid.GridView masterView = (DevExpress.XtraGrid.Views.Grid.GridView)sender;
+            DevExpress.XtraGrid.Views.Grid.GridView detailView = (DevExpress.XtraGrid.Views.Grid.GridView)masterView.GetDetailView(e.RowHandle, e.RelationIndex);
+
+            detailView.Columns["PO Order No."].Visible = false;
+            detailView.Columns["Revision No."].Visible = false;
+            detailView.Columns["OIDCOLOR"].Visible = false;
+            detailView.Columns["OIDSIZE"].Visible = false;
+            detailView.Columns["Order Qty. (Pcs)"].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+
+            detailView.OptionsView.ColumnAutoWidth = false;
+            detailView.BestFitColumns();
+        }
+
+        private void gvSumPO_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
+        {
+            if (e.Info.IsRowIndicator) e.Info.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void gvSumDO_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
+        {
+            if (e.Info.IsRowIndicator) e.Info.DisplayText = (e.RowHandle + 1).ToString();
         }
     }
 

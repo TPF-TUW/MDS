@@ -143,6 +143,7 @@ namespace MPS01
             sbSQL.Append("ORDER BY COF.ProductionPlanID ");
             new ObjDevEx.setGridControl(gcFO, gvFO, sbSQL).getData(false, false, false, true);
 
+            gvFO.Columns["ID"].Visible = false;
             gvFO.Columns["Customer ID"].Visible = false;
             gvFO.Columns["OIDCSITEM"].Visible = false;
             gvFO.Columns["SupplierID"].Visible = false;
@@ -1962,6 +1963,11 @@ namespace MPS01
         private void ribbonControl_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gvFO_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
+        {
+            //if (e.Info.IsRowIndicator) e.Info.DisplayText = (e.RowHandle + 1).ToString();
         }
     }
 }
