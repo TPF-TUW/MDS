@@ -39,9 +39,13 @@ namespace M12
         {
             glueCode.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             glueCode.Properties.AcceptEditorTextAsNewValue = DevExpress.Utils.DefaultBoolean.True;
-            glueVendor.Properties.DataSource = vendorTypes;
-            glueVendor.Properties.DisplayMember = "NAME";
-            glueVendor.Properties.ValueMember = "ID";
+
+            StringBuilder sbTYPE = new StringBuilder();
+            sbTYPE.Append("SELECT Name AS VendorType, No AS ID FROM ENUMTYPE WHERE (Module = N'Vendor') ORDER BY No ");
+            new ObjDevEx.setGridLookUpEdit(glueVendor, sbTYPE, "VendorType", "ID").getData();
+            //glueVendor.Properties.DataSource = vendorTypes;
+            //glueVendor.Properties.DisplayMember = "NAME";
+            //glueVendor.Properties.ValueMember = "ID";
 
             bbiNew.PerformClick();
         }
