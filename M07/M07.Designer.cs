@@ -29,8 +29,37 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(M07));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.slueSModel = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.ribbonControl2 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.bbiNew = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.bbiEdit = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.bbiSave = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.bbiDelete = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.bbiRefresh = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.bbiPrintPreview = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.bbiPrint = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.bbiExcel = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.slueSCode = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.slueSStyle = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.slueSVendor = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.slueSCustomer = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcListItem = new DevExpress.XtraGrid.GridControl();
+            this.gvListItem = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.lblIDVENDItem = new DevExpress.XtraEditors.LabelControl();
             this.btnDELETE = new DevExpress.XtraEditors.SimpleButton();
             this.btnNEW = new DevExpress.XtraEditors.SimpleButton();
@@ -112,8 +141,27 @@
             this.txeComposition = new DevExpress.XtraEditors.TextEdit();
             this.txeDescription = new DevExpress.XtraEditors.TextEdit();
             this.rgMaterial = new DevExpress.XtraEditors.RadioGroup();
+            this.slueSMaterial = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.slueSBranch = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.slueSCategory = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.tabbedControlGroup1 = new DevExpress.XtraLayout.TabbedControlGroup();
+            this.layoutControlGroup13 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem69 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem70 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem71 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem72 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem73 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem74 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem75 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem76 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem77 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem12 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -203,57 +251,23 @@
             this.layoutControlItem66 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem67 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem68 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bbiNew = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.bbiEdit = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.bbiSave = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.bbiDelete = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.bbiRefresh = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.bbiPrintPreview = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.bbiPrint = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.bbiExcel = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
-            this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonControl2 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.layoutControlGroup13 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.layoutControlItem69 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.layoutControlItem70 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridLookUpEdit2 = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.layoutControlItem71 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.layoutControlItem72 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.searchLookUpEdit2 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.layoutControlItem73 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.searchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridLookUpEdit3 = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.layoutControlItem74 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridLookUpEdit3View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.searchLookUpEdit3 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.layoutControlItem75 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.searchLookUpEdit4 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.layoutControlItem76 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.searchLookUpEdit5 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.layoutControlItem77 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem12 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.slueSModel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slueSCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slueSStyle.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slueSVendor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slueSCustomer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcListItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvListItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeArrivalLead.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueUnit.Properties)).BeginInit();
@@ -333,8 +347,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.txeComposition.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgMaterial.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slueSMaterial.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slueSBranch.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slueSCategory.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem69)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem70)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem71)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem72)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem73)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem74)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem75)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem76)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem77)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
@@ -424,51 +457,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem66)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem67)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem68)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem69)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem70)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem71)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem72)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem73)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem74)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem75)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem76)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem77)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.searchLookUpEdit5);
-            this.layoutControl1.Controls.Add(this.searchLookUpEdit4);
-            this.layoutControl1.Controls.Add(this.searchLookUpEdit3);
-            this.layoutControl1.Controls.Add(this.gridLookUpEdit3);
-            this.layoutControl1.Controls.Add(this.searchLookUpEdit2);
-            this.layoutControl1.Controls.Add(this.searchLookUpEdit1);
-            this.layoutControl1.Controls.Add(this.gridLookUpEdit2);
-            this.layoutControl1.Controls.Add(this.gridLookUpEdit1);
-            this.layoutControl1.Controls.Add(this.gridControl1);
+            this.layoutControl1.Controls.Add(this.slueSModel);
+            this.layoutControl1.Controls.Add(this.slueSCode);
+            this.layoutControl1.Controls.Add(this.slueSStyle);
+            this.layoutControl1.Controls.Add(this.slueSVendor);
+            this.layoutControl1.Controls.Add(this.slueSCustomer);
+            this.layoutControl1.Controls.Add(this.gcListItem);
             this.layoutControl1.Controls.Add(this.lblIDVENDItem);
             this.layoutControl1.Controls.Add(this.btnDELETE);
             this.layoutControl1.Controls.Add(this.btnNEW);
@@ -537,6 +535,9 @@
             this.layoutControl1.Controls.Add(this.txeComposition);
             this.layoutControl1.Controls.Add(this.txeDescription);
             this.layoutControl1.Controls.Add(this.rgMaterial);
+            this.layoutControl1.Controls.Add(this.slueSMaterial);
+            this.layoutControl1.Controls.Add(this.slueSBranch);
+            this.layoutControl1.Controls.Add(this.slueSCategory);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 160);
             this.layoutControl1.Name = "layoutControl1";
@@ -545,6 +546,286 @@
             this.layoutControl1.Size = new System.Drawing.Size(1098, 654);
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // slueSModel
+            // 
+            this.slueSModel.Location = new System.Drawing.Point(160, 177);
+            this.slueSModel.MenuManager = this.ribbonControl2;
+            this.slueSModel.Name = "slueSModel";
+            this.slueSModel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.slueSModel.Properties.NullText = "";
+            this.slueSModel.Properties.PopupView = this.gridView8;
+            this.slueSModel.Size = new System.Drawing.Size(198, 20);
+            this.slueSModel.StyleController = this.layoutControl1;
+            this.slueSModel.TabIndex = 90;
+            this.slueSModel.EditValueChanged += new System.EventHandler(this.slueSModel_EditValueChanged);
+            // 
+            // ribbonControl2
+            // 
+            this.ribbonControl2.ExpandCollapseItem.Id = 0;
+            this.ribbonControl2.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl2.ExpandCollapseItem,
+            this.ribbonControl2.SearchEditItem,
+            this.bbiNew,
+            this.bbiEdit,
+            this.bbiSave,
+            this.bbiDelete,
+            this.bbiRefresh,
+            this.bbiPrintPreview,
+            this.bbiPrint,
+            this.bbiExcel,
+            this.skinDropDownButtonItem1,
+            this.skinPaletteDropDownButtonItem1,
+            this.barStaticItem1});
+            this.ribbonControl2.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl2.MaxItemId = 2;
+            this.ribbonControl2.Name = "ribbonControl2";
+            this.ribbonControl2.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage3,
+            this.ribbonPage1});
+            this.ribbonControl2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
+            this.ribbonControl2.Size = new System.Drawing.Size(1098, 160);
+            this.ribbonControl2.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
+            // 
+            // bbiNew
+            // 
+            this.bbiNew.Caption = "New";
+            this.bbiNew.Id = 11;
+            this.bbiNew.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiNew.ImageOptions.SvgImage")));
+            this.bbiNew.Name = "bbiNew";
+            this.bbiNew.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbiNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiNew_ItemClick);
+            // 
+            // bbiEdit
+            // 
+            this.bbiEdit.Caption = "Edit";
+            this.bbiEdit.Id = 12;
+            this.bbiEdit.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiEdit.ImageOptions.SvgImage")));
+            this.bbiEdit.Name = "bbiEdit";
+            this.bbiEdit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbiEdit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // bbiSave
+            // 
+            this.bbiSave.Caption = "Save";
+            this.bbiSave.Id = 13;
+            this.bbiSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiSave.ImageOptions.SvgImage")));
+            this.bbiSave.Name = "bbiSave";
+            this.bbiSave.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
+            // 
+            // bbiDelete
+            // 
+            this.bbiDelete.Caption = "Delete";
+            this.bbiDelete.Id = 14;
+            this.bbiDelete.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiDelete.ImageOptions.SvgImage")));
+            this.bbiDelete.Name = "bbiDelete";
+            this.bbiDelete.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbiDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // bbiRefresh
+            // 
+            this.bbiRefresh.Caption = "Refresh";
+            this.bbiRefresh.Id = 15;
+            this.bbiRefresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiRefresh.ImageOptions.SvgImage")));
+            this.bbiRefresh.Name = "bbiRefresh";
+            this.bbiRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
+            // 
+            // bbiPrintPreview
+            // 
+            this.bbiPrintPreview.Caption = "Preview";
+            this.bbiPrintPreview.Id = 16;
+            this.bbiPrintPreview.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiPrintPreview.ImageOptions.SvgImage")));
+            this.bbiPrintPreview.Name = "bbiPrintPreview";
+            this.bbiPrintPreview.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.bbiPrintPreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPrintPreview_ItemClick);
+            // 
+            // bbiPrint
+            // 
+            this.bbiPrint.Caption = "Print";
+            this.bbiPrint.Id = 17;
+            this.bbiPrint.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiPrint.ImageOptions.SvgImage")));
+            this.bbiPrint.Name = "bbiPrint";
+            this.bbiPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.bbiPrint.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPrint_ItemClick);
+            // 
+            // bbiExcel
+            // 
+            this.bbiExcel.Caption = "Excel";
+            this.bbiExcel.Id = 18;
+            this.bbiExcel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiExcel.ImageOptions.SvgImage")));
+            this.bbiExcel.Name = "bbiExcel";
+            this.bbiExcel.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbiExcel.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.bbiExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExcel_ItemClick);
+            // 
+            // skinDropDownButtonItem1
+            // 
+            this.skinDropDownButtonItem1.Id = 21;
+            this.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
+            this.skinDropDownButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // skinPaletteDropDownButtonItem1
+            // 
+            this.skinPaletteDropDownButtonItem1.Id = 22;
+            this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
+            this.skinPaletteDropDownButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "[MDS : Merchandise and Development System ] There is a problem. Please contact. [" +
+    " Tel .312 ]";
+            this.barStaticItem1.Id = 1;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
+            // ribbonPage3
+            // 
+            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup3});
+            this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Text = "Home";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.bbiNew);
+            this.ribbonPageGroup3.ItemLinks.Add(this.bbiEdit);
+            this.ribbonPageGroup3.ItemLinks.Add(this.bbiSave);
+            this.ribbonPageGroup3.ItemLinks.Add(this.bbiDelete);
+            this.ribbonPageGroup3.ItemLinks.Add(this.bbiRefresh);
+            this.ribbonPageGroup3.ItemLinks.Add(this.bbiPrintPreview);
+            this.ribbonPageGroup3.ItemLinks.Add(this.bbiPrint);
+            this.ribbonPageGroup3.ItemLinks.Add(this.bbiExcel);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "Theme";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.skinDropDownButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.skinPaletteDropDownButtonItem1);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            // 
+            // gridView8
+            // 
+            this.gridView8.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView8.Name = "gridView8";
+            this.gridView8.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView8.OptionsView.ShowGroupPanel = false;
+            // 
+            // slueSCode
+            // 
+            this.slueSCode.Location = new System.Drawing.Point(160, 153);
+            this.slueSCode.MenuManager = this.ribbonControl2;
+            this.slueSCode.Name = "slueSCode";
+            this.slueSCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.slueSCode.Properties.NullText = "";
+            this.slueSCode.Properties.PopupView = this.gridView7;
+            this.slueSCode.Size = new System.Drawing.Size(198, 20);
+            this.slueSCode.StyleController = this.layoutControl1;
+            this.slueSCode.TabIndex = 89;
+            this.slueSCode.EditValueChanged += new System.EventHandler(this.slueSCode_EditValueChanged);
+            // 
+            // gridView7
+            // 
+            this.gridView7.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView7.Name = "gridView7";
+            this.gridView7.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView7.OptionsView.ShowGroupPanel = false;
+            // 
+            // slueSStyle
+            // 
+            this.slueSStyle.Location = new System.Drawing.Point(160, 129);
+            this.slueSStyle.MenuManager = this.ribbonControl2;
+            this.slueSStyle.Name = "slueSStyle";
+            this.slueSStyle.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.slueSStyle.Properties.NullText = "";
+            this.slueSStyle.Properties.PopupView = this.gridView6;
+            this.slueSStyle.Size = new System.Drawing.Size(198, 20);
+            this.slueSStyle.StyleController = this.layoutControl1;
+            this.slueSStyle.TabIndex = 88;
+            this.slueSStyle.EditValueChanged += new System.EventHandler(this.slueSStyle_EditValueChanged);
+            // 
+            // gridView6
+            // 
+            this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView6.OptionsView.ShowGroupPanel = false;
+            // 
+            // slueSVendor
+            // 
+            this.slueSVendor.Location = new System.Drawing.Point(160, 81);
+            this.slueSVendor.MenuManager = this.ribbonControl2;
+            this.slueSVendor.Name = "slueSVendor";
+            this.slueSVendor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.slueSVendor.Properties.NullText = "";
+            this.slueSVendor.Properties.PopupView = this.searchLookUpEdit2View;
+            this.slueSVendor.Size = new System.Drawing.Size(198, 20);
+            this.slueSVendor.StyleController = this.layoutControl1;
+            this.slueSVendor.TabIndex = 86;
+            this.slueSVendor.EditValueChanged += new System.EventHandler(this.slueSVendor_EditValueChanged);
+            // 
+            // searchLookUpEdit2View
+            // 
+            this.searchLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit2View.Name = "searchLookUpEdit2View";
+            this.searchLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            // 
+            // slueSCustomer
+            // 
+            this.slueSCustomer.Location = new System.Drawing.Point(160, 57);
+            this.slueSCustomer.MenuManager = this.ribbonControl2;
+            this.slueSCustomer.Name = "slueSCustomer";
+            this.slueSCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.slueSCustomer.Properties.NullText = "";
+            this.slueSCustomer.Properties.PopupView = this.gridView5;
+            this.slueSCustomer.Size = new System.Drawing.Size(198, 20);
+            this.slueSCustomer.StyleController = this.layoutControl1;
+            this.slueSCustomer.TabIndex = 85;
+            this.slueSCustomer.EditValueChanged += new System.EventHandler(this.slueSCustomer_EditValueChanged);
+            // 
+            // gridView5
+            // 
+            this.gridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView5.OptionsView.ShowGroupPanel = false;
+            // 
+            // gcListItem
+            // 
+            this.gcListItem.Location = new System.Drawing.Point(362, 9);
+            this.gcListItem.MainView = this.gvListItem;
+            this.gcListItem.MenuManager = this.ribbonControl2;
+            this.gcListItem.Name = "gcListItem";
+            this.gcListItem.Size = new System.Drawing.Size(727, 612);
+            this.gcListItem.TabIndex = 82;
+            this.gcListItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvListItem});
+            // 
+            // gvListItem
+            // 
+            this.gvListItem.GridControl = this.gcListItem;
+            this.gvListItem.Name = "gvListItem";
+            this.gvListItem.OptionsBehavior.Editable = false;
+            this.gvListItem.OptionsBehavior.ReadOnly = true;
+            this.gvListItem.OptionsView.ColumnAutoWidth = false;
+            this.gvListItem.OptionsView.EnableAppearanceEvenRow = true;
+            this.gvListItem.OptionsView.EnableAppearanceOddRow = true;
+            this.gvListItem.OptionsView.ShowAutoFilterRow = true;
+            this.gvListItem.OptionsView.ShowGroupPanel = false;
+            this.gvListItem.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gvListItem_CustomDrawRowIndicator);
             // 
             // lblIDVENDItem
             // 
@@ -1051,9 +1332,9 @@
             this.rgTax.Name = "rgTax";
             this.rgTax.Properties.Columns = 3;
             this.rgTax.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "BOI"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(2)), "19 BIS"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(9)), "Other")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "BOI"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(2, "19 BIS"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(9, "Other")});
             this.rgTax.Size = new System.Drawing.Size(177, 36);
             this.rgTax.StyleController = this.layoutControl1;
             this.rgTax.TabIndex = 38;
@@ -1064,9 +1345,9 @@
             this.rgPurchase.Name = "rgPurchase";
             this.rgPurchase.Properties.Columns = 3;
             this.rgPurchase.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "Local"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Import"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(9)), "Other")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "Local"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Import"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(9, "Other")});
             this.rgPurchase.Size = new System.Drawing.Size(177, 35);
             this.rgPurchase.StyleController = this.layoutControl1;
             this.rgPurchase.TabIndex = 37;
@@ -1432,6 +1713,69 @@
             this.rgMaterial.TabIndex = 4;
             this.rgMaterial.SelectedIndexChanged += new System.EventHandler(this.rgMaterial_SelectedIndexChanged);
             // 
+            // slueSMaterial
+            // 
+            this.slueSMaterial.Location = new System.Drawing.Point(160, 9);
+            this.slueSMaterial.MenuManager = this.ribbonControl2;
+            this.slueSMaterial.Name = "slueSMaterial";
+            this.slueSMaterial.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.slueSMaterial.Properties.NullText = "";
+            this.slueSMaterial.Properties.PopupView = this.gridView2;
+            this.slueSMaterial.Size = new System.Drawing.Size(171, 20);
+            this.slueSMaterial.StyleController = this.layoutControl1;
+            this.slueSMaterial.TabIndex = 83;
+            this.slueSMaterial.EditValueChanged += new System.EventHandler(this.glueSMaterial_EditValueChanged);
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // slueSBranch
+            // 
+            this.slueSBranch.Location = new System.Drawing.Point(160, 33);
+            this.slueSBranch.MenuManager = this.ribbonControl2;
+            this.slueSBranch.Name = "slueSBranch";
+            this.slueSBranch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.slueSBranch.Properties.NullText = "";
+            this.slueSBranch.Properties.PopupView = this.gridView3;
+            this.slueSBranch.Size = new System.Drawing.Size(171, 20);
+            this.slueSBranch.StyleController = this.layoutControl1;
+            this.slueSBranch.TabIndex = 84;
+            this.slueSBranch.EditValueChanged += new System.EventHandler(this.glueSBranch_EditValueChanged);
+            // 
+            // gridView3
+            // 
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // slueSCategory
+            // 
+            this.slueSCategory.Location = new System.Drawing.Point(160, 105);
+            this.slueSCategory.MenuManager = this.ribbonControl2;
+            this.slueSCategory.Name = "slueSCategory";
+            this.slueSCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.slueSCategory.Properties.NullText = "";
+            this.slueSCategory.Properties.PopupView = this.gridView4;
+            this.slueSCategory.Size = new System.Drawing.Size(198, 20);
+            this.slueSCategory.StyleController = this.layoutControl1;
+            this.slueSCategory.TabIndex = 87;
+            this.slueSCategory.EditValueChanged += new System.EventHandler(this.glueSCategory_EditValueChanged);
+            // 
+            // gridView4
+            // 
+            this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView4.OptionsView.ShowGroupPanel = false;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -1455,6 +1799,132 @@
             this.layoutControlGroup1,
             this.layoutControlGroup2});
             this.tabbedControlGroup1.TextLocation = DevExpress.Utils.Locations.Bottom;
+            this.tabbedControlGroup1.SelectedPageChanged += new DevExpress.XtraLayout.LayoutTabPageChangedEventHandler(this.tabbedControlGroup1_SelectedPageChanged);
+            // 
+            // layoutControlGroup13
+            // 
+            this.layoutControlGroup13.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem69,
+            this.emptySpaceItem9,
+            this.layoutControlItem70,
+            this.layoutControlItem71,
+            this.layoutControlItem72,
+            this.layoutControlItem73,
+            this.layoutControlItem74,
+            this.layoutControlItem75,
+            this.layoutControlItem76,
+            this.layoutControlItem77,
+            this.emptySpaceItem11,
+            this.emptySpaceItem12});
+            this.layoutControlGroup13.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup13.Name = "layoutControlGroup13";
+            this.layoutControlGroup13.Size = new System.Drawing.Size(1084, 616);
+            this.layoutControlGroup13.Text = "List of Item";
+            // 
+            // layoutControlItem69
+            // 
+            this.layoutControlItem69.Control = this.gcListItem;
+            this.layoutControlItem69.Location = new System.Drawing.Point(353, 0);
+            this.layoutControlItem69.Name = "layoutControlItem69";
+            this.layoutControlItem69.Size = new System.Drawing.Size(731, 616);
+            this.layoutControlItem69.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem69.TextVisible = false;
+            // 
+            // emptySpaceItem9
+            // 
+            this.emptySpaceItem9.AllowHotTrack = false;
+            this.emptySpaceItem9.Location = new System.Drawing.Point(0, 192);
+            this.emptySpaceItem9.Name = "emptySpaceItem9";
+            this.emptySpaceItem9.Size = new System.Drawing.Size(353, 424);
+            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem70
+            // 
+            this.layoutControlItem70.Control = this.slueSMaterial;
+            this.layoutControlItem70.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem70.Name = "layoutControlItem70";
+            this.layoutControlItem70.Size = new System.Drawing.Size(326, 24);
+            this.layoutControlItem70.Text = "Material Type";
+            this.layoutControlItem70.TextSize = new System.Drawing.Size(139, 14);
+            // 
+            // layoutControlItem71
+            // 
+            this.layoutControlItem71.Control = this.slueSBranch;
+            this.layoutControlItem71.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem71.Name = "layoutControlItem71";
+            this.layoutControlItem71.Size = new System.Drawing.Size(326, 24);
+            this.layoutControlItem71.Text = "Branch";
+            this.layoutControlItem71.TextSize = new System.Drawing.Size(139, 14);
+            // 
+            // layoutControlItem72
+            // 
+            this.layoutControlItem72.Control = this.slueSCustomer;
+            this.layoutControlItem72.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem72.Name = "layoutControlItem72";
+            this.layoutControlItem72.Size = new System.Drawing.Size(353, 24);
+            this.layoutControlItem72.Text = "Customer";
+            this.layoutControlItem72.TextSize = new System.Drawing.Size(139, 14);
+            // 
+            // layoutControlItem73
+            // 
+            this.layoutControlItem73.Control = this.slueSVendor;
+            this.layoutControlItem73.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem73.Name = "layoutControlItem73";
+            this.layoutControlItem73.Size = new System.Drawing.Size(353, 24);
+            this.layoutControlItem73.Text = "Vendor";
+            this.layoutControlItem73.TextSize = new System.Drawing.Size(139, 14);
+            // 
+            // layoutControlItem74
+            // 
+            this.layoutControlItem74.Control = this.slueSCategory;
+            this.layoutControlItem74.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem74.Name = "layoutControlItem74";
+            this.layoutControlItem74.Size = new System.Drawing.Size(353, 24);
+            this.layoutControlItem74.Text = "Category";
+            this.layoutControlItem74.TextSize = new System.Drawing.Size(139, 14);
+            // 
+            // layoutControlItem75
+            // 
+            this.layoutControlItem75.Control = this.slueSStyle;
+            this.layoutControlItem75.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem75.Name = "layoutControlItem75";
+            this.layoutControlItem75.Size = new System.Drawing.Size(353, 24);
+            this.layoutControlItem75.Text = "Style Name";
+            this.layoutControlItem75.TextSize = new System.Drawing.Size(139, 14);
+            // 
+            // layoutControlItem76
+            // 
+            this.layoutControlItem76.Control = this.slueSCode;
+            this.layoutControlItem76.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem76.Name = "layoutControlItem76";
+            this.layoutControlItem76.Size = new System.Drawing.Size(353, 24);
+            this.layoutControlItem76.Text = "Code";
+            this.layoutControlItem76.TextSize = new System.Drawing.Size(139, 14);
+            // 
+            // layoutControlItem77
+            // 
+            this.layoutControlItem77.Control = this.slueSModel;
+            this.layoutControlItem77.Location = new System.Drawing.Point(0, 168);
+            this.layoutControlItem77.Name = "layoutControlItem77";
+            this.layoutControlItem77.Size = new System.Drawing.Size(353, 24);
+            this.layoutControlItem77.Text = "Model No.";
+            this.layoutControlItem77.TextSize = new System.Drawing.Size(139, 14);
+            // 
+            // emptySpaceItem11
+            // 
+            this.emptySpaceItem11.AllowHotTrack = false;
+            this.emptySpaceItem11.Location = new System.Drawing.Point(326, 0);
+            this.emptySpaceItem11.Name = "emptySpaceItem11";
+            this.emptySpaceItem11.Size = new System.Drawing.Size(27, 24);
+            this.emptySpaceItem11.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem12
+            // 
+            this.emptySpaceItem12.AllowHotTrack = false;
+            this.emptySpaceItem12.Location = new System.Drawing.Point(326, 24);
+            this.emptySpaceItem12.Name = "emptySpaceItem12";
+            this.emptySpaceItem12.Size = new System.Drawing.Size(27, 24);
+            this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup1
             // 
@@ -2338,467 +2808,10 @@
             this.layoutControlItem68.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem68.TextVisible = false;
             // 
-            // bbiNew
-            // 
-            this.bbiNew.Caption = "New";
-            this.bbiNew.Id = 11;
-            this.bbiNew.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiNew.ImageOptions.SvgImage")));
-            this.bbiNew.Name = "bbiNew";
-            this.bbiNew.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bbiNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiNew_ItemClick);
-            // 
-            // bbiEdit
-            // 
-            this.bbiEdit.Caption = "Edit";
-            this.bbiEdit.Id = 12;
-            this.bbiEdit.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiEdit.ImageOptions.SvgImage")));
-            this.bbiEdit.Name = "bbiEdit";
-            this.bbiEdit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bbiEdit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // bbiSave
-            // 
-            this.bbiSave.Caption = "Save";
-            this.bbiSave.Id = 13;
-            this.bbiSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiSave.ImageOptions.SvgImage")));
-            this.bbiSave.Name = "bbiSave";
-            this.bbiSave.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
-            // 
-            // bbiDelete
-            // 
-            this.bbiDelete.Caption = "Delete";
-            this.bbiDelete.Id = 14;
-            this.bbiDelete.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiDelete.ImageOptions.SvgImage")));
-            this.bbiDelete.Name = "bbiDelete";
-            this.bbiDelete.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bbiDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // bbiRefresh
-            // 
-            this.bbiRefresh.Caption = "Refresh";
-            this.bbiRefresh.Id = 15;
-            this.bbiRefresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiRefresh.ImageOptions.SvgImage")));
-            this.bbiRefresh.Name = "bbiRefresh";
-            this.bbiRefresh.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bbiRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // bbiPrintPreview
-            // 
-            this.bbiPrintPreview.Caption = "Preview";
-            this.bbiPrintPreview.Id = 16;
-            this.bbiPrintPreview.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiPrintPreview.ImageOptions.SvgImage")));
-            this.bbiPrintPreview.Name = "bbiPrintPreview";
-            this.bbiPrintPreview.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bbiPrintPreview.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // bbiPrint
-            // 
-            this.bbiPrint.Caption = "Print";
-            this.bbiPrint.Id = 17;
-            this.bbiPrint.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiPrint.ImageOptions.SvgImage")));
-            this.bbiPrint.Name = "bbiPrint";
-            this.bbiPrint.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bbiPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // bbiExcel
-            // 
-            this.bbiExcel.Caption = "Excel";
-            this.bbiExcel.Id = 18;
-            this.bbiExcel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiExcel.ImageOptions.SvgImage")));
-            this.bbiExcel.Name = "bbiExcel";
-            this.bbiExcel.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bbiExcel.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.bbiExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExcel_ItemClick);
-            // 
-            // skinDropDownButtonItem1
-            // 
-            this.skinDropDownButtonItem1.Id = 21;
-            this.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
-            this.skinDropDownButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // skinPaletteDropDownButtonItem1
-            // 
-            this.skinPaletteDropDownButtonItem1.Id = 22;
-            this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
-            this.skinPaletteDropDownButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
             // ribbonPage2
             // 
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "ribbonPage2";
-            // 
-            // ribbonControl2
-            // 
-            this.ribbonControl2.ExpandCollapseItem.Id = 0;
-            this.ribbonControl2.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbonControl2.ExpandCollapseItem,
-            this.ribbonControl2.SearchEditItem,
-            this.bbiNew,
-            this.bbiEdit,
-            this.bbiSave,
-            this.bbiDelete,
-            this.bbiRefresh,
-            this.bbiPrintPreview,
-            this.bbiPrint,
-            this.bbiExcel,
-            this.skinDropDownButtonItem1,
-            this.skinPaletteDropDownButtonItem1,
-            this.barStaticItem1});
-            this.ribbonControl2.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl2.MaxItemId = 2;
-            this.ribbonControl2.Name = "ribbonControl2";
-            this.ribbonControl2.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage3,
-            this.ribbonPage1});
-            this.ribbonControl2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbonControl2.Size = new System.Drawing.Size(1098, 160);
-            this.ribbonControl2.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
-            // 
-            // barStaticItem1
-            // 
-            this.barStaticItem1.Caption = "[MDS : Merchandise and Development System ] There is a problem. Please contact. [" +
-    " Tel .312 ]";
-            this.barStaticItem1.Id = 1;
-            this.barStaticItem1.Name = "barStaticItem1";
-            // 
-            // ribbonPage3
-            // 
-            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
-            this.ribbonPage3.Name = "ribbonPage3";
-            this.ribbonPage3.Text = "Home";
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.bbiNew);
-            this.ribbonPageGroup3.ItemLinks.Add(this.bbiEdit);
-            this.ribbonPageGroup3.ItemLinks.Add(this.bbiSave);
-            this.ribbonPageGroup3.ItemLinks.Add(this.bbiDelete);
-            this.ribbonPageGroup3.ItemLinks.Add(this.bbiRefresh);
-            this.ribbonPageGroup3.ItemLinks.Add(this.bbiPrintPreview);
-            this.ribbonPageGroup3.ItemLinks.Add(this.bbiPrint);
-            this.ribbonPageGroup3.ItemLinks.Add(this.bbiExcel);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            // 
-            // ribbonPage1
-            // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Theme";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.skinDropDownButtonItem1);
-            this.ribbonPageGroup1.ItemLinks.Add(this.skinPaletteDropDownButtonItem1);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            // 
-            // layoutControlGroup13
-            // 
-            this.layoutControlGroup13.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem69,
-            this.emptySpaceItem9,
-            this.layoutControlItem70,
-            this.layoutControlItem71,
-            this.layoutControlItem72,
-            this.layoutControlItem73,
-            this.layoutControlItem74,
-            this.layoutControlItem75,
-            this.layoutControlItem76,
-            this.layoutControlItem77,
-            this.emptySpaceItem11,
-            this.emptySpaceItem12});
-            this.layoutControlGroup13.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup13.Name = "layoutControlGroup13";
-            this.layoutControlGroup13.Size = new System.Drawing.Size(1084, 616);
-            this.layoutControlGroup13.Text = "List of Item";
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Location = new System.Drawing.Point(362, 9);
-            this.gridControl1.MainView = this.gridView2;
-            this.gridControl1.MenuManager = this.ribbonControl2;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(727, 612);
-            this.gridControl1.TabIndex = 82;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gridControl1;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.ColumnAutoWidth = false;
-            this.gridView2.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridView2.OptionsView.EnableAppearanceOddRow = true;
-            this.gridView2.OptionsView.ShowAutoFilterRow = true;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // layoutControlItem69
-            // 
-            this.layoutControlItem69.Control = this.gridControl1;
-            this.layoutControlItem69.Location = new System.Drawing.Point(353, 0);
-            this.layoutControlItem69.Name = "layoutControlItem69";
-            this.layoutControlItem69.Size = new System.Drawing.Size(731, 616);
-            this.layoutControlItem69.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem69.TextVisible = false;
-            // 
-            // emptySpaceItem9
-            // 
-            this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(0, 192);
-            this.emptySpaceItem9.Name = "emptySpaceItem9";
-            this.emptySpaceItem9.Size = new System.Drawing.Size(353, 424);
-            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // gridLookUpEdit1
-            // 
-            this.gridLookUpEdit1.Location = new System.Drawing.Point(160, 9);
-            this.gridLookUpEdit1.MenuManager = this.ribbonControl2;
-            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
-            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit1.Properties.NullText = "";
-            this.gridLookUpEdit1.Properties.PopupView = this.gridView3;
-            this.gridLookUpEdit1.Size = new System.Drawing.Size(171, 20);
-            this.gridLookUpEdit1.StyleController = this.layoutControl1;
-            this.gridLookUpEdit1.TabIndex = 83;
-            // 
-            // layoutControlItem70
-            // 
-            this.layoutControlItem70.Control = this.gridLookUpEdit1;
-            this.layoutControlItem70.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem70.Name = "layoutControlItem70";
-            this.layoutControlItem70.Size = new System.Drawing.Size(326, 24);
-            this.layoutControlItem70.Text = "Material Type";
-            this.layoutControlItem70.TextSize = new System.Drawing.Size(139, 14);
-            // 
-            // gridView3
-            // 
-            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView3.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridLookUpEdit2
-            // 
-            this.gridLookUpEdit2.Location = new System.Drawing.Point(160, 33);
-            this.gridLookUpEdit2.MenuManager = this.ribbonControl2;
-            this.gridLookUpEdit2.Name = "gridLookUpEdit2";
-            this.gridLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit2.Properties.NullText = "";
-            this.gridLookUpEdit2.Properties.PopupView = this.gridView4;
-            this.gridLookUpEdit2.Size = new System.Drawing.Size(171, 20);
-            this.gridLookUpEdit2.StyleController = this.layoutControl1;
-            this.gridLookUpEdit2.TabIndex = 84;
-            // 
-            // layoutControlItem71
-            // 
-            this.layoutControlItem71.Control = this.gridLookUpEdit2;
-            this.layoutControlItem71.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem71.Name = "layoutControlItem71";
-            this.layoutControlItem71.Size = new System.Drawing.Size(326, 24);
-            this.layoutControlItem71.Text = "Branch";
-            this.layoutControlItem71.TextSize = new System.Drawing.Size(139, 14);
-            // 
-            // gridView4
-            // 
-            this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView4.Name = "gridView4";
-            this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView4.OptionsView.ShowGroupPanel = false;
-            // 
-            // searchLookUpEdit1
-            // 
-            this.searchLookUpEdit1.Location = new System.Drawing.Point(160, 57);
-            this.searchLookUpEdit1.MenuManager = this.ribbonControl2;
-            this.searchLookUpEdit1.Name = "searchLookUpEdit1";
-            this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEdit1.Properties.NullText = "";
-            this.searchLookUpEdit1.Properties.PopupView = this.gridView5;
-            this.searchLookUpEdit1.Size = new System.Drawing.Size(198, 20);
-            this.searchLookUpEdit1.StyleController = this.layoutControl1;
-            this.searchLookUpEdit1.TabIndex = 85;
-            // 
-            // layoutControlItem72
-            // 
-            this.layoutControlItem72.Control = this.searchLookUpEdit1;
-            this.layoutControlItem72.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem72.Name = "layoutControlItem72";
-            this.layoutControlItem72.Size = new System.Drawing.Size(353, 24);
-            this.layoutControlItem72.Text = "Customer";
-            this.layoutControlItem72.TextSize = new System.Drawing.Size(139, 14);
-            // 
-            // gridView5
-            // 
-            this.gridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView5.Name = "gridView5";
-            this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView5.OptionsView.ShowGroupPanel = false;
-            // 
-            // searchLookUpEdit2
-            // 
-            this.searchLookUpEdit2.Location = new System.Drawing.Point(160, 81);
-            this.searchLookUpEdit2.MenuManager = this.ribbonControl2;
-            this.searchLookUpEdit2.Name = "searchLookUpEdit2";
-            this.searchLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEdit2.Properties.NullText = "";
-            this.searchLookUpEdit2.Properties.PopupView = this.searchLookUpEdit2View;
-            this.searchLookUpEdit2.Size = new System.Drawing.Size(198, 20);
-            this.searchLookUpEdit2.StyleController = this.layoutControl1;
-            this.searchLookUpEdit2.TabIndex = 86;
-            // 
-            // layoutControlItem73
-            // 
-            this.layoutControlItem73.Control = this.searchLookUpEdit2;
-            this.layoutControlItem73.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem73.Name = "layoutControlItem73";
-            this.layoutControlItem73.Size = new System.Drawing.Size(353, 24);
-            this.layoutControlItem73.Text = "Vendor";
-            this.layoutControlItem73.TextSize = new System.Drawing.Size(139, 14);
-            // 
-            // searchLookUpEdit2View
-            // 
-            this.searchLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit2View.Name = "searchLookUpEdit2View";
-            this.searchLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit2View.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridLookUpEdit3
-            // 
-            this.gridLookUpEdit3.Location = new System.Drawing.Point(160, 105);
-            this.gridLookUpEdit3.MenuManager = this.ribbonControl2;
-            this.gridLookUpEdit3.Name = "gridLookUpEdit3";
-            this.gridLookUpEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit3.Properties.NullText = "";
-            this.gridLookUpEdit3.Properties.PopupView = this.gridLookUpEdit3View;
-            this.gridLookUpEdit3.Size = new System.Drawing.Size(198, 20);
-            this.gridLookUpEdit3.StyleController = this.layoutControl1;
-            this.gridLookUpEdit3.TabIndex = 87;
-            // 
-            // layoutControlItem74
-            // 
-            this.layoutControlItem74.Control = this.gridLookUpEdit3;
-            this.layoutControlItem74.Location = new System.Drawing.Point(0, 96);
-            this.layoutControlItem74.Name = "layoutControlItem74";
-            this.layoutControlItem74.Size = new System.Drawing.Size(353, 24);
-            this.layoutControlItem74.Text = "Category";
-            this.layoutControlItem74.TextSize = new System.Drawing.Size(139, 14);
-            // 
-            // gridLookUpEdit3View
-            // 
-            this.gridLookUpEdit3View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit3View.Name = "gridLookUpEdit3View";
-            this.gridLookUpEdit3View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit3View.OptionsView.ShowGroupPanel = false;
-            // 
-            // searchLookUpEdit3
-            // 
-            this.searchLookUpEdit3.Location = new System.Drawing.Point(160, 129);
-            this.searchLookUpEdit3.MenuManager = this.ribbonControl2;
-            this.searchLookUpEdit3.Name = "searchLookUpEdit3";
-            this.searchLookUpEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEdit3.Properties.NullText = "";
-            this.searchLookUpEdit3.Properties.PopupView = this.gridView6;
-            this.searchLookUpEdit3.Size = new System.Drawing.Size(198, 20);
-            this.searchLookUpEdit3.StyleController = this.layoutControl1;
-            this.searchLookUpEdit3.TabIndex = 88;
-            // 
-            // layoutControlItem75
-            // 
-            this.layoutControlItem75.Control = this.searchLookUpEdit3;
-            this.layoutControlItem75.Location = new System.Drawing.Point(0, 120);
-            this.layoutControlItem75.Name = "layoutControlItem75";
-            this.layoutControlItem75.Size = new System.Drawing.Size(353, 24);
-            this.layoutControlItem75.Text = "Style Name";
-            this.layoutControlItem75.TextSize = new System.Drawing.Size(139, 14);
-            // 
-            // gridView6
-            // 
-            this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView6.Name = "gridView6";
-            this.gridView6.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView6.OptionsView.ShowGroupPanel = false;
-            // 
-            // searchLookUpEdit4
-            // 
-            this.searchLookUpEdit4.Location = new System.Drawing.Point(160, 153);
-            this.searchLookUpEdit4.MenuManager = this.ribbonControl2;
-            this.searchLookUpEdit4.Name = "searchLookUpEdit4";
-            this.searchLookUpEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEdit4.Properties.NullText = "";
-            this.searchLookUpEdit4.Properties.PopupView = this.gridView7;
-            this.searchLookUpEdit4.Size = new System.Drawing.Size(198, 20);
-            this.searchLookUpEdit4.StyleController = this.layoutControl1;
-            this.searchLookUpEdit4.TabIndex = 89;
-            // 
-            // layoutControlItem76
-            // 
-            this.layoutControlItem76.Control = this.searchLookUpEdit4;
-            this.layoutControlItem76.Location = new System.Drawing.Point(0, 144);
-            this.layoutControlItem76.Name = "layoutControlItem76";
-            this.layoutControlItem76.Size = new System.Drawing.Size(353, 24);
-            this.layoutControlItem76.Text = "Code";
-            this.layoutControlItem76.TextSize = new System.Drawing.Size(139, 14);
-            // 
-            // gridView7
-            // 
-            this.gridView7.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView7.Name = "gridView7";
-            this.gridView7.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView7.OptionsView.ShowGroupPanel = false;
-            // 
-            // searchLookUpEdit5
-            // 
-            this.searchLookUpEdit5.Location = new System.Drawing.Point(160, 177);
-            this.searchLookUpEdit5.MenuManager = this.ribbonControl2;
-            this.searchLookUpEdit5.Name = "searchLookUpEdit5";
-            this.searchLookUpEdit5.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEdit5.Properties.NullText = "";
-            this.searchLookUpEdit5.Properties.PopupView = this.gridView8;
-            this.searchLookUpEdit5.Size = new System.Drawing.Size(198, 20);
-            this.searchLookUpEdit5.StyleController = this.layoutControl1;
-            this.searchLookUpEdit5.TabIndex = 90;
-            // 
-            // layoutControlItem77
-            // 
-            this.layoutControlItem77.Control = this.searchLookUpEdit5;
-            this.layoutControlItem77.Location = new System.Drawing.Point(0, 168);
-            this.layoutControlItem77.Name = "layoutControlItem77";
-            this.layoutControlItem77.Size = new System.Drawing.Size(353, 24);
-            this.layoutControlItem77.Text = "Model No.";
-            this.layoutControlItem77.TextSize = new System.Drawing.Size(139, 14);
-            // 
-            // gridView8
-            // 
-            this.gridView8.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView8.Name = "gridView8";
-            this.gridView8.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView8.OptionsView.ShowGroupPanel = false;
-            // 
-            // emptySpaceItem11
-            // 
-            this.emptySpaceItem11.AllowHotTrack = false;
-            this.emptySpaceItem11.Location = new System.Drawing.Point(326, 0);
-            this.emptySpaceItem11.Name = "emptySpaceItem11";
-            this.emptySpaceItem11.Size = new System.Drawing.Size(27, 24);
-            this.emptySpaceItem11.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem12
-            // 
-            this.emptySpaceItem12.AllowHotTrack = false;
-            this.emptySpaceItem12.Location = new System.Drawing.Point(326, 24);
-            this.emptySpaceItem12.Name = "emptySpaceItem12";
-            this.emptySpaceItem12.Size = new System.Drawing.Size(27, 24);
-            this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
             // 
             // M07
             // 
@@ -2812,8 +2825,22 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "M07 :  Item Master";
             this.Load += new System.EventHandler(this.XtraForm1_Load);
+            this.Shown += new System.EventHandler(this.M07_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.slueSModel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slueSCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slueSStyle.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slueSVendor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slueSCustomer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcListItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvListItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeArrivalLead.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueUnit.Properties)).EndInit();
@@ -2893,8 +2920,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.txeComposition.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgMaterial.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slueSMaterial.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slueSBranch.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slueSCategory.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem69)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem70)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem71)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem72)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem73)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem74)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem75)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem76)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem77)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
@@ -2984,38 +3030,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem66)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem67)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem68)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem69)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem70)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem71)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem72)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem73)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem74)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem75)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem76)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem77)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3213,24 +3227,18 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem10;
-        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit5;
+        private DevExpress.XtraEditors.SearchLookUpEdit slueSModel;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView8;
-        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit4;
+        private DevExpress.XtraEditors.SearchLookUpEdit slueSCode;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView7;
-        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit3;
+        private DevExpress.XtraEditors.SearchLookUpEdit slueSStyle;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit3;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit3View;
-        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit2;
+        private DevExpress.XtraEditors.SearchLookUpEdit slueSVendor;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit2View;
-        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
+        private DevExpress.XtraEditors.SearchLookUpEdit slueSCustomer;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.GridControl gcListItem;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvListItem;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup13;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem69;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem9;
@@ -3244,5 +3252,11 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem77;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem11;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem12;
+        private DevExpress.XtraEditors.SearchLookUpEdit slueSMaterial;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.SearchLookUpEdit slueSBranch;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraEditors.SearchLookUpEdit slueSCategory;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
     }
 }

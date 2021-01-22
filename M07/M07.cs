@@ -21,6 +21,7 @@ namespace M07
         private const string imgPathFile = @"\\172.16.0.190\MDS_Project\MDS\Pictures\";
         private DataTable dtVendor = new DataTable();
         private string selCode = "";
+        StringBuilder sbMeterial = new StringBuilder();
         public M07()
         {
             InitializeComponent();
@@ -36,11 +37,23 @@ namespace M07
 
         private void XtraForm1_Load(object sender, EventArgs e)
         {
-            tabbedControlGroup1.SelectedTabPage = layoutControlGroup1; //เลือกแท็บ Main
+            tabbedControlGroup1.SelectedTabPage = layoutControlGroup13; //เลือกแท็บ Search
             rgMaterial.SelectedIndex = 0;
 
             glueCode.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             glueCode.Properties.AcceptEditorTextAsNewValue = DevExpress.Utils.DefaultBoolean.True;
+
+            sbMeterial.Append(" SELECT '0' AS ID, 'Finished Goods' AS MaterialType ");
+            sbMeterial.Append("UNION ALL ");
+            sbMeterial.Append(" SELECT '1' AS ID, 'Fabric' AS MaterialType ");
+            sbMeterial.Append("UNION ALL ");
+            sbMeterial.Append(" SELECT '2' AS ID, 'Accessory' AS MaterialType ");
+            sbMeterial.Append("UNION ALL ");
+            sbMeterial.Append(" SELECT '3' AS ID, 'Packaging' AS MaterialType ");
+            sbMeterial.Append("UNION ALL ");
+            sbMeterial.Append(" SELECT '4' AS ID, 'Sample' AS MaterialType ");
+            sbMeterial.Append("UNION ALL ");
+            sbMeterial.Append(" SELECT '9' AS ID, 'Finished Goods' AS MaterialType ");
 
             NewData();
             LoadData();
@@ -252,6 +265,7 @@ namespace M07
             sbSQL.Append("FROM  Branchs ");
             sbSQL.Append("ORDER BY OIDBranch ");
             new ObjDevEx.setGridLookUpEdit(glueBranch, sbSQL, "Branch", "ID").getData(true);
+            new ObjDevEx.setSearchLookUpEdit(slueSBranch, sbSQL, "Branch", "ID").getData(true);
 
             sbSQL.Clear();
             sbSQL.Append("SELECT OIDUNIT AS ID, UnitName ");
@@ -267,7 +281,97 @@ namespace M07
             new ObjDevEx.setSearchLookUpEdit(slueDefaultVendor, sbSQL, "Name", "ID").getData(true);
             new ObjDevEx.setSearchLookUpEdit(slueVendorCode, sbSQL, "Code", "ID").getData(true);
 
-            
+            //SEARCH
+            new ObjDevEx.setSearchLookUpEdit(slueSMaterial, sbMeterial, "MaterialType", "ID").getData(true);
+
+            slueSCustomer.Properties.DataSource = slueCustomer.Properties.DataSource;
+            slueSCustomer.Properties.DisplayMember = slueCustomer.Properties.DisplayMember;
+            slueSCustomer.Properties.ValueMember = slueCustomer.Properties.ValueMember;
+
+            slueSVendor.Properties.DataSource = slueDefaultVendor.Properties.DataSource;
+            slueSVendor.Properties.DisplayMember = slueDefaultVendor.Properties.DisplayMember;
+            slueSVendor.Properties.ValueMember = slueDefaultVendor.Properties.ValueMember;
+
+            slueSCategory.Properties.DataSource = slueCategory.Properties.DataSource;
+            slueSCategory.Properties.DisplayMember = slueCategory.Properties.DisplayMember;
+            slueSCategory.Properties.ValueMember = slueCategory.Properties.ValueMember;
+
+            slueSStyle.Properties.DataSource = slueStyle.Properties.DataSource;
+            slueSStyle.Properties.DisplayMember = slueStyle.Properties.DisplayMember;
+            slueSStyle.Properties.ValueMember = slueStyle.Properties.ValueMember;
+
+
+            sbSQL.Clear();
+            sbSQL.Append("SELECT ModelNo FROM Items ORDER BY ModelNo");
+            new ObjDevEx.setSearchLookUpEdit(slueSModel, sbSQL, "ModelNo", "ModelNo").getData(true);
+
+            sbSQL.Clear();
+            sbSQL.Append("SELECT OIDSTYLE AS ID, StyleName ");
+            sbSQL.Append("FROM  ProductStyle ");
+            sbSQL.Append("ORDER BY StyleName ");
+            new ObjDevEx.setSearchLookUpEdit(slueSStyle, sbSQL, "StyleName", "ID").getData(true);
+
+            sbSQL.Clear();
+            sbSQL.Append("SELECT Code, Description ");
+            sbSQL.Append("FROM  Items ");
+            sbSQL.Append("ORDER BY Code ");
+            new ObjDevEx.setSearchLookUpEdit(slueSCode, sbSQL, "Code", "Code").getData(true);
+
+            LOAD_LIST();
+        }
+
+        private void LOAD_LIST()
+        {
+            gcListItem.DataSource = null;
+            if (slueSMaterial.Text.Trim() != "" || 
+                slueSBranch.Text.Trim() != "" || 
+                slueSCustomer.Text.Trim() != "" || 
+                slueSVendor.Text.Trim() != "" || 
+                slueSCategory.Text.Trim() != "" ||
+                slueSStyle.Text.Trim() != "" ||
+                slueSCode.Text.Trim() != "" ||
+                slueSModel.Text.Trim() != "")
+            {
+                StringBuilder sbSQL = new StringBuilder();
+                sbSQL.Append("SELECT IT.OIDITEM, IT.MaterialType AS MaterialTypeID, MTYPE.MaterialType, IT.Code, IT.Description, IT.Composition, IT.WeightOrMoreDetail, IT.ModelNo, IT.ModelName, IT.OIDCATEGORY, GC.CategoryName, IT.OIDSTYLE, ");
+                sbSQL.Append("       PS.StyleName, IT.OIDCOLOR, PC.ColorNo, PC.ColorName, IT.OIDSIZE, PSZ.SizeNo, PSZ.SizeName, IT.OIDCUST, CUS.ShortName, CUS.Name, IT.BusinessUnit, IT.Season, IT.ClassType, IT.Branch AS BranchID, ");
+                sbSQL.Append("       BN.Name AS Branch, IT.CostSheetNo, IT.StdPrice, IT.FirstVendor AS FirstVendID, VD2.Name AS FirstVendor, IT.PurchaseType AS PurchaseTypeID, ");
+                sbSQL.Append("       CASE WHEN IT.PurchaseType = 0 THEN 'Local' ELSE CASE WHEN IT.PurchaseType = 1 THEN 'Import' ELSE CASE WHEN IT.PurchaseType = 9 THEN 'Other' ELSE '' END END END AS PurchaseType, IT.PurchaseLoss, ");
+                sbSQL.Append("       IT.TaxBenefits AS TaxBenefitsID, CASE WHEN IT.TaxBenefits = 1 THEN 'BOI' ELSE CASE WHEN IT.TaxBenefits = 2 THEN '19 BIS' ELSE CASE WHEN IT.TaxBenefits = 9 THEN 'Other' ELSE '' END END END AS TaxBenefits, ");
+                sbSQL.Append("       IT.FirstReceiptDate, IT.DefaultVendor AS DefaultVendID, VD.Name AS DefaultVendor, IT.MinStock, IT.MaxStock, IT.StockShelfLife, IT.StdCost, IT.DefaultUnit, UN.UnitName AS DefaultUnit, IT.PathFile, IT.LabTestNo, ");
+                sbSQL.Append("       IT.ApprovedLabDate, IT.QCInspection, IT.CreatedBy, IT.CreatedDate, IT.UpdatedBy, IT.UpdatedDate ");
+                sbSQL.Append("FROM   Items AS IT INNER JOIN ");
+                sbSQL.Append("       ProductStyle AS PS ON IT.OIDSTYLE = PS.OIDSTYLE INNER JOIN ");
+                sbSQL.Append("       ProductColor AS PC ON IT.OIDCOLOR = PC.OIDCOLOR INNER JOIN ");
+                sbSQL.Append("       ProductSize AS PSZ ON IT.OIDSIZE = PSZ.OIDSIZE INNER JOIN ");
+                sbSQL.Append("       Customer AS CUS ON IT.OIDCUST = CUS.OIDCUST LEFT OUTER JOIN ");
+                sbSQL.Append("       GarmentCategory AS GC ON IT.OIDCATEGORY = GC.OIDGCATEGORY LEFT OUTER JOIN ");
+                sbSQL.Append("       Vendor AS VD ON IT.DefaultVendor = VD.OIDVEND LEFT OUTER JOIN ");
+                sbSQL.Append("       Vendor AS VD2 ON IT.FirstVendor = VD2.OIDVEND LEFT OUTER JOIN ");
+                sbSQL.Append("       Unit AS UN ON IT.DefaultUnit = UN.OIDUNIT LEFT OUTER JOIN ");
+                sbSQL.Append("       Branchs AS BN ON IT.Branch = BN.OIDBranch LEFT OUTER JOIN ");
+                sbSQL.Append("       (" + sbMeterial.ToString() + ") AS MTYPE ON IT.MaterialType = MTYPE.ID ");
+                sbSQL.Append("WHERE (IT.OIDITEM <> '') ");
+                if(slueSMaterial.Text.Trim() != "")
+                    sbSQL.Append("AND (IT.MaterialType = '" + slueSMaterial.EditValue.ToString() + "') ");
+                if(slueSBranch.Text.Trim() != "")
+                    sbSQL.Append("AND (IT.Branch = '" + slueSBranch.EditValue.ToString() + "') ");
+                if(slueSCustomer.Text.Trim() != "")
+                    sbSQL.Append("AND (IT.OIDCUST = '" + slueSCustomer.EditValue.ToString() + "') ");
+                if(slueSVendor.Text.Trim() != "")
+                    sbSQL.Append("AND (IT.DefaultVendor = '" + slueSVendor.EditValue.ToString() + "') ");
+                if(slueSCategory.Text.Trim() != "")
+                    sbSQL.Append("AND (IT.OIDCATEGORY = '" + slueSCategory.EditValue.ToString() + "') ");
+                if(slueSStyle.Text.Trim() != "")
+                    sbSQL.Append("AND (IT.OIDSTYLE = '" + slueSStyle.EditValue.ToString() + "') ");
+                if(slueSCode.Text.Trim() != "")
+                    sbSQL.Append("AND (IT.Code = N'" + slueSCode.EditValue.ToString() + "') ");
+                if(slueSModel.Text.Trim() != "")
+                    sbSQL.Append("AND (IT.ModelNo = N'" + slueSModel.EditValue.ToString() + "') ");
+                sbSQL.Append("ORDER BY IT.OIDITEM, IT.Code ");
+
+                new ObjDevEx.setGridControl(gcListItem, gvListItem, sbSQL).getData(false, false, false, true);
+            }
         }
 
         private void bbiNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1148,7 +1252,9 @@ namespace M07
 
         private void bbiExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+            string pathFile = new ObjSet.Folder(@"C:\MDS\Export\").GetPath() + "ItemsList_" + DateTime.Now.ToString("yyyyMMdd") + ".xlsx";
+            gvListItem.ExportToXlsx(pathFile);
+            System.Diagnostics.Process.Start(pathFile);
         }
 
         private void picImg_Click(object sender, EventArgs e)
@@ -1516,6 +1622,93 @@ namespace M07
             {
                 txeRemark.Focus();
             }
+        }
+
+        private void glueSMaterial_EditValueChanged(object sender, EventArgs e)
+        {
+            LOAD_LIST();
+        }
+
+        private void glueSBranch_EditValueChanged(object sender, EventArgs e)
+        {
+            LOAD_LIST();
+        }
+
+        private void slueSCustomer_EditValueChanged(object sender, EventArgs e)
+        {
+            LOAD_LIST();
+        }
+
+        private void slueSVendor_EditValueChanged(object sender, EventArgs e)
+        {
+            LOAD_LIST();
+        }
+
+        private void glueSCategory_EditValueChanged(object sender, EventArgs e)
+        {
+            LOAD_LIST();
+        }
+
+        private void slueSStyle_EditValueChanged(object sender, EventArgs e)
+        {
+            LOAD_LIST();
+        }
+
+        private void slueSCode_EditValueChanged(object sender, EventArgs e)
+        {
+            LOAD_LIST();
+        }
+
+        private void slueSModel_EditValueChanged(object sender, EventArgs e)
+        {
+            LOAD_LIST();
+        }
+
+        private void M07_Shown(object sender, EventArgs e)
+        {
+            tabbedControlGroup1.SelectedTabPage = layoutControlGroup13; //เลือกแท็บ Search
+            bbiRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            bbiPrintPreview.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            bbiPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            bbiExcel.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+        }
+
+        private void gvListItem_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
+        {
+            if (e.Info.IsRowIndicator) e.Info.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void bbiRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LOAD_LIST();
+        }
+
+        private void tabbedControlGroup1_SelectedPageChanged(object sender, DevExpress.XtraLayout.LayoutTabPageChangedEventArgs e)
+        {
+            if (tabbedControlGroup1.SelectedTabPage == layoutControlGroup13)
+            {
+                bbiRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                bbiPrintPreview.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                bbiPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                bbiExcel.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                bbiRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bbiPrintPreview.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bbiPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bbiExcel.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+        }
+
+        private void bbiPrintPreview_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gcListItem.ShowPrintPreview();
+        }
+
+        private void bbiPrint_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gcListItem.Print();
         }
     }
 }
