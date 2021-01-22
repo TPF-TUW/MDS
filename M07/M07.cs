@@ -338,8 +338,8 @@ namespace M07
                 sbSQL.Append("       BN.Name AS Branch, IT.CostSheetNo, IT.StdPrice, IT.FirstVendor AS FirstVendID, VD2.Name AS FirstVendor, IT.PurchaseType AS PurchaseTypeID, ");
                 sbSQL.Append("       CASE WHEN IT.PurchaseType = 0 THEN 'Local' ELSE CASE WHEN IT.PurchaseType = 1 THEN 'Import' ELSE CASE WHEN IT.PurchaseType = 9 THEN 'Other' ELSE '' END END END AS PurchaseType, IT.PurchaseLoss, ");
                 sbSQL.Append("       IT.TaxBenefits AS TaxBenefitsID, CASE WHEN IT.TaxBenefits = 1 THEN 'BOI' ELSE CASE WHEN IT.TaxBenefits = 2 THEN '19 BIS' ELSE CASE WHEN IT.TaxBenefits = 9 THEN 'Other' ELSE '' END END END AS TaxBenefits, ");
-                sbSQL.Append("       IT.FirstReceiptDate, IT.DefaultVendor AS DefaultVendID, VD.Name AS DefaultVendor, IT.MinStock, IT.MaxStock, IT.StockShelfLife, IT.StdCost, IT.DefaultUnit, UN.UnitName AS DefaultUnit, IT.PathFile, IT.LabTestNo, ");
-                sbSQL.Append("       IT.ApprovedLabDate, IT.QCInspection, IT.CreatedBy, IT.CreatedDate, IT.UpdatedBy, IT.UpdatedDate ");
+                sbSQL.Append("       CASE WHEN IT.FirstReceiptDate IS NULL THEN '' ELSE CONVERT(VARCHAR(10), IT.FirstReceiptDate, 103) END FirstReceiptDate, IT.DefaultVendor AS DefaultVendID, VD.Name AS DefaultVendor, IT.MinStock, IT.MaxStock, IT.StockShelfLife, IT.StdCost, IT.DefaultUnit AS DefaultUnitID, UN.UnitName AS DefaultUnit, IT.PathFile, IT.LabTestNo, ");
+                sbSQL.Append("       CASE WHEN IT.ApprovedLabDate IS NULL THEN '' ELSE CONVERT(VARCHAR(10), IT.ApprovedLabDate, 103) END AS ApprovedLabDate, IT.QCInspection, IT.CreatedBy, IT.CreatedDate, IT.UpdatedBy, IT.UpdatedDate ");
                 sbSQL.Append("FROM   Items AS IT INNER JOIN ");
                 sbSQL.Append("       ProductStyle AS PS ON IT.OIDSTYLE = PS.OIDSTYLE INNER JOIN ");
                 sbSQL.Append("       ProductColor AS PC ON IT.OIDCOLOR = PC.OIDCOLOR INNER JOIN ");
@@ -371,6 +371,21 @@ namespace M07
                 sbSQL.Append("ORDER BY IT.OIDITEM, IT.Code ");
 
                 new ObjDevEx.setGridControl(gcListItem, gvListItem, sbSQL).getData(false, false, false, true);
+
+                gvListItem.Columns["MaterialTypeID"].Visible = false;
+                gvListItem.Columns["OIDITEM"].Visible = false;
+                gvListItem.Columns["OIDCATEGORY"].Visible = false;
+                gvListItem.Columns["OIDSTYLE"].Visible = false;
+                gvListItem.Columns["OIDCOLOR"].Visible = false;
+                gvListItem.Columns["OIDSIZE"].Visible = false;
+                gvListItem.Columns["OIDCUST"].Visible = false;
+                gvListItem.Columns["BranchID"].Visible = false;
+                gvListItem.Columns["FirstVendID"].Visible = false;
+                gvListItem.Columns["PurchaseTypeID"].Visible = false;
+                gvListItem.Columns["TaxBenefitsID"].Visible = false;
+                gvListItem.Columns["DefaultVendID"].Visible = false;
+                gvListItem.Columns["DefaultUnitID"].Visible = false;
+                gvListItem.Columns["PathFile"].Visible = false;
             }
         }
 
@@ -1687,6 +1702,11 @@ namespace M07
         {
             if (tabbedControlGroup1.SelectedTabPage == layoutControlGroup13)
             {
+                bbiNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bbiEdit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bbiDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
                 bbiRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 bbiPrintPreview.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 bbiPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
@@ -1694,6 +1714,11 @@ namespace M07
             }
             else
             {
+                bbiNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                bbiEdit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                bbiDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
                 bbiRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                 bbiPrintPreview.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                 bbiPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;

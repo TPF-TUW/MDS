@@ -103,26 +103,9 @@ namespace MPS02
             gcEntryPO.DataSource = dtPOEntry;
 
 
-            //dtDOEntry.Columns.Add("OrderNo", typeof(String));
-            //dtDOEntry.Columns.Add("RevisionNo", typeof(Int32));
-            //dtDOEntry.Columns.Add("DONo", typeof(String));
-            //dtDOEntry.Columns.Add("DocStatus", typeof(Int32));
-            //dtDOEntry.Columns.Add("ItemCode", typeof(Int32));
-            //dtDOEntry.Columns.Add("ItemName", typeof(String));
-            //dtDOEntry.Columns.Add("PatternDimensionCode", typeof(String));
-            //dtDOEntry.Columns.Add("TransportationMethod", typeof(Int32));
-            //dtDOEntry.Columns.Add("PortCode", typeof(Int32));
-            //dtDOEntry.Columns.Add("PortName", typeof(String));
-            //dtDOEntry.Columns.Add("WHName", typeof(String));
-            //dtDOEntry.Columns.Add("Address", typeof(String));
-            //dtDOEntry.Columns.Add("Telephone", typeof(String));
-            //dtDOEntry.Columns.Add("PersonInCharge", typeof(String));
-            //dtDOEntry.Columns.Add("Incoterms", typeof(Int32));
-            //dtDOEntry.Columns.Add("Forwarder", typeof(String));
-            //dtDOEntry.Columns.Add("OIDVEND", typeof(Int32));
-            //dtDOEntry.Columns.Add("ETAWH", typeof(DateTime));
-            //dtDOEntry.Columns.Add("ContractedETD", typeof(DateTime));
-            //gcEntryDO.DataSource = dtDOEntry;
+            StringBuilder sbSQL = new StringBuilder();
+            sbSQL.Append("SELECT No AS ID, Name AS Incoterms FROM ENUMTYPE WHERE (Module = 'CODO') ORDER BY OIDENUM ");
+            new ObjDevEx.setGridLookUpEdit(glueDoIncoterms, sbSQL, "Incoterms", "ID").getData();
 
             gluePoBusinessUnit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             gluePoBusinessUnit.Properties.AcceptEditorTextAsNewValue = DevExpress.Utils.DefaultBoolean.True;
@@ -148,6 +131,7 @@ namespace MPS02
 
         private void LoadSummary()
         {
+            gcSumPO.DataSource = null;
             StringBuilder sbSQL = new StringBuilder();
             //PO
             sbSQL.Append("SELECT PO.OrderNo AS [PO Order No.], PO.RevisionNo AS [Revised No.], CONVERT(NVARCHAR(10), PO.RevisedDate, 103) AS RevisedDate, PO.DocumentStatus AS DocStatus, ST.Status AS DocumentStatus, PO.Lot AS [Lot No.], PO.OrderPlanNumber AS [Order Plan No.], PO.OIDCUST, CUS.Name AS Customer, ");
@@ -166,9 +150,10 @@ namespace MPS02
             sbSQL.Append("       Currency AS CUR ON PO.OIDCURR = CUR.OIDCURR ");
             sbSQL.Append("ORDER BY [PO Order No.] ");
             new ObjDevEx.setGridControl(gcSumPO, gvSumPO, sbSQL).getData(false, false, false, true);
-            
+
 
             //DO
+            gcSumDO.DataSource = null;
             sbSQL.Clear();
             sbSQL.Append("SELECT DO.DONo AS [DO No.], DO.OrderNo AS [PO Order No.], DO.RevisionNo AS [Revision No.], DO.DocStatus, ST.Status AS DocumentStatus, DO.ItemCode, IC.ItemName, DO.PatternDimensionCode,  ");
             sbSQL.Append("       DO.TransportationMethod AS TransMethod, CASE WHEN DO.TransportationMethod = 0 THEN 'Ship' ELSE CASE WHEN DO.TransportationMethod = 1 THEN 'Air' ELSE '' END END AS TransportationMethod, ");
@@ -456,7 +441,7 @@ namespace MPS02
             txeDoAddress.Text = "";
             txeDoTelephone.Text = "";
             txeDoPersonInCharge.Text = "";
-            txeDoIncoterms.Text = "";
+            glueDoIncoterms.EditValue = "1";
             txeDoForwarder.Text = "";
             slueDoOIDVEND.EditValue = "";
             dteDoETAWH.EditValue = DBNull.Value;
@@ -504,6 +489,34 @@ namespace MPS02
             //Tab Entry
             SetNewPO();
             SetNewDO();
+
+            txePoFilePath.Text = "";
+            spsPO.CloseCellEditor(DevExpress.XtraSpreadsheet.CellEditorEnterValueMode.Default);
+            spsPO.CreateNewDocument();
+            cbePoSheet.Properties.Items.Clear();
+            cbePoSheet.Text = "";
+
+            lciPregressPOSave.Visibility = LayoutVisibility.Never;
+            pbcPOSave.Properties.Step = 1;
+            pbcPOSave.Properties.PercentView = true;
+            pbcPOSave.Properties.Maximum = 100;
+            pbcPOSave.Properties.Minimum = 0;
+            pbcPOSave.EditValue = 0;
+
+
+            txeDoFilePath.Text = "";
+            spsDO.CloseCellEditor(DevExpress.XtraSpreadsheet.CellEditorEnterValueMode.Default);
+            spsDO.CreateNewDocument();
+            cbeDoSheet.Properties.Items.Clear();
+            cbeDoSheet.Text = "";
+
+            lciPregressDOSave.Visibility = LayoutVisibility.Never;
+            pbcDOSave.Properties.Step = 1;
+            pbcDOSave.Properties.PercentView = true;
+            pbcDOSave.Properties.Maximum = 100;
+            pbcDOSave.Properties.Minimum = 0;
+            pbcDOSave.EditValue = 0;
+
             txePoOrderNo.Focus();
 
         }
@@ -879,7 +892,7 @@ namespace MPS02
                                         string TransportationMethod = glueDoTransportationMethod.Text.Trim() != "" ? glueDoTransportationMethod.EditValue.ToString() : "";
                                         string PortCode = slueDoPortCode.Text.Trim() != "" ? slueDoPortCode.EditValue.ToString() : "";
 
-                                        string Incoterms = txeDoIncoterms.Text.Trim();
+                                        string Incoterms = glueDoIncoterms.EditValue.ToString();
                                         string Forwarder = txeDoForwarder.Text.Trim();
 
                                         string OIDVEND = slueDoOIDVEND.Text.Trim() != "" ? slueDoOIDVEND.EditValue.ToString() : "";
@@ -1298,6 +1311,7 @@ namespace MPS02
                             if (chkSAVE == true)
                             {
                                 lciPregressPOSave.Visibility = LayoutVisibility.Never;
+                                tabbedControlGroup5.SelectedTabPage = layoutControlGroup13;
                                 FUNC.msgInfo("Save PO complete.");
                                 bbiNew.PerformClick();
                             }
@@ -1391,15 +1405,14 @@ namespace MPS02
                     PortCode = PortCode.Length > 4 ? PortCode.Substring(0, 4) : PortCode;
                     PortCode = IsNumeric(PortCode) == true ? PortCode : "0";
 
-                    string Incoterms = WSHEETDO.Rows[i][14].DisplayText.ToString().Trim(); //รอ
-                    Incoterms = "1"; //ใส่ไว้ก่อน รอข้อมูลอีกที
+                    string Incoterms = WSHEETDO.Rows[i][14].DisplayText.ToString().Trim(); 
+                    Incoterms = Incoterms != "" ? "1" : "0"; 
 
                     string ContractedETD = WSHEETDO.Rows[i][15].DisplayText.ToString().Trim();
                     ContractedETD = ContractedETD != "" ? "'" + Convert.ToDateTime(ContractedETD).ToString("yyyy-MM-dd") + "'" : "NULL";
                     string Forwarder = WSHEETDO.Rows[i][16].DisplayText.ToString().Trim();
 
-                    string OIDVEND = WSHEETDO.Rows[i][17].DisplayText.ToString().Trim(); //รอ
-                    //ใส่ไว้ก่อน รอข้อมูลอีกที
+                    string OIDVEND = WSHEETDO.Rows[i][17].DisplayText.ToString().Trim();
                     OIDVEND = WSHEETDO.Rows[i][18].DisplayText.ToString().Trim();
                     OIDVEND = OIDVEND.Replace(" ", "").Replace(".", "").Replace(",", "");
                     OIDVEND = new DBQuery("SELECT OIDVEND FROM Vendor WHERE(REPLACE(REPLACE(REPLACE(Name, ' ', ''), '.', ''), ',', '') = '" + OIDVEND + "')").getString();
@@ -1540,11 +1553,44 @@ namespace MPS02
         private void tabbedControlGroup3_SelectedPageChanged(object sender, DevExpress.XtraLayout.LayoutTabPageChangedEventArgs e)
         {
             if (tabbedControlGroup3.SelectedTabPage == layoutControlGroup4) //Summary
+            {
+                bbiNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bbiEdit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bbiDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
+                bbiRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                ribbonPageGroup2.Visible = true;
+                ribbonPageGroup5.Visible = true;
+
                 tabbedControlGroup2.SelectedTabPage = layoutControlGroup2;
+            }
             else if (tabbedControlGroup3.SelectedTabPage == layoutControlGroup5) //Entry
+            {
+                bbiNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                bbiEdit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                bbiDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
+                bbiRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                ribbonPageGroup2.Visible = false;
+                ribbonPageGroup5.Visible = false;
+
                 tabbedControlGroup4.SelectedTabPage = layoutControlGroup8;
+            }
             else if (tabbedControlGroup3.SelectedTabPage == layoutControlGroup12) //Import
+            {
+                bbiNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                bbiEdit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                bbiDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
+                bbiRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                ribbonPageGroup2.Visible = false;
+                ribbonPageGroup5.Visible = false;
+
                 tabbedControlGroup5.SelectedTabPage = layoutControlGroup13;
+            }
         }
 
         private void gvSumPO_RowCellClick(object sender, RowCellClickEventArgs e)
@@ -2137,7 +2183,7 @@ namespace MPS02
             txeDoTelephone.Text = "";
             txeDoPersonInCharge.Text = "";
 
-            txeDoIncoterms.Text = "";
+            glueDoIncoterms.EditValue = "1";
             txeDoForwarder.Text = "";
             slueDoOIDVEND.EditValue = "";
             dteDoETAWH.EditValue = null;
@@ -2166,7 +2212,7 @@ namespace MPS02
                 slueDoDONo.ReadOnly = true;
                 glueDoTransportationMethod.ReadOnly = true;
                 slueDoPortCode.ReadOnly = true;
-                txeDoIncoterms.ReadOnly = true;
+                glueDoIncoterms.ReadOnly = true;
                 txeDoForwarder.ReadOnly = true;
                 slueDoOIDVEND.ReadOnly = true;
                 dteDoETAWH.ReadOnly = true;
@@ -2188,7 +2234,7 @@ namespace MPS02
                     slueDoDONo.ReadOnly = false;
                     glueDoTransportationMethod.ReadOnly = false;
                     slueDoPortCode.ReadOnly = false;
-                    txeDoIncoterms.ReadOnly = false;
+                    glueDoIncoterms.ReadOnly = false;
                     txeDoForwarder.ReadOnly = false;
                     slueDoOIDVEND.ReadOnly = false;
                     dteDoETAWH.ReadOnly = false;
@@ -2213,7 +2259,7 @@ namespace MPS02
                         slueDoDONo.ReadOnly = false;
                         glueDoTransportationMethod.ReadOnly = false;
                         slueDoPortCode.ReadOnly = false;
-                        txeDoIncoterms.ReadOnly = false;
+                        glueDoIncoterms.ReadOnly = false;
                         txeDoForwarder.ReadOnly = false;
                         slueDoOIDVEND.ReadOnly = false;
                         dteDoETAWH.ReadOnly = false;
@@ -2234,7 +2280,7 @@ namespace MPS02
                         slueDoDONo.ReadOnly = false;
                         glueDoTransportationMethod.ReadOnly = false;
                         slueDoPortCode.ReadOnly = false;
-                        txeDoIncoterms.ReadOnly = false;
+                        glueDoIncoterms.ReadOnly = false;
                         txeDoForwarder.ReadOnly = false;
                         slueDoOIDVEND.ReadOnly = false;
                         dteDoETAWH.ReadOnly = false;
@@ -2255,7 +2301,7 @@ namespace MPS02
                         slueDoDONo.ReadOnly = false;
                         glueDoTransportationMethod.ReadOnly = true;
                         slueDoPortCode.ReadOnly = true;
-                        txeDoIncoterms.ReadOnly = true;
+                        glueDoIncoterms.ReadOnly = true;
                         txeDoForwarder.ReadOnly = true;
                         slueDoOIDVEND.ReadOnly = true;
                         dteDoETAWH.ReadOnly = true;
@@ -2276,7 +2322,7 @@ namespace MPS02
                         slueDoDONo.ReadOnly = false;
                         glueDoTransportationMethod.ReadOnly = true;
                         slueDoPortCode.ReadOnly = true;
-                        txeDoIncoterms.ReadOnly = true;
+                        glueDoIncoterms.ReadOnly = true;
                         txeDoForwarder.ReadOnly = true;
                         slueDoOIDVEND.ReadOnly = true;
                         dteDoETAWH.ReadOnly = true;
@@ -2533,7 +2579,7 @@ namespace MPS02
         {
             if(slueDoPortCode.Text.Trim() != "")
                 LoadPortCode(slueDoPortCode.EditValue.ToString());
-            txeDoIncoterms.Focus();
+            glueDoIncoterms.Focus();
         }
 
         private void txeDoIncoterms_KeyDown(object sender, KeyEventArgs e)
@@ -2988,7 +3034,7 @@ namespace MPS02
         private void LOADDO(string DONO)
         {
             glueDoTransportationMethod.Text = "";
-            txeDoIncoterms.Text = "";
+            glueDoIncoterms.EditValue = "0";
             txeDoForwarder.Text = "";
             slueDoOIDVEND.EditValue = "";
             dteDoETAWH.EditValue = null;
@@ -3015,7 +3061,7 @@ namespace MPS02
                     speDoRevisionNo.Value = Convert.ToInt32(arrDO[1]);
                     glueDoTransportationMethod.Text = arrDO[3];
                     slueDoPortCode.EditValue = arrDO[4];
-                    txeDoIncoterms.Text = arrDO[5];
+                    glueDoIncoterms.EditValue = arrDO[5];
                     txeDoForwarder.Text = arrDO[6];
                     slueDoOIDVEND.EditValue = arrDO[7];
 
@@ -3183,6 +3229,11 @@ namespace MPS02
                     //LoadForecast("Edit", ID);
                 }
             }
+        }
+
+        private void bbiRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadSummary();
         }
     }
 
