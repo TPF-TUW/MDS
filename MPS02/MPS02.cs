@@ -1207,6 +1207,16 @@ namespace MPS02
                                     string strItemCode = WSHEETPO.Rows[i][27].DisplayText.ToString().Trim().Replace("'", "''");
                                     string strItemName = WSHEETPO.Rows[i][28].DisplayText.ToString().Trim().Replace("'", "''");
                                     string strStyleNo = WSHEETPO.Rows[i][29].DisplayText.ToString().Trim().Replace("'", "''");
+
+                                    string strStyle = strStyleNo.Replace(Regex.Match(strStyleNo, @"\d+([,\.]\d+)?").Value, "");
+                                    StringBuilder sbSTYLE = new StringBuilder();
+                                    sbSTYLE.Append("IF NOT EXISTS(SELECT OIDSTYLE FROM ProductStyle WHERE StyleName = N'" + strStyle + "') ");
+                                    sbSTYLE.Append("  BEGIN ");
+                                    sbSTYLE.Append("       INSERT INTO ProductStyle(StyleName) VALUES(N'" + strStyle + "') ");
+                                    sbSTYLE.Append("  END ");
+                                    sbSTYLE.Append("SELECT OIDSTYLE FROM ProductStyle WHERE(StyleName = N'" + strStyle + "') ");
+                                    string OIDSTYLE = new DBQuery(sbSTYLE).getString();
+
                                     if (ItemCode != strItemCode)
                                     {
                                         ItemCode = strItemCode;
@@ -1215,11 +1225,18 @@ namespace MPS02
                                         StringBuilder sbITEM = new StringBuilder();
                                         string FabricWidth = WSHEETPO.Rows[i][38].DisplayText.ToString().Trim().Replace("'", "''");
                                         string FBComposition = WSHEETPO.Rows[i][40].DisplayText.ToString().Trim().Replace("'", "''");
-                                        sbITEM.Append("IF NOT EXISTS(SELECT OIDCSITEM FROM ItemCustomer WHERE (ItemCode = N'" + strItemCode + "')) ");
+
+                                        sbITEM.Append("IF NOT EXISTS(SELECT OIDCSITEM FROM ItemCustomer WHERE (OIDCUST='" + OIDCUST + "') AND (ItemCode = N'" + strItemCode + "')) ");
                                         sbITEM.Append(" BEGIN ");
-                                        sbITEM.Append("   INSERT INTO ItemCustomer(OIDCUST, ItemCode, ItemName, Season, FabricWidth, FBComposition, StyleNo) VALUES('" + OIDCUST + "', N'" + strItemCode + "', N'" + strItemName + "', '" + Season + "', N'" + FabricWidth + "', N'" + FBComposition + "', N'" + strStyleNo + "') ");
+                                        sbITEM.Append("   INSERT INTO ItemCustomer(OIDCUST, ItemCode, ItemName, OIDSTYLE, Season, FabricWidth, FBComposition, StyleNo) VALUES('" + OIDCUST + "', N'" + strItemCode + "', N'" + strItemName + "', '" + OIDSTYLE + "', '" + Season + "', N'" + FabricWidth + "', N'" + FBComposition + "', N'" + strStyleNo + "') ");
                                         sbITEM.Append(" END ");
-                                        sbITEM.Append("SELECT TOP(1) OIDCSITEM FROM ItemCustomer WHERE (ItemCode = N'" + strItemCode + "') ");
+                                        sbITEM.Append("ELSE ");
+                                        sbITEM.Append(" BEGIN ");
+                                        sbITEM.Append("   UPDATE ItemCustomer SET  ");
+                                        sbITEM.Append("     ItemName=N'" + strItemName + "', OIDSTYLE='" + OIDSTYLE + "', Season=N'" + Season + "', FabricWidth=N'" + FabricWidth + "', FBComposition=N'" + FBComposition + "', StyleNo=N'" + strStyleNo + "'  ");
+                                        sbITEM.Append("   WHERE (OIDCUST='" + OIDCUST + "') AND (ItemCode = N'" + strItemCode + "')  ");
+                                        sbITEM.Append(" END ");
+                                        sbITEM.Append("SELECT TOP(1) OIDCSITEM FROM ItemCustomer WHERE (OIDCUST='" + OIDCUST + "') AND (ItemCode = N'" + strItemCode + "') ");
                                         OIDITEM = new DBQuery(sbITEM).getString();
                                     }
 
