@@ -88,6 +88,7 @@ namespace MDS00
             this.accordionControlElement27 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.accordionControlElement55 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -187,6 +188,7 @@ namespace MDS00
             this.accordionControlElement10,
             this.accordionControlElement11,
             this.accordionControlElement12,
+            this.accordionControlElement55,
             this.accordionControlElement13,
             this.accordionControlElement14,
             this.accordionControlElement15,
@@ -198,6 +200,7 @@ namespace MDS00
             this.accordionControlElement21,
             this.accordionControlElement31,
             this.accordionControlElement22});
+            this.accordionControlElement2.Expanded = true;
             this.accordionControlElement2.Hint = "Master";
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Text = "Master";
@@ -384,7 +387,6 @@ namespace MDS00
             this.accordionControlElement38,
             this.accordionControlElement39,
             this.accordionControlElement40});
-            this.accordionControlElement30.Expanded = true;
             this.accordionControlElement30.Hint = "Master Production Schedule";
             this.accordionControlElement30.Name = "accordionControlElement30";
             this.accordionControlElement30.Text = "MPS";
@@ -558,6 +560,14 @@ namespace MDS00
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
             // 
+            // accordionControlElement55
+            // 
+            this.accordionControlElement55.Hint = "M18";
+            this.accordionControlElement55.ImageOptions.Image = global::MDS00.Resource1.M07;
+            this.accordionControlElement55.Name = "accordionControlElement55";
+            this.accordionControlElement55.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement55.Text = "Customer Item";
+            // 
             // XtraForm3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -633,5 +643,6 @@ namespace MDS00
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement52;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement53;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement54;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement55;
     }
 }

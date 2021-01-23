@@ -258,6 +258,10 @@
       <Project>{0901e8aa-c978-4172-974e-6259813b9188}</Project>
       <Name>M17</Name>
     </ProjectReference>
+    <ProjectReference Include="..\M18\M18.csproj">
+      <Project>{847772aa-5d4e-4f50-a05d-738ce25b78d3}</Project>
+      <Name>M18</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MPS01\MPS01.csproj">
       <Project>{e3827f97-86ce-4a22-92be-db661d99c4b6}</Project>
       <Name>MPS01</Name>
