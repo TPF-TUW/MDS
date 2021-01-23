@@ -53,6 +53,10 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txeStyleCode = new DevExpress.XtraEditors.TextEdit();
+            this.txeStyleNo = new DevExpress.XtraEditors.TextEdit();
+            this.speSeason = new DevExpress.XtraEditors.SpinEdit();
+            this.lblStatus = new DevExpress.XtraEditors.LabelControl();
             this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
             this.txeItemName = new DevExpress.XtraEditors.TextEdit();
@@ -66,6 +70,8 @@
             this.txeID = new DevExpress.XtraEditors.TextEdit();
             this.gcCustItem = new DevExpress.XtraGrid.GridControl();
             this.gvCustItem = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.glueSeason = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -77,25 +83,25 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tabbedControlGroup1 = new DevExpress.XtraLayout.TabbedControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.lblStatus = new DevExpress.XtraEditors.LabelControl();
-            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.glueSeason = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.speSeason = new DevExpress.XtraEditors.SpinEdit();
-            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txeStyle = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txeStyleCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeStyleNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speSeason.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeItemName.Properties)).BeginInit();
@@ -109,6 +115,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txeID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCustItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCustItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glueSeason.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -120,21 +128,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glueSeason.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speSeason.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txeStyle.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -214,7 +220,7 @@
             this.bbiRefresh.Id = 19;
             this.bbiRefresh.ImageOptions.ImageUri.Uri = "Refresh";
             this.bbiRefresh.Name = "bbiRefresh";
-            this.bbiRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
             // 
             // bbiPrint
             // 
@@ -327,7 +333,8 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.txeStyle);
+            this.layoutControl1.Controls.Add(this.txeStyleCode);
+            this.layoutControl1.Controls.Add(this.txeStyleNo);
             this.layoutControl1.Controls.Add(this.speSeason);
             this.layoutControl1.Controls.Add(this.lblStatus);
             this.layoutControl1.Controls.Add(this.textEdit8);
@@ -349,6 +356,73 @@
             this.layoutControl1.Size = new System.Drawing.Size(1118, 610);
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txeStyleCode
+            // 
+            this.txeStyleCode.Location = new System.Drawing.Point(193, 196);
+            this.txeStyleCode.MenuManager = this.ribbonControl;
+            this.txeStyleCode.Name = "txeStyleCode";
+            this.txeStyleCode.Properties.Appearance.Options.UseTextOptions = true;
+            this.txeStyleCode.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txeStyleCode.Properties.ReadOnly = true;
+            this.txeStyleCode.Size = new System.Drawing.Size(74, 20);
+            this.txeStyleCode.StyleController = this.layoutControl1;
+            this.txeStyleCode.TabIndex = 18;
+            // 
+            // txeStyleNo
+            // 
+            this.txeStyleNo.Location = new System.Drawing.Point(117, 196);
+            this.txeStyleNo.MenuManager = this.ribbonControl;
+            this.txeStyleNo.Name = "txeStyleNo";
+            this.txeStyleNo.Properties.Appearance.Options.UseTextOptions = true;
+            this.txeStyleNo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txeStyleNo.Properties.BeepOnError = false;
+            this.txeStyleNo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txeStyleNo.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txeStyleNo.Properties.MaskSettings.Set("mask", "d");
+            this.txeStyleNo.Properties.MaxLength = 5;
+            this.txeStyleNo.Size = new System.Drawing.Size(72, 20);
+            this.txeStyleNo.StyleController = this.layoutControl1;
+            this.txeStyleNo.TabIndex = 17;
+            // 
+            // speSeason
+            // 
+            this.speSeason.EditValue = new decimal(new int[] {
+            2020,
+            0,
+            0,
+            0});
+            this.speSeason.Location = new System.Drawing.Point(117, 76);
+            this.speSeason.MenuManager = this.ribbonControl;
+            this.speSeason.Name = "speSeason";
+            this.speSeason.Properties.Appearance.Options.UseTextOptions = true;
+            this.speSeason.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.speSeason.Properties.BeepOnError = false;
+            this.speSeason.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.speSeason.Properties.MaskSettings.Set("mask", "d");
+            this.speSeason.Properties.MaxValue = new decimal(new int[] {
+            2500,
+            0,
+            0,
+            0});
+            this.speSeason.Properties.MinValue = new decimal(new int[] {
+            2010,
+            0,
+            0,
+            0});
+            this.speSeason.Size = new System.Drawing.Size(98, 20);
+            this.speSeason.StyleController = this.layoutControl1;
+            this.speSeason.TabIndex = 16;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Location = new System.Drawing.Point(182, 4);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(70, 14);
+            this.lblStatus.StyleController = this.layoutControl1;
+            this.lblStatus.TabIndex = 15;
+            this.lblStatus.Text = "labelControl1";
             // 
             // textEdit8
             // 
@@ -379,6 +453,7 @@
             this.txeItemName.Size = new System.Drawing.Size(229, 20);
             this.txeItemName.StyleController = this.layoutControl1;
             this.txeItemName.TabIndex = 11;
+            this.txeItemName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeItemName_KeyDown);
             // 
             // txeFBComposition
             // 
@@ -389,6 +464,7 @@
             this.txeFBComposition.Size = new System.Drawing.Size(229, 20);
             this.txeFBComposition.StyleController = this.layoutControl1;
             this.txeFBComposition.TabIndex = 10;
+            this.txeFBComposition.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeFBComposition_KeyDown);
             // 
             // txeFabricWidth
             // 
@@ -399,16 +475,19 @@
             this.txeFabricWidth.Size = new System.Drawing.Size(229, 20);
             this.txeFabricWidth.StyleController = this.layoutControl1;
             this.txeFabricWidth.TabIndex = 9;
+            this.txeFabricWidth.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeFabricWidth_KeyDown);
             // 
             // txeItemCode
             // 
             this.txeItemCode.Location = new System.Drawing.Point(117, 100);
             this.txeItemCode.MenuManager = this.ribbonControl;
             this.txeItemCode.Name = "txeItemCode";
-            this.txeItemCode.Properties.MaxLength = 10;
+            this.txeItemCode.Properties.MaxLength = 20;
             this.txeItemCode.Size = new System.Drawing.Size(229, 20);
             this.txeItemCode.StyleController = this.layoutControl1;
             this.txeItemCode.TabIndex = 8;
+            this.txeItemCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeItemCode_KeyDown);
+            this.txeItemCode.Leave += new System.EventHandler(this.txeItemCode_Leave);
             // 
             // slueStyle
             // 
@@ -422,6 +501,7 @@
             this.slueStyle.Size = new System.Drawing.Size(98, 20);
             this.slueStyle.StyleController = this.layoutControl1;
             this.slueStyle.TabIndex = 7;
+            this.slueStyle.EditValueChanged += new System.EventHandler(this.slueStyle_EditValueChanged);
             // 
             // searchLookUpEdit2View
             // 
@@ -442,6 +522,7 @@
             this.slueCustomer.Size = new System.Drawing.Size(229, 20);
             this.slueCustomer.StyleController = this.layoutControl1;
             this.slueCustomer.TabIndex = 6;
+            this.slueCustomer.EditValueChanged += new System.EventHandler(this.slueCustomer_EditValueChanged);
             // 
             // searchLookUpEdit1View
             // 
@@ -474,12 +555,38 @@
             // gvCustItem
             // 
             this.gvCustItem.GridControl = this.gcCustItem;
+            this.gvCustItem.IndicatorWidth = 40;
             this.gvCustItem.Name = "gvCustItem";
+            this.gvCustItem.OptionsBehavior.Editable = false;
+            this.gvCustItem.OptionsBehavior.ReadOnly = true;
             this.gvCustItem.OptionsView.ColumnAutoWidth = false;
             this.gvCustItem.OptionsView.EnableAppearanceEvenRow = true;
             this.gvCustItem.OptionsView.EnableAppearanceOddRow = true;
             this.gvCustItem.OptionsView.ShowAutoFilterRow = true;
             this.gvCustItem.OptionsView.ShowGroupPanel = false;
+            this.gvCustItem.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gvCustItem_CustomDrawRowIndicator);
+            this.gvCustItem.DoubleClick += new System.EventHandler(this.gvCustItem_DoubleClick);
+            // 
+            // glueSeason
+            // 
+            this.glueSeason.Location = new System.Drawing.Point(219, 76);
+            this.glueSeason.MenuManager = this.ribbonControl;
+            this.glueSeason.Name = "glueSeason";
+            this.glueSeason.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glueSeason.Properties.NullText = "";
+            this.glueSeason.Properties.PopupView = this.gridLookUpEdit1View;
+            this.glueSeason.Size = new System.Drawing.Size(59, 20);
+            this.glueSeason.StyleController = this.layoutControl1;
+            this.glueSeason.TabIndex = 12;
+            this.glueSeason.EditValueChanged += new System.EventHandler(this.glueSeason_EditValueChanged);
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // Root
             // 
@@ -503,7 +610,9 @@
             this.layoutControlItem12,
             this.layoutControlItem13,
             this.layoutControlItem9,
-            this.layoutControlItem14});
+            this.layoutControlItem14,
+            this.layoutControlItem15,
+            this.emptySpaceItem6});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.Root.Size = new System.Drawing.Size(1118, 610);
@@ -597,16 +706,6 @@
             this.layoutControlItem8.Text = "Item Name";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(101, 14);
             // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.glueSeason;
-            this.layoutControlItem9.Location = new System.Drawing.Point(215, 72);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(63, 24);
-            this.layoutControlItem9.Text = "Season";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem9.TextVisible = false;
-            // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
@@ -641,6 +740,60 @@
             this.layoutControlItem11.Text = "Created By";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(101, 14);
             // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.lblStatus;
+            this.layoutControlItem12.Location = new System.Drawing.Point(178, 0);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(74, 24);
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem12.TextVisible = false;
+            // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.Control = this.speSeason;
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(215, 24);
+            this.layoutControlItem13.Text = "Season";
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(101, 14);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.glueSeason;
+            this.layoutControlItem9.Location = new System.Drawing.Point(215, 72);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(63, 24);
+            this.layoutControlItem9.Text = "Season";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem9.TextVisible = false;
+            // 
+            // layoutControlItem14
+            // 
+            this.layoutControlItem14.Control = this.txeStyleNo;
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 192);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(189, 24);
+            this.layoutControlItem14.Text = "Style No.";
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(101, 14);
+            // 
+            // layoutControlItem15
+            // 
+            this.layoutControlItem15.Control = this.txeStyleCode;
+            this.layoutControlItem15.Location = new System.Drawing.Point(189, 192);
+            this.layoutControlItem15.Name = "layoutControlItem15";
+            this.layoutControlItem15.Size = new System.Drawing.Size(78, 24);
+            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem15.TextVisible = false;
+            // 
+            // emptySpaceItem6
+            // 
+            this.emptySpaceItem6.AllowHotTrack = false;
+            this.emptySpaceItem6.Location = new System.Drawing.Point(267, 192);
+            this.emptySpaceItem6.Name = "emptySpaceItem6";
+            this.emptySpaceItem6.Size = new System.Drawing.Size(79, 24);
+            this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
@@ -665,99 +818,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(1104, 572);
             this.layoutControlGroup1.Text = "Marking";
             // 
-            // lblStatus
-            // 
-            this.lblStatus.Location = new System.Drawing.Point(182, 4);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(70, 14);
-            this.lblStatus.StyleController = this.layoutControl1;
-            this.lblStatus.TabIndex = 15;
-            this.lblStatus.Text = "labelControl1";
-            // 
-            // layoutControlItem12
-            // 
-            this.layoutControlItem12.Control = this.lblStatus;
-            this.layoutControlItem12.Location = new System.Drawing.Point(178, 0);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(74, 24);
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem12.TextVisible = false;
-            // 
-            // glueSeason
-            // 
-            this.glueSeason.Location = new System.Drawing.Point(219, 76);
-            this.glueSeason.MenuManager = this.ribbonControl;
-            this.glueSeason.Name = "glueSeason";
-            this.glueSeason.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.glueSeason.Properties.NullText = "";
-            this.glueSeason.Properties.PopupView = this.gridLookUpEdit1View;
-            this.glueSeason.Size = new System.Drawing.Size(59, 20);
-            this.glueSeason.StyleController = this.layoutControl1;
-            this.glueSeason.TabIndex = 12;
-            // 
-            // gridLookUpEdit1View
-            // 
-            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // speSeason
-            // 
-            this.speSeason.EditValue = new decimal(new int[] {
-            2020,
-            0,
-            0,
-            0});
-            this.speSeason.Location = new System.Drawing.Point(117, 76);
-            this.speSeason.MenuManager = this.ribbonControl;
-            this.speSeason.Name = "speSeason";
-            this.speSeason.Properties.Appearance.Options.UseTextOptions = true;
-            this.speSeason.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.speSeason.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.speSeason.Properties.MaxValue = new decimal(new int[] {
-            2500,
-            0,
-            0,
-            0});
-            this.speSeason.Properties.MinValue = new decimal(new int[] {
-            2010,
-            0,
-            0,
-            0});
-            this.speSeason.Size = new System.Drawing.Size(98, 20);
-            this.speSeason.StyleController = this.layoutControl1;
-            this.speSeason.TabIndex = 16;
-            // 
-            // layoutControlItem13
-            // 
-            this.layoutControlItem13.Control = this.speSeason;
-            this.layoutControlItem13.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(215, 24);
-            this.layoutControlItem13.Text = "Season";
-            this.layoutControlItem13.TextSize = new System.Drawing.Size(101, 14);
-            // 
-            // txeStyle
-            // 
-            this.txeStyle.Location = new System.Drawing.Point(117, 196);
-            this.txeStyle.MenuManager = this.ribbonControl;
-            this.txeStyle.Name = "txeStyle";
-            this.txeStyle.Size = new System.Drawing.Size(229, 20);
-            this.txeStyle.StyleController = this.layoutControl1;
-            this.txeStyle.TabIndex = 17;
-            // 
-            // layoutControlItem14
-            // 
-            this.layoutControlItem14.Control = this.txeStyle;
-            this.layoutControlItem14.Location = new System.Drawing.Point(0, 192);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(346, 24);
-            this.layoutControlItem14.Text = "Style No.";
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(101, 14);
-            // 
             // M18
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -773,6 +833,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txeStyleCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeStyleNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speSeason.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeItemName.Properties)).EndInit();
@@ -786,6 +849,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txeID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCustItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCustItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glueSeason.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -797,21 +862,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glueSeason.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speSeason.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txeStyle.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -879,7 +942,10 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private DevExpress.XtraEditors.SpinEdit speSeason;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
-        private DevExpress.XtraEditors.TextEdit txeStyle;
+        private DevExpress.XtraEditors.TextEdit txeStyleNo;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
+        private DevExpress.XtraEditors.TextEdit txeStyleCode;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
     }
 }
