@@ -1228,7 +1228,7 @@ namespace MPS02
 
                                         sbITEM.Append("IF NOT EXISTS(SELECT OIDCSITEM FROM ItemCustomer WHERE (OIDCUST='" + OIDCUST + "') AND (ItemCode = N'" + strItemCode + "')) ");
                                         sbITEM.Append(" BEGIN ");
-                                        sbITEM.Append("   INSERT INTO ItemCustomer(OIDCUST, ItemCode, ItemName, OIDSTYLE, Season, FabricWidth, FBComposition, StyleNo) VALUES('" + OIDCUST + "', N'" + strItemCode + "', N'" + strItemName + "', '" + OIDSTYLE + "', '" + Season + "', N'" + FabricWidth + "', N'" + FBComposition + "', N'" + strStyleNo + "') ");
+                                        sbITEM.Append("   INSERT INTO ItemCustomer(OIDCUST, ItemCode, ItemName, OIDSTYLE, Season, FabricWidth, FBComposition, StyleNo) VALUES('" + OIDCUST + "', N'" + strItemCode + "', N'" + strItemName + "', '" + OIDSTYLE + "', N'" + Season + "', N'" + FabricWidth + "', N'" + FBComposition + "', N'" + strStyleNo + "') ");
                                         sbITEM.Append(" END ");
                                         sbITEM.Append("ELSE ");
                                         sbITEM.Append(" BEGIN ");

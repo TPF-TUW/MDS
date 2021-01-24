@@ -640,17 +640,44 @@ namespace MPS01
                         pbcSave.Properties.Minimum = 0;
                         pbcSave.EditValue = 0;
 
+                        string Customer = "";
+                        string OIDCUST = "";
+
                         for (int i = 1; i < WSHEET.GetDataRange().RowCount; i++)
                         {
                             string PlanID = WSHEET.Rows[i][0].DisplayText.ToString().Trim();
             
                             if (PlanID != "")
                             {
-                                string Customer = WSHEET.Rows[i][4].DisplayText.ToString().Trim().Replace("'", "''");
+                                string strCustomer = WSHEET.Rows[i][4].DisplayText.ToString().Trim().Replace("'", "''");
+                                if (Customer != strCustomer.Replace(" ", "").Replace(".", "").Replace(",", ""))
+                                {
+                                    Customer = strCustomer.Replace(" ", "").Replace(".", "").Replace(",", "");
+                                    string CustomerCode = Customer.Length > 20 ? Customer.Substring(0, 20) : Customer;
+                                    string CustomerShort = Customer.Length > 10 ? Customer.Substring(0, 10) : Customer;
+                                    StringBuilder sbCUST = new StringBuilder();
+                                    sbCUST.Append("IF NOT EXISTS(SELECT OIDCUST FROM Customer WHERE Name LIKE N'%" + Customer + "%') ");
+                                    sbCUST.Append(" BEGIN ");
+                                    sbCUST.Append("   INSERT INTO Customer(Code, Name, ShortName) VALUES(N'" + CustomerCode + "', N'" + strCustomer + "', N'" + CustomerShort + "') ");
+                                    sbCUST.Append(" END ");
+                                    sbCUST.Append("SELECT TOP(1) OIDCUST FROM Customer WHERE Name LIKE N'%" + Customer + "%' ");
+                                    OIDCUST = new DBQuery(sbCUST).getString();
+                                }
+
                                 string ItemCode = WSHEET.Rows[i][6].DisplayText.ToString().Trim().Replace("'", "''");
+                                ItemCode = ItemCode.Length > 20 ? ItemCode.Substring(0, 20) : ItemCode;
                                 string ItemName = WSHEET.Rows[i][7].DisplayText.ToString().Trim().Replace("'", "''");
-                                string StyleNo = WSHEET.Rows[i][8].DisplayText.ToString().Trim().Replace("'", "''"); //5 ตัวสุดท้าย
-                                StyleNo = StyleNo.Length > 5 ? StyleNo.Substring(StyleNo.Length-5, 5) : StyleNo;
+                                string StyleNo = WSHEET.Rows[i][8].DisplayText.ToString().Trim().Replace("'", "''");
+                                StyleNo = StyleNo.Length > 10 ? StyleNo.Substring(0, 10) : StyleNo;
+
+                                string strStyle = StyleNo.Replace(Regex.Match(StyleNo, @"\d+([,\.]\d+)?").Value, ""); //5 ตัวสุดท้าย
+                                StringBuilder sbSTYLE = new StringBuilder();
+                                sbSTYLE.Append("IF NOT EXISTS(SELECT OIDSTYLE FROM ProductStyle WHERE StyleName = N'" + strStyle + "') ");
+                                sbSTYLE.Append("  BEGIN ");
+                                sbSTYLE.Append("       INSERT INTO ProductStyle(StyleName) VALUES(N'" + strStyle + "') ");
+                                sbSTYLE.Append("  END ");
+                                sbSTYLE.Append("SELECT OIDSTYLE FROM ProductStyle WHERE(StyleName = N'" + strStyle + "') ");
+                                string OIDSTYLE = new DBQuery(sbSTYLE).getString();
 
                                 string Season = WSHEET.Rows[i][1].DisplayText.ToString().Trim() + WSHEET.Rows[i][2].DisplayText.ToString().Trim();
                                 string Supplier = WSHEET.Rows[i][19].DisplayText.ToString().Trim().Replace("'", "''"); //Raw Material Supplier Code
@@ -715,16 +742,28 @@ namespace MPS01
                                     SupplierCode = SupplierCode.Substring(0, 20);
 
                                 sbSQL.Clear();
-                                sbSQL.Append("IF NOT EXISTS(SELECT OIDCUST FROM Customer WHERE Name LIKE N'" + Customer + "%') ");
-                                sbSQL.Append(" BEGIN ");
-                                sbSQL.Append("   INSERT INTO Customer(Code, Name, ShortName) VALUES(N'" + CustCode + "', N'" + Customer + "', N'" + CustShort + "') ");
-                                sbSQL.Append(" END ");
+                                //sbSQL.Append("IF NOT EXISTS(SELECT OIDCUST FROM Customer WHERE Name LIKE N'" + Customer + "%') ");
+                                //sbSQL.Append(" BEGIN ");
+                                //sbSQL.Append("   INSERT INTO Customer(Code, Name, ShortName) VALUES(N'" + CustCode + "', N'" + Customer + "', N'" + CustShort + "') ");
+                                //sbSQL.Append(" END ");
 
-                                sbSQL.Append("IF NOT EXISTS(SELECT OIDCSITEM FROM ItemCustomer WHERE ItemCode = N'" + ItemCode + "' AND OIDCUST = (SELECT TOP(1) OIDCUST FROM Customer WHERE Name LIKE N'" + Customer + "%')) ");
+                                //sbSQL.Append("IF NOT EXISTS(SELECT OIDCSITEM FROM ItemCustomer WHERE ItemCode = N'" + ItemCode + "' AND OIDCUST = '" + OIDCUST + "') ");
+                                //sbSQL.Append(" BEGIN ");
+                                //sbSQL.Append("   INSERT INTO ItemCustomer(OIDCUST, ItemCode, ItemName, StyleNo, OIDSTYLE, Season) ");
+                                //sbSQL.Append("   SELECT (SELECT TOP(1) OIDCUST FROM Customer WHERE Name LIKE N'" + Customer + "%') AS OIDCUST, N'" + ItemCode + "' AS ItemCode, N'" + ItemName + "' AS ItemName, N'" + StyleNo + "' AS StyleNo, '" + OIDSTYLE + "' AS OIDSTYLE, N'" + Season + "' AS Season ");
+                                //sbSQL.Append(" END ");
+
+                                sbSQL.Append("IF NOT EXISTS(SELECT OIDCSITEM FROM ItemCustomer WHERE (OIDCUST='" + OIDCUST + "') AND (ItemCode = N'" + ItemCode + "')) ");
                                 sbSQL.Append(" BEGIN ");
-                                sbSQL.Append("   INSERT INTO ItemCustomer(OIDCUST, ItemCode, ItemName, StyleNo, Season) ");
-                                sbSQL.Append("   SELECT (SELECT TOP(1) OIDCUST FROM Customer WHERE Name LIKE N'" + Customer + "%') AS OIDCUST, N'" + ItemCode + "' AS ItemCode, N'" + ItemName + "' AS ItemName, N'" + StyleNo + "' AS StyleNo, N'" + Season + "' AS Season ");
+                                sbSQL.Append("   INSERT INTO ItemCustomer(OIDCUST, ItemCode, ItemName, OIDSTYLE, Season, StyleNo) VALUES('" + OIDCUST + "', N'" + ItemCode + "', N'" + ItemName + "', '" + OIDSTYLE + "', N'" + Season + "', N'" + StyleNo + "') ");
                                 sbSQL.Append(" END ");
+                                sbSQL.Append("ELSE ");
+                                sbSQL.Append(" BEGIN ");
+                                sbSQL.Append("   UPDATE ItemCustomer SET  ");
+                                sbSQL.Append("     ItemName=N'" + ItemName + "', OIDSTYLE='" + OIDSTYLE + "', Season=N'" + Season + "', StyleNo=N'" + StyleNo + "'  ");
+                                sbSQL.Append("   WHERE (OIDCUST='" + OIDCUST + "') AND (ItemCode = N'" + ItemCode + "')  ");
+                                sbSQL.Append(" END ");
+                                
 
                                 sbSQL.Append("IF NOT EXISTS(SELECT OIDVEND FROM Vendor WHERE Name LIKE N'" + Supplier + "%' AND VendorType = 6) ");
                                 sbSQL.Append(" BEGIN ");
@@ -737,10 +776,10 @@ namespace MPS01
                                 sbSQL.Append("                         LogisticsType, OrderQty, FabricOrderNO, FabricUpdateDate, FabricActualOrderQty, TrimOrderNO, TrimUpdateDate, TrimActualOrderQty, POOrderNO, POUpdateDate, POActualOrderQty, ColorOrderNO, ColorUpdateDate, ");
                                 sbSQL.Append("                         ColorActualOrderQty, OrderQTYOld, BookingFabric, BookingAccessory, FileOrderDate, DataUpdate, CreateBy, CreateDate, UpdateBy, Updatedate) ");
                                 sbSQL.Append("   SELECT N'" + PlanID + "' AS ProductionPlanID, ");
-                                sbSQL.Append("      (SELECT TOP(1) OIDCUST FROM Customer WHERE Name LIKE N'" + Customer + "%') AS OIDCUST, ");
+                                sbSQL.Append("      '" + OIDCUST + "' AS OIDCUST, ");
                                 sbSQL.Append("      N'" + Season + "' AS Season, ");
                                 sbSQL.Append("      N'" + Unit + "' AS BusinessUnit, ");
-                                sbSQL.Append("      (SELECT TOP(1) OIDCSITEM FROM ItemCustomer WHERE ItemCode = N'" + ItemCode + "' AND OIDCUST = (SELECT TOP(1) OIDCUST FROM Customer WHERE Name LIKE N'" + Customer + "%')) AS OIDCSITEM, ");
+                                sbSQL.Append("      (SELECT TOP(1) OIDCSITEM FROM ItemCustomer WHERE ItemCode = N'" + ItemCode + "' AND OIDCUST='" + OIDCUST + "') AS OIDCSITEM, ");
                                 sbSQL.Append("      N'" + ModelNo + "' AS ModelNo, ");
                                 sbSQL.Append("      (SELECT TOP(1) OIDVEND FROM Vendor WHERE Name LIKE N'" + Supplier + "%' AND VendorType = 6) AS OIDVEND, ");
                                 sbSQL.Append("      '" + SewingDifficulty + "' AS SewingDifficulty, ");
@@ -777,10 +816,10 @@ namespace MPS01
                                 sbSQL.Append("ELSE ");
                                 sbSQL.Append(" BEGIN ");
                                 sbSQL.Append("   UPDATE COForecast SET ");
-                                sbSQL.Append("      OIDCUST = (SELECT TOP(1) OIDCUST FROM Customer WHERE Name LIKE N'" + Customer + "%'), ");
+                                sbSQL.Append("      OIDCUST = '" + OIDCUST + "', ");
                                 sbSQL.Append("      Season = N'" + Season + "', ");
                                 sbSQL.Append("      BusinessUnit = N'" + Unit + "', ");
-                                sbSQL.Append("      OIDCSITEM = (SELECT TOP(1) OIDCSITEM FROM ItemCustomer WHERE ItemCode = N'" + ItemCode + "' AND OIDCUST = (SELECT TOP(1) OIDCUST FROM Customer WHERE Name LIKE N'" + Customer + "%')), ");
+                                sbSQL.Append("      OIDCSITEM = (SELECT TOP(1) OIDCSITEM FROM ItemCustomer WHERE ItemCode = N'" + ItemCode + "' AND OIDCUST='" + OIDCUST + "'), ");
                                 sbSQL.Append("      ModelNo = N'" + ModelNo + "', ");
                                 sbSQL.Append("      OIDVEND = (SELECT TOP(1) OIDVEND FROM Vendor WHERE Name LIKE N'" + Supplier + "%' AND VendorType = 6), ");
                                 sbSQL.Append("      SewingDifficulty = '" + SewingDifficulty + "', ");

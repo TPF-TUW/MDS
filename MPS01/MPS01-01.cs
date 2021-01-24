@@ -68,9 +68,12 @@ namespace MPS01
                 {
                     if (FUNC.msgQuiz("Confirm save data ?") == true)
                     {
+                        string OIDSTYLE = slueStyle.Text.Trim() != "" ? "'" + slueStyle.EditValue.ToString() + "'" : "NULL";
+                        string Season = glueSeason.Text.Trim() != "" ? speSeason.Value.ToString() + glueSeason.EditValue.ToString() : "";
+
                         StringBuilder sbSQL = new StringBuilder();
-                        sbSQL.Append("  INSERT INTO ItemCustomer(OIDCUST, ItemCode, ItemName, StyleNo, Season) ");
-                        sbSQL.Append("  VALUES('" + slueCustomer.EditValue.ToString() + "', N'" + txeItemCode.Text.Trim().Replace("'", "''") + "', N'" + txeItemName.Text.Trim().Replace("'", "''") + "', N'" + txeStyleNo.Text.Trim().Replace("'", "''") + "', N'" + speSeason.Value.ToString() + glueSeason.EditValue.ToString() + "') ");
+                        sbSQL.Append("  INSERT INTO ItemCustomer(OIDCUST, ItemCode, ItemName, OIDSTYLE, Season, FabricWidth, FBComposition, StyleNo) ");
+                        sbSQL.Append("  VALUES(N'" + slueCustomer.EditValue.ToString() + "', N'" + txeItemCode.Text.Trim().Replace("'", "''") + "', N'" + txeItemName.Text.Trim().Replace("'", "''") + "', " + OIDSTYLE + ", N'" + Season + "', N'" + txeFabricWidth.Text.Trim().Replace("'", "''") + "', N'" + txeFBComposition.Text.Trim().Replace("'", "''") + "', N'" + txeStyleNo.Text.Trim() + txeStyleCode.Text.Trim() + "') ");
 
                         if (sbSQL.Length > 0)
                         {
@@ -97,8 +100,12 @@ namespace MPS01
             txeItemCode.Text = "";
             txeItemName.Text = "";
             txeStyleNo.Text = "";
+            txeStyleCode.Text = "";
+            txeFBComposition.Text = "";
+            txeFabricWidth.Text = "";
             speSeason.Value = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
             glueSeason.EditValue = "";
+            slueStyle.EditValue = "";
             slueCustomer.Focus();
         }
 
@@ -127,12 +134,21 @@ namespace MPS01
             sbSQL.Append("ORDER BY OIDSEASON");
             new ObjDevEx.setGridLookUpEdit(glueSeason, sbSQL, "Season No.", "Season No.").getData();
 
+            sbSQL.Clear();
+            sbSQL.Append("SELECT PS.StyleName, GC.CategoryName, PS.OIDSTYLE AS ID ");
+            sbSQL.Append("FROM   ProductStyle AS PS INNER JOIN ");
+            sbSQL.Append("       GarmentCategory AS GC ON PS.OIDGCATEGORY = GC.OIDGCATEGORY ");
+            sbSQL.Append("ORDER BY PS.StyleName ");
+            new ObjDevEx.setSearchLookUpEdit(slueStyle, sbSQL, "StyleName", "ID").getData();
+
             NewData();
         }
 
         private void slueCustomer_EditValueChanged(object sender, EventArgs e)
         {
-            txeItemCode.Focus();
+            bool chkDup = chkDuplicate();
+            if (chkDup == true)
+                slueStyle.Focus();
         }
 
         private void txeItemCode_KeyDown(object sender, KeyEventArgs e)
@@ -163,8 +179,9 @@ namespace MPS01
             if (txeItemCode.Text != "")
             {
                 txeItemCode.Text = txeItemCode.Text.ToUpper().Trim();
+                string CUST = slueCustomer.Text.Trim() != "" ? slueCustomer.EditValue.ToString() : "";
                 StringBuilder sbSQL = new StringBuilder();
-                sbSQL.Append("SELECT TOP(1) ItemCode FROM ItemCustomer WHERE (ItemCode = N'" + txeItemCode.Text.Trim().Replace("'", "''") + "') ");
+                sbSQL.Append("SELECT TOP(1) ItemCode FROM ItemCustomer WHERE (OIDCUST = '" + CUST + "') AND (ItemCode = N'" + txeItemCode.Text.Trim().Replace("'", "''") + "') ");
                 if (new DBQuery(sbSQL).getString() != "")
                 {
                     chkDup = false;
@@ -187,6 +204,23 @@ namespace MPS01
             {
                 speSeason.Focus();
             }
+        }
+
+        private void glueSeason_EditValueChanged(object sender, EventArgs e)
+        {
+            txeFabricWidth.Focus();
+        }
+
+        private void txeFabricWidth_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txeFBComposition.Focus();
+        }
+
+        private void slueStyle_EditValueChanged(object sender, EventArgs e)
+        {
+            txeStyleCode.Text = slueStyle.Text;
+            txeItemCode.Focus();
         }
     }
 }
