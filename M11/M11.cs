@@ -258,5 +258,11 @@ namespace M11
 
             txeStyleNo.Focus();
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            var frm = new M11_01();
+            frm.ShowDialog(this);
+        }
     }
 }
