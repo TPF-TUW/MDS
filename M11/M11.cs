@@ -144,11 +144,7 @@ namespace M11
                     {
                         StringBuilder sbSQL = new StringBuilder();
 
-                        string strCREATE = "0";
-                        if (txeCREATE.Text.Trim() != "")
-                        {
-                            strCREATE = txeCREATE.Text.Trim();
-                        }
+                        string strCREATE = txeCREATE.Text.Trim() != "" ? txeCREATE.Text.Trim() : "0";
 
                         if (lblStatus.Text == "* Add Style")
                         {
