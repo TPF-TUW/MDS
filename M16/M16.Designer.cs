@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(M16));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
@@ -45,6 +46,7 @@
             this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.bbiExcel = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiExcelDownload = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgPrint = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -104,7 +106,6 @@
             this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.bbiExcelDownload = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -289,6 +290,13 @@
             this.barButtonItem1.Caption = "barButtonItem1";
             this.barButtonItem1.Id = 27;
             this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // bbiExcelDownload
+            // 
+            this.bbiExcelDownload.Caption = "Excel Download";
+            this.bbiExcelDownload.Id = 28;
+            this.bbiExcelDownload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiExcelDownload.ImageOptions.SvgImage")));
+            this.bbiExcelDownload.Name = "bbiExcelDownload";
             // 
             // ribbonPage1
             // 
@@ -980,13 +988,6 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.bbiExcel);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Export";
-            // 
-            // bbiExcelDownload
-            // 
-            this.bbiExcelDownload.Caption = "Excel Download";
-            this.bbiExcelDownload.Id = 28;
-            this.bbiExcelDownload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
-            this.bbiExcelDownload.Name = "bbiExcelDownload";
             // 
             // M16
             // 

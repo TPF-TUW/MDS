@@ -3363,6 +3363,11 @@ namespace MPS02
         {
             if (e.Info.IsRowIndicator) e.Info.DisplayText = (e.RowHandle + 1).ToString();
         }
+
+        private void ribbonControl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class DocumentStatus

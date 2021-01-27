@@ -212,7 +212,7 @@ namespace M16
                     sbSQL.Append(" END ");
 
                     sbSQL.Append("UPDATE Vessel SET Status = 0 WHERE (OIDVend = '" + slueCarrier.EditValue.ToString() + "') AND (FileYear = '" + speYear.Value.ToString() + "') AND (TimeOfDocument < " + speTime.Value.ToString() + ") ");
-
+                   // MessageBox.Show(sbSQL.ToString());
                     if (sbSQL.Length > 0)
                     {
                         try
@@ -265,6 +265,7 @@ namespace M16
                                                 sbSQL.Append("INSERT INTO VesselDetail(OIDVessel, Vessel, Voy, TSorDirect, TSPort, VesselType, Carrier, CFSCutDate, CFSCutDay, CFSCutTime, ETDDate, ETDDay, ETADate, ETADay, ETAWHDate, ETAWHDay, ETDtoWHDays, ETAtoWHDays, Priority, Remarks) ");
                                                 sbSQL.Append(" VALUES('" + OIDVessel + "', N'" + Vessel + "', N'" + Voy + "', N'" + TSorDirect + "', N'" + TSPort + "', N'" + VesselType + "', N'" + Carrier + "', '" + Convert.ToDateTime(CFSCutDate).ToString("yyyy-MM-dd HH:mm:ss") + "', N'" + CFSCutDay + "', '" + Convert.ToDateTime(CFSCutTime).ToString("HH:mm:ss") + "', '" + Convert.ToDateTime(ETDDate).ToString("yyyy-MM-dd HH:mm:ss") + "', N'" + ETDDay + "', '" + Convert.ToDateTime(ETADate).ToString("yyyy-MM-dd HH:mm:ss") + "', N'" + ETADay + "', '" + Convert.ToDateTime(ETAWHDate).ToString("yyyy-MM-dd HH:mm:ss") + "', N'" + ETAWHDay + "', '" + ETDtoWHDays + "', '" + ETAtoWHDays + "', N'" + Priority + "', N'" + Remarks + "')  ");
                                             }
+                                            //MessageBox.Show(sbSQL.ToString());
                                         }
                                     }
 
@@ -467,7 +468,8 @@ namespace M16
 
             //**** ETD >> ETA ****
             string EtaWh = wsActive.Rows[2]["Q"].DisplayText;
-            EtaWh = Regex.Match(EtaWh, @"\d+([,\.]\d+)?").Value;
+            //EtaWh = Regex.Match(EtaWh, @"\d+([,\.]\d+)?").Value;
+            EtaWh = "0";
             txeEtaWh.Text = EtaWh;
         }
 
