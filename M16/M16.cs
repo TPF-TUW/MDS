@@ -247,13 +247,18 @@ namespace M16
                                             string VesselType = WSHEET.Rows[i][4].DisplayText.ToString();
                                             string Carrier = WSHEET.Rows[i][5].DisplayText.ToString();
                                             string CFSCutDate = WSHEET.Rows[i][6].DisplayText.ToString();
+                                            CFSCutDate = CFSCutDate != "" ? "'" + Convert.ToDateTime(CFSCutDate).ToString("yyyy-MM-dd HH:mm:ss") + "'" : "NULL";
                                             string CFSCutDay = WSHEET.Rows[i][7].DisplayText.ToString();
                                             string CFSCutTime = WSHEET.Rows[i][8].DisplayText.ToString();
+                                            CFSCutTime = CFSCutTime != "" ? "'" + Convert.ToDateTime(CFSCutTime).ToString("HH:mm:ss") + "'" : "NULL";
                                             string ETDDate = WSHEET.Rows[i][9].DisplayText.ToString();
+                                            ETDDate = ETDDate != "" ? "'" + Convert.ToDateTime(ETDDate).ToString("yyyy-MM-dd HH:mm:ss") + "'" : "NULL";
                                             string ETDDay = WSHEET.Rows[i][10].DisplayText.ToString();
                                             string ETADate = WSHEET.Rows[i][11].DisplayText.ToString();
+                                            ETADate = ETADate != "" ? "'" + Convert.ToDateTime(ETADate).ToString("yyyy-MM-dd HH:mm:ss") + "'" : "NULL";
                                             string ETADay = WSHEET.Rows[i][12].DisplayText.ToString();
                                             string ETAWHDate = WSHEET.Rows[i][13].DisplayText.ToString();
+                                            ETAWHDate = ETAWHDate != "" ? "'" + Convert.ToDateTime(ETAWHDate).ToString("yyyy-MM-dd HH:mm:ss") + "'" : "NULL";
                                             string ETAWHDay = WSHEET.Rows[i][14].DisplayText.ToString();
                                             string ETDtoWHDays = WSHEET.Rows[i][15].DisplayText.ToString();
                                             string ETAtoWHDays = WSHEET.Rows[i][16].DisplayText.ToString();
@@ -263,7 +268,7 @@ namespace M16
                                             if (Vessel != "")
                                             {
                                                 sbSQL.Append("INSERT INTO VesselDetail(OIDVessel, Vessel, Voy, TSorDirect, TSPort, VesselType, Carrier, CFSCutDate, CFSCutDay, CFSCutTime, ETDDate, ETDDay, ETADate, ETADay, ETAWHDate, ETAWHDay, ETDtoWHDays, ETAtoWHDays, Priority, Remarks) ");
-                                                sbSQL.Append(" VALUES('" + OIDVessel + "', N'" + Vessel + "', N'" + Voy + "', N'" + TSorDirect + "', N'" + TSPort + "', N'" + VesselType + "', N'" + Carrier + "', '" + Convert.ToDateTime(CFSCutDate).ToString("yyyy-MM-dd HH:mm:ss") + "', N'" + CFSCutDay + "', '" + Convert.ToDateTime(CFSCutTime).ToString("HH:mm:ss") + "', '" + Convert.ToDateTime(ETDDate).ToString("yyyy-MM-dd HH:mm:ss") + "', N'" + ETDDay + "', '" + Convert.ToDateTime(ETADate).ToString("yyyy-MM-dd HH:mm:ss") + "', N'" + ETADay + "', '" + Convert.ToDateTime(ETAWHDate).ToString("yyyy-MM-dd HH:mm:ss") + "', N'" + ETAWHDay + "', '" + ETDtoWHDays + "', '" + ETAtoWHDays + "', N'" + Priority + "', N'" + Remarks + "')  ");
+                                                sbSQL.Append(" VALUES('" + OIDVessel + "', N'" + Vessel + "', N'" + Voy + "', N'" + TSorDirect + "', N'" + TSPort + "', N'" + VesselType + "', N'" + Carrier + "', " + CFSCutDate + ", N'" + CFSCutDay + "', " + CFSCutTime + ", " + ETDDate + ", N'" + ETDDay + "', " + ETADate + ", N'" + ETADay + "', " + ETAWHDate + ", N'" + ETAWHDay + "', '" + ETDtoWHDays + "', '" + ETAtoWHDays + "', N'" + Priority + "', N'" + Remarks + "')  ");
                                             }
                                             //MessageBox.Show(sbSQL.ToString());
                                         }
