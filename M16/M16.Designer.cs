@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(M16));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
@@ -556,6 +557,7 @@
             this.slueTo.Size = new System.Drawing.Size(165, 20);
             this.slueTo.StyleController = this.layoutControl1;
             this.slueTo.TabIndex = 15;
+            this.slueTo.EditValueChanged += new System.EventHandler(this.slueTo_EditValueChanged);
             // 
             // searchLookUpEdit3View
             // 
@@ -604,6 +606,7 @@
             this.slueFrom.Size = new System.Drawing.Size(168, 20);
             this.slueFrom.StyleController = this.layoutControl1;
             this.slueFrom.TabIndex = 12;
+            this.slueFrom.EditValueChanged += new System.EventHandler(this.slueFrom_EditValueChanged);
             // 
             // searchLookUpEdit2View
             // 

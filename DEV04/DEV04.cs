@@ -17,6 +17,7 @@ namespace DEV04
         private Functionality.Function FUNC = new Functionality.Function();
         List<PatternZone> PZone;
 
+        DataTable dtFB = new DataTable();
         public DEV04()
         {
             InitializeComponent();
@@ -35,18 +36,141 @@ namespace DEV04
             cUtility.SaveRegistry(@"Software\MDS", "SkinPalette", userLookAndFeel.ActiveSvgPaletteName);
         }
 
-        private void XtraForm1_Load(object sender, EventArgs e)
+        private void CreateBands(out DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1, out DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2)
         {
-            LoadData();
-            NewData();
+            gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            gridBand1.Name = "BandsHeader";
+            gridBand1.Caption = "FABRIC COST";
+            gridBand1.AppearanceHeader.Font = new Font(gridBand1.AppearanceHeader.Font.Name, 40);
+            gridBand1.RowCount = 1;
+
+            gridBand2.Name = "BandsEstCost";
+            gridBand2.Caption = "Estimate Cost";
+            gridBand1.RowCount = 1;
+
+            bgvFabric.Bands.Add(gridBand1);
+            bgvFabric.Bands.Add(gridBand2);
+
+            bgvFabric.Bands[0].AppearanceHeader.Font = new Font(gridBand1.AppearanceHeader.Font.Name, 12);
+            bgvFabric.Bands[0].AppearanceHeader.BackColor = Color.White;
+            bgvFabric.Bands[0].AppearanceHeader.ForeColor = Color.DarkRed;
+            bgvFabric.Bands[0].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+        }
+
+        private void CreateColumns(DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1, DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2)
+        {
+            //***** 1 **********
+            DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn7 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn8 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn9 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn10 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn11 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn12 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn13 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn14 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+
+            bandedGridColumn1.Caption = "Type";
+            bandedGridColumn1.FieldName = "bcType";
+            bandedGridColumn1.Visible = true;
+
+            bandedGridColumn1.RowCount = 2;
+
+            bandedGridColumn2.Caption = "Size";
+            bandedGridColumn2.FieldName = "bcSize";
+            bandedGridColumn2.Visible = true;
+
+            bandedGridColumn3.Caption = "Fabric No.";
+            bandedGridColumn3.FieldName = "bcFabric";
+            bandedGridColumn3.Visible = true;
+
+            bandedGridColumn4.Caption = "Vendor";
+            bandedGridColumn4.FieldName = "bcVendor";
+            bandedGridColumn4.Visible = true;
+
+            bandedGridColumn5.Caption = "Garment Part";
+            bandedGridColumn5.FieldName = "bcGarmentPart";
+            bandedGridColumn5.Visible = true;
+
+            bandedGridColumn6.Caption = "Color No.";
+            bandedGridColumn6.FieldName = "bcColorNo";
+            bandedGridColumn6.Visible = true;
+
+            bandedGridColumn7.Caption = "Color Name";
+            bandedGridColumn7.FieldName = "bcColorName";
+            bandedGridColumn7.Visible = true;
+
+            bandedGridColumn8.Caption = "Width(All)";
+            bandedGridColumn8.FieldName = "bcWidthAll";
+            bandedGridColumn8.Visible = true;
+
+            bandedGridColumn9.Caption = "Width(Use)";
+            bandedGridColumn9.FieldName = "bcWidthUse";
+            bandedGridColumn9.Visible = true;
+
+            bandedGridColumn10.Caption = "g/m";
+            bandedGridColumn10.FieldName = "bcGM";
+            bandedGridColumn10.Visible = true;
+
+            bandedGridColumn11.Caption = "m/1P";
+            bandedGridColumn11.FieldName = "bcM1P";
+            bandedGridColumn11.Visible = true;
+
+            bandedGridColumn12.Caption = "kg/1P";
+            bandedGridColumn12.FieldName = "bcKg1P";
+            bandedGridColumn12.Visible = true;
+
+            bandedGridColumn13.Caption = "Price(Baht)";
+            bandedGridColumn13.FieldName = "bcPrice";
+            bandedGridColumn13.Visible = true;
+
+            bandedGridColumn14.Caption = "%Loss";
+            bandedGridColumn14.FieldName = "bcLoss";
+            bandedGridColumn14.Visible = true;
 
 
+            gridBand1.Columns.Add(bandedGridColumn1);
+            gridBand1.Columns.Add(bandedGridColumn2);
+            gridBand1.Columns.Add(bandedGridColumn3);
+            gridBand1.Columns.Add(bandedGridColumn4);
+            gridBand1.Columns.Add(bandedGridColumn5);
+            gridBand1.Columns.Add(bandedGridColumn6);
+            gridBand1.Columns.Add(bandedGridColumn7);
+            gridBand1.Columns.Add(bandedGridColumn8);
+            gridBand1.Columns.Add(bandedGridColumn9);
+            gridBand1.Columns.Add(bandedGridColumn10);
+            gridBand1.Columns.Add(bandedGridColumn11);
+            gridBand1.Columns.Add(bandedGridColumn12);
+            gridBand1.Columns.Add(bandedGridColumn13);
+            gridBand1.Columns.Add(bandedGridColumn14);
 
+
+            //***** 2 **********
             List<string> listSize = new List<string>();
             listSize.Add("S");
             listSize.Add("M");
             listSize.Add("S");
             listSize.Add("M");
+
+            //gridBand2.Children.Clear();
+            //int i = 0;
+            //foreach (string item in listSize) // Loop through List with foreach
+            //{
+            //    GridBand bandSize = new GridBand();
+            //    bandSize.Name = "BCSSize" + (i + 1).ToString();
+            //    bandSize.Caption = item;
+            //    bandSize.RowCount = 1;
+            //    //bandSize.Children.AddBand(listColor[i]);
+            //    gridBand2.Children.Add(bandSize);
+            //    i++;
+            //}
+
 
             List<string> listColor = new List<string>();
             listColor.Add("03 Gray");
@@ -54,21 +178,117 @@ namespace DEV04
             listColor.Add("16 Red");
             listColor.Add("16 Red");
 
-            gbEstimateCost.Children.Clear();
-
-            int i = 0;
-            foreach (string item in listSize) // Loop through List with foreach
+            int x = 0;
+            foreach (string items in listColor)
             {
-                GridBand bandSize = new GridBand();
-                bandSize.Name = item + "_" + i.ToString();
-                bandSize.Caption = item;
-                bandSize.RowCount = 1;
-                bandSize.Children.AddBand(listColor[i]);
-                gbEstimateCost.Children.Add(bandSize);
-                i++;
+                DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bGridCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+                bGridCol.Caption = items;
+                bGridCol.FieldName = "BCS" + (x + 1).ToString();
+                bGridCol.Visible = true;
+                bGridCol.RowCount = 2;
+                //listColumnColor.Add(bGridCol);
+                gridBand2.Columns.Add(bGridCol);
+                x++;
             }
 
-            
+
+            bgvFabric.OptionsView.ColumnAutoWidth = false;
+            bgvFabric.BestFitColumns();
+            //gridBand2.Columns.Add(listColumnColor);
+        }
+
+        private void XtraForm1_Load(object sender, EventArgs e)
+        {
+            LoadData();
+            NewData();
+
+            DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
+            DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
+
+            CreateBands(out gridBand1, out gridBand2);
+            CreateColumns(gridBand1, gridBand2);
+
+            StringBuilder sbSQL = new StringBuilder();
+            sbSQL.Append("SELECT 'A' AS bcType, 'S' AS bcSize, 'FDSSTRKJ91' AS bcFabric, 'Nan Yang' AS bcVendor, 'Body' As bcGarmentPart, '03 Gray' As bcColorNo, '03 GRAY(BC07)-F142C' AS bcColorName, '167.0' AS bcWidthAll, '162.0' As bcWidthUse, '275.550' AS bcGM, '0.1758' AS bcM1P, '0.0484' AS bcKg1P, '565.00' AS bcPrice, '3.0%' AS bcLoss, '2.1664' AS BCS1, '' AS BCS2, '' AS BCS3, '' AS BCS4 ");
+            new ObjDevEx.setGridControl(bgcFabric, bgvFabric, sbSQL).getData();
+
+            //List<string> listSize = new List<string>();
+            //listSize.Add("S");
+            //listSize.Add("M");
+            //listSize.Add("S");
+            //listSize.Add("M");
+
+            //List<string> listColor = new List<string>();
+            //listColor.Add("03 Gray");
+            //listColor.Add("03 Gray");
+            //listColor.Add("16 Red");
+            //listColor.Add("16 Red");
+
+            //gbEstimateCost.Children.Clear();
+
+            //int i = 0;
+            //foreach (string item in listSize) // Loop through List with foreach
+            //{
+            //    GridBand bandSize = new GridBand();
+            //    bandSize.Name = "BCSSize" + (i + 1).ToString();
+            //    bandSize.Caption = item;
+            //    bandSize.RowCount = 1;
+            //    bandSize.Children.AddBand(listColor[i]);
+            //    gbEstimateCost.Children.Add(bandSize);
+            //    i++;
+            //}
+
+            //////DevExpress.XtraGrid.Columns.GridColumn gbcType = new DevExpress.XtraGrid.Columns.GridColumn();
+            //BandedGridColumn gbcType = new BandedGridColumn();
+            //gbcType.FieldName = "CsType";
+            //gbcType.Caption = "Type";
+            //gbcType.AppearanceCell.BackColor = Color.Red;
+            ////gvFabric.Columns.Add(gbcType);
+            //CSType.Columns.Contains(gbcType);
+            ////CSType.Columns.Add(gbcType);
+
+            //dtFB = new DataTable("FABRIC");
+            //dtFB.Columns.Add("CsType", typeof(String));
+            //dtFB.Columns.Add("CsSize", typeof(String));
+            //dtFB.Columns.Add("CSFBNo", typeof(String));
+            //dtFB.Columns.Add("CSVendor", typeof(String));
+            //dtFB.Columns.Add("CSGarment", typeof(String));
+            //dtFB.Columns.Add("CSColorNo", typeof(String));
+            //dtFB.Columns.Add("CSColorName", typeof(String));
+            //dtFB.Columns.Add("CSWidthAll", typeof(String));
+            //dtFB.Columns.Add("CSWidthUse", typeof(String));
+            //dtFB.Columns.Add("CSGM", typeof(String));
+            //dtFB.Columns.Add("CSM1P", typeof(String));
+            //dtFB.Columns.Add("CSKg1P", typeof(String));
+            //dtFB.Columns.Add("CSPrice", typeof(String));
+            //dtFB.Columns.Add("CSLoss", typeof(String));
+            //dtFB.Columns.Add("CSSize1", typeof(String));
+            //dtFB.Columns.Add("CSSize2", typeof(String));
+            //dtFB.Columns.Add("CSSize3", typeof(String));
+            //dtFB.Columns.Add("CSSize4", typeof(String));
+            //dtFB.Columns.Add("CSSize5", typeof(String));
+            //dtFB.Columns.Add("CSSize6", typeof(String));
+            //dtFB.Columns.Add("CSSize7", typeof(String));
+            //dtFB.Columns.Add("CSSize8", typeof(String));
+            //dtFB.Columns.Add("CSSize9", typeof(String));
+            //dtFB.Columns.Add("CSSize10", typeof(String));
+
+            //dtFB.Rows.Add(new object[] { "F", "S", "FDSSTRKJ91", "Nan Yang", "Body", "03 Gray", "03 GRAY(BC07)-F142C", "167.0", "162.0", "275.550", "0.1758", "0.0484", "565.00", "3.0%", "2.1664", "", "", "" });
+            //dtFB.Rows.Add(new object[] { "A", "S", "FDSSTRKJ91", "Nan Yang", "Body", "03 Gray", "03 GRAY(BC07)-F142C", "167.0", "162.0", "275.550", "0.1758", "0.0484", "565.00", "3.0%", "2.1664", "", "", "" });
+
+            //gcFabric.DataSource = dtFB;
+
+
+            ////StringBuilder sbSQL = new StringBuilder();
+            ////sbSQL.Append("SELECT 'F' AS CsType, 'S' AS CSSize, 'FDSSTRKJ91', 'Nan Yang', 'Body', '03 Gray', '03 GRAY(BC07)-F142C', '167.0', '162.0', '275.550', '0.1758', '0.0484', '565.00', '3.0%', '2.1664', '', '', '' ");
+            ////sbSQL.Append("UNION ALL ");
+            ////sbSQL.Append("SELECT 'A' AS CsType, 'S' AS CSSize, 'FDSSTRKJ91', 'Nan Yang', 'Body', '03 Gray', '03 GRAY(BC07)-F142C', '167.0', '162.0', '275.550', '0.1758', '0.0484', '565.00', '3.0%', '2.1664', '', '', '' ");
+            ////new ObjDevEx.setGridControl(gcFabric, gvFabric, sbSQL).getData();
+
+            ////DataTable dtFABRIC = dtFB;
+
+            ////dtFABRIC.Rows.Add("F", "S", "FDSSTRKJ91", "Nan Yang", "Body", "03 Gray", "03 GRAY(BC07)-F142C", "167.0", "162.0", "275.550", "0.1758", "0.0484", "565.00", "3.0%", "2.1664", "", "", "");
+            ////gcFabric.DataSource = dtFABRIC;
 
         }
 

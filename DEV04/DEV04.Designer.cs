@@ -53,12 +53,16 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.bgcFabric = new DevExpress.XtraGrid.GridControl();
+            this.bgvFabric = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.pivotGridControl1 = new DevExpress.XtraPivotGrid.PivotGridControl();
             this.gcFolding = new DevExpress.XtraGrid.GridControl();
             this.gvFolding = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcMaterial = new DevExpress.XtraGrid.GridControl();
             this.gvMaterial = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcFabric = new DevExpress.XtraGrid.GridControl();
+            this.gvFabric = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
+            this.bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridLookUpEdit4 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit4View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridLookUpEdit3 = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -113,6 +117,7 @@
             this.tabbedControlGroup2 = new DevExpress.XtraLayout.TabbedControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem32 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -139,9 +144,8 @@
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tabbedControlGroup1 = new DevExpress.XtraLayout.TabbedControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.gvFabric = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.CSType = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand5 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand6 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -159,12 +163,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bgcFabric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bgvFabric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcFolding)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvFolding)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMaterial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMaterial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcFabric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvFabric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit4View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3.Properties)).BeginInit();
@@ -220,6 +227,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem32)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
@@ -246,7 +254,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvFabric)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -440,6 +447,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.bgcFabric);
             this.layoutControl1.Controls.Add(this.pivotGridControl1);
             this.layoutControl1.Controls.Add(this.gcFolding);
             this.layoutControl1.Controls.Add(this.gcMaterial);
@@ -479,6 +487,22 @@
             this.layoutControl1.Size = new System.Drawing.Size(1118, 610);
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // bgcFabric
+            // 
+            this.bgcFabric.Location = new System.Drawing.Point(254, 57);
+            this.bgcFabric.MainView = this.bgvFabric;
+            this.bgcFabric.MenuManager = this.ribbonControl;
+            this.bgcFabric.Name = "bgcFabric";
+            this.bgcFabric.Size = new System.Drawing.Size(855, 166);
+            this.bgcFabric.TabIndex = 35;
+            this.bgcFabric.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.bgvFabric});
+            // 
+            // bgvFabric
+            // 
+            this.bgvFabric.GridControl = this.bgcFabric;
+            this.bgvFabric.Name = "bgvFabric";
             // 
             // pivotGridControl1
             // 
@@ -535,14 +559,37 @@
             // 
             // gcFabric
             // 
-            this.gcFabric.Location = new System.Drawing.Point(254, 57);
+            this.gcFabric.Location = new System.Drawing.Point(254, 227);
             this.gcFabric.MainView = this.gvFabric;
             this.gcFabric.MenuManager = this.ribbonControl;
             this.gcFabric.Name = "gcFabric";
-            this.gcFabric.Size = new System.Drawing.Size(855, 259);
+            this.gcFabric.Size = new System.Drawing.Size(855, 89);
             this.gcFabric.TabIndex = 31;
             this.gcFabric.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvFabric});
+            // 
+            // gvFabric
+            // 
+            this.gvFabric.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gvFabric.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvFabric.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
+            this.gridBand1,
+            this.gbEstimateCost});
+            this.gvFabric.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
+            this.bandedGridColumn1});
+            this.gvFabric.GridControl = this.gcFabric;
+            this.gvFabric.Name = "gvFabric";
+            this.gvFabric.OptionsView.ColumnAutoWidth = false;
+            this.gvFabric.OptionsView.EnableAppearanceEvenRow = true;
+            this.gvFabric.OptionsView.EnableAppearanceOddRow = true;
+            this.gvFabric.OptionsView.ShowGroupPanel = false;
+            // 
+            // bandedGridColumn1
+            // 
+            this.bandedGridColumn1.Caption = "bandedGridColumn1";
+            this.bandedGridColumn1.FieldName = "CsType";
+            this.bandedGridColumn1.Name = "bandedGridColumn1";
+            this.bandedGridColumn1.OptionsEditForm.ColumnSpan = 2;
             // 
             // gridLookUpEdit4
             // 
@@ -1104,7 +1151,8 @@
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem28});
+            this.layoutControlItem28,
+            this.layoutControlItem32});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(859, 263);
@@ -1113,11 +1161,20 @@
             // layoutControlItem28
             // 
             this.layoutControlItem28.Control = this.gcFabric;
-            this.layoutControlItem28.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem28.Location = new System.Drawing.Point(0, 170);
             this.layoutControlItem28.Name = "layoutControlItem28";
-            this.layoutControlItem28.Size = new System.Drawing.Size(859, 263);
+            this.layoutControlItem28.Size = new System.Drawing.Size(859, 93);
             this.layoutControlItem28.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem28.TextVisible = false;
+            // 
+            // layoutControlItem32
+            // 
+            this.layoutControlItem32.Control = this.bgcFabric;
+            this.layoutControlItem32.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem32.Name = "layoutControlItem32";
+            this.layoutControlItem32.Size = new System.Drawing.Size(859, 170);
+            this.layoutControlItem32.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem32.TextVisible = false;
             // 
             // layoutControlGroup3
             // 
@@ -1362,24 +1419,10 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(1104, 572);
             this.layoutControlGroup1.Text = "Marking";
             // 
-            // gvFabric
-            // 
-            this.gvFabric.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gvFabric.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gvFabric.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
-            this.gridBand1,
-            this.gbEstimateCost});
-            this.gvFabric.GridControl = this.gcFabric;
-            this.gvFabric.Name = "gvFabric";
-            this.gvFabric.OptionsView.ColumnAutoWidth = false;
-            this.gvFabric.OptionsView.EnableAppearanceEvenRow = true;
-            this.gvFabric.OptionsView.EnableAppearanceOddRow = true;
-            this.gvFabric.OptionsView.ShowGroupPanel = false;
-            // 
             // gridBand1
             // 
             this.gridBand1.Children.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
-            this.gridBand3,
+            this.CSType,
             this.gridBand4,
             this.gridBand5,
             this.gridBand6,
@@ -1396,15 +1439,17 @@
             this.gridBand1.Name = "gridBand1";
             this.gridBand1.RowCount = 2;
             this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 980;
+            this.gridBand1.Width = 985;
             // 
-            // gridBand3
+            // CSType
             // 
-            this.gridBand3.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand3.Caption = "Type";
-            this.gridBand3.Name = "gridBand3";
-            this.gridBand3.VisibleIndex = 0;
+            this.CSType.AppearanceHeader.Options.UseTextOptions = true;
+            this.CSType.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CSType.Caption = "Type";
+            this.CSType.Columns.Add(this.bandedGridColumn1);
+            this.CSType.Name = "CSType";
+            this.CSType.VisibleIndex = 0;
+            this.CSType.Width = 75;
             // 
             // gridBand4
             // 
@@ -1533,12 +1578,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bgcFabric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bgvFabric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcFolding)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvFolding)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMaterial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMaterial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcFabric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvFabric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit4View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3.Properties)).EndInit();
@@ -1594,6 +1642,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem32)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
@@ -1620,7 +1669,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvFabric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1737,8 +1785,12 @@
         private DevExpress.XtraPivotGrid.PivotGridControl pivotGridControl1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem31;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView gvFabric;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1;
+        private DevExpress.XtraGrid.GridControl bgcFabric;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bgvFabric;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem32;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand CSType;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand5;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand6;

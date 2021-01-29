@@ -20,6 +20,7 @@ namespace M16
         private Functionality.Function FUNC = new Functionality.Function();
         private const string xlsxPathFile = @"\\172.16.0.190\MDS_Project\MDS\ImportFile\Vessel\";
         string LongGestDays = "";
+        private const int PORT_THAI = 8602;
         public M16()
         {
             InitializeComponent();
@@ -50,15 +51,15 @@ namespace M16
             new ObjDevEx.setSearchLookUpEdit(slueCarrier, sbSQL, "Vendor", "ID").getData();
 
             sbSQL.Clear();
-            sbSQL.Append("SELECT PortCode, PortName, City, Country, OIDPORT AS ID ");
+            sbSQL.Append("SELECT PortCode, PortName, City, Country, PortCode AS ID ");
             sbSQL.Append("FROM PortAndCity ");
             sbSQL.Append("ORDER BY PortCode ");
             new ObjDevEx.setSearchLookUpEdit(slueFrom, sbSQL, "City", "ID").getData();
             new ObjDevEx.setSearchLookUpEdit(slueTo, sbSQL, "City", "ID").getData();
 
-            sbSQL.Clear();
-            sbSQL.Append("SELECT TOP(1) OIDPORT FROM PortAndCity WHERE (City = N'Bangkok') ");
-            slueFrom.EditValue = new DBQuery(sbSQL).getInt();
+            //sbSQL.Clear();
+            //sbSQL.Append("SELECT TOP(1) OIDPORT FROM PortAndCity WHERE (City = N'THAILAND') ");
+            slueFrom.EditValue = PORT_THAI; //THAILAND DEFAULT
         }
 
         private void NewData()
@@ -71,7 +72,7 @@ namespace M16
             slueCarrier.EditValue = "";
             speYear.Value = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
 
-            slueFrom.EditValue = "";
+            slueFrom.EditValue = PORT_THAI;
             dteFileDate.EditValue = DateTime.Now;
 
             speTime.Value = 1;
@@ -113,7 +114,7 @@ namespace M16
             }
             else if (slueFrom.Text.Trim() == "")
             {
-                FUNC.msgWarning("Please select from.");
+                FUNC.msgWarning("Please select departure.");
                 slueFrom.Focus();
             }
             else if (slueTo.Text.Trim() == "")
@@ -211,7 +212,13 @@ namespace M16
                     sbSQL.Append("  WHERE (OIDVend = '" + slueCarrier.EditValue.ToString() + "') AND (FileYear = '" + speYear.Value.ToString() + "') AND (TimeOfDocument = '" + speTime.Value.ToString() + "') ");
                     sbSQL.Append(" END ");
 
-                    sbSQL.Append("UPDATE Vessel SET Status = 0 WHERE (OIDVend = '" + slueCarrier.EditValue.ToString() + "') AND (FileYear = '" + speYear.Value.ToString() + "') AND (TimeOfDocument < " + speTime.Value.ToString() + ") ");
+                    sbSQL.Append("UPDATE Vessel SET ");
+                    sbSQL.Append("  Status = 0 ");
+                    sbSQL.Append("WHERE (OIDVend = '" + slueCarrier.EditValue.ToString() + "') ");
+                    sbSQL.Append("AND (FileYear = '" + speYear.Value.ToString() + "') ");
+                    sbSQL.Append("AND (OIDDeparturePort = '" + slueFrom.EditValue.ToString() + "') ");
+                    sbSQL.Append("AND (OIDDestinationPort = '" + slueTo.EditValue.ToString() + "') ");
+                    sbSQL.Append("AND (TimeOfDocument < " + speTime.Value.ToString() + ") ");
                    // MessageBox.Show(sbSQL.ToString());
                     if (sbSQL.Length > 0)
                     {
@@ -350,55 +357,73 @@ namespace M16
 
         private void sbOpenFile_Click(object sender, EventArgs e)
         {
-            xtraOpenFileDialog1.Filter = "Excel Files|*.xlsx";
-            xtraOpenFileDialog1.FileName = "";
-            xtraOpenFileDialog1.Title = "Select Excel File";
-
-            if (xtraOpenFileDialog1.ShowDialog() == DialogResult.OK)
+            if (slueCarrier.Text.Trim() == "")
             {
-                txeFilePath.Text = xtraOpenFileDialog1.FileName;
+                FUNC.msgWarning("Please select carrier before select file.");
+                slueCarrier.Focus();
+            }
+            else if (slueFrom.Text.Trim() == "")
+            {
+                FUNC.msgWarning("Please select departure before select file.");
+                slueFrom.Focus();
+            }
+            else if (slueTo.Text.Trim() == "")
+            {
+                FUNC.msgWarning("Please select destination before select file.");
+                slueTo.Focus();
+            }
+            else
+            {
+                xtraOpenFileDialog1.Filter = "Excel Files|*.xlsx";
+                xtraOpenFileDialog1.FileName = "";
+                xtraOpenFileDialog1.Title = "Select Excel File";
 
-                IWorkbook workbook = spsVessel.Document;
-
-                try
+                if (xtraOpenFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    //workbook.LoadDocument(txeFilePath.Text, DocumentFormat.OpenXml);
-                    // Load a workbook from a stream.
-                    using (FileStream stream = new FileStream(txeFilePath.Text, FileMode.Open))
+                    txeFilePath.Text = xtraOpenFileDialog1.FileName;
+
+                    IWorkbook workbook = spsVessel.Document;
+
+                    try
                     {
-                       // workbook.CalculateFull();
-                        workbook.LoadDocument(stream, DocumentFormat.Xlsx);
-                        workbook.Worksheets.ActiveWorksheet = workbook.Worksheets[0];
-   
-                        //*** Delete sheet > 2
-                        //if (workbook.Worksheets.Count > 2)
-                        //{
-                        //    for (int i = workbook.Worksheets.Count - 1; i > 1; i--)
-                        //    {
-                        //        workbook.Worksheets.RemoveAt(i);
-                        //    }
-                        //}
+                        //workbook.LoadDocument(txeFilePath.Text, DocumentFormat.OpenXml);
+                        // Load a workbook from a stream.
+                        using (FileStream stream = new FileStream(txeFilePath.Text, FileMode.Open))
+                        {
+                            // workbook.CalculateFull();
+                            workbook.LoadDocument(stream, DocumentFormat.Xlsx);
+                            workbook.Worksheets.ActiveWorksheet = workbook.Worksheets[0];
 
-                        LoadSheetHead(workbook.Worksheets[0]);
+                            //*** Delete sheet > 2
+                            //if (workbook.Worksheets.Count > 2)
+                            //{
+                            //    for (int i = workbook.Worksheets.Count - 1; i > 1; i--)
+                            //    {
+                            //        workbook.Worksheets.RemoveAt(i);
+                            //    }
+                            //}
+
+                            LoadSheetHead(workbook.Worksheets[0]);
+                        }
                     }
+                    catch (Exception)
+                    {
+                        FUNC.msgWarning("Please close excel file before import.");
+                        txeFilePath.Text = "";
+                    }
+
+                    //// Access a collection of worksheets.
+                    //WorksheetCollection worksheets = workbook.Worksheets;
+
+                    // Access a worksheet by its index.
+                    //Worksheet worksheet2 = workbook.Worksheets[1];
+
+                    //// Access a worksheet by its name.
+                    //Worksheet worksheet2 = workbook.Worksheets["Sheet2"];
+
+                    // txeLimit.Text = worksheet2.Rows[0]["B"].DisplayText;
+
                 }
-                catch (Exception)
-                {
-                    FUNC.msgWarning("Please close excel file before import.");
-                    txeFilePath.Text = "";
-                }
-
-                //// Access a collection of worksheets.
-                //WorksheetCollection worksheets = workbook.Worksheets;
-
-                // Access a worksheet by its index.
-                //Worksheet worksheet2 = workbook.Worksheets[1];
-
-                //// Access a worksheet by its name.
-                //Worksheet worksheet2 = workbook.Worksheets["Sheet2"];
-
-               // txeLimit.Text = worksheet2.Rows[0]["B"].DisplayText;
-  
             }
         }
 
@@ -480,9 +505,9 @@ namespace M16
 
         private void M16_Shown(object sender, EventArgs e)
         {
-            StringBuilder sbSQL = new StringBuilder();
-            sbSQL.Append("SELECT TOP(1) OIDPORT FROM PortAndCity WHERE (City = N'Bangkok') ");
-            slueFrom.EditValue = new DBQuery(sbSQL).getInt();
+            //StringBuilder sbSQL = new StringBuilder();
+            //sbSQL.Append("SELECT TOP(1) OIDPORT FROM PortAndCity WHERE (City = N'Bangkok') ");
+            slueFrom.EditValue = PORT_THAI;
         }
 
         private void slueCarrier_EditValueChanged(object sender, EventArgs e)
@@ -496,9 +521,9 @@ namespace M16
 
         private void findTime()
         {
-            if (slueCarrier.Text.Trim() != "" && speYear.Value.ToString() != "")
+            if (slueCarrier.Text.Trim() != "" && speYear.Value.ToString() != "" && slueFrom.Text.Trim() != "" && slueTo.Text.Trim() != "")
             {
-                int strTime = new DBQuery("SELECT MAX(TimeOfDocument) + 1 AS NewNo FROM Vessel WHERE (OIDVend = '" + slueCarrier.EditValue.ToString() + "') AND (FileYear = '" + speYear.Value.ToString() + "') ").getInt();
+                int strTime = new DBQuery("SELECT MAX(TimeOfDocument) + 1 AS NewNo FROM Vessel WHERE (OIDVend = '" + slueCarrier.EditValue.ToString() + "') AND (FileYear = '" + speYear.Value.ToString() + "') AND (OIDDeparturePort = '" + slueFrom.EditValue.ToString() + "') AND (OIDDestinationPort = '" + slueTo.EditValue.ToString() + "') ").getInt();
                 if (strTime == 0)
                 {
                     strTime = 1;
@@ -526,7 +551,7 @@ namespace M16
         private void speYear_EditValueChanged(object sender, EventArgs e)
         {
             speTime.Value = 1;
-            if (slueCarrier.Text.Trim() != "")
+            if (slueCarrier.Text.Trim() != "" && slueFrom.Text.Trim() != "" && slueTo.Text.Trim() != "")
             {
                 findTime();
             }
@@ -541,11 +566,11 @@ namespace M16
 
             //SET DEFALUT
             StringBuilder sbSQL = new StringBuilder();
-            sbSQL.Append("SELECT TOP(1) OIDPORT FROM PortAndCity WHERE (City = N'Bangkok') ");
-            slueFrom.EditValue = new DBQuery(sbSQL).getInt();
+            //sbSQL.Append("SELECT TOP(1) OIDPORT FROM PortAndCity WHERE (City = N'Bangkok') ");
+            //slueFrom.EditValue = new DBQuery(sbSQL).getInt();
 
             dteFileDate.EditValue = DateTime.Now;
-            slueTo.EditValue = "";
+            //slueTo.EditValue = "";
 
             txeLimit.Text = "";
             txeStdDay.Text = "";
@@ -565,71 +590,77 @@ namespace M16
 
             int Defalut_Time = Convert.ToInt32(speTime.Value);
             //LOAD DATA
-            sbSQL.Clear();
-            sbSQL.Append("SELECT OIDVessel, OIDVend, TimeOfDocument, OIDDeparturePort, OIDDestinationPort, FileDate, FileYear, StdLongestDay, Status, LCLLimitOfCBM, DayOfCYCutToETD, DayOfETDtoETA, DayOfETAtoWH, PathFile, UpdatedBy, UpdatedDate ");
-            sbSQL.Append("FROM Vessel ");
-            sbSQL.Append("WHERE(OIDVend = '" + slueCarrier.EditValue.ToString() + "') AND(FileYear = '" + speYear.Value.ToString() + "') AND(TimeOfDocument = '" + speTime.Value.ToString() + "') ");
-            string[] arrVessel = new DBQuery(sbSQL).getMultipleValue();
-            if (arrVessel.Length > 0)
+            string CarrierID = slueCarrier.Text.Trim() != "" ? slueCarrier.EditValue.ToString() : "";
+            string Departure = slueFrom.Text.Trim() != "" ? slueFrom.EditValue.ToString() : "";
+            string Destination = slueTo.Text.Trim() != "" ? slueTo.EditValue.ToString() : "";
+
+            if (CarrierID != "" && Departure != "" && Destination != "")
             {
-                bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                rpgPrint.Visible = true;
-                rpgExport.Visible = true;
-                layoutBrowse.Visibility = LayoutVisibility.Never;
-
-                string OIDVessel = arrVessel[0];
-                slueFrom.EditValue = Convert.ToInt32(arrVessel[3]);
-                slueTo.EditValue = Convert.ToInt32(arrVessel[4]);
-                dteFileDate.EditValue = Convert.ToDateTime(arrVessel[5]);
-                txeStdDay.Text = arrVessel[7];
-                rgStatus.EditValue = Convert.ToInt32(arrVessel[8]);
-                txeLimit.Text = arrVessel[9];
-                txeCyCut.Text = arrVessel[10];
-                txeEtdEta.Text = arrVessel[11];
-                txeEtaWh.Text = arrVessel[12];
-
-                txeFilePath.Text = arrVessel[13];
-                txeCREATE.Text = arrVessel[14];
-                txeDATE.Text = Convert.ToDateTime(arrVessel[15]).ToString("dd/MM/yyyy HH:mm:ss");
-
-                if (txeFilePath.Text.Trim() != "")
-                {
-                    //OPEN EXCEL
-                    try
-                    {
-                        IWorkbook workbook = spsVessel.Document;
-                        using (FileStream stream = new FileStream(txeFilePath.Text.Trim(), FileMode.Open))
-                        {
-                            workbook.LoadDocument(stream, DocumentFormat.Xlsx);
-                            workbook.Worksheets.ActiveWorksheet = workbook.Worksheets[0];
-                            LoadSheetHead(workbook.Worksheets[0]);
-                        }
-                    }
-                    catch (Exception)
-                    { }
-                }
-
-                //Load to GridControl
                 sbSQL.Clear();
-                sbSQL.Append("SELECT VSD.OIDVesselDT AS ID, VSD.OIDVessel AS [Vessel ID], VD.Code AS [Vendor Code], VD.Name AS [Vendor Name], VD.ShotName AS [Vendor Short Name], VSD.Vessel, VSD.Voy, VSD.TSorDirect AS [T/S or Direct], ");
-                sbSQL.Append("       VSD.TSPort AS[T / S Port], VSD.VesselType AS[FCL / LCL], VSD.Carrier, VSD.CFSCutDate AS[CY - Cut Date], VSD.CFSCutDay AS[CY - Cut Day], VSD.CFSCutTime AS[CY - Cut Time], VSD.ETDDate AS[ETD Date], ");
-                sbSQL.Append("       VSD.ETDDay AS[ETD Day], VSD.ETADate AS[ETA Date], VSD.ETADay AS[ETA Day], VSD.ETAWHDate AS[ETA - WH Date], VSD.ETAWHDay AS[ETA - WH Day], VSD.ETDtoWHDays AS[Days ETD - WH], ");
-                sbSQL.Append("       VSD.ETAtoWHDays AS[Days ETA - WH], VSD.Priority, VSD.Remarks ");
-                sbSQL.Append("FROM   VesselDetail AS VSD INNER JOIN ");
-                sbSQL.Append("       Vessel AS VS ON VSD.OIDVessel = VS.OIDVessel LEFT OUTER JOIN ");
-                sbSQL.Append("       Vendor AS VD ON VS.OIDVend = VD.OIDVEND ");
-                sbSQL.Append("WHERE (VSD.OIDVessel = '" + OIDVessel + "') ");
-                sbSQL.Append("ORDER BY[FCL / LCL], [CY - Cut Date] ");
-                new ObjDevEx.setGridControl(gcVessel, gvVessel, sbSQL).getDataShowOrder(false, false, false, true);
-                gvVessel.Columns["ID"].Visible = false;
-                gvVessel.Columns["Vessel ID"].Visible = false;
-            }
+                sbSQL.Append("SELECT OIDVessel, OIDVend, TimeOfDocument, OIDDeparturePort, OIDDestinationPort, FileDate, FileYear, StdLongestDay, Status, LCLLimitOfCBM, DayOfCYCutToETD, DayOfETDtoETA, DayOfETAtoWH, PathFile, UpdatedBy, UpdatedDate ");
+                sbSQL.Append("FROM Vessel ");
+                sbSQL.Append("WHERE(OIDVend = '" + CarrierID + "') AND (FileYear = '" + speYear.Value.ToString() + "') AND (OIDDeparturePort = '" + Departure + "') AND (OIDDestinationPort = '" + Destination + "') AND (TimeOfDocument = '" + speTime.Value.ToString() + "') ");
+                string[] arrVessel = new DBQuery(sbSQL).getMultipleValue();
+                if (arrVessel.Length > 0)
+                {
+                    bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    rpgPrint.Visible = true;
+                    rpgExport.Visible = true;
+                    layoutBrowse.Visibility = LayoutVisibility.Never;
 
+                    string OIDVessel = arrVessel[0];
+                    slueFrom.EditValue = Convert.ToInt32(arrVessel[3]);
+                    slueTo.EditValue = Convert.ToInt32(arrVessel[4]);
+                    dteFileDate.EditValue = Convert.ToDateTime(arrVessel[5]);
+                    txeStdDay.Text = arrVessel[7];
+                    rgStatus.EditValue = Convert.ToInt32(arrVessel[8]);
+                    txeLimit.Text = arrVessel[9];
+                    txeCyCut.Text = arrVessel[10];
+                    txeEtdEta.Text = arrVessel[11];
+                    txeEtaWh.Text = arrVessel[12];
+
+                    txeFilePath.Text = arrVessel[13];
+                    txeCREATE.Text = arrVessel[14];
+                    txeDATE.Text = Convert.ToDateTime(arrVessel[15]).ToString("dd/MM/yyyy HH:mm:ss");
+
+                    if (txeFilePath.Text.Trim() != "")
+                    {
+                        //OPEN EXCEL
+                        try
+                        {
+                            IWorkbook workbook = spsVessel.Document;
+                            using (FileStream stream = new FileStream(txeFilePath.Text.Trim(), FileMode.Open))
+                            {
+                                workbook.LoadDocument(stream, DocumentFormat.Xlsx);
+                                workbook.Worksheets.ActiveWorksheet = workbook.Worksheets[0];
+                                LoadSheetHead(workbook.Worksheets[0]);
+                            }
+                        }
+                        catch (Exception)
+                        { }
+                    }
+
+                    //Load to GridControl
+                    sbSQL.Clear();
+                    sbSQL.Append("SELECT VSD.OIDVesselDT AS ID, VSD.OIDVessel AS [Vessel ID], VD.Code AS [Vendor Code], VD.Name AS [Vendor Name], VD.ShotName AS [Vendor Short Name], VSD.Vessel, VSD.Voy, VSD.TSorDirect AS [T/S or Direct], ");
+                    sbSQL.Append("       VSD.TSPort AS[T / S Port], VSD.VesselType AS[FCL / LCL], VSD.Carrier, VSD.CFSCutDate AS[CY - Cut Date], VSD.CFSCutDay AS[CY - Cut Day], VSD.CFSCutTime AS[CY - Cut Time], VSD.ETDDate AS[ETD Date], ");
+                    sbSQL.Append("       VSD.ETDDay AS[ETD Day], VSD.ETADate AS[ETA Date], VSD.ETADay AS[ETA Day], VSD.ETAWHDate AS[ETA - WH Date], VSD.ETAWHDay AS[ETA - WH Day], VSD.ETDtoWHDays AS[Days ETD - WH], ");
+                    sbSQL.Append("       VSD.ETAtoWHDays AS[Days ETA - WH], VSD.Priority, VSD.Remarks ");
+                    sbSQL.Append("FROM   VesselDetail AS VSD INNER JOIN ");
+                    sbSQL.Append("       Vessel AS VS ON VSD.OIDVessel = VS.OIDVessel LEFT OUTER JOIN ");
+                    sbSQL.Append("       Vendor AS VD ON VS.OIDVend = VD.OIDVEND ");
+                    sbSQL.Append("WHERE (VSD.OIDVessel = '" + OIDVessel + "') ");
+                    sbSQL.Append("ORDER BY[FCL / LCL], [CY - Cut Date] ");
+                    new ObjDevEx.setGridControl(gcVessel, gvVessel, sbSQL).getDataShowOrder(false, false, false, true);
+                    gvVessel.Columns["ID"].Visible = false;
+                    gvVessel.Columns["Vessel ID"].Visible = false;
+                }
+            }
         }
 
         private void speTime_EditValueChanged(object sender, EventArgs e)
         {
-            int strTime = new DBQuery("SELECT MAX(TimeOfDocument) + 1 AS NewNo FROM Vessel WHERE (OIDVend = '" + slueCarrier.EditValue.ToString() + "') AND (FileYear = '" + speYear.Value.ToString() + "') ").getInt();
+            int strTime = new DBQuery("SELECT MAX(TimeOfDocument) + 1 AS NewNo FROM Vessel WHERE (OIDVend = '" + slueCarrier.EditValue.ToString() + "') AND (FileYear = '" + speYear.Value.ToString() + "') AND (OIDDeparturePort = '" + slueFrom.EditValue.ToString() + "') AND (OIDDestinationPort = '" + slueTo.EditValue.ToString() + "') ").getInt();
             if (strTime == 0)
             {
                 strTime = 1;
@@ -652,6 +683,24 @@ namespace M16
         {
             //if (e.Info.IsRowIndicator) e.Info.DisplayText = (e.RowHandle + 1).ToString();
             //gvVessel.IndicatorWidth = 45;
+        }
+
+        private void slueFrom_EditValueChanged(object sender, EventArgs e)
+        {
+            if (slueCarrier.Text.Trim() != "" && slueFrom.Text.Trim() != "" && slueTo.Text.Trim() != "")
+            {
+                findTime();
+            }
+            slueTo.Focus();
+        }
+
+        private void slueTo_EditValueChanged(object sender, EventArgs e)
+        {
+            if (slueCarrier.Text.Trim() != "" && slueFrom.Text.Trim() != "" && slueTo.Text.Trim() != "")
+            {
+                findTime();
+            }
+            txeFilePath.Focus();
         }
     }
 }
