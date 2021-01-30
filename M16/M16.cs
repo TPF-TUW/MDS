@@ -191,7 +191,7 @@ namespace M16
                     }
 
                     //*** Vessel ****
-                    sbSQL.Append("IF NOT EXISTS(SELECT OIDVessel FROM Vessel WHERE OIDVend = '" + slueCarrier.EditValue.ToString() + "' AND FileYear = '" + speYear.Value.ToString() + "' AND TimeOfDocument = '" + speTime.Value.ToString() + "') ");
+                    sbSQL.Append("IF NOT EXISTS(SELECT OIDVessel FROM Vessel WHERE OIDVend = '" + slueCarrier.EditValue.ToString() + "' AND FileYear = '" + speYear.Value.ToString() + "' AND OIDDeparturePort = '" + slueFrom.EditValue.ToString() + "' AND OIDDestinationPort = '" + slueTo.EditValue.ToString() + "' AND TimeOfDocument = '" + speTime.Value.ToString() + "') ");
                     sbSQL.Append(" BEGIN ");
                     sbSQL.Append("  INSERT INTO Vessel(OIDVend, TimeOfDocument, OIDDeparturePort, OIDDestinationPort, FileDate, FileYear, StdLongestDay, Status, LCLLimitOfCBM, DayOfCYCutToETD, DayOfETDtoETA, DayOfETAtoWH, PathFile, UpdatedBy, UpdatedDate) ");
                     sbSQL.Append("   VALUES('" + slueCarrier.EditValue.ToString() + "', '" + speTime.Value.ToString() + "', '" + slueFrom.EditValue.ToString() + "', '" + slueTo.EditValue.ToString() + "', '" + Convert.ToDateTime(dteFileDate.EditValue.ToString()).ToString("yyyy-MM-dd") + "', '" + speYear.Value.ToString() + "', '" + txeStdDay.Text.Trim() + "', " + Status + ", '" + txeLimit.Text.Trim() + "', '" + txeCyCut.Text.Trim() + "', '" + txeEtdEta.Text.Trim() + "', '" + txeEtaWh.Text.Trim() + "', N'" + newPathFileName + "', '" + strCREATE + "', GETDATE())  ");
@@ -209,7 +209,7 @@ namespace M16
                     sbSQL.Append("     DayOfETDtoETA='" + txeEtdEta.Text.Trim() + "', ");
                     sbSQL.Append("     DayOfETAtoWH='" + txeEtaWh.Text.Trim() + "', ");
                     sbSQL.Append("     PathFile=N'" + newPathFileName + "' ");
-                    sbSQL.Append("  WHERE (OIDVend = '" + slueCarrier.EditValue.ToString() + "') AND (FileYear = '" + speYear.Value.ToString() + "') AND (TimeOfDocument = '" + speTime.Value.ToString() + "') ");
+                    sbSQL.Append("  WHERE (OIDVend = '" + slueCarrier.EditValue.ToString() + "') AND (FileYear = '" + speYear.Value.ToString() + "') AND (OIDDeparturePort = '" + slueFrom.EditValue.ToString() + "') AND (OIDDestinationPort = '" + slueTo.EditValue.ToString() + "') AND (TimeOfDocument = '" + speTime.Value.ToString() + "') ");
                     sbSQL.Append(" END ");
 
                     sbSQL.Append("UPDATE Vessel SET ");

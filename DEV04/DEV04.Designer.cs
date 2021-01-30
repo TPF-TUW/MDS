@@ -60,9 +60,6 @@
             this.gvFolding = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcMaterial = new DevExpress.XtraGrid.GridControl();
             this.gvMaterial = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gcFabric = new DevExpress.XtraGrid.GridControl();
-            this.gvFabric = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
-            this.bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridLookUpEdit4 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit4View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridLookUpEdit3 = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -116,7 +113,6 @@
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tabbedControlGroup2 = new DevExpress.XtraLayout.TabbedControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem32 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -144,22 +140,6 @@
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tabbedControlGroup1 = new DevExpress.XtraLayout.TabbedControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.CSType = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand5 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand6 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand7 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand8 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand9 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand10 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand11 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand12 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand13 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand14 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand15 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand16 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gbEstimateCost = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -170,8 +150,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvFolding)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMaterial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMaterial)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcFabric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvFabric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit4View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3.Properties)).BeginInit();
@@ -226,7 +204,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem32)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
@@ -451,7 +428,6 @@
             this.layoutControl1.Controls.Add(this.pivotGridControl1);
             this.layoutControl1.Controls.Add(this.gcFolding);
             this.layoutControl1.Controls.Add(this.gcMaterial);
-            this.layoutControl1.Controls.Add(this.gcFabric);
             this.layoutControl1.Controls.Add(this.gridLookUpEdit4);
             this.layoutControl1.Controls.Add(this.gridLookUpEdit3);
             this.layoutControl1.Controls.Add(this.memoEdit1);
@@ -494,7 +470,7 @@
             this.bgcFabric.MainView = this.bgvFabric;
             this.bgcFabric.MenuManager = this.ribbonControl;
             this.bgcFabric.Name = "bgcFabric";
-            this.bgcFabric.Size = new System.Drawing.Size(855, 166);
+            this.bgcFabric.Size = new System.Drawing.Size(855, 259);
             this.bgcFabric.TabIndex = 35;
             this.bgcFabric.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bgvFabric});
@@ -503,6 +479,7 @@
             // 
             this.bgvFabric.GridControl = this.bgcFabric;
             this.bgvFabric.Name = "bgvFabric";
+            this.bgvFabric.OptionsView.ShowGroupPanel = false;
             // 
             // pivotGridControl1
             // 
@@ -556,40 +533,6 @@
             this.gvMaterial.OptionsView.EnableAppearanceEvenRow = true;
             this.gvMaterial.OptionsView.EnableAppearanceOddRow = true;
             this.gvMaterial.OptionsView.ShowGroupPanel = false;
-            // 
-            // gcFabric
-            // 
-            this.gcFabric.Location = new System.Drawing.Point(254, 227);
-            this.gcFabric.MainView = this.gvFabric;
-            this.gcFabric.MenuManager = this.ribbonControl;
-            this.gcFabric.Name = "gcFabric";
-            this.gcFabric.Size = new System.Drawing.Size(855, 89);
-            this.gcFabric.TabIndex = 31;
-            this.gcFabric.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvFabric});
-            // 
-            // gvFabric
-            // 
-            this.gvFabric.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gvFabric.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gvFabric.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
-            this.gridBand1,
-            this.gbEstimateCost});
-            this.gvFabric.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
-            this.bandedGridColumn1});
-            this.gvFabric.GridControl = this.gcFabric;
-            this.gvFabric.Name = "gvFabric";
-            this.gvFabric.OptionsView.ColumnAutoWidth = false;
-            this.gvFabric.OptionsView.EnableAppearanceEvenRow = true;
-            this.gvFabric.OptionsView.EnableAppearanceOddRow = true;
-            this.gvFabric.OptionsView.ShowGroupPanel = false;
-            // 
-            // bandedGridColumn1
-            // 
-            this.bandedGridColumn1.Caption = "bandedGridColumn1";
-            this.bandedGridColumn1.FieldName = "CsType";
-            this.bandedGridColumn1.Name = "bandedGridColumn1";
-            this.bandedGridColumn1.OptionsEditForm.ColumnSpan = 2;
             // 
             // gridLookUpEdit4
             // 
@@ -1151,28 +1094,18 @@
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem28,
             this.layoutControlItem32});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(859, 263);
             this.layoutControlGroup2.Text = "Fabric";
             // 
-            // layoutControlItem28
-            // 
-            this.layoutControlItem28.Control = this.gcFabric;
-            this.layoutControlItem28.Location = new System.Drawing.Point(0, 170);
-            this.layoutControlItem28.Name = "layoutControlItem28";
-            this.layoutControlItem28.Size = new System.Drawing.Size(859, 93);
-            this.layoutControlItem28.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem28.TextVisible = false;
-            // 
             // layoutControlItem32
             // 
             this.layoutControlItem32.Control = this.bgcFabric;
             this.layoutControlItem32.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem32.Name = "layoutControlItem32";
-            this.layoutControlItem32.Size = new System.Drawing.Size(859, 170);
+            this.layoutControlItem32.Size = new System.Drawing.Size(859, 263);
             this.layoutControlItem32.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem32.TextVisible = false;
             // 
@@ -1419,150 +1352,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(1104, 572);
             this.layoutControlGroup1.Text = "Marking";
             // 
-            // gridBand1
-            // 
-            this.gridBand1.Children.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
-            this.CSType,
-            this.gridBand4,
-            this.gridBand5,
-            this.gridBand6,
-            this.gridBand7,
-            this.gridBand8,
-            this.gridBand9,
-            this.gridBand10,
-            this.gridBand11,
-            this.gridBand12,
-            this.gridBand13,
-            this.gridBand14,
-            this.gridBand15,
-            this.gridBand16});
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.RowCount = 2;
-            this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 985;
-            // 
-            // CSType
-            // 
-            this.CSType.AppearanceHeader.Options.UseTextOptions = true;
-            this.CSType.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CSType.Caption = "Type";
-            this.CSType.Columns.Add(this.bandedGridColumn1);
-            this.CSType.Name = "CSType";
-            this.CSType.VisibleIndex = 0;
-            this.CSType.Width = 75;
-            // 
-            // gridBand4
-            // 
-            this.gridBand4.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand4.Caption = "Size";
-            this.gridBand4.Name = "gridBand4";
-            this.gridBand4.VisibleIndex = 1;
-            // 
-            // gridBand5
-            // 
-            this.gridBand5.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand5.Caption = "Fabric No.";
-            this.gridBand5.Name = "gridBand5";
-            this.gridBand5.VisibleIndex = 2;
-            // 
-            // gridBand6
-            // 
-            this.gridBand6.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand6.Caption = "Vendor";
-            this.gridBand6.Name = "gridBand6";
-            this.gridBand6.VisibleIndex = 3;
-            // 
-            // gridBand7
-            // 
-            this.gridBand7.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand7.Caption = "Garment Part";
-            this.gridBand7.Name = "gridBand7";
-            this.gridBand7.VisibleIndex = 4;
-            // 
-            // gridBand8
-            // 
-            this.gridBand8.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand8.Caption = "Color No.";
-            this.gridBand8.Name = "gridBand8";
-            this.gridBand8.VisibleIndex = 5;
-            // 
-            // gridBand9
-            // 
-            this.gridBand9.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand9.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand9.Caption = "Color Name";
-            this.gridBand9.Name = "gridBand9";
-            this.gridBand9.VisibleIndex = 6;
-            // 
-            // gridBand10
-            // 
-            this.gridBand10.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand10.Caption = "Width(All)";
-            this.gridBand10.Name = "gridBand10";
-            this.gridBand10.VisibleIndex = 7;
-            // 
-            // gridBand11
-            // 
-            this.gridBand11.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand11.Caption = "Width(Use)";
-            this.gridBand11.Name = "gridBand11";
-            this.gridBand11.VisibleIndex = 8;
-            // 
-            // gridBand12
-            // 
-            this.gridBand12.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand12.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand12.Caption = "g/m";
-            this.gridBand12.Name = "gridBand12";
-            this.gridBand12.VisibleIndex = 9;
-            // 
-            // gridBand13
-            // 
-            this.gridBand13.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand13.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand13.Caption = "m/1P";
-            this.gridBand13.Name = "gridBand13";
-            this.gridBand13.VisibleIndex = 10;
-            // 
-            // gridBand14
-            // 
-            this.gridBand14.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand14.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand14.Caption = "kg/1P";
-            this.gridBand14.Name = "gridBand14";
-            this.gridBand14.VisibleIndex = 11;
-            // 
-            // gridBand15
-            // 
-            this.gridBand15.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand15.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand15.Caption = "Price(Baht)";
-            this.gridBand15.Name = "gridBand15";
-            this.gridBand15.VisibleIndex = 12;
-            // 
-            // gridBand16
-            // 
-            this.gridBand16.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand16.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand16.Caption = "%Loss";
-            this.gridBand16.Name = "gridBand16";
-            this.gridBand16.VisibleIndex = 13;
-            // 
-            // gbEstimateCost
-            // 
-            this.gbEstimateCost.AppearanceHeader.Options.UseTextOptions = true;
-            this.gbEstimateCost.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gbEstimateCost.Caption = "Estimate Cost";
-            this.gbEstimateCost.Name = "gbEstimateCost";
-            this.gbEstimateCost.VisibleIndex = 1;
-            // 
             // DEV04
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -1585,8 +1374,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvFolding)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMaterial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMaterial)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcFabric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvFabric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit4View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit3.Properties)).EndInit();
@@ -1641,7 +1428,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem32)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).EndInit();
@@ -1730,7 +1516,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvFolding;
         private DevExpress.XtraGrid.GridControl gcMaterial;
         private DevExpress.XtraGrid.Views.Grid.GridView gvMaterial;
-        private DevExpress.XtraGrid.GridControl gcFabric;
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit4;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit4View;
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit3;
@@ -1759,7 +1544,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraLayout.TabbedControlGroup tabbedControlGroup2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem28;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem29;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
@@ -1784,26 +1568,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem25;
         private DevExpress.XtraPivotGrid.PivotGridControl pivotGridControl1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem31;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView gvFabric;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1;
         private DevExpress.XtraGrid.GridControl bgcFabric;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bgvFabric;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem32;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand CSType;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand5;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand6;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand7;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand8;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand9;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand10;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand11;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand12;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand13;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand14;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand15;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand16;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gbEstimateCost;
     }
 }

@@ -41,27 +41,31 @@ namespace DEV04
             gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             gridBand1.Name = "BandsHeader";
-            gridBand1.Caption = "FABRIC COST";
+            gridBand1.Caption = "FABRIC COST DATA";
             gridBand1.AppearanceHeader.Font = new Font(gridBand1.AppearanceHeader.Font.Name, 40);
             gridBand1.RowCount = 1;
 
             gridBand2.Name = "BandsEstCost";
-            gridBand2.Caption = "Estimate Cost";
+            gridBand2.Caption = "ESTIMATE COST";
             gridBand1.RowCount = 1;
 
             bgvFabric.Bands.Add(gridBand1);
             bgvFabric.Bands.Add(gridBand2);
 
-            bgvFabric.Bands[0].AppearanceHeader.Font = new Font(gridBand1.AppearanceHeader.Font.Name, 12);
-            bgvFabric.Bands[0].AppearanceHeader.BackColor = Color.White;
-            bgvFabric.Bands[0].AppearanceHeader.ForeColor = Color.DarkRed;
+            bgvFabric.Bands[0].AppearanceHeader.Font = new Font(gridBand1.AppearanceHeader.Font.Name, 10, FontStyle.Bold);
+            bgvFabric.Bands[0].AppearanceHeader.BackColor = Color.FromArgb(64, 0, 0);
             bgvFabric.Bands[0].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+
+
+            bgvFabric.Bands[1].AppearanceHeader.Font = new Font(gridBand1.AppearanceHeader.Font.Name, 9);
+            bgvFabric.Bands[1].AppearanceHeader.BackColor = Color.DarkRed;
+            bgvFabric.Bands[1].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
         }
 
         private void CreateColumns(DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1, DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2)
         {
             //***** 1 **********
-            DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            //DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -76,11 +80,11 @@ namespace DEV04
             DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn13 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn14 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
 
-            bandedGridColumn1.Caption = "Type";
-            bandedGridColumn1.FieldName = "bcType";
-            bandedGridColumn1.Visible = true;
+            //bandedGridColumn1.Caption = "Type";
+            //bandedGridColumn1.FieldName = "bcType";
+            //bandedGridColumn1.Visible = true;
 
-            bandedGridColumn1.RowCount = 2;
+            //bandedGridColumn1.RowCount = 2;
 
             bandedGridColumn2.Caption = "Size";
             bandedGridColumn2.FieldName = "bcSize";
@@ -94,7 +98,7 @@ namespace DEV04
             bandedGridColumn4.FieldName = "bcVendor";
             bandedGridColumn4.Visible = true;
 
-            bandedGridColumn5.Caption = "Garment Part";
+            bandedGridColumn5.Caption = "Garment" + Environment.NewLine + "Part";
             bandedGridColumn5.FieldName = "bcGarmentPart";
             bandedGridColumn5.Visible = true;
 
@@ -106,11 +110,11 @@ namespace DEV04
             bandedGridColumn7.FieldName = "bcColorName";
             bandedGridColumn7.Visible = true;
 
-            bandedGridColumn8.Caption = "Width(All)";
+            bandedGridColumn8.Caption = "Width" + Environment.NewLine + "(All)";
             bandedGridColumn8.FieldName = "bcWidthAll";
             bandedGridColumn8.Visible = true;
 
-            bandedGridColumn9.Caption = "Width(Use)";
+            bandedGridColumn9.Caption = "Width" + Environment.NewLine + "(Use)";
             bandedGridColumn9.FieldName = "bcWidthUse";
             bandedGridColumn9.Visible = true;
 
@@ -126,7 +130,7 @@ namespace DEV04
             bandedGridColumn12.FieldName = "bcKg1P";
             bandedGridColumn12.Visible = true;
 
-            bandedGridColumn13.Caption = "Price(Baht)";
+            bandedGridColumn13.Caption = "Price" + Environment.NewLine + "(Baht)";
             bandedGridColumn13.FieldName = "bcPrice";
             bandedGridColumn13.Visible = true;
 
@@ -135,7 +139,7 @@ namespace DEV04
             bandedGridColumn14.Visible = true;
 
 
-            gridBand1.Columns.Add(bandedGridColumn1);
+            //gridBand1.Columns.Add(bandedGridColumn1);
             gridBand1.Columns.Add(bandedGridColumn2);
             gridBand1.Columns.Add(bandedGridColumn3);
             gridBand1.Columns.Add(bandedGridColumn4);
@@ -158,19 +162,6 @@ namespace DEV04
             listSize.Add("S");
             listSize.Add("M");
 
-            //gridBand2.Children.Clear();
-            //int i = 0;
-            //foreach (string item in listSize) // Loop through List with foreach
-            //{
-            //    GridBand bandSize = new GridBand();
-            //    bandSize.Name = "BCSSize" + (i + 1).ToString();
-            //    bandSize.Caption = item;
-            //    bandSize.RowCount = 1;
-            //    //bandSize.Children.AddBand(listColor[i]);
-            //    gridBand2.Children.Add(bandSize);
-            //    i++;
-            //}
-
 
             List<string> listColor = new List<string>();
             listColor.Add("03 Gray");
@@ -182,15 +173,30 @@ namespace DEV04
             foreach (string items in listColor)
             {
                 DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bGridCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-                bGridCol.Caption = items;
+                bGridCol.Caption = listSize[x] + Environment.NewLine  + items;
                 bGridCol.FieldName = "BCS" + (x + 1).ToString();
                 bGridCol.Visible = true;
-                bGridCol.RowCount = 2;
-                //listColumnColor.Add(bGridCol);
+                
                 gridBand2.Columns.Add(bGridCol);
                 x++;
             }
 
+            bgvFabric.ColumnPanelRowHeight = 38;
+            bgvFabric.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            bgvFabric.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            bgvFabric.Appearance.BandPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            bgvFabric.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+
+            for (int ii = 0; ii < bgvFabric.Columns.Count; ii++)
+                bgvFabric.Columns[ii].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+
+            if (bgvFabric.Columns.Count > 13)
+            {
+                for (int ii = 13; ii < bgvFabric.Columns.Count; ii++)
+                {
+                    bgvFabric.Columns[ii].AppearanceHeader.BackColor = Color.FromArgb(255, 222, 222);
+                }
+            }
 
             bgvFabric.OptionsView.ColumnAutoWidth = false;
             bgvFabric.BestFitColumns();
@@ -209,9 +215,16 @@ namespace DEV04
             CreateColumns(gridBand1, gridBand2);
 
             StringBuilder sbSQL = new StringBuilder();
-            sbSQL.Append("SELECT 'A' AS bcType, 'S' AS bcSize, 'FDSSTRKJ91' AS bcFabric, 'Nan Yang' AS bcVendor, 'Body' As bcGarmentPart, '03 Gray' As bcColorNo, '03 GRAY(BC07)-F142C' AS bcColorName, '167.0' AS bcWidthAll, '162.0' As bcWidthUse, '275.550' AS bcGM, '0.1758' AS bcM1P, '0.0484' AS bcKg1P, '565.00' AS bcPrice, '3.0%' AS bcLoss, '2.1664' AS BCS1, '' AS BCS2, '' AS BCS3, '' AS BCS4 ");
+            sbSQL.Append("SELECT 'S' AS bcSize, 'FDSSTRKJ91' AS bcFabric, 'Nan Yang' AS bcVendor, 'Body' As bcGarmentPart, '03 Gray' As bcColorNo, '03 GRAY(BC07)-F142C' AS bcColorName, '167.0' AS bcWidthAll, '162.0' As bcWidthUse, '275.550' AS bcGM, '0.1758' AS bcM1P, '0.0484' AS bcKg1P, '565.00' AS bcPrice, '3.0%' AS bcLoss, '2.1664' AS BCS1, '' AS BCS2, '' AS BCS3, '' AS BCS4 ");
+            sbSQL.Append("UNION ALL ");
+            sbSQL.Append("SELECT 'M' AS bcSize, 'FDSSTRKJ91' AS bcFabric, 'Nan Yang' AS bcVendor, 'Body' As bcGarmentPart, '03 Gray' As bcColorNo, '03 GRAY(BC07)-F142C' AS bcColorName, '167.0' AS bcWidthAll, '162.0' As bcWidthUse, '275.550' AS bcGM, '0.1758' AS bcM1P, '0.0484' AS bcKg1P, '565.00' AS bcPrice, '3.0%' AS bcLoss, '' AS BCS1, '31.9491' AS BCS2, '' AS BCS3, '' AS BCS4 ");
+            sbSQL.Append("UNION ALL ");
+            sbSQL.Append("SELECT 'S' AS bcSize, 'FDSSTRKJ91' AS bcFabric, 'Nan Yang' AS bcVendor, 'Body' As bcGarmentPart, '16 Red' As bcColorNo, '16K RED-F142C' AS bcColorName, '167.0' AS bcWidthAll, '162.0' As bcWidthUse, '275.550' AS bcGM, '0.1758' AS bcM1P, '0.0484' AS bcKg1P, '565.00' AS bcPrice, '3.0%' AS bcLoss, '' AS BCS1, '' AS BCS2, '22.8821' AS BCS3, '' AS BCS4 ");
+            sbSQL.Append("UNION ALL ");
+            sbSQL.Append("SELECT 'M' AS bcSize, 'FDSSTRKJ91' AS bcFabric, 'Nan Yang' AS bcVendor, 'Body' As bcGarmentPart, '16 Red' As bcColorNo, '16K RED-F142C' AS bcColorName, '167.0' AS bcWidthAll, '162.0' As bcWidthUse, '275.550' AS bcGM, '0.1758' AS bcM1P, '0.0484' AS bcKg1P, '565.00' AS bcPrice, '3.0%' AS bcLoss, '' AS BCS1, '' AS BCS2, '' AS BCS3, '25.9551' AS BCS4 ");
             new ObjDevEx.setGridControl(bgcFabric, bgvFabric, sbSQL).getData();
-
+            bgvFabric.OptionsView.ColumnAutoWidth = false;
+            bgvFabric.BestFitColumns();
             //List<string> listSize = new List<string>();
             //listSize.Add("S");
             //listSize.Add("M");
