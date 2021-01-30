@@ -182,7 +182,7 @@ namespace M16
                         // Save the modified document to a stream.
                         System.IO.FileInfo fi = new System.IO.FileInfo(txeFilePath.Text);
                         string extn = fi.Extension;
-                        string newFileName = slueCarrier.Text.Trim().Replace(" ", "_") + "-" + speYear.Value.ToString() + "-" + speTime.Value.ToString() + extn;
+                        string newFileName = slueCarrier.Text.Trim().Replace(" ", "_") + "-" + slueFrom.EditValue.ToString() + "-" + slueTo.EditValue.ToString() + "-" + speYear.Value.ToString() + "-" + speTime.Value.ToString() + extn;
                         newPathFileName = xlsxPathFile + newFileName;
                         using (FileStream stream = new FileStream(newPathFileName, FileMode.Create, FileAccess.ReadWrite))
                         {
