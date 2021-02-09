@@ -50,6 +50,9 @@ namespace DEV01
                         int i = db.Query(sql,mainConn);
                         if (i > 0)
                         {
+                            DEV01 frmDev = Application.OpenForms.OfType<DEV01>().First();
+                            db.getGl("Select OIDGCATEGORY,CategoryName from GarmentCategory", mainConn, frmDev.glCategoryDivision_Main, "OIDGCATEGORY", "CategoryName");
+
                             ct.showInfoMessage("Save CategoryName is Successufull.");
                             this.Close();
                         }

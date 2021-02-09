@@ -1,4 +1,5 @@
 ﻿using DevExpress.Utils;
+using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
@@ -16,6 +17,30 @@ namespace DEV01
 {
     public class classTools
     {
+        public void validate_Numeric(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e, string colName)
+        {
+            GridView view = sender as GridView;
+            if (view.FocusedColumn.FieldName == colName)
+            {
+                double val = 0;
+                if (!Double.TryParse(e.Value as String, out val))
+                {
+                    e.Valid = false;
+                    e.ErrorText = "Only numeric values are accepted.";
+                }
+            }
+        }
+
+        public void bbi_Hide(BarItem bbi)
+        {
+            bbi.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+        }
+
+        public void bbi_Show(BarItem bbi)
+        {
+            bbi.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+        }
+
         // show Information Message
         public void showInfoMessage(string StrText)
         {

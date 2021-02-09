@@ -60,6 +60,8 @@ namespace DEV01
                         int i = db.Query(sql, mainConn);
                         if (i > 0)
                         {
+                            DEV01 frmDev = Application.OpenForms.OfType<DEV01>().First();
+                            db.getSl("Select OIDCUST,ShortName,Name From Customer", mainConn, frmDev.slCustomer_Main, "OIDCUST", "Name");
                             ct.showInfoMessage("Save Customer is Successfull.");
                             this.Close();
                         }

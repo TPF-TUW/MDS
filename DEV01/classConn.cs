@@ -272,7 +272,7 @@ namespace DEV01
         public void getGrid_FBListSample(GridControl gcName,string Where)
         {
             sql = new StringBuilder();
-            sql.Append("SELECT smplQR.OIDSMPL, smpl.SMPLPatternNo,'' as Consumption, c.ColorName, s.SizeName, smplQR.Quantity,u.UnitName,smplQR.OIDSMPLDT,s.OIDSIZE,u.OIDUNIT FROM SMPLRequest smpl INNER JOIN SMPLQuantityRequired smplQR ON smpl.OIDSMPL = smplQR.OIDSMPL INNER JOIN ProductColor c ON smplQR.OIDCOLOR = c.OIDCOLOR INNER JOIN ProductSize s ON smplQR.OIDSIZE = s.OIDSIZE INNER JOIN Unit u ON smplQR.OIDUnit = u.OIDUNIT Where smplQR.OIDSMPL is not null " + Where + " Order By smplQR.OIDSMPL,smpl.SMPLPatternNo,c.ColorName");
+            sql.Append("SELECT smplQR.OIDSMPL,smpl.SMPLNo, smpl.SMPLPatternNo,'' as Consumption, c.ColorName, s.SizeName, smplQR.Quantity,u.UnitName,smplQR.OIDSMPLDT,s.OIDSIZE,u.OIDUNIT FROM SMPLRequest smpl INNER JOIN SMPLQuantityRequired smplQR ON smpl.OIDSMPL = smplQR.OIDSMPL INNER JOIN ProductColor c ON smplQR.OIDCOLOR = c.OIDCOLOR INNER JOIN ProductSize s ON smplQR.OIDSIZE = s.OIDSIZE INNER JOIN Unit u ON smplQR.OIDUnit = u.OIDUNIT Where smplQR.OIDSMPL is not null " + Where + " Order By smplQR.OIDSMPL,smpl.SMPLPatternNo,c.ColorName");
             getGc(sql, gcName,MDS());
         }
         public string genSMPLNo()

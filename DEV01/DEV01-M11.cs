@@ -62,6 +62,8 @@ namespace DEV01
                         int i = db.Query(sql, mainConn);
                         if (i > 0)
                         {
+                            DEV01 frmDev = Application.OpenForms.OfType<DEV01>().First();
+                            db.getSl("select OIDSTYLE,StyleName From ProductStyle", mainConn, frmDev.slStyleName_Main, "OIDSTYLE", "StyleName");
                             ct.showInfoMessage("Save StyleName is Successufull.");
                             this.Close();
                         }

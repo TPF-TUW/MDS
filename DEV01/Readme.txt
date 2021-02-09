@@ -1,4 +1,8 @@
-﻿Global Variable
+﻿V001 : 25/01/2021
+- Update FGColor Where Colortype = 0 > Finish
+- Update FGColor Where ColorType = 1 > Wait
+
+Global Variable
 >> Variable
 string currenTab		= string.Empty;
 string dosetOIDSMPL		= string.Empty;
